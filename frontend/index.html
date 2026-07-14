@@ -36,20 +36,61 @@
                     <li class="nav-item dropdown vv-hover-dropdown">
                         <a class="vv-nav-link dropdown-toggle" href="/tours" id="toursDropdown" role="button"
                             aria-expanded="false">Tours</a>
-                        <ul class="dropdown-menu border-0 shadow-sm rounded-4 mt-0" aria-labelledby="toursDropdown">
-                            <li><a class="dropdown-item fw-bold py-2" href="/tours">Tất cả Tours</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item text-muted fs-7 py-2" href="/tours?q=Đà%20Nẵng">Du lịch Đà
-                                    Nẵng</a></li>
-                            <li><a class="dropdown-item text-muted fs-7 py-2" href="/tours?q=Hạ%20Long">Du lịch Hạ
-                                    Long</a></li>
-                            <li><a class="dropdown-item text-muted fs-7 py-2" href="/tours?q=Phú%20Quốc">Du lịch Phú
-                                    Quốc</a></li>
-                            <li><a class="dropdown-item text-muted fs-7 py-2" href="/tours?q=Sapa">Khám phá Sa Pa</a>
-                            </li>
-                        </ul>
+                        <div class="dropdown-menu border-0 shadow rounded-4 mt-0 p-4 mega-menu"
+                            aria-labelledby="toursDropdown" style="width: 700px; max-width: 90vw;">
+                            <div class="row g-4">
+                                <!-- Tour Mood -->
+                                <div class="col-md-4">
+                                    <h6 class="fw-bold mb-3 fs-7 text-uppercase" style="color: var(--primary);">Tour Mood</h6>
+                                    <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+                                        <li><a class="text-decoration-none text-muted fw-medium vv-hover-text-primary" href="/tours?mood=thư giãn">Thư giãn & Nghỉ dưỡng</a></li>
+                                        <li><a class="text-decoration-none text-muted fw-medium vv-hover-text-primary" href="/tours?mood=gia đình">Du lịch Gia đình</a></li>
+                                        <li><a class="text-decoration-none text-muted fw-medium vv-hover-text-primary" href="/tours?mood=khám phá">Khám phá & Trải nghiệm</a></li>
+                                        <li><a class="text-decoration-none text-muted fw-medium vv-hover-text-primary" href="/tours?mood=văn hóa">Văn hóa & Lịch sử</a></li>
+                                        <li><a class="text-decoration-none text-muted fw-medium vv-hover-text-primary" href="/tours?mood=lãng mạn">Lãng mạn</a></li>
+                                    </ul>
+                                </div>
+                                <!-- Cảm hứng -->
+                                <div class="col-md-8 border-start px-4">
+                                    <h6 class="fw-bold mb-3 fs-7 text-uppercase" style="color: var(--primary);">Cảm hứng cho chuyến đi</h6>
+                                    <div class="row g-3">
+                                        <div class="col-4">
+                                            <a href="/tours?category=Biển" class="text-decoration-none d-block">
+                                                <div class="position-relative rounded-3 overflow-hidden shadow-sm vv-hover-scale" style="height: 90px;">
+                                                    <img src="/assets/images/dulichbien.png" alt="Du lịch biển" class="img-fluid w-100 h-100 object-fit-cover">
+                                                    <div class="position-absolute bottom-0 start-0 w-100 p-2 text-white" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                                                        <span class="fs-8 fw-semibold">Du lịch biển</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-4">
+                                            <a href="/tours?category=Vùng cao" class="text-decoration-none d-block">
+                                                <div class="position-relative rounded-3 overflow-hidden shadow-sm vv-hover-scale" style="height: 90px;">
+                                                    <img src="/assets/images/vungcao.png" alt="Vùng cao" class="img-fluid w-100 h-100 object-fit-cover">
+                                                    <div class="position-absolute bottom-0 start-0 w-100 p-2 text-white" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                                                        <span class="fs-8 fw-semibold">Vùng cao</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-4">
+                                            <a href="/tours?category=Văn hóa" class="text-decoration-none d-block">
+                                                <div class="position-relative rounded-3 overflow-hidden shadow-sm vv-hover-scale" style="height: 90px;">
+                                                    <img src="/assets/images/vanhoa.png" alt="Văn hóa & Di sản" class="img-fluid w-100 h-100 object-fit-cover">
+                                                    <div class="position-absolute bottom-0 start-0 w-100 p-2 text-white" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                                                        <span class="fs-8 fw-semibold">Văn hóa & Di sản</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-4 pt-3 border-top text-center">
+                                    <a href="/tours" class="btn rounded-pill px-5 py-2 fw-bold shadow-sm" style="background-color: var(--primary); color: white; transition: 0.3s; border: none;">Xem Tất cả Tours</a>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="vv-nav-link" href="/coming-soon">Blog</a>
