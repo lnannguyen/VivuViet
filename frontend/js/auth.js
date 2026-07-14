@@ -1,4 +1,6 @@
-const API_URL = "http://localhost:5000/api";
+const API_URL = window.location.port === "5000" || (!window.location.hostname.includes("localhost") && !window.location.hostname.includes("127.0.0.1"))
+    ? `${window.location.origin}/api`
+    : "http://localhost:5000/api";
 let currentUser = null;
 
 // Khu vực thông báo
