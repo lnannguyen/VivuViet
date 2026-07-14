@@ -1992,9 +1992,9 @@ body.page-ready {
 }
 
 /* =============================================
-   Category horizontal scroll on mobile and tablet
+   Category horizontal scroll on mobile only
    ============================================= */
-@media (max-width: 991.98px) {
+@media (max-width: 767.98px) {
     #categories-container,
     #categories-skeleton {
         display: flex;
@@ -2028,9 +2028,9 @@ body.page-ready {
 }
 
 /* =============================================
-   Flash Sale horizontal scroll on mobile and tablet
+   Flash Sale horizontal scroll on mobile only
    ============================================= */
-@media (max-width: 991.98px) {
+@media (max-width: 767.98px) {
     #flashSaleList,
     #flash-sale-skeleton {
         display: flex;
@@ -2060,5 +2060,107 @@ body.page-ready {
         scroll-snap-align: start;
         margin-bottom: 0 !important;
         padding: 0 !important; /* Xoá padding mặc định của Bootstrap col */
+    }
+}
+
+/* =============================================
+   Featured Tours (Hot Tours) horizontal scroll on mobile only
+   ============================================= */
+@media (max-width: 767.98px) {
+    #tourList,
+    #tours-skeleton {
+        display: flex;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        padding-bottom: 1rem !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        margin-left: -1rem !important;
+        margin-right: -1rem !important;
+        gap: 1rem !important;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+    }
+
+    #tourList::-webkit-scrollbar,
+    #tours-skeleton::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+
+    #tourList > div,
+    #tours-skeleton > div {
+        flex: 0 0 280px !important; /* Độ rộng thẻ tour trên mobile */
+        width: 280px !important;
+        max-width: 280px !important;
+        scroll-snap-align: start;
+        margin-bottom: 0 !important;
+        padding: 0 !important; /* Xoá padding mặc định của Bootstrap col */
+    }
+}
+
+/* =============================================
+   Top Destinations horizontal scroll on mobile only
+   ============================================= */
+@media (max-width: 767.98px) {
+    #destinations-container > .row,
+    #destinations-skeleton {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        padding-bottom: 1rem !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        margin-left: -1rem !important;
+        margin-right: -1rem !important;
+        gap: 1rem !important;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+    }
+
+    #destinations-container > .row::-webkit-scrollbar,
+    #destinations-skeleton::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+
+    #destinations-container > .row > .col-md-5,
+    #destinations-skeleton > .col-md-5 {
+        flex: 0 0 220px !important;
+        width: 220px !important;
+        max-width: 220px !important;
+        min-height: 270px !important;
+        height: 270px !important;
+        scroll-snap-align: start;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    #destinations-container > .row > .col-md-7,
+    #destinations-skeleton > .col-md-7 {
+        flex: 0 0 auto !important;
+        width: auto !important;
+        max-width: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    #destinations-container > .row > .col-md-7 > .d-flex,
+    #destinations-skeleton > .d-flex {
+        flex-direction: row !important;
+        gap: 1rem !important;
+        height: 270px !important;
+    }
+
+    #destinations-container > .row > .col-md-7 > .d-flex > div,
+    #destinations-skeleton > .d-flex > div {
+        flex: 0 0 220px !important;
+        width: 220px !important;
+        max-width: 220px !important;
+        min-height: 270px !important;
+        height: 270px !important;
+        scroll-snap-align: start;
+        padding: 0 !important;
+        margin: 0 !important;
     }
 }
