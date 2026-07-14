@@ -557,3 +557,20 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* =============================================
+   Override Bootstrap accordion – xanh lá thay xanh dương
+   ============================================= */
+.vv-accordion-btn,
+.accordion-button.vv-accordion-btn {
+    color: var(--primary) !important;
+}
+.vv-accordion-btn:not(.collapsed),
+.accordion-button.vv-accordion-btn:not(.collapsed) {
+    color: var(--primary) !important;
+    background-color: #fff !important;
+    box-shadow: none !important;
+}
+.vv-accordion-btn::after {
+    filter: hue-rotate(140deg) saturate(2) brightness(0.6);
+}

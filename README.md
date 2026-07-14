@@ -2,6 +2,8 @@
 
 VivuViet là nền tảng website đặt tour du lịch Việt Nam toàn diện, kết hợp các xu hướng công nghệ hiện đại nhằm mang lại trải nghiệm cá nhân hóa tốt nhất cho du khách. Hệ thống được xây dựng trên mô hình Client-Server hiện đại, tách biệt hoàn toàn giữa Frontend tĩnh và Backend cung cấp RESTful API.
 
+🌐 **Demo trực tuyến:** [https://vivuviet.onrender.com](https://vivuviet.onrender.com)
+
 ---
 
 ## Tính năng nổi bật
@@ -18,6 +20,7 @@ VivuViet là nền tảng website đặt tour du lịch Việt Nam toàn diện,
 
 ### 3. Đặt tour & Thanh toán thông minh
 *   **Đặt chỗ linh hoạt (Booking Engine):** Lựa chọn ngày đi khả dụng, số lượng khách (tự động tính giá vé người lớn/trẻ em).
+*   **Thanh toán trực tuyến VNPay:** Tích hợp cổng thanh toán VNPay Sandbox với ký số HMAC-SHA512, hỗ trợ thanh toán qua thẻ ATM/tài khoản ngân hàng.
 *   **Thanh toán mã QR động:** Tự động sinh mã QR chuyển khoản chứa đúng số tiền và cú pháp giao dịch giúp thanh toán nhanh gọn qua các ứng dụng ngân hàng.
 *   **Hệ thống Voucher & Khuyến mãi:** Áp dụng voucher giảm giá trực tiếp vào hóa đơn đặt tour.
 
@@ -38,11 +41,16 @@ VivuViet là nền tảng website đặt tour du lịch Việt Nam toàn diện,
 ### Backend (Server-side)
 *   **Node.js & Express.js:** Xây dựng máy chủ web và các định tuyến dịch vụ RESTful API.
 *   **JSON Web Token (JWT):** Xác thực tài khoản người dùng và bảo mật phiên làm việc phi trạng thái.
+*   **BcryptJS:** Mã hóa một chiều mật khẩu người dùng trước khi lưu trữ vào cơ sở dữ liệu.
 *   **Multer:** Xử lý upload tệp đa phương tiện (ảnh đại diện, ảnh/video đánh giá tour) lưu trữ trực tiếp trên đĩa cục bộ.
+*   **VNPay (HMAC-SHA512):** Tích hợp cổng thanh toán VNPay Sandbox với ký số bảo mật.
 
 ### Cơ sở dữ liệu (Database)
 *   **MongoDB Atlas:** Cơ sở dữ liệu NoSQL đám mây lưu trữ dữ liệu dạng tài liệu JSON động.
 *   **Mongoose:** ODM (Object Document Mapper) quản lý Schema và tương tác dữ liệu MongoDB.
+
+### Triển khai (Deployment)
+*   **Render.com:** Nền tảng cloud triển khai máy chủ Backend + Frontend tĩnh tại `https://vivuviet.onrender.com`.
 
 ---
 
@@ -69,7 +77,7 @@ VivuViet/
     ├── models/               # Cấu trúc lược đồ dữ liệu MongoDB (Mongoose Schemas)
     ├── routes/               # Cấu trúc định tuyến API endpoints
     ├── services/             # Dịch vụ gửi email tự động và các helper khác
-    ├── .env                  # Cấu hình biến môi trường (Database URI, JWT Secret)
+    ├── .env                  # Cấu hình biến môi trường (Database URI, JWT Secret, VNPay)
     ├── seed.js               # Kịch bản nạp dữ liệu mẫu ban đầu (Tours, Destinations)
     ├── seed_voucher.js       # Kịch bản nạp dữ liệu mã giảm giá mẫu
     ├── seed_reviews.js       # Kịch bản nạp dữ liệu đánh giá mẫu
@@ -98,6 +106,12 @@ VivuViet/
     PORT=5000
     MONGO_URI=your_mongodb_connection_string
     JWT_SECRET=your_jwt_secret_key
+
+    # Cấu hình cổng thanh toán VNPay
+    VNPAY_TMN_CODE=your_vnpay_tmn_code
+    VNPAY_HASH_SECRET=your_vnpay_hash_secret
+    VNPAY_URL=https://sandbox.vnpayment.vn/paymentv2/vpcpay.html
+    VNPAY_RETURN_URL=http://localhost:5000/api/payments/vnpay-return
     ```
 
 ### Bước 3: Nạp dữ liệu mẫu ban đầu (Seeding Database)
@@ -135,4 +149,3 @@ Khi thực hiện giao diện thanh toán qua cổng VNPay Sandbox, bạn có th
 *   **Tên chủ thẻ:** NGUYEN VAN A
 *   **Ngày phát hành:** 07/15
 *   **Mật khẩu OTP:** 123456
-

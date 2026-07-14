@@ -173,11 +173,11 @@ function renderTourData(tour) {
                 (day, idx) => `
       <div class="accordion-item border mb-3 bg-white rounded-3 overflow-hidden shadow-sm">
         <h2 class="accordion-header" id="headingDay${idx}">
-          <button class="accordion-button ${idx === 0 ? "" : "collapsed"} fw-bold text-primary bg-white shadow-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDay${idx}" aria-expanded="${idx === 0 ? "true" : "false"}" aria-controls="collapseDay${idx}">
-            <span class="me-3 badge bg-accent text-white px-3 py-2">Ngày ${day.day}</span> ${day.title}
+          <button class="accordion-button fw-bold bg-white shadow-none border-0 vv-accordion-btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDay${idx}" aria-expanded="true" aria-controls="collapseDay${idx}">
+            <span class="me-3 badge bg-accent text-white px-3 py-2">Ngày ${day.day}</span> ${day.title.replace(/^Ng[àa]y\s+\d+\s*[:\-–]\s*/i, '')}
           </button>
         </h2>
-        <div id="collapseDay${idx}" class="accordion-collapse collapse ${idx === 0 ? "show" : ""}" aria-labelledby="headingDay${idx}" data-bs-parent="#vv-itinerary">
+        <div id="collapseDay${idx}" class="accordion-collapse collapse show" aria-labelledby="headingDay${idx}">
           <div class="accordion-body text-secondary bg-light border-top">
             <p class="mb-0" style="line-height: 1.6;">${day.content.replace(/\n/g, "<br>")}</p>
           </div>

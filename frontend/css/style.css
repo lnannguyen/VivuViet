@@ -1831,26 +1831,33 @@ body.page-ready {
 }
 
 .hide-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 /* Custom Form Controls to match Brand */
 .form-range::-webkit-slider-thumb {
     background-color: var(--primary);
 }
+
 .form-range::-moz-range-thumb {
     background-color: var(--primary);
 }
+
 .form-range::-ms-thumb {
     background-color: var(--primary);
 }
+
 .form-range:focus::-webkit-slider-thumb {
     box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(14, 94, 58, 0.25);
 }
+
 .form-range:focus::-moz-range-thumb {
     box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(14, 94, 58, 0.25);
 }
+
 .form-range:focus::-ms-thumb {
     box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(14, 94, 58, 0.25);
 }
@@ -1859,6 +1866,7 @@ body.page-ready {
     background-color: var(--primary);
     border-color: var(--primary);
 }
+
 .form-check-input:focus {
     border-color: var(--primary);
     box-shadow: 0 0 0 0.25rem rgba(14, 94, 58, 0.25);
@@ -1867,6 +1875,7 @@ body.page-ready {
 .bg-brand {
     background-color: var(--primary) !important;
 }
+
 .bg-accent {
     background-color: var(--accent) !important;
 }
@@ -1898,7 +1907,8 @@ body.page-ready {
 }
 
 /* Media Upload & Display */
-.media-preview-grid, .review-media-grid {
+.media-preview-grid,
+.review-media-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
     gap: 10px;
@@ -1917,7 +1927,8 @@ body.page-ready {
     justify-content: center;
 }
 
-.media-item img, .media-item video {
+.media-item img,
+.media-item video {
     width: 100%;
     height: 100%;
     object-fit: cover;

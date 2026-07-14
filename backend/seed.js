@@ -226,6 +226,31 @@ const seedData = async () => {
                 if (match) days = parseInt(match[1]);
             }
 
+            // Tạo lịch trình mẫu theo số ngày nếu không có sẵn
+            const buildItinerary = (srcItinerary, numDays, tourName, dest) => {
+                if (srcItinerary && srcItinerary.length > 0) return srcItinerary;
+                const result = [];
+                const activities = [
+                    `Tập trung tại điểm xuất phát, làm thủ tục và khởi hành đến ${dest}. Nhận phòng khách sạn, ổn định chỗ ở và dùng bữa tối cùng đoàn. Hướng dẫn viên phổ biến lịch trình chi tiết cho chuyến đi.`,
+                    `Khởi hành tham quan các điểm nổi bật tại ${dest}. Ghé thăm các danh lam thắng cảnh địa phương, thưởng thức ẩm thực đặc sản vùng. Chiều tự do mua sắm và khám phá.`,
+                    `Tiếp tục hành trình khám phá những điểm đến hấp dẫn còn lại tại ${dest}. Trải nghiệm văn hóa địa phương và các hoạt động đặc trưng của vùng. Tối thưởng thức chương trình nghệ thuật đặc sắc.`,
+                    `Buổi sáng tự do tham quan và mua sắm quà lưu niệm. Dùng bữa trưa và tập trung làm thủ tục trả phòng. Khởi hành về điểm xuất phát, kết thúc chuyến hành trình đáng nhớ.`,
+                ];
+                for (let i = 0; i < numDays; i++) {
+                    const isLast = i === numDays - 1;
+                    result.push({
+                        day: i + 1,
+                        title: isLast
+                            ? `Ngày ${i + 1}: Tham quan & Trở về`
+                            : i === 0
+                            ? `Ngày ${i + 1}: Xuất phát – ${dest}`
+                            : `Ngày ${i + 1}: Khám phá ${dest}`,
+                        content: activities[Math.min(i, activities.length - 1)],
+                    });
+                }
+                return result;
+            };
+
             return {
                 _id: t._id || t.code || t.slug, // Dùng _id có sẵn hoặc sinh từ code/slug
                 code: t.code,
@@ -268,6 +293,7 @@ const seedData = async () => {
                 includes: t.included || [],
                 excluded: t.excluded || [],
                 excludes: t.excluded || [],
+                itinerary: buildItinerary(t.itinerary, days, t.name, t.destination),
                 category: category,
                 mood:
                     category === "Du lịch biển"
