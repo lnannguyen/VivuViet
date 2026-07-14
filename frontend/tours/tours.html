@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#0e5e3a" />
+        <title>VivuViet - Danh Sách Tour Du Lịch</title>
+
+        <!-- Bootstrap 5.3.3 CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <!-- Bootstrap Icons -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+            rel="stylesheet"
+        />
+
+        <!-- Global Design System CSS -->
+        <link rel="stylesheet" href="/css/style.css" />
+        <!-- Local Page CSS -->
+        <link rel="stylesheet" href="/tours/style.css" />
+        <!-- Favicon -->
+        <link rel="icon" href="/favicon.png" type="image/png" />
+    </head>
+    <body class="page-loading">
+        <!-- Thanh điều hướng -->
+        <nav class="vv-navbar navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand vv-brand" href="/"
+                    >Vivu<span>Viet</span></a
+                >
+
+                <button
+                    class="navbar-toggler border-0 shadow-none"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#vvNavbar"
+                    aria-controls="vvNavbar"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="vvNavbar">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4 gap-2">
+                        <li class="nav-item dropdown vv-hover-dropdown">
+                            <a
+                                class="vv-nav-link dropdown-toggle active"
+                                href="/tours"
+                                id="toursDropdown"
+                                role="button"
+                                aria-expanded="false"
+                                >Tours</a
+                            >
+                            <div
+                                class="dropdown-menu border-0 shadow rounded-4 mt-0 p-4 mega-menu"
+                                aria-labelledby="toursDropdown"
+                                style="width: 700px; max-width: 90vw;"
+                            >
+                                <div class="row g-4">
+                                    <!-- Tour Mood -->
+                                    <div class="col-md-4">
+                                        <h6 class="fw-bold mb-3 fs-7 text-uppercase" style="color: var(--primary);">Tour Mood</h6>
+                                        <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+                                            <li><a class="text-decoration-none text-muted fw-medium vv-hover-text-primary" href="/tours?mood=thư giãn">Thư giãn & Nghỉ dưỡng</a></li>
+                                            <li><a class="text-decoration-none text-muted fw-medium vv-hover-text-primary" href="/tours?mood=gia đình">Du lịch Gia đình</a></li>
+                                            <li><a class="text-decoration-none text-muted fw-medium vv-hover-text-primary" href="/tours?mood=khám phá">Khám phá & Trải nghiệm</a></li>
+                                            <li><a class="text-decoration-none text-muted fw-medium vv-hover-text-primary" href="/tours?mood=văn hóa">Văn hóa & Lịch sử</a></li>
+                                            <li><a class="text-decoration-none text-muted fw-medium vv-hover-text-primary" href="/tours?mood=lãng mạn">Lãng mạn</a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- Cảm hứng -->
+                                    <div class="col-md-8 border-start px-4">
+                                        <h6 class="fw-bold mb-3 fs-7 text-uppercase" style="color: var(--primary);">Cảm hứng cho chuyến đi</h6>
+                                        <div class="row g-3">
+                                            <div class="col-4">
+                                                <a href="/tours?category=Biển" class="text-decoration-none d-block">
+                                                    <div class="position-relative rounded-3 overflow-hidden shadow-sm vv-hover-scale" style="height: 90px;">
+                                                        <img src="/assets/images/dulichbien.png" alt="Du lịch biển" class="img-fluid w-100 h-100 object-fit-cover">
+                                                        <div class="position-absolute bottom-0 start-0 w-100 p-2 text-white" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                                                            <span class="fs-8 fw-semibold">Du lịch biển</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col-4">
+                                                <a href="/tours?category=Vùng cao" class="text-decoration-none d-block">
+                                                    <div class="position-relative rounded-3 overflow-hidden shadow-sm vv-hover-scale" style="height: 90px;">
+                                                        <img src="/assets/images/vungcao.png" alt="Vùng cao" class="img-fluid w-100 h-100 object-fit-cover">
+                                                        <div class="position-absolute bottom-0 start-0 w-100 p-2 text-white" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                                                            <span class="fs-8 fw-semibold">Vùng cao</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col-4">
+                                                <a href="/tours?category=Văn hóa" class="text-decoration-none d-block">
+                                                    <div class="position-relative rounded-3 overflow-hidden shadow-sm vv-hover-scale" style="height: 90px;">
+                                                        <img src="/assets/images/vanhoa.png" alt="Văn hóa & Di sản" class="img-fluid w-100 h-100 object-fit-cover">
+                                                        <div class="position-absolute bottom-0 start-0 w-100 p-2 text-white" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                                                            <span class="fs-8 fw-semibold">Văn hóa & Di sản</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mt-4 pt-3 border-top text-center">
+                                        <a href="/tours" class="btn rounded-pill px-5 py-2 fw-bold shadow-sm" style="background-color: var(--primary); color: white; transition: 0.3s; border: none;">Xem Tất cả Tours</a>
+                                    </div>
+                                </div>
+                            </div></li>
+                        <li class="nav-item">
+                            <a class="vv-nav-link" href="/coming-soon">Blog</a>
+                        </li>
+                    </ul>
+
+                    <div
+                        class="d-flex flex-column flex-lg-row align-items-stretch align-items-lg-center gap-3"
+                    >
+                        <!-- Navigation Search Box -->
+                        <div class="search-box-nav">
+                            <i class="bi bi-search search-icon"></i>
+                            <input
+                                type="text"
+                                id="navSearchInput"
+                                placeholder="Tìm kiếm hành trình..."
+                                autocomplete="off"
+                            />
+                        </div>
+
+                        <!-- Authentication Area (Login/Register or User Profile) -->
+                        <div id="nav-auth-area">
+                            <!-- Loading placeholder -->
+                            <div
+                                class="spinner-border spinner-border-sm text-success"
+                                role="status"
+                            >
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main content -->
+        <main class="container my-5">
+            <!-- Page Header -->
+            <div class="mb-5">
+                <h1 class="section-title mb-2">Khám Phá Việt Nam</h1>
+                <p class="text-muted-brand fs-6">
+                    Tìm kiếm những hành trình độc bản, từ vẻ đẹp cổ kính của Hội
+                    An đến sự hùng vĩ của Vịnh Hạ Long.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- SIDEBAR: BỘ LỌC -->
+                <aside class="col-lg-3">
+                    <div class="filter-sidebar">
+                        <div
+                            class="d-flex justify-content-between align-items-center mb-4"
+                        >
+                            <h4 class="filter-title mb-0 text-primary-brand">Bộ lọc</h4>
+                            <button id="clearFilters" class="btn-clear">
+                                XÓA TẤT CẢ
+                            </button>
+                        </div>
+
+                        <!-- Loại hình tour -->
+                        <div class="mb-4 pb-3 border-bottom border-light">
+                            <h6
+                                class="fw-bold mb-3 fs-7 text-primary-brand text-uppercase"
+                            >
+                                Loại hình tour
+                            </h6>
+                            <div class="form-check mb-2">
+                                <input
+                                    class="form-check-input filter-cat shadow-none"
+                                    type="checkbox"
+                                    value="Du lịch biển"
+                                    id="catSea"
+                                />
+                                <label
+                                    class="form-check-label fs-7"
+                                    for="catSea"
+                                    >Du lịch biển</label
+                                >
+                            </div>
+                            <div class="form-check mb-2">
+                                <input
+                                    class="form-check-input filter-cat shadow-none"
+                                    type="checkbox"
+                                    value="Vùng Cao"
+                                    id="catMountain"
+                                />
+                                <label
+                                    class="form-check-label fs-7"
+                                    for="catMountain"
+                                    >Vùng cao</label
+                                >
+                            </div>
+                            <div class="form-check mb-2">
+                                <input
+                                    class="form-check-input filter-cat shadow-none"
+                                    type="checkbox"
+                                    value="Văn Hóa & Di Sản"
+                                    id="catCulture"
+                                />
+                                <label
+                                    class="form-check-label fs-7"
+                                    for="catCulture"
+                                    >Di tích & Văn hóa</label
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Khoảng giá -->
+                        <div class="mb-4 pb-3 border-bottom border-light">
+                            <h6
+                                class="fw-bold mb-3 fs-7 text-primary-brand text-uppercase"
+                            >
+                                Khoảng giá tối đa:
+                                <span
+                                    id="currentPriceDisplay"
+                                    class="text-accent"
+                                    >20,000,000 đ</span
+                                >
+                            </h6>
+                            <input
+                                type="range"
+                                class="form-range"
+                                id="priceRange"
+                                min="1000000"
+                                max="20000000"
+                                step="500000"
+                                value="20000000"
+                            />
+                            <div
+                                class="d-flex justify-content-between text-muted fs-8 mt-1 fw-bold"
+                            >
+                                <span>1tr</span>
+                                <span>20tr+</span>
+                            </div>
+                        </div>
+
+                        <!-- Thời gian -->
+                        <div class="mb-4 pb-3 border-bottom border-light">
+                            <h6
+                                class="fw-bold mb-3 fs-7 text-primary-brand text-uppercase"
+                            >
+                                Thời gian chuyến đi
+                            </h6>
+                            <div
+                                id="durationFilters"
+                                class="d-flex flex-wrap gap-1"
+                            >
+                                <span
+                                    class="time-pill filter-time"
+                                    data-min="1"
+                                    data-max="3"
+                                    >1 - 3 ngày</span
+                                >
+                                <span
+                                    class="time-pill filter-time"
+                                    data-min="4"
+                                    data-max="7"
+                                    >4 - 7 ngày</span
+                                >
+                                <span
+                                    class="time-pill filter-time"
+                                    data-min="8"
+                                    data-max="14"
+                                    >8 - 14 ngày</span
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Đánh giá -->
+                        <div class="mb-2">
+                            <h6
+                                class="fw-bold mb-3 fs-7 text-primary-brand text-uppercase"
+                            >
+                                Đánh giá sao
+                            </h6>
+                            <div
+                                class="form-check d-flex align-items-center gap-2"
+                            >
+                                <input
+                                    class="form-check-input shadow-none mt-0"
+                                    type="checkbox"
+                                    id="rate5"
+                                    value="5"
+                                />
+                                <label
+                                    class="form-check-label text-warning fs-7"
+                                    for="rate5"
+                                >
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <span class="text-muted ms-1 fs-8"
+                                        >(Đánh giá 4.8+)</span
+                                    >
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- TOUR LISTING GRID -->
+                <section class="col-lg-9">
+                    <!-- Tour Matching Banner Alert -->
+                    <div
+                        id="matchingAlertBanner"
+                        class="alert alert-primary border-0 rounded-4 mb-4 d-none align-items-center justify-content-between p-3 gap-2"
+                        style="background: #e0f2fe; color: #0369a1"
+                    >
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="bi bi-bullseye fs-4 text-accent"></i>
+                            <div>
+                                <div
+                                    class="fw-bold fs-7"
+                                    style="color: #0369a1"
+                                >
+                                    Đã ghép đôi Tour Matching thành công!
+                                </div>
+                                <div
+                                    class="fs-8 text-muted"
+                                    style="color: #0c4a6e !important"
+                                >
+                                    Hành trình dưới đây được lọc và hiển thị
+                                    theo phần trăm phù hợp nhất với khảo sát của
+                                    bạn.
+                                </div>
+                            </div>
+                        </div>
+                        <button
+                            class="btn btn-sm p-1 fs-7"
+                            style="
+                                border: none;
+                                color: #0369a1;
+                                background: none;
+                            "
+                            onclick="clearQuizMatching()"
+                        >
+                            <i class="bi bi-x-lg"></i>
+                        </button>
+                    </div>
+
+                    <!-- Top bar -->
+                    <div
+                        class="d-flex justify-content-between align-items-center mb-4"
+                    >
+                        <span class="fw-bold text-muted-brand fs-7"
+                            ><span id="tourCount" class="text-accent fs-5"
+                                >0</span
+                            >
+                            tour phù hợp được tìm thấy</span
+                        >
+                        <div
+                            class="d-flex align-items-center gap-2 fs-7 text-muted-brand"
+                        >
+                            <span>Sắp xếp:</span>
+                            <select class="sort-select" id="sortSelect">
+                                <option value="popular">Phổ biến nhất</option>
+                                <option value="price-asc">
+                                    Giá từ thấp - cao
+                                </option>
+                                <option value="price-desc">
+                                    Giá từ cao - thấp
+                                </option>
+                                <option value="rating-desc">
+                                    Đánh giá cao nhất
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Shimmer loading skeleton container -->
+                    <div id="tours-skeleton" class="row">
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="skeleton skeleton-card"></div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="skeleton skeleton-card"></div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="skeleton skeleton-card"></div>
+                        </div>
+                    </div>
+
+                    <!-- Grid Render -->
+                    <div
+                        class="row g-4"
+                        id="tourGrid"
+                        style="display: none"
+                    ></div>
+
+                    <!-- Pagination -->
+                    <div
+                        class="d-flex pagination-custom"
+                        id="paginationContainer"
+                    ></div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Chân trang -->
+        <footer class="vv-footer">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <a
+                            href="/"
+                            class="vv-footer-brand d-block mb-3 text-decoration-none"
+                            ><span>VivuViet</span></a
+                        >
+                        <p
+                            class="small opacity-75 mb-3"
+                            style="max-width: 320px"
+                        >
+                            Tự hào mang đến những hành trình khám phá Việt Nam
+                            đích thực với dịch vụ tận tâm và chuyên nghiệp.
+                        </p>
+                        <div class="d-flex gap-2">
+                            <a href="/coming-soon" class="social-btn"
+                                ><i class="bi bi-facebook"></i
+                            ></a>
+                            <a href="/coming-soon" class="social-btn"
+                                ><i class="bi bi-instagram"></i
+                            ></a>
+                            <a href="/coming-soon" class="social-btn"
+                                ><i class="bi bi-youtube"></i
+                            ></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 col-6">
+                        <h6>Liên kết</h6>
+                        <ul class="list-unstyled d-flex flex-column gap-2 fs-7">
+                            <li><a href="/coming-soon">Về chúng tôi</a></li>
+                            <li>
+                                <a href="/coming-soon">Chính sách đối tác</a>
+                            </li>
+                            <li><a href="/coming-soon">Khuyến mãi hot</a></li>
+                            <li><a href="/coming-soon">Blog cẩm nang</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 col-6">
+                        <h6>Hỗ trợ</h6>
+                        <ul class="list-unstyled d-flex flex-column gap-2 fs-7">
+                            <li>
+                                <a href="/coming-soon">Câu hỏi thường gặp</a>
+                            </li>
+                            <li>
+                                <a href="/coming-soon">Điều khoản dịch vụ</a>
+                            </li>
+                            <li>
+                                <a href="/coming-soon">Chính sách bảo mật</a>
+                            </li>
+                            <li><a href="/coming-soon">Liên hệ phản hồi</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <h6>Liên hệ</h6>
+                        <ul class="list-unstyled d-flex flex-column gap-2 fs-7">
+                            <li>
+                                <i class="bi bi-geo-alt text-accent me-2"></i
+                                >123 Đường Lê Lợi, Quận 1, TP. HCM
+                            </li>
+                            <li>
+                                <i class="bi bi-telephone text-accent me-2"></i
+                                >+84 123 456 789
+                            </li>
+                            <li>
+                                <i class="bi bi-envelope text-accent me-2"></i
+                                >hello@vivuviet.com
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr class="vv-footer-divider" />
+                <div class="text-center small opacity-50">
+                    &copy; 2026 VivuViet Travel. Explore the heart of Vietnam.
+                    All rights reserved.
+                </div>
+            </div>
+        </footer>
+
+        <!-- Floating contact button -->
+        <a href="#" class="floating-btn" id="btnZalo" aria-label="Zalo Support">
+            <i class="bi bi-chat-dots-fill"></i>
+        </a>
+
+        <!-- Modals: authentication -->
+
+        <!-- Login Modal -->
+        <div
+            class="modal fade auth-modal"
+            id="loginModal"
+            tabindex="-1"
+            aria-labelledby="loginModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="loginModalLabel">
+                            Đăng Nhập VivuViet
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body p-4">
+                        <form id="loginForm">
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label"
+                                    >Địa chỉ Email</label
+                                >
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="loginEmail"
+                                    placeholder="name@example.com"
+                                    required
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label"
+                                    >Mật khẩu</label
+                                >
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="loginPassword"
+                                    placeholder="Nhập mật khẩu"
+                                    required
+                                />
+                            </div>
+                            <div
+                                class="d-flex justify-content-between align-items-center mb-4 fs-7"
+                            >
+                                <div class="form-check">
+                                    <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        id="rememberMe"
+                                    />
+                                    <label
+                                        class="form-check-label text-muted-brand"
+                                        for="rememberMe"
+                                        >Ghi nhớ đăng nhập</label
+                                    >
+                                </div>
+                                <a
+                                    href="/coming-soon"
+                                    class="text-accent fw-bold text-decoration-none"
+                                    >Quên mật khẩu?</a
+                                >
+                            </div>
+                            <button
+                                type="submit"
+                                class="btn-brand w-100 py-2.5 justify-content-center text-center"
+                            >
+                                Đăng nhập
+                            </button>
+
+                            <p class="text-center mt-3 fs-7 text-muted">
+                                Chưa có tài khoản?
+                                <a
+                                    href="#"
+                                    class="text-accent fw-bold text-decoration-none"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#registerModal"
+                                    >Đăng ký ngay</a
+                                >
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Register Modal -->
+        <div
+            class="modal fade auth-modal"
+            id="registerModal"
+            tabindex="-1"
+            aria-labelledby="registerModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="registerModalLabel">
+                            Đăng Ký Thành Viên
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body p-4">
+                        <form id="registerForm">
+                            <div class="mb-3">
+                                <label for="registerFullname" class="form-label"
+                                    >Họ và Tên</label
+                                >
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="registerFullname"
+                                    placeholder="Ví dụ: Nguyễn Văn A"
+                                    required
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label for="registerEmail" class="form-label"
+                                    >Địa chỉ Email</label
+                                >
+                                <input
+                                    type="email"
+                                    class="form-control"
+                                    id="registerEmail"
+                                    placeholder="name@example.com"
+                                    required
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label for="registerPhone" class="form-label"
+                                    >Số điện thoại</label
+                                >
+                                <input
+                                    type="tel"
+                                    class="form-control"
+                                    id="registerPhone"
+                                    placeholder="Ví dụ: 0912345678"
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label for="registerPassword" class="form-label"
+                                    >Mật khẩu</label
+                                >
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="registerPassword"
+                                    placeholder="Nhập mật khẩu (tối thiểu 6 ký tự)"
+                                    required
+                                    minlength="6"
+                                />
+                            </div>
+                            <div class="form-check mb-4 fs-7">
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="agreeTerms"
+                                    required
+                                />
+                                <label
+                                    class="form-check-label text-muted-brand"
+                                    for="agreeTerms"
+                                >
+                                    Tôi đồng ý với các
+                                    <a
+                                        href="/coming-soon"
+                                        class="text-accent text-decoration-none"
+                                        >điều khoản dịch vụ</a
+                                    >
+                                    và chính sách của VivuViet.
+                                </label>
+                            </div>
+                            <button
+                                type="submit"
+                                class="btn-brand w-100 py-2.5 justify-content-center text-center"
+                            >
+                                Đăng ký thành viên
+                            </button>
+
+                            <p class="text-center mt-3 fs-7 text-muted">
+                                Đã có tài khoản?
+                                <a
+                                    href="#"
+                                    class="text-accent fw-bold text-decoration-none"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#loginModal"
+                                    >Đăng nhập</a
+                                >
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Khu vực thông báo -->
+        <div id="toast-container"></div>
+
+        <!-- Bootstrap 5.3.3 JS Bundle -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Global Shared Auth JS -->
+        <script src="/js/auth.js"></script>
+        <!-- Search Dropdown -->
+        <script src="/js/search.js"></script>
+        <!-- Chatbox -->
+        <script src="/js/chatbox.js"></script>
+        <!-- Local Page Script -->
+        <script src="/tours/script.js"></script>
+    </body>
+</html>

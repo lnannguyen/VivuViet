@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#0e5e3a" />
+        <title>Chi Tiết Hành Trình - VivuViet</title>
+
+        <!-- Bootstrap 5.3.3 CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <!-- Bootstrap Icons -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+            rel="stylesheet"
+        />
+
+        <!-- Global CSS Design System -->
+        <link rel="stylesheet" href="/css/style.css" />
+        <!-- Page-specific CSS -->
+        <link rel="stylesheet" href="/tour-detail/style.css" />
+        <!-- Favicon -->
+        <link rel="icon" href="/favicon.png" type="image/png" />
+    </head>
+    <body class="page-loading">
+        <!-- Thanh điều hướng -->
+        <nav class="vv-navbar navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand vv-brand" href="/"
+                    >Vivu<span>Viet</span></a
+                >
+
+                <button
+                    class="navbar-toggler border-0 shadow-none"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#vvNavbar"
+                    aria-controls="vvNavbar"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="vvNavbar">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4 gap-2">
+                        <li class="nav-item dropdown vv-hover-dropdown">
+                            <a
+                                class="vv-nav-link dropdown-toggle active"
+                                href="/tours"
+                                id="toursDropdown"
+                                role="button"
+                                aria-expanded="false"
+                                >Tours</a
+                            >
+                            <div
+                                class="dropdown-menu border-0 shadow rounded-4 mt-0 p-4 mega-menu"
+                                aria-labelledby="toursDropdown"
+                                style="width: 700px; max-width: 90vw;"
+                            >
+                                <div class="row g-4">
+                                    <!-- Tour Mood -->
+                                    <div class="col-md-4">
+                                        <h6 class="fw-bold mb-3 fs-7 text-uppercase" style="color: var(--primary);">Tour Mood</h6>
+                                        <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+                                            <li><a class="text-decoration-none text-muted fw-medium vv-hover-text-primary" href="/tours?mood=thư giãn">Thư giãn & Nghỉ dưỡng</a></li>
+                                            <li><a class="text-decoration-none text-muted fw-medium vv-hover-text-primary" href="/tours?mood=gia đình">Du lịch Gia đình</a></li>
+                                            <li><a class="text-decoration-none text-muted fw-medium vv-hover-text-primary" href="/tours?mood=khám phá">Khám phá & Trải nghiệm</a></li>
+                                            <li><a class="text-decoration-none text-muted fw-medium vv-hover-text-primary" href="/tours?mood=văn hóa">Văn hóa & Lịch sử</a></li>
+                                            <li><a class="text-decoration-none text-muted fw-medium vv-hover-text-primary" href="/tours?mood=lãng mạn">Lãng mạn</a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- Cảm hứng -->
+                                    <div class="col-md-8 border-start px-4">
+                                        <h6 class="fw-bold mb-3 fs-7 text-uppercase" style="color: var(--primary);">Cảm hứng cho chuyến đi</h6>
+                                        <div class="row g-3">
+                                            <div class="col-4">
+                                                <a href="/tours?category=Biển" class="text-decoration-none d-block">
+                                                    <div class="position-relative rounded-3 overflow-hidden shadow-sm vv-hover-scale" style="height: 90px;">
+                                                        <img src="/assets/images/dulichbien.png" alt="Du lịch biển" class="img-fluid w-100 h-100 object-fit-cover">
+                                                        <div class="position-absolute bottom-0 start-0 w-100 p-2 text-white" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                                                            <span class="fs-8 fw-semibold">Du lịch biển</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col-4">
+                                                <a href="/tours?category=Vùng cao" class="text-decoration-none d-block">
+                                                    <div class="position-relative rounded-3 overflow-hidden shadow-sm vv-hover-scale" style="height: 90px;">
+                                                        <img src="/assets/images/vungcao.png" alt="Vùng cao" class="img-fluid w-100 h-100 object-fit-cover">
+                                                        <div class="position-absolute bottom-0 start-0 w-100 p-2 text-white" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                                                            <span class="fs-8 fw-semibold">Vùng cao</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col-4">
+                                                <a href="/tours?category=Văn hóa" class="text-decoration-none d-block">
+                                                    <div class="position-relative rounded-3 overflow-hidden shadow-sm vv-hover-scale" style="height: 90px;">
+                                                        <img src="/assets/images/vanhoa.png" alt="Văn hóa & Di sản" class="img-fluid w-100 h-100 object-fit-cover">
+                                                        <div class="position-absolute bottom-0 start-0 w-100 p-2 text-white" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                                                            <span class="fs-8 fw-semibold">Văn hóa & Di sản</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mt-4 pt-3 border-top text-center">
+                                        <a href="/tours" class="btn rounded-pill px-5 py-2 fw-bold shadow-sm" style="background-color: var(--primary); color: white; transition: 0.3s; border: none;">Xem Tất cả Tours</a>
+                                    </div>
+                                </div>
+                            </div> </li>
+                        <li class="nav-item">
+                            <a class="vv-nav-link" href="/coming-soon">Blog</a>
+                        </li>
+                    </ul>
+
+                    <div
+                        class="d-flex flex-column flex-lg-row align-items-stretch align-items-lg-center gap-3"
+                    >
+                        <div class="search-box-nav">
+                            <i class="bi bi-search search-icon"></i>
+                            <input
+                                type="text"
+                                id="navSearchInput"
+                                placeholder="Tìm kiếm hành trình..."
+                                autocomplete="off"
+                            />
+                        </div>
+
+                        <div id="nav-auth-area">
+                            <div
+                                class="spinner-border spinner-border-sm text-success"
+                                role="status"
+                            >
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main layout -->
+        <main class="container my-5">
+            <!-- State Screen: Loading -->
+            <div id="vv-loading-screen" class="vv-state-screen">
+                <div class="vv-spinner"></div>
+                <p class="fw-semibold">Đang tải thông tin hành trình...</p>
+            </div>
+
+            <!-- State Screen: Error -->
+            <div
+                id="vv-error-screen"
+                class="vv-state-screen"
+                style="display: none"
+            >
+                <i
+                    class="bi bi-exclamation-triangle text-warning fs-1 mb-2"
+                ></i>
+                <p id="vv-error-message" class="fw-bold">
+                    Không tìm thấy thông tin tour du lịch này!
+                </p>
+                <a href="/tours" class="btn-brand fs-7 mt-2"
+                    >Quay lại danh sách</a
+                >
+            </div>
+
+            <!-- Content Grid (Rendered by JS) -->
+            <div id="vv-tour-content" style="display: none">
+                <!-- Gallery images -->
+                <div id="vv-gallery"></div>
+
+                <div class="vv-content-grid mt-4">
+                    <!-- Main Column -->
+                    <div class="vv-main-col">
+                        <div id="vv-badges" class="vv-badges"></div>
+                        <h1 id="vv-title" class="vv-title"></h1>
+                        <div id="vv-meta" class="vv-meta-row"></div>
+
+                        <!-- Highlights Section -->
+                        <section
+                            class="vv-section"
+                            id="vv-highlights-section"
+                        ></section>
+
+                        <!-- Timeline Schedule -->
+                        <section class="vv-section">
+                            <h2 class="vv-section-title">
+                                Lịch trình chi tiết
+                            </h2>
+                            <div
+                                id="vv-itinerary"
+                                class="vv-timeline mt-4"
+                            ></div>
+                        </section>
+
+                        <!-- VR 360 Space -->
+                        <section
+                            class="vv-section"
+                            id="vv-virtual360-section"
+                        ></section>
+
+                        <!-- Map Path -->
+                        <section class="vv-section">
+                            <h2 class="vv-section-title">Bản đồ lộ trình</h2>
+                            <div id="vv-map" class="vv-map-box mt-3"></div>
+                        </section>
+
+                        <!-- Weather recommendation widget -->
+                        <section
+                            class="vv-section"
+                            id="vv-weather-section"
+                        ></section>
+
+                        <!-- Inclusions / Exclusions -->
+                        <section
+                            class="vv-section vv-include-grid mt-4"
+                            id="vv-include-exclude-section"
+                        ></section>
+
+                        <!-- Customer Reviews List -->
+                        <section class="vv-section">
+                            <div class="vv-reviews-head">
+                                <h2 class="vv-section-title">
+                                    Đánh giá từ du khách
+                                </h2>
+                            </div>
+                            <div
+                                id="vv-reviews"
+                                class="vv-reviews-grid mt-4"
+                            ></div>
+                        </section>
+                    </div>
+
+                    <!-- Sidebar booking card -->
+                    <aside
+                        class="vv-side-col"
+                        id="vv-sidebar-container"
+                    ></aside>
+                </div>
+
+                <!-- Related suggested tours -->
+                <div
+                    class="mt-5 pt-4 border-top border-light"
+                    id="vv-related-section"
+                ></div>
+            </div>
+        </main>
+
+        <!-- Chân trang -->
+        <footer class="vv-footer">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <a
+                            href="/"
+                            class="vv-footer-brand d-block mb-3 text-decoration-none"
+                            ><span>VivuViet</span></a
+                        >
+                        <p
+                            class="small opacity-75 mb-3"
+                            style="max-width: 320px"
+                        >
+                            Tự hào mang đến những hành trình khám phá Việt Nam
+                            đích thực với dịch vụ tận tâm và chuyên nghiệp.
+                        </p>
+                        <div class="d-flex gap-2">
+                            <a href="/coming-soon" class="social-btn"
+                                ><i class="bi bi-facebook"></i
+                            ></a>
+                            <a href="/coming-soon" class="social-btn"
+                                ><i class="bi bi-instagram"></i
+                            ></a>
+                            <a href="/coming-soon" class="social-btn"
+                                ><i class="bi bi-youtube"></i
+                            ></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 col-6">
+                        <h6>Liên kết</h6>
+                        <ul class="list-unstyled d-flex flex-column gap-2 fs-7">
+                            <li><a href="/coming-soon">Về chúng tôi</a></li>
+                            <li>
+                                <a href="/coming-soon">Chính sách đối tác</a>
+                            </li>
+                            <li><a href="/coming-soon">Khuyến mãi hot</a></li>
+                            <li><a href="/coming-soon">Blog cẩm nang</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 col-6">
+                        <h6>Hỗ trợ</h6>
+                        <ul class="list-unstyled d-flex flex-column gap-2 fs-7">
+                            <li>
+                                <a href="/coming-soon">Câu hỏi thường gặp</a>
+                            </li>
+                            <li>
+                                <a href="/coming-soon">Điều khoản dịch vụ</a>
+                            </li>
+                            <li>
+                                <a href="/coming-soon">Chính sách bảo mật</a>
+                            </li>
+                            <li><a href="/coming-soon">Liên hệ phản hồi</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <h6>Liên hệ</h6>
+                        <ul class="list-unstyled d-flex flex-column gap-2 fs-7">
+                            <li>
+                                <i class="bi bi-geo-alt text-accent me-2"></i
+                                >123 Đường Lê Lợi, Quận 1, TP. HCM
+                            </li>
+                            <li>
+                                <i class="bi bi-telephone text-accent me-2"></i
+                                >+84 123 456 789
+                            </li>
+                            <li>
+                                <i class="bi bi-envelope text-accent me-2"></i
+                                >hello@vivuviet.com
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr class="vv-footer-divider" />
+                <div class="text-center small opacity-50">
+                    &copy; 2026 VivuViet Travel. Explore the heart of Vietnam.
+                    All rights reserved.
+                </div>
+            </div>
+        </footer>
+
+        <!-- FLOATING CONTACT BUTTON -->
+
+        <!-- Toast alerts container -->
+        <div id="toast-container"></div>
+
+        <!-- Bootstrap 5.3.3 JS Bundle -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Global Shared Auth JS -->
+        <script src="/js/auth.js"></script>
+        <!-- Search Dropdown -->
+        <script src="/js/search.js"></script>
+        <!-- Chatbox -->
+        <script src="/js/chatbox.js"></script>
+        <!-- Weather Logic -->
+        <script src="/js/weather.js"></script>
+        <!-- Local Page Script -->
+        <script src="/tour-detail/script.js"></script>
+    </body>
+</html>

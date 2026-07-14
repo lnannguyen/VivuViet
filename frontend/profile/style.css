@@ -1,0 +1,301 @@
+/* profile/style.css - Styles for User Profile Dashboard */
+
+.profile-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* Sidebar Styling */
+.profile-sidebar {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.5rem 0;
+    box-shadow: var(--shadow-sm);
+}
+
+.profile-user-info {
+    text-align: center;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1rem;
+}
+
+.profile-avatar-upload {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 0.75rem auto;
+}
+
+.profile-avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-muted);
+}
+
+.btn-change-avatar {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: #fff;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+.btn-change-avatar:hover {
+    background-color: var(--accent);
+}
+
+.profile-membership-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.25rem 0.65rem;
+    border-radius: var(--radius-pill);
+    margin-top: 0.25rem;
+    background-color: var(--primary-muted);
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+/* Menu links */
+.profile-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.profile-menu-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    border-left: 3px solid transparent;
+    transition: var(--transition);
+    cursor: pointer;
+}
+.profile-menu-link:hover {
+    background-color: #fcfbfa;
+    color: var(--primary);
+}
+.profile-menu-link.active {
+    background-color: var(--primary-muted);
+    color: var(--primary);
+    border-left-color: var(--primary);
+}
+.profile-menu-link i {
+    font-size: 1.1rem;
+}
+
+/* Dashboard Content Area */
+.profile-content {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    min-height: 520px;
+}
+
+.profile-content-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.75rem;
+}
+
+/* Tab contents */
+.profile-tab-pane {
+    display: none;
+}
+.profile-tab-pane.active {
+    display: block;
+}
+
+/* Passport stamps layout */
+.passport-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 1.25rem;
+}
+.passport-stamp {
+    border: 2px dashed var(--border);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0.75rem;
+    background-color: #fcfbfa;
+    transition: var(--transition);
+    position: relative;
+}
+.passport-stamp.unlocked {
+    border-color: var(--primary);
+    border-style: solid;
+    background-color: var(--primary-muted);
+    box-shadow: var(--shadow-sm);
+    transform: rotate(-5deg);
+}
+.passport-stamp-name {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+}
+.passport-stamp.unlocked .passport-stamp-name {
+    color: var(--primary);
+}
+.passport-stamp-date {
+    font-size: 0.55rem;
+    color: var(--text-light);
+    margin-top: 0.25rem;
+}
+.passport-stamp-count {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    background-color: var(--accent);
+    color: #fff;
+    font-size: 0.6rem;
+    font-weight: 700;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Achievements badges */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1.5rem;
+}
+.achievement-badge-card {
+    background-color: #fcfbfa;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    text-align: center;
+    transition: var(--transition);
+}
+.achievement-badge-card.locked {
+    opacity: 0.65;
+    filter: grayscale(1);
+}
+.achievement-badge-icon {
+    font-size: 2.25rem;
+    margin-bottom: 0.5rem;
+}
+.achievement-badge-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+.achievement-badge-desc {
+    font-size: 0.65rem;
+    color: var(--text-light);
+}
+
+/* Voucher Ticket Cards */
+.voucher-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+.voucher-ticket {
+    display: flex;
+    background-color: #fff;
+    border: 1.5px dashed var(--border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+.voucher-ticket-left {
+    background-color: var(--primary);
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    width: 100px;
+    text-align: center;
+}
+.voucher-ticket-right {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.voucher-ticket-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+.voucher-ticket-desc {
+    font-size: 0.7rem;
+    color: var(--text-light);
+    line-height: 1.3;
+}
+.voucher-ticket-code {
+    font-family: monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    background-color: var(--bg-body);
+    padding: 0.15rem 0.5rem;
+    border-radius: 3px;
+    border: 1px solid var(--border);
+}
+
+/* Review Stars Interactive */
+.stars-interactive {
+    display: flex;
+    gap: 0.4rem;
+    font-size: 1.75rem;
+    color: var(--border);
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+.stars-interactive i.active {
+    color: var(--accent);
+}
+
+/* Responsive adjustment */
+@media (max-width: 992px) {
+    .profile-layout {
+        grid-template-columns: 1fr;
+    }
+    .voucher-grid {
+        grid-template-columns: 1fr;
+    }
+}

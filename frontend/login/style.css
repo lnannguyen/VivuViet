@@ -1,0 +1,299 @@
+/* login/style.css - Page-specific styles for Login screen matching mockup exactly */
+
+:root {
+    --primary-brand: #0a5c36;
+    --primary-hover: #074327;
+    --bg-warm: #fafaf3; /* Exact Figma warm background color */
+    --border-light: #c3c8bb; /* Exact Figma sage green border color */
+    --text-dark: #1a1c18; /* Dark charcoal heading color from Figma */
+    --text-main: #43483f; /* Main text and label color from Figma */
+    --text-muted: #74796e; /* Muted text color from Figma */
+}
+
+body {
+    font-family: "Be Vietnam Pro", sans-serif;
+    background-color: var(--bg-warm);
+    margin: 0;
+    padding: 0;
+    color: var(--text-main);
+}
+
+.login-wrapper {
+    min-height: 100vh;
+    display: flex;
+}
+
+/* LEFT PANEL (Branding & Landscape) */
+.login-left {
+    flex: 1;
+    width: 50%;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.1), rgba(7, 34, 20, 0.6)),
+        url("/assets/images/bg-login.jpg") no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 5rem 4rem;
+    color: #fff;
+    position: relative;
+}
+
+.login-left-content {
+    z-index: 2;
+    max-width: 480px;
+}
+
+.auth-brand {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff !important;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 2rem; /* Grouped directly above the title matching Figma */
+    letter-spacing: -0.5px;
+}
+
+.auth-brand.dark {
+    color: var(--primary-brand) !important;
+    margin-bottom: 2.5rem;
+}
+
+.auth-left-text h1 {
+    font-size: 2.75rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+}
+
+.auth-left-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    font-weight: 400;
+}
+
+.auth-left-footer {
+    margin-top: 6rem;
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+
+/* RIGHT PANEL (Form and Actions) */
+.login-right {
+    flex: 1;
+    width: 50%;
+    background-color: var(--bg-warm);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 3rem;
+}
+
+.login-right-content {
+    width: 100%;
+    max-width: 544px; /* Matches exact Figma width */
+}
+
+.login-card-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    letter-spacing: -0.5px;
+}
+
+.fs-7 {
+    font-size: 0.85rem !important;
+}
+
+.fs-8 {
+    font-size: 0.75rem !important;
+}
+
+.text-muted-brand {
+    color: var(--text-muted);
+}
+
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+/* Form input labels matching Figma mixed-case and weight */
+.form-label {
+    font-size: 0.85rem !important;
+    font-weight: 600;
+    color: var(--text-main);
+    text-transform: none !important;
+    margin-bottom: 0.5rem;
+}
+
+/* Form inputs styling with icons */
+.auth-input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.auth-input {
+    width: 100%;
+    height: 48px;
+    padding-left: 2.75rem;
+    padding-right: 2.75rem;
+    border: 1px solid var(--border-light);
+    background-color: #ffffff !important; /* Pure white input background */
+    border-radius: 8px;
+    font-size: 0.875rem;
+    color: var(--text-dark);
+    box-shadow: none !important;
+    transition: border-color 0.15s ease-in-out;
+}
+
+/* Custom autofill color override to keep background white */
+.auth-input:-webkit-autofill,
+.auth-input:-webkit-autofill:hover,
+.auth-input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+    -webkit-text-fill-color: var(--text-dark) !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.auth-input:focus {
+    border-color: var(--primary-brand);
+}
+
+.input-icon-left {
+    position: absolute;
+    left: 0.9rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    pointer-events: none;
+}
+
+.btn-toggle-password {
+    position: absolute;
+    right: 0.9rem;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.btn-brand {
+    background-color: var(--primary-brand);
+    color: #fff;
+    border: none;
+    height: 48px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.btn-brand:hover {
+    background-color: var(--primary-hover);
+    color: #fff;
+}
+
+.text-accent {
+    color: var(
+        --primary-brand
+    ) !important; /* Changed to green matching Figma links */
+}
+
+.text-accent:hover {
+    color: var(--primary-hover) !important;
+    text-decoration: underline;
+}
+
+/* Divider matching mockup */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin: 1.75rem 0;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.divider:not(:empty)::before {
+    margin-right: 0.75rem;
+}
+
+.divider:not(:empty)::after {
+    margin-left: 0.75rem;
+}
+
+/* OAuth buttons side-by-side */
+.oauth-btn {
+    background-color: #ffffff;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 0.65rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-main);
+    transition: all 0.15s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.oauth-btn:hover {
+    background-color: #f9fafb;
+    border-color: #d1d5db;
+}
+
+/* Footer links at the very bottom */
+.auth-right-footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-top: 1px solid var(--border-light);
+    padding-top: 1.25rem;
+    margin-top: 4rem;
+}
+
+.auth-right-footer a {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+.auth-right-footer a:hover {
+    color: var(--primary-brand);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .login-left {
+        display: none;
+    }
+
+    .login-right {
+        flex: 1;
+        min-width: 100%;
+        padding: 3rem 1.5rem;
+    }
+
+    .auth-right-footer {
+        margin-top: 3rem;
+    }
+}

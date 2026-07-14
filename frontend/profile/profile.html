@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#0e5e3a" />
+        <title>Trang Cá Nhân - VivuViet</title>
+
+        <!-- Bootstrap 5.3.3 CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <!-- Bootstrap Icons -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+            rel="stylesheet"
+        />
+
+        <!-- Global Design System CSS -->
+        <link rel="stylesheet" href="/css/style.css" />
+        <!-- Page-specific CSS -->
+        <link rel="stylesheet" href="/profile/style.css" />
+        <!-- Favicon -->
+        <link rel="icon" href="/favicon.png" type="image/png" />
+    </head>
+    <body class="page-loading">
+        <!-- Thanh điều hướng -->
+        <nav class="vv-navbar navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand vv-brand" href="/"
+                    >Vivu<span>Viet</span></a
+                >
+
+                <button
+                    class="navbar-toggler border-0 shadow-none"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#vvNavbar"
+                    aria-controls="vvNavbar"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="vvNavbar">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4 gap-2">
+                        <li class="nav-item dropdown vv-hover-dropdown">
+                            <a
+                                class="vv-nav-link dropdown-toggle"
+                                href="/tours"
+                                id="toursDropdown"
+                                role="button"
+                                aria-expanded="false"
+                                >Tours</a
+                            >
+                            <div
+                                class="dropdown-menu border-0 shadow rounded-4 mt-0 p-4 mega-menu"
+                                aria-labelledby="toursDropdown"
+                                style="width: 700px; max-width: 90vw;"
+                            >
+                                <div class="row g-4">
+                                    <!-- Tour Mood -->
+                                    <div class="col-md-4">
+                                        <h6 class="fw-bold mb-3 fs-7 text-uppercase" style="color: var(--primary);">Tour Mood</h6>
+                                        <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+                                            <li><a class="text-decoration-none text-muted fw-medium vv-hover-text-primary" href="/tours?mood=thư giãn">Thư giãn & Nghỉ dưỡng</a></li>
+                                            <li><a class="text-decoration-none text-muted fw-medium vv-hover-text-primary" href="/tours?mood=gia đình">Du lịch Gia đình</a></li>
+                                            <li><a class="text-decoration-none text-muted fw-medium vv-hover-text-primary" href="/tours?mood=khám phá">Khám phá & Trải nghiệm</a></li>
+                                            <li><a class="text-decoration-none text-muted fw-medium vv-hover-text-primary" href="/tours?mood=văn hóa">Văn hóa & Lịch sử</a></li>
+                                            <li><a class="text-decoration-none text-muted fw-medium vv-hover-text-primary" href="/tours?mood=lãng mạn">Lãng mạn</a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- Cảm hứng -->
+                                    <div class="col-md-8 border-start px-4">
+                                        <h6 class="fw-bold mb-3 fs-7 text-uppercase" style="color: var(--primary);">Cảm hứng cho chuyến đi</h6>
+                                        <div class="row g-3">
+                                            <div class="col-4">
+                                                <a href="/tours?category=Biển" class="text-decoration-none d-block">
+                                                    <div class="position-relative rounded-3 overflow-hidden shadow-sm vv-hover-scale" style="height: 90px;">
+                                                        <img src="/assets/images/dulichbien.png" alt="Du lịch biển" class="img-fluid w-100 h-100 object-fit-cover">
+                                                        <div class="position-absolute bottom-0 start-0 w-100 p-2 text-white" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                                                            <span class="fs-8 fw-semibold">Du lịch biển</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col-4">
+                                                <a href="/tours?category=Vùng cao" class="text-decoration-none d-block">
+                                                    <div class="position-relative rounded-3 overflow-hidden shadow-sm vv-hover-scale" style="height: 90px;">
+                                                        <img src="/assets/images/vungcao.png" alt="Vùng cao" class="img-fluid w-100 h-100 object-fit-cover">
+                                                        <div class="position-absolute bottom-0 start-0 w-100 p-2 text-white" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                                                            <span class="fs-8 fw-semibold">Vùng cao</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="col-4">
+                                                <a href="/tours?category=Văn hóa" class="text-decoration-none d-block">
+                                                    <div class="position-relative rounded-3 overflow-hidden shadow-sm vv-hover-scale" style="height: 90px;">
+                                                        <img src="/assets/images/vanhoa.png" alt="Văn hóa & Di sản" class="img-fluid w-100 h-100 object-fit-cover">
+                                                        <div class="position-absolute bottom-0 start-0 w-100 p-2 text-white" style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);">
+                                                            <span class="fs-8 fw-semibold">Văn hóa & Di sản</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mt-4 pt-3 border-top text-center">
+                                        <a href="/tours" class="btn rounded-pill px-5 py-2 fw-bold shadow-sm" style="background-color: var(--primary); color: white; transition: 0.3s; border: none;">Xem Tất cả Tours</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="vv-nav-link" href="/coming-soon">Blog</a>
+                        </li>
+                    </ul>
+
+                    <div
+                        class="d-flex flex-column flex-lg-row align-items-stretch align-items-lg-center gap-3"
+                    >
+                        <div class="search-box-nav">
+                            <i class="bi bi-search search-icon"></i>
+                            <input
+                                type="text"
+                                id="navSearchInput"
+                                placeholder="Tìm kiếm hành trình..."
+                                autocomplete="off"
+                            />
+                        </div>
+
+                        <div id="nav-auth-area">
+                            <div
+                                class="spinner-border spinner-border-sm text-success"
+                                role="status"
+                            >
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main content layout -->
+        <main class="container my-5">
+            <div class="profile-layout">
+                <!-- LEFT COLUMN: SIDEBAR -->
+                <aside class="profile-sidebar shadow-sm">
+                    <!-- User Brief -->
+                    <div class="profile-user-info">
+                        <div class="profile-avatar-upload">
+                            <img
+                                src=""
+                                id="sidebar-avatar"
+                                class="profile-avatar-img"
+                                alt="User Avatar"
+                            />
+                            <span
+                                class="btn-change-avatar"
+                                onclick="changeAvatarDemo()"
+                                ><i class="bi bi-camera"></i
+                            ></span>
+                        </div>
+                        <h5 class="fw-bold mb-1 text-primary-brand" id="sidebar-name">
+                            Loading Name...
+                        </h5>
+                        <div
+                            id="sidebar-membership"
+                            class="profile-membership-badge"
+                        >
+                            Gold Member
+                        </div>
+                        <div class="mt-3 fs-8 fw-semibold text-secondary">
+                            <i class="bi bi-gem text-accent me-1"></i>
+                            <span id="sidebar-points" class="text-accent fs-6"
+                                >0</span
+                            >
+                            VivuPoints
+                        </div>
+                    </div>
+
+                    <!-- Menu Tabs Links -->
+                    <ul class="profile-menu">
+                        <li
+                            class="profile-menu-link active"
+                            data-tab="info"
+                            onclick="switchProfileTab('info')"
+                        >
+                            <i class="bi bi-person-fill"></i> Thông tin cá nhân
+                        </li>
+                        <li
+                            class="profile-menu-link"
+                            data-tab="bookings"
+                            onclick="switchProfileTab('bookings')"
+                        >
+                            <i class="bi bi-clock-history"></i> Lịch sử booking
+                        </li>
+                        <li
+                            class="profile-menu-link"
+                            data-tab="reviews"
+                            onclick="switchProfileTab('reviews')"
+                        >
+                            <i class="bi bi-star-fill"></i> Đánh giá của tôi
+                        </li>
+                        <li
+                            class="profile-menu-link"
+                            data-tab="wishlist"
+                            onclick="switchProfileTab('wishlist')"
+                        >
+                            <i class="bi bi-heart-fill"></i> Danh sách yêu thích
+                        </li>
+                        <li
+                            class="profile-menu-link"
+                            data-tab="passport"
+                            onclick="switchProfileTab('passport')"
+                        >
+                            <i class="bi bi-journal-album"></i> Travel Passport
+                        </li>
+                        <li
+                            class="profile-menu-link"
+                            data-tab="achievements"
+                            onclick="switchProfileTab('achievements')"
+                        >
+                            <i class="bi bi-trophy-fill"></i> Thành tựu du lịch
+                        </li>
+                        <li
+                            class="profile-menu-link"
+                            data-tab="vouchers"
+                            onclick="switchProfileTab('vouchers')"
+                        >
+                            <i class="bi bi-ticket-perforated-fill"></i> Voucher
+                            của tôi
+                        </li>
+                        <li
+                            class="profile-menu-link"
+                            data-tab="notifications"
+                            onclick="switchProfileTab('notifications')"
+                        >
+                            <i class="bi bi-bell-fill"></i> Thông báo
+                        </li>
+                    </ul>
+                </aside>
+
+                <!-- RIGHT COLUMN: CONTENT PANELS -->
+                <section class="profile-content shadow-sm">
+                    <!-- Tab 1: Personal Info -->
+                    <div id="tab-info" class="profile-tab-pane active">
+                        <div class="d-flex justify-content-between align-items-start mb-4">
+                            <div>
+                                <h4 class="profile-content-title mb-1">
+                                    Thông tin cá nhân
+                                </h4>
+                                <p class="text-muted fs-8 mb-0">Quản lý thông tin hồ sơ của bạn để bảo mật tài khoản</p>
+                            </div>
+                            <button type="button" id="btnEditProfile" class="btn-brand py-2 px-4 rounded-3 d-flex align-items-center gap-2" onclick="enableProfileEdit()">
+                                <i class="bi bi-pencil-fill"></i> Chỉnh sửa
+                            </button>
+                        </div>
+                        
+                        <div class="row">
+                            <!-- Avatar / Name Side (Inside Tab) -->
+                            <div class="col-md-4 text-center border-end border-light pe-4 d-flex flex-column align-items-center justify-content-center">
+                                <div class="profile-avatar-upload mx-auto mb-3" style="width: 120px; height: 120px;">
+                                    <img src="" id="tab-avatar" class="profile-avatar-img w-100 h-100 object-fit-cover rounded-circle border border-2 border-white shadow-sm" alt="Avatar" />
+                                    <span class="btn-change-avatar" onclick="changeAvatarDemo()"><i class="bi bi-camera"></i></span>
+                                </div>
+                                <h5 class="fw-bold mb-1 text-dark" id="tab-name">Loading...</h5>
+                                <div class="text-accent fs-8 fw-bold mt-1 text-uppercase" id="tab-membership">Thành viên</div>
+                            </div>
+
+                            <!-- Form Side -->
+                            <div class="col-md-8 ps-md-4">
+                                <form
+                                    id="profileInfoForm"
+                                    onsubmit="
+                                        event.preventDefault();
+                                        saveProfileInfo();
+                                    "
+                                >
+                                    <div class="row g-4 mb-4">
+                                        <div class="col-md-6">
+                                            <label for="profileName" class="form-label fs-8 fw-bold text-secondary mb-2">Họ và tên</label>
+                                            <div class="position-relative">
+                                                <i class="bi bi-person position-absolute top-50 translate-middle-y ms-3 text-muted"></i>
+                                                <input type="text" class="form-control py-2 ps-5 bg-light border-0 rounded-3 shadow-none fs-7" id="profileName" disabled required />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="profileEmail" class="form-label fs-8 fw-bold text-secondary mb-2">Email</label>
+                                            <div class="position-relative">
+                                                <i class="bi bi-envelope position-absolute top-50 translate-middle-y ms-3 text-muted"></i>
+                                                <input type="email" class="form-control py-2 ps-5 pe-5 bg-light border-0 rounded-3 shadow-none fs-7" id="profileEmail" disabled />
+                                                <i class="bi bi-check-circle-fill text-success position-absolute top-50 translate-middle-y end-0 me-3"></i>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-6">
+                                            <label for="profilePhone" class="form-label fs-8 fw-bold text-secondary mb-2">Số điện thoại</label>
+                                            <div class="position-relative">
+                                                <i class="bi bi-telephone position-absolute top-50 translate-middle-y ms-3 text-muted"></i>
+                                                <input type="tel" class="form-control py-2 ps-5 bg-light border-0 rounded-3 shadow-none fs-7" id="profilePhone" disabled />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="profileDob" class="form-label fs-8 fw-bold text-secondary mb-2">Ngày sinh</label>
+                                            <div class="position-relative">
+                                                <i class="bi bi-calendar3 position-absolute top-50 translate-middle-y ms-3 text-muted"></i>
+                                                <input type="date" class="form-control py-2 ps-5 bg-light border-0 rounded-3 shadow-none fs-7 text-muted" id="profileDob" disabled />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                        <label class="form-label fs-8 fw-bold text-secondary mb-3 d-block">Giới tính</label>
+                                        <div class="d-flex gap-5">
+                                            <div class="form-check">
+                                                <input class="form-check-input shadow-none" type="radio" name="profileGender" id="genderMale" value="male" disabled>
+                                                <label class="form-check-label fs-7 fw-medium" for="genderMale">Nam</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input shadow-none" type="radio" name="profileGender" id="genderFemale" value="female" disabled>
+                                                <label class="form-check-label fs-7 fw-medium" for="genderFemale">Nữ</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input shadow-none" type="radio" name="profileGender" id="genderOther" value="other" disabled>
+                                                <label class="form-check-label fs-7 fw-medium" for="genderOther">Khác</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label for="profileAddress" class="form-label fs-8 fw-bold text-secondary mb-2">Địa chỉ</label>
+                                        <div class="position-relative">
+                                            <i class="bi bi-geo-alt position-absolute top-0 mt-3 ms-3 text-muted"></i>
+                                            <textarea class="form-control py-2 ps-5 bg-light border-0 rounded-3 shadow-none fs-7" id="profileAddress" rows="2" style="resize: none;" disabled></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="text-end mt-4">
+                                        <button type="submit" id="btnSaveProfile" class="btn btn-brand text-white py-2 px-4 rounded-3 d-none border-0 fw-bold">
+                                            CẬP NHẬT HỒ SƠ
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: Bookings list -->
+                    <div id="tab-bookings" class="profile-tab-pane">
+                        <h4 class="profile-content-title">
+                            Lịch sử đặt tour chuyến đi
+                        </h4>
+                        <div
+                            id="bookings-list-container"
+                            class="d-flex flex-column gap-3"
+                        >
+                            <!-- Bookings will be loaded here via JS -->
+                        </div>
+                    </div>
+
+                    <!-- Tab 2.5: My Reviews -->
+                    <div id="tab-reviews" class="profile-tab-pane">
+                        <div class="d-flex justify-content-between align-items-start mb-4">
+                            <div>
+                                <h4 class="profile-content-title mb-1">
+                                    Đánh giá của tôi
+                                </h4>
+                                <p class="text-muted fs-8 mb-0">Quản lý những bài đánh giá bạn đã viết cho các chuyến đi.</p>
+                            </div>
+                        </div>
+
+                        <div id="reviews-list-container">
+                            <div class="text-center py-5 text-muted">
+                                <div class="spinner-border spinner-border-sm mb-2" role="status"></div>
+                                <div>Đang tải đánh giá...</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: Wishlist grid -->
+                    <div id="tab-wishlist" class="profile-tab-pane">
+                        <h4 class="profile-content-title">
+                            Hành trình du lịch yêu thích
+                        </h4>
+                        <div class="row g-4" id="wishlist-grid-container">
+                            <!-- Rendered by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Tab 4: Passport stamps -->
+                    <div id="tab-passport" class="profile-tab-pane">
+                        <h4 class="profile-content-title">
+                            Hộ chiếu du lịch (Travel Passport)
+                        </h4>
+                        <p class="fs-8 text-muted mb-4">
+                            <i
+                                class="bi bi-info-circle-fill text-accent me-1"
+                            ></i
+                            >Hệ thống tự động đóng con dấu địa danh mới vào hộ
+                            chiếu số của bạn sau mỗi tour du lịch hoàn thành
+                            thành công!
+                        </p>
+                        <div
+                            class="passport-grid"
+                            id="passport-stamps-container"
+                        >
+                            <!-- Rendered by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Tab 5: Achievements -->
+                    <div id="tab-achievements" class="profile-tab-pane">
+                        <h4 class="profile-content-title">
+                            Danh sách huy hiệu thành tựu
+                        </h4>
+                        <p class="fs-8 text-muted mb-4">
+                            <i
+                                class="bi bi-info-circle-fill text-accent me-1"
+                            ></i
+                            >Mở khoá các huy hiệu vinh danh độc quyền của
+                            VivuViet khi hoàn thành các mục tiêu du lịch lý thú!
+                        </p>
+                        <div
+                            class="achievements-grid"
+                            id="achievements-container"
+                        >
+                            <!-- Rendered by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Tab 6: Vouchers -->
+                    <div id="tab-vouchers" class="profile-tab-pane">
+                        <div
+                            class="d-flex justify-content-between align-items-center mb-3 border-bottom border-light pb-2"
+                        >
+                            <h4
+                                class="profile-content-title mb-0 border-0 pb-0"
+                            >
+                                Ví Voucher giảm giá
+                            </h4>
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="fs-8 fw-semibold text-secondary"
+                                    >Đổi Voucher bằng điểm thưởng:</span
+                                >
+                                <button
+                                    class="btn btn-outline-brand fs-8 py-1 px-3"
+                                    onclick="redeemPointsModal()"
+                                >
+                                    ĐỔI ĐIỂM THƯỞNG
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            class="voucher-grid mt-4"
+                            id="vouchers-wallet-container"
+                        >
+                            <!-- Rendered by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Tab 7: Notifications -->
+                    <div id="tab-notifications" class="profile-tab-pane">
+                        <div
+                            class="d-flex justify-content-between align-items-center mb-3 border-bottom border-light pb-2"
+                        >
+                            <h4
+                                class="profile-content-title mb-0 border-0 pb-0"
+                            >
+                                Trung tâm thông báo
+                            </h4>
+                            <button
+                                class="btn btn-outline-brand fs-8 py-1 px-3"
+                                onclick="markAllNotificationsRead()"
+                            >
+                                ĐÁNH DẤU ĐÃ ĐỌC
+                            </button>
+                        </div>
+                        <div
+                            class="d-flex flex-column gap-2 mt-4"
+                            id="notifications-list-container"
+                        >
+                            <!-- Rendered by JS -->
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Modals -->
+
+        <!-- Review Writing Modal -->
+        <div
+            class="modal fade"
+            id="writeReviewModal"
+            tabindex="-1"
+            aria-labelledby="writeReviewModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content border-0 shadow-lg rounded-4">
+                    <div class="modal-header border-light">
+                        <h5
+                            class="modal-title fw-bold text-primary-brand"
+                            id="writeReviewModalLabel"
+                        >
+                            Viết đánh giá chuyến đi
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body p-4">
+                        <form
+                            id="writeReviewForm"
+                            onsubmit="
+                                event.preventDefault();
+                                submitReview();
+                            "
+                        >
+                            <input type="hidden" id="reviewTourId" />
+                            <input type="hidden" id="reviewBookingId" />
+
+                            <div class="mb-3">
+                                <label
+                                    class="form-label fs-7 fw-bold text-secondary"
+                                    >Chọn số sao đánh giá *</label
+                                >
+                                <div
+                                    class="stars-interactive"
+                                    id="reviewStarsArea"
+                                >
+                                    <i class="bi bi-star" data-rating="1"></i>
+                                    <i class="bi bi-star" data-rating="2"></i>
+                                    <i class="bi bi-star" data-rating="3"></i>
+                                    <i class="bi bi-star" data-rating="4"></i>
+                                    <i class="bi bi-star" data-rating="5"></i>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label
+                                    for="reviewComment"
+                                    class="form-label fs-7 fw-bold text-secondary"
+                                    >Nhận xét của bạn *</label
+                                >
+                                <textarea
+                                    class="form-control shadow-none fs-7"
+                                    id="reviewComment"
+                                    rows="4"
+                                    placeholder="Nhập cảm nhận của bạn về khách sạn, lịch trình, hướng dẫn viên..."
+                                    required
+                                    minlength="10"
+                                ></textarea>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label fs-7 fw-bold text-secondary">Đính kèm hình ảnh/video thực tế (không bắt buộc)</label>
+                                <p class="fs-8 text-muted mb-2">Tối đa 3 ảnh (cộng 20 điểm/ảnh) và 2 video (cộng 30 điểm/video).</p>
+                                <input
+                                    class="form-control shadow-none fs-7"
+                                    type="file"
+                                    id="reviewMedia"
+                                    accept="image/*, video/*"
+                                    multiple
+                                />
+                                <div id="mediaPreview" class="media-preview-grid"></div>
+                            </div>
+
+                            <button
+                                type="submit"
+                                id="btnSubmitReview"
+                                class="btn-brand w-100 py-2.5 justify-content-center text-center"
+                            >
+                                GỬI ĐÁNH GIÁ ĐỂ CỘNG 50 VI-POINTS
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- View Review Modal -->
+        <div
+            class="modal fade"
+            id="viewReviewModal"
+            tabindex="-1"
+            aria-labelledby="viewReviewModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content border-0 shadow-lg rounded-4">
+                    <div class="modal-header border-light">
+                        <h5 class="modal-title fw-bold text-primary-brand" id="viewReviewModalLabel">Đánh giá của bạn</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-4">
+                        <div class="mb-3">
+                            <label class="form-label fs-7 fw-bold text-secondary">Số sao đánh giá</label>
+                            <div class="fs-5 text-accent mb-2" id="viewReviewStars"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fs-7 fw-bold text-secondary">Nhận xét của bạn</label>
+                            <p class="fs-7 p-3 bg-light rounded-3 text-muted" id="viewReviewComment" style="white-space: pre-line; border: 1px solid var(--border);"></p>
+                        </div>
+                        <div class="mb-3" id="viewReviewMediaContainer" style="display: none;">
+                            <label class="form-label fs-7 fw-bold text-secondary">Hình ảnh/Video đã tải lên</label>
+                            <div id="viewReviewMedia" class="review-media-grid"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Redeem Points Modal -->
+        <div
+            class="modal fade"
+            id="redeemPointsModal"
+            tabindex="-1"
+            aria-labelledby="redeemPointsModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content border-0 shadow-lg rounded-4">
+                    <div class="modal-header border-light">
+                        <h5
+                            class="modal-title fw-bold text-primary"
+                            id="redeemPointsModalLabel"
+                        >
+                            Đổi điểm lấy Voucher
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body p-4 text-center">
+                        <p class="fs-7 text-muted mb-4">
+                            Bạn đang có
+                            <strong
+                                class="text-accent"
+                                id="redeem-points-balance"
+                                >0</strong
+                            >
+                            VivuPoints. Chọn voucher mong muốn để quy đổi:
+                        </p>
+                        <div class="d-flex flex-column gap-3 mb-4">
+                            <!-- Voucher Option 1 -->
+                            <div
+                                class="d-flex justify-content-between align-items-center p-3 border rounded-3 bg-light text-start"
+                            >
+                                <div>
+                                    <div class="fw-bold fs-7 text-primary">
+                                        Voucher giảm trực tiếp 100k
+                                    </div>
+                                    <div class="fs-8 text-muted">
+                                        Cần tích lũy: 1,000 VivuPoints
+                                    </div>
+                                </div>
+                                <button
+                                    class="btn btn-brand fs-8 py-1 px-3 border-0"
+                                    onclick="redeemVoucherAction(100000, 1000)"
+                                >
+                                    QUY ĐỔI
+                                </button>
+                            </div>
+                            <!-- Voucher Option 2 -->
+                            <div
+                                class="d-flex justify-content-between align-items-center p-3 border rounded-3 bg-light text-start"
+                            >
+                                <div>
+                                    <div class="fw-bold fs-7 text-primary">
+                                        Voucher giảm trực tiếp 300k
+                                    </div>
+                                    <div class="fs-8 text-muted">
+                                        Cần tích lũy: 2,500 VivuPoints
+                                    </div>
+                                </div>
+                                <button
+                                    class="btn btn-brand fs-8 py-1 px-3 border-0"
+                                    onclick="redeemVoucherAction(300000, 2500)"
+                                >
+                                    QUY ĐỔI
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chân trang -->
+        <footer class="vv-footer">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <a
+                            href="/"
+                            class="vv-footer-brand d-block mb-3 text-decoration-none"
+                            ><span>VivuViet</span></a
+                        >
+                        <p
+                            class="small opacity-75 mb-3"
+                            style="max-width: 320px"
+                        >
+                            Tự hào mang đến những hành trình khám phá Việt Nam
+                            đích thực với dịch vụ tận tâm và chuyên nghiệp.
+                        </p>
+                        <div class="d-flex gap-2">
+                            <a href="/coming-soon" class="social-btn"
+                                ><i class="bi bi-facebook"></i
+                            ></a>
+                            <a href="/coming-soon" class="social-btn"
+                                ><i class="bi bi-instagram"></i
+                            ></a>
+                            <a href="/coming-soon" class="social-btn"
+                                ><i class="bi bi-youtube"></i
+                            ></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 col-6">
+                        <h6>Liên kết</h6>
+                        <ul class="list-unstyled d-flex flex-column gap-2 fs-7">
+                            <li><a href="/coming-soon">Về chúng tôi</a></li>
+                            <li>
+                                <a href="/coming-soon">Chính sách đối tác</a>
+                            </li>
+                            <li><a href="/coming-soon">Khuyến mãi hot</a></li>
+                            <li><a href="/coming-soon">Blog cẩm nang</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 col-6">
+                        <h6>Hỗ trợ</h6>
+                        <ul class="list-unstyled d-flex flex-column gap-2 fs-7">
+                            <li>
+                                <a href="/coming-soon">Câu hỏi thường gặp</a>
+                            </li>
+                            <li>
+                                <a href="/coming-soon">Điều khoản dịch vụ</a>
+                            </li>
+                            <li>
+                                <a href="/coming-soon">Chính sách bảo mật</a>
+                            </li>
+                            <li><a href="/coming-soon">Liên hệ phản hồi</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <h6>Liên hệ</h6>
+                        <ul class="list-unstyled d-flex flex-column gap-2 fs-7">
+                            <li>
+                                <i class="bi bi-geo-alt text-accent me-2"></i
+                                >123 Đường Lê Lợi, Quận 1, TP. HCM
+                            </li>
+                            <li>
+                                <i class="bi bi-telephone text-accent me-2"></i
+                                >+84 123 456 789
+                            </li>
+                            <li>
+                                <i class="bi bi-envelope text-accent me-2"></i
+                                >hello@vivuviet.com
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr class="vv-footer-divider" />
+                <div class="text-center small opacity-50">
+                    &copy; 2026 VivuViet Travel. Explore the heart of Vietnam.
+                    All rights reserved.
+                </div>
+            </div>
+        </footer>
+
+        <!-- Toast alerts container -->
+        <div id="toast-container"></div>
+
+        <!-- Bootstrap Bundle JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Shared Auth script -->
+        <script src="/js/auth.js"></script>
+        <!-- Search Dropdown -->
+        <script src="/js/search.js"></script>
+        <!-- Chatbox -->
+        <script src="/js/chatbox.js"></script>
+        <!-- Page controller script -->
+        <script src="/profile/script.js"></script>
+    </body>
+</html>

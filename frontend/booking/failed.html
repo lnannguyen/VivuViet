@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Thanh Toán Thất Bại - VivuViet</title>
+        <!-- Bootstrap 5.3.3 CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <!-- Bootstrap Icons -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+            rel="stylesheet"
+        />
+
+        <!-- Custom CSS Design System -->
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/booking/style.css" />
+        <!-- Favicon -->
+        <link rel="icon" href="/favicon.png" type="image/png" />
+    </head>
+    <body class="page-loading" style="background-color: var(--bg-body)">
+        <!-- Thanh điều hướng -->
+        <nav class="vv-navbar navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand vv-brand" href="/"
+                    >Vivu<span>Viet</span></a
+                >
+
+                <button
+                    class="navbar-toggler border-0 shadow-none"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#vvNavbar"
+                    aria-controls="vvNavbar"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="vvNavbar">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4 gap-2">
+                        <li class="nav-item">
+                            <a class="vv-nav-link active" href="/tours"
+                                >Tours</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="vv-nav-link" href="/coming-soon">Blog</a>
+                        </li>
+                    </ul>
+
+                    <div
+                        class="d-flex flex-column flex-lg-row align-items-stretch align-items-lg-center gap-3"
+                    >
+                        <div class="search-box-nav">
+                            <i class="bi bi-search search-icon"></i>
+                            <input
+                                type="text"
+                                id="navSearchInput"
+                                placeholder="Tìm kiếm hành trình..."
+                                autocomplete="off"
+                            />
+                        </div>
+
+                        <div id="nav-auth-area">
+                            <div
+                                class="spinner-border spinner-border-sm text-success"
+                                role="status"
+                            >
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main content -->
+        <main class="container my-5">
+            <div class="failed-layout-grid">
+                <!-- Left Panel: Error Explanation & Sub Cards -->
+                <div class="failed-left">
+                    <div class="failed-left-card">
+                        <div class="failed-circle-icon">
+                            <i class="bi bi-exclamation-lg"></i>
+                        </div>
+                        <h2 class="failed-title">Thanh toán thất bại</h2>
+                        <p class="failed-desc">
+                            Rất tiếc, đã có lỗi xảy ra trong quá trình thanh
+                            toán của bạn. Vui lòng thử lại hoặc chọn phương thức
+                            khác để không bỏ lỡ hành trình sắp tới.
+                        </p>
+
+                        <!-- Actions buttons -->
+                        <div class="failed-actions">
+                            <button
+                                id="btnRetryBooking"
+                                class="btn btn-brand py-2.5 px-4"
+                            >
+                                <i class="bi bi-arrow-clockwise me-1"></i>Thử
+                                lại thanh toán
+                            </button>
+                            <button
+                                class="btn-failed-outline py-2.5 px-4"
+                                onclick="toggleChatbox()"
+                            >
+                                <i class="bi bi-telephone-fill"></i>Liên hệ hỗ
+                                trợ
+                            </button>
+                        </div>
+
+                        <!-- Bottom sub diagnostic cards -->
+                        <div
+                            class="failed-sub-cards border-top border-light pt-4"
+                        >
+                            <div class="failed-sub-card">
+                                <div class="failed-sub-card-icon">
+                                    <i class="bi bi-credit-card-2-front"></i>
+                                </div>
+                                <div>
+                                    <div class="failed-sub-card-title">
+                                        Số dư không đủ
+                                    </div>
+                                    <div class="failed-sub-card-desc">
+                                        Vui lòng kiểm tra lại hạn mức thẻ hoặc
+                                        số dư tài khoản ngân hàng của bạn.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="failed-sub-card">
+                                <div class="failed-sub-card-icon">
+                                    <i class="bi bi-clock-history"></i>
+                                </div>
+                                <div>
+                                    <div class="failed-sub-card-title">
+                                        Hết thời gian
+                                    </div>
+                                    <div class="failed-sub-card-desc">
+                                        Phiên thanh toán đã hết hạn. Vui lòng
+                                        thực hiện lại quy trình đặt chỗ.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Panel: Tour Details & Hold seat note -->
+                <div class="failed-right">
+                    <div class="summary-panel shadow-sm">
+                        <!-- Tour Card Details -->
+                        <div class="vv-ticket-card border-0 shadow-none mb-3">
+                            <img
+                                src="/assets/images/dulichbien.png"
+                                id="res-tour-img"
+                                class="rounded-3 w-100"
+                                style="height: 160px; object-fit: cover"
+                                alt="Tour image"
+                            />
+                            <div class="p-3 bg-light rounded-bottom-3 mt-1">
+                                <span
+                                    class="badge bg-success text-white mb-2 fs-9 text-uppercase"
+                                    id="res-tour-cat"
+                                    >Premium</span
+                                >
+                                <h5
+                                    class="fw-bold fs-7 text-primary mb-2"
+                                    id="res-tour-name"
+                                >
+                                    Hành trình Vịnh Hạ Long
+                                </h5>
+                                <div class="fs-8 text-muted d-flex gap-3">
+                                    <span
+                                        ><i
+                                            class="bi bi-calendar3 text-accent me-1"
+                                        ></i>
+                                        <span id="res-date"
+                                            >--/--/----</span
+                                        ></span
+                                    >
+                                    <span
+                                        ><i
+                                            class="bi bi-people-fill text-accent me-1"
+                                        ></i>
+                                        <span id="res-qty">1 Khách</span></span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Price lines -->
+                        <div class="border-top border-light pt-3">
+                            <div
+                                class="d-flex justify-content-between mb-2 fs-7 text-secondary"
+                            >
+                                <span>Giá tour</span>
+                                <span id="res-subtotal">0 đ</span>
+                            </div>
+                            <div
+                                class="d-flex justify-content-between mb-2 fs-7 text-secondary"
+                            >
+                                <span>Phí dịch vụ</span>
+                                <span id="res-fee">0 đ</span>
+                            </div>
+                            <div
+                                class="d-flex justify-content-between mt-3 pt-3 border-top border-light fw-bold fs-6 text-success"
+                            >
+                                <span>Tổng cộng</span>
+                                <span id="res-total">0 đ</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Keep booking warning banner -->
+                    <div class="keep-booking-card">
+                        <div class="keep-booking-title">
+                            Đừng bỏ lỡ khoảnh khắc
+                        </div>
+                        <p class="keep-booking-desc">
+                            Chúng tôi đang giữ chỗ này cho bạn trong vòng 15
+                            phút tới. Hãy thử lại để hoàn tất chuyến đi mơ ước.
+                        </p>
+                        <a href="/coming-soon" class="keep-booking-link"
+                            >Tìm hiểu về chính sách hoàn tiền
+                            <i class="bi bi-arrow-right"></i
+                        ></a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Chân trang -->
+        <footer class="vv-footer">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <a
+                            href="/"
+                            class="vv-footer-brand d-block mb-3 text-decoration-none"
+                            ><span>VivuViet</span></a
+                        >
+                        <p
+                            class="small opacity-75 mb-3"
+                            style="max-width: 320px"
+                        >
+                            Tự hào mang đến những hành trình khám phá Việt Nam
+                            đích thực với dịch vụ tận tâm và chuyên nghiệp.
+                        </p>
+                        <div class="d-flex gap-2">
+                            <a href="/coming-soon" class="social-btn"
+                                ><i class="bi bi-facebook"></i
+                            ></a>
+                            <a href="/coming-soon" class="social-btn"
+                                ><i class="bi bi-instagram"></i
+                            ></a>
+                            <a href="/coming-soon" class="social-btn"
+                                ><i class="bi bi-youtube"></i
+                            ></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 col-6">
+                        <h6>Liên kết</h6>
+                        <ul class="list-unstyled d-flex flex-column gap-2 fs-7">
+                            <li><a href="/coming-soon">Về chúng tôi</a></li>
+                            <li>
+                                <a href="/coming-soon">Chính sách đối tác</a>
+                            </li>
+                            <li><a href="/coming-soon">Khuyến mãi hot</a></li>
+                            <li><a href="/coming-soon">Blog cẩm nang</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 col-6">
+                        <h6>Hỗ trợ</h6>
+                        <ul class="list-unstyled d-flex flex-column gap-2 fs-7">
+                            <li>
+                                <a href="/coming-soon">Câu hỏi thường gặp</a>
+                            </li>
+                            <li>
+                                <a href="/coming-soon">Điều khoản dịch vụ</a>
+                            </li>
+                            <li>
+                                <a href="/coming-soon">Chính sách bảo mật</a>
+                            </li>
+                            <li><a href="/coming-soon">Liên hệ phản hồi</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <h6>Liên hệ</h6>
+                        <ul class="list-unstyled d-flex flex-column gap-2 fs-7">
+                            <li>
+                                <i class="bi bi-geo-alt text-accent me-2"></i
+                                >123 Đường Lê Lợi, Quận 1, TP. HCM
+                            </li>
+                            <li>
+                                <i class="bi bi-telephone text-accent me-2"></i
+                                >+84 123 456 789
+                            </li>
+                            <li>
+                                <i class="bi bi-envelope text-accent me-2"></i
+                                >hello@vivuviet.com
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr class="vv-footer-divider" />
+                <div class="text-center small opacity-50">
+                    &copy; 2026 VivuViet Travel. Explore the heart of Vietnam.
+                    All rights reserved.
+                </div>
+            </div>
+        </footer>
+
+        <script src="/js/auth.js"></script>
+        <script src="/js/chatbox.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", async () => {
+                document.body.classList.remove("page-loading");
+                document.body.classList.add("page-ready");
+
+                const cached = localStorage.getItem("temp_booking_data");
+                if (cached) {
+                    try {
+                        const b = JSON.parse(cached);
+
+                        // Retry button trigger
+                        const retryBtn =
+                            document.getElementById("btnRetryBooking");
+                        if (retryBtn) {
+                            retryBtn.addEventListener("click", () => {
+                                window.location.href = `/booking/${b.tour_id}/payment`;
+                            });
+                        }
+
+                        // Fetch tour info dynamically to render details
+                        const res = await fetch(`/api/tours/${b.tour_id}`);
+                        if (res.ok) {
+                            const tour = await res.json();
+                            document.getElementById("res-tour-name").innerText =
+                                tour.title || tour.name;
+                            document.getElementById("res-tour-img").src =
+                                tour.image || "/assets/images/dulichbien.png";
+                            document.getElementById("res-tour-cat").innerText =
+                                tour.category || "Premium";
+
+                            document.getElementById("res-date").innerText =
+                                new Date(b.departure_date).toLocaleDateString(
+                                    "vi-VN",
+                                );
+                            document.getElementById("res-qty").innerText =
+                                `${b.quantity} người (${b.adults_qty}NL, ${b.children_qty}TE)`;
+
+                            document.getElementById("res-subtotal").innerText =
+                                b.total_price.toLocaleString("vi-VN") + " đ";
+                            document.getElementById("res-fee").innerText =
+                                b.service_fee.toLocaleString("vi-VN") + " đ";
+                            document.getElementById("res-total").innerText =
+                                b.final_price.toLocaleString("vi-VN") + " đ";
+                        }
+                    } catch (e) {
+                        console.error(e);
+                    }
+                } else {
+                    // Fallback retry button if cache cleared
+                    const retryBtn = document.getElementById("btnRetryBooking");
+                    if (retryBtn) {
+                        retryBtn.addEventListener("click", () => {
+                            const lastTourId = localStorage.getItem(
+                                "last_booking_tour_id",
+                            );
+                            if (lastTourId) {
+                                window.location.href = `/booking/${lastTourId}/payment`;
+                            } else {
+                                window.location.href = "/tours";
+                            }
+                        });
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

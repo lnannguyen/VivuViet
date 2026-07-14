@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Đăng Nhập - VivuViet</title>
+        <!-- Bootstrap 5.3.3 CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <!-- Bootstrap Icons -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+            rel="stylesheet"
+        />
+        <!-- Google Font -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <!-- Global CSS -->
+        <link rel="stylesheet" href="/css/style.css" />
+        <!-- Page-specific CSS -->
+        <link rel="stylesheet" href="/login/style.css" />
+        <!-- Favicon -->
+        <link rel="icon" href="/favicon.png" type="image/png" />
+    </head>
+    <body class="page-loading">
+        <div class="login-wrapper">
+            <!-- Left panel: Visual & Branding info with image background -->
+            <div class="login-left">
+                <div class="login-left-content">
+                    <a class="auth-brand" href="/">VivuViet</a>
+                    <div class="auth-left-text">
+                        <h1 class="mb-3">Khám phá tâm hồn<br />Việt Nam</h1>
+                        <p class="mb-0">
+                            Tham gia cùng chúng tôi trong hành trình tìm về
+                            những vùng đất kỳ vĩ và những câu chuyện bản địa
+                            chưa từng kể.
+                        </p>
+                    </div>
+                    <div class="auth-left-footer">
+                        &copy; 2026 VivuViet Travel. Explore the heart of
+                        Vietnam.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right panel: Form card -->
+            <div class="login-right">
+                <div class="login-right-content">
+                    <div class="mb-4 text-center">
+                        <a class="auth-brand dark" href="/">VivuViet</a>
+                    </div>
+
+                    <div class="mb-4">
+                        <h2 class="login-card-title mb-2">Chào mừng trở lại</h2>
+                        <p class="text-muted fs-7">
+                            Bắt đầu hành trình tiếp theo của bạn ngay hôm nay.
+                        </p>
+                    </div>
+
+                    <!-- Regular credentials form -->
+                    <form id="pageLoginForm">
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label"
+                                >Email hoặc Tên đăng nhập</label
+                            >
+                            <div class="auth-input-wrapper">
+                                <i class="bi bi-person input-icon-left"></i>
+                                <input
+                                    type="email"
+                                    class="form-control auth-input"
+                                    id="loginEmail"
+                                    placeholder="yourname@email.com"
+                                    required
+                                    autocomplete="email"
+                                />
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label"
+                                >Mật khẩu</label
+                            >
+                            <div class="auth-input-wrapper">
+                                <i class="bi bi-lock input-icon-left"></i>
+                                <input
+                                    type="password"
+                                    class="form-control auth-input"
+                                    id="loginPassword"
+                                    placeholder="••••••••"
+                                    required
+                                    autocomplete="current-password"
+                                />
+                                <button
+                                    type="button"
+                                    class="btn-toggle-password"
+                                    id="togglePasswordBtn"
+                                >
+                                    <i
+                                        class="bi bi-eye"
+                                        id="togglePasswordIcon"
+                                    ></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div
+                            class="d-flex justify-content-between align-items-center mb-4 fs-7"
+                        >
+                            <div class="form-check">
+                                <input
+                                    class="form-check-input shadow-none"
+                                    type="checkbox"
+                                    id="rememberMe"
+                                />
+                                <label
+                                    class="form-check-label text-muted-brand"
+                                    for="rememberMe"
+                                    >Ghi nhớ tôi</label
+                                >
+                            </div>
+                            <a
+                                href="/coming-soon"
+                                class="text-accent fw-bold text-decoration-none"
+                                >Quên mật khẩu?</a
+                            >
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="btn-brand w-100 py-3 justify-content-center text-center rounded-3"
+                        >
+                            Đăng nhập
+                        </button>
+                    </form>
+
+                    <div class="divider">Hoặc đăng nhập bằng</div>
+
+                    <!-- OAuth quick logins -->
+                    <div class="row g-2 mb-4">
+                        <div class="col-6">
+                            <button
+                                class="oauth-btn w-100"
+                                id="btnGoogleLogin"
+                                type="button"
+                            >
+                                <span class="fw-bold fs-7">
+                                    <span style="color: #4285f4">G</span
+                                    ><span style="color: #ea4335">o</span
+                                    ><span style="color: #fbbc05">o</span
+                                    ><span style="color: #4285f4">g</span
+                                    ><span style="color: #34a853">l</span
+                                    ><span style="color: #ea4335">e</span>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <button
+                                class="oauth-btn w-100"
+                                id="btnFacebookLogin"
+                                type="button"
+                            >
+                                <span
+                                    class="fw-bold fs-7"
+                                    style="color: #1877f2"
+                                    >Facebook</span
+                                >
+                            </button>
+                        </div>
+                    </div>
+
+                    <p class="text-center mb-5 fs-7 text-muted">
+                        Bạn chưa có tài khoản?
+                        <a
+                            href="/register"
+                            class="text-accent fw-bold text-decoration-none"
+                            >Đăng ký ngay</a
+                        >
+                    </p>
+
+                    <!-- Right panel footer links -->
+                    <div class="auth-right-footer">
+                        <a href="/coming-soon">Điều khoản dịch vụ</a>
+                        <a href="/coming-soon">Chính sách bảo mật</a>
+                        <a href="/coming-soon">Hỗ trợ khách hàng</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toast alerts container -->
+        <div id="toast-container"></div>
+
+        <!-- Bootstrap Bundle JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Shared Auth script -->
+        <script src="/js/auth.js"></script>
+        <!-- Chatbox -->
+        <script src="/js/chatbox.js"></script>
+        <!-- Page controller script -->
+        <script src="/login/script.js"></script>
+        <script>
+            // Password visibility toggle helper
+            document.addEventListener("DOMContentLoaded", () => {
+                const toggleBtn = document.getElementById("togglePasswordBtn");
+                const passwordInput = document.getElementById("loginPassword");
+                const toggleIcon =
+                    document.getElementById("togglePasswordIcon");
+
+                if (toggleBtn && passwordInput && toggleIcon) {
+                    toggleBtn.addEventListener("click", () => {
+                        if (passwordInput.type === "password") {
+                            passwordInput.type = "text";
+                            toggleIcon.className = "bi bi-eye-slash";
+                        } else {
+                            passwordInput.type = "password";
+                            toggleIcon.className = "bi bi-eye";
+                        }
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

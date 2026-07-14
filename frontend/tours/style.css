@@ -1,0 +1,103 @@
+/* =============================================
+   FILTER SIDEBAR & PAGINATION (TOUR LISTING)
+   ============================================= */
+.filter-sidebar {
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
+}
+.filter-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+.btn-clear {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: var(--transition);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+.btn-clear:hover {
+    color: var(--primary);
+}
+.time-pill {
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-pill);
+    padding: 0.4rem 0.9rem;
+    font-size: 0.825rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-block;
+    margin-right: 0.4rem;
+    margin-bottom: 0.5rem;
+}
+.time-pill:hover,
+.time-pill.active {
+    background: var(--primary-muted);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+.sort-select {
+    background: transparent;
+    border: none;
+    color: var(--primary);
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+}
+.sort-select option {
+    background: #fff;
+    color: var(--text-primary);
+}
+
+.pagination-custom {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+.page-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-card);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    transition: var(--transition);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+.page-btn:hover {
+    background: var(--primary-muted);
+    color: var(--primary);
+    border-color: var(--primary);
+}
+.page-btn.active {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+}
+.page-dots {
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+}

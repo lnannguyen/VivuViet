@@ -1,0 +1,559 @@
+/* tour-detail/style.css - Page-specific styles for Tour Detail page */
+
+/* Layout Grid */
+.vv-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* Gallery Section */
+.vv-gallery {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 0.75rem;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin-bottom: 2rem;
+    height: 400px;
+}
+.vv-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.vv-gallery img:hover {
+    transform: scale(1.03);
+}
+.vv-gallery-main {
+    height: 100%;
+    overflow: hidden;
+    min-height: 0;
+    min-width: 0;
+}
+.vv-gallery-side {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.75rem;
+    height: 100%;
+    min-height: 0;
+}
+.vv-gallery-side > img {
+    min-height: 0;
+    min-width: 0;
+}
+.vv-gallery-wide {
+    grid-column: span 2;
+    overflow: hidden;
+    height: 100%;
+    min-height: 0;
+    min-width: 0;
+}
+
+/* Badges & Meta */
+.vv-badges {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+.vv-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.35rem 0.75rem;
+    border-radius: var(--radius-sm);
+    color: #fff;
+}
+.vv-badge-best {
+    background-color: var(--accent);
+}
+.vv-badge-save {
+    background-color: var(--primary);
+}
+
+.vv-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+.vv-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border);
+}
+.vv-meta-row span {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+.vv-star {
+    color: var(--accent);
+}
+
+/* Highlights Box */
+.vv-highlight-box {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.75rem;
+    margin-bottom: 2.5rem;
+    box-shadow: var(--shadow-sm);
+}
+.vv-highlight-box h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1.25rem;
+}
+.vv-highlight-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+.vv-highlight-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+}
+.vv-highlight-item i {
+    color: var(--primary);
+    font-size: 1rem;
+}
+
+/* Timeline/Itinerary */
+.vv-timeline {
+    position: relative;
+    padding-left: 1.75rem;
+    margin-bottom: 2.5rem;
+}
+.vv-timeline::before {
+    content: "";
+    position: absolute;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    left: 6px;
+    width: 2px;
+    background-color: var(--border);
+}
+.vv-timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+}
+.vv-timeline-marker {
+    position: absolute;
+    left: -1.75rem;
+    top: 0.25rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 3px var(--primary-muted);
+}
+.vv-timeline-content {
+    padding-left: 0.5rem;
+}
+.vv-timeline-label {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--accent);
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+.vv-timeline-content h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+.vv-timeline-content p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* 360 Space */
+.vv-360-note {
+    font-size: 0.825rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+.vv-360-frame-wrap {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    height: 380px;
+    border: 1px solid var(--border);
+    margin-bottom: 1rem;
+}
+.vv-360-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.vv-360-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.825rem;
+    font-weight: 600;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+    background: transparent;
+}
+.vv-360-btn-outline:hover {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+/* Map Section */
+.vv-map-box {
+    background-color: #e5e9f0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    height: 250px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+    background-image: radial-gradient(var(--border) 1px, transparent 0);
+    background-size: 16px 16px;
+}
+.vv-map-tag {
+    background-color: var(--primary);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    font-weight: 700;
+    box-shadow: var(--shadow-sm);
+    z-index: 1;
+}
+.vv-map-pin {
+    font-size: 2.5rem;
+    color: var(--accent);
+    position: absolute;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Weather Widget */
+.weather-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    margin-bottom: 2.5rem;
+    box-shadow: var(--shadow-sm);
+}
+.weather-card-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+.weather-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.weather-current {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.weather-temp {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+}
+.weather-desc {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+.weather-forecast {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+}
+.forecast-item {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+.forecast-day {
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+.forecast-icon {
+    font-size: 1.25rem;
+    color: var(--primary);
+    margin: 0.25rem 0;
+}
+.forecast-temp {
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* Include / Exclude Section */
+.vv-include-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+.vv-include-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.vv-include-yes {
+    color: var(--primary);
+}
+.vv-include-no {
+    color: #dc3545;
+}
+.vv-include-list {
+    list-style: none;
+    padding: 0;
+    font-size: 0.875rem;
+}
+.vv-include-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.65rem;
+    color: var(--text-secondary);
+}
+.vv-include-list i {
+    font-size: 1.1rem;
+}
+.vv-include-yes + .vv-include-list i {
+    color: var(--primary);
+}
+.vv-include-no + .vv-include-list i {
+    color: #dc3545;
+}
+
+/* Reviews list */
+.vv-reviews-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+.vv-review-card {
+    display: flex;
+    gap: 1rem;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+}
+.vv-review-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: var(--primary-muted);
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.vv-review-body {
+    flex: 1;
+}
+.vv-review-head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+.vv-review-name {
+    font-weight: 700;
+    font-size: 0.875rem;
+    color: var(--text-primary);
+}
+.vv-review-date {
+    font-size: 0.72rem;
+    color: var(--text-light);
+}
+.vv-review-stars {
+    color: var(--accent);
+    font-size: 0.8rem;
+}
+.vv-review-comment {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+/* Sidebar booking card */
+.sidebar-booking-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.75rem;
+    box-shadow: var(--shadow-md);
+    position: sticky;
+    top: 100px;
+}
+.sidebar-price-label {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.sidebar-price-value {
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.counter-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+.counter-desc {
+    font-size: 0.7rem;
+    color: var(--text-light);
+}
+.counter-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.btn-counter {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+.btn-counter:hover:not(:disabled) {
+    border-color: var(--primary);
+    color: var(--primary);
+    background-color: var(--primary-muted);
+}
+.btn-counter:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.price-breakdown {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+.price-breakdown-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.4rem;
+}
+
+/* Sections */
+.vv-section {
+    margin-bottom: 3rem;
+}
+.vv-section-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+/* Loading skeleton */
+.vv-state-screen {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+}
+.vv-spinner {
+    width: 45px;
+    height: 45px;
+    border: 4px solid var(--primary-muted);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive detail page */
+@media (max-width: 992px) {
+    .vv-content-grid {
+        grid-template-columns: 1fr;
+    }
+    .sidebar-booking-card {
+        position: static;
+        margin-top: 2rem;
+    }
+    .vv-gallery {
+        height: 320px;
+    }
+}
+
+@media (max-width: 576px) {
+    .vv-gallery {
+        grid-template-columns: 1fr;
+        height: 240px;
+    }
+    .vv-gallery-side {
+        display: none;
+    }
+    .vv-highlight-grid {
+        grid-template-columns: 1fr;
+    }
+    .vv-include-grid {
+        grid-template-columns: 1fr;
+    }
+}

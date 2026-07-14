@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#0e5e3a" />
+        <title>Đặt Tour - Thanh Toán - VivuViet</title>
+
+        <!-- Bootstrap 5.3.3 CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <!-- Bootstrap Icons -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+            rel="stylesheet"
+        />
+
+        <!-- Global Design CSS -->
+        <link rel="stylesheet" href="/css/style.css" />
+        <!-- Page CSS -->
+        <link rel="stylesheet" href="/booking/style.css" />
+        <!-- Favicon -->
+        <link rel="icon" href="/favicon.png" type="image/png" />
+    </head>
+    <body class="page-loading">
+        <!-- Thanh điều hướng -->
+        <nav class="vv-navbar navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand vv-brand" href="/"
+                    >Vivu<span>Viet</span></a
+                >
+
+                <button
+                    class="navbar-toggler border-0 shadow-none"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#vvNavbar"
+                    aria-controls="vvNavbar"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="vvNavbar">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4 gap-2">
+                        <li class="nav-item">
+                            <a class="vv-nav-link" href="/tours">Tours</a>
+                        </li>
+                    </ul>
+
+                    <div
+                        class="d-flex flex-column flex-lg-row align-items-stretch align-items-lg-center gap-3"
+                    >
+                        <div id="nav-auth-area">
+                            <div
+                                class="spinner-border spinner-border-sm text-success"
+                                role="status"
+                            >
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main content -->
+        <main class="container my-5">
+            <!-- Stepper Navigation -->
+            <div class="booking-stepper">
+                <div class="step-item completed">
+                    <div class="step-icon">1</div>
+                    <div class="step-label">Thông tin</div>
+                </div>
+                <div class="step-item active">
+                    <div class="step-icon">2</div>
+                    <div class="step-label">Thanh toán</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-icon">3</div>
+                    <div class="step-label">Hoàn tất</div>
+                </div>
+            </div>
+
+            <!-- Layout Grid -->
+            <div class="booking-grid mt-5">
+                <!-- Left Column: Payment Methods -->
+                <div class="booking-left">
+                    <div class="booking-card">
+                        <h3>Chọn phương thức thanh toán</h3>
+                        <p class="fs-7 text-muted-brand mb-4">
+                            Vui lòng lựa chọn một trong các cổng thanh toán bảo
+                            mật dưới đây để hoàn tất giao dịch:
+                        </p>
+
+                        <div class="payment-methods">
+                            <!-- 1. Bank Transfer -->
+                            <div
+                                class="payment-card active"
+                                data-method="bank_transfer"
+                                onclick="selectPaymentMethod(this)"
+                            >
+                                <div class="payment-card-icon">
+                                    <i class="bi bi-bank"></i>
+                                </div>
+                                <div>
+                                    <div class="payment-card-title">
+                                        Chuyển khoản Ngân hàng
+                                    </div>
+                                    <div class="payment-card-desc">
+                                        Chuyển khoản trực tiếp qua mã QR-Code
+                                        nhanh chóng.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 2. VNPay -->
+                            <div
+                                class="payment-card"
+                                data-method="vnpay"
+                                onclick="selectPaymentMethod(this)"
+                            >
+                                <div class="payment-card-icon">
+                                    <i class="bi bi-qr-code-scan"></i>
+                                </div>
+                                <div>
+                                    <div class="payment-card-title">
+                                        Ví điện tử VNPay / QR-Pay
+                                    </div>
+                                    <div class="payment-card-desc">
+                                        Thanh toán bằng ví VNPay hoặc ứng dụng
+                                        ngân hàng di động.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 3. MoMo -->
+                            <div
+                                class="payment-card disabled opacity-50"
+                                data-method="momo"
+                                onclick="selectPaymentMethod(this)"
+                                style="cursor: not-allowed"
+                            >
+                                <div class="payment-card-icon">
+                                    <i class="bi bi-wallet2"></i>
+                                </div>
+                                <div class="w-100 position-relative">
+                                    <div
+                                        class="payment-card-title d-flex justify-content-between align-items-center"
+                                    >
+                                        Ví điện tử MoMo
+                                        <span
+                                            class="badge bg-secondary"
+                                            style="font-size: 10px"
+                                            >Bảo trì</span
+                                        >
+                                    </div>
+                                    <div class="payment-card-desc">
+                                        Giao dịch nhanh qua ví điện tử liên kết
+                                        số 1 Việt Nam.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 4. Card Credit -->
+                            <div
+                                class="payment-card disabled opacity-50"
+                                data-method="card"
+                                onclick="selectPaymentMethod(this)"
+                                style="cursor: not-allowed"
+                            >
+                                <div class="payment-card-icon">
+                                    <i class="bi bi-credit-card-2-front"></i>
+                                </div>
+                                <div class="w-100 position-relative">
+                                    <div
+                                        class="payment-card-title d-flex justify-content-between align-items-center"
+                                    >
+                                        Thẻ Quốc tế (Visa/Mastercard)
+                                        <span
+                                            class="badge bg-secondary"
+                                            style="font-size: 10px"
+                                            >Bảo trì</span
+                                        >
+                                    </div>
+                                    <div class="payment-card-desc">
+                                        Hỗ trợ các loại thẻ thanh toán quốc tế
+                                        phổ biến.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mã QR demo Bank details for bank transfer method -->
+                        <div
+                            id="bank-transfer-details"
+                            class="mt-4 p-4 border border-light rounded-3 bg-light text-center"
+                            style="display: block"
+                        >
+                            <h6 class="fw-bold fs-7 text-primary mb-2">
+                                QUÉT MÃ QR ĐỂ CHUYỂN KHOẢN NHANH
+                            </h6>
+                            <p class="fs-8 text-muted mb-3">
+                                Dùng App Ngân hàng của bạn quét mã VietQR dưới
+                                đây để thanh toán tự động:
+                            </p>
+                            <div class="d-flex justify-content-center mb-3">
+                                <img
+                                    src="/assets/images/qr_code.png"
+                                    alt="VietQR VietinBank"
+                                    class="border p-2 bg-white"
+                                    style="width: 160px; height: 160px"
+                                />
+                            </div>
+                            <div
+                                class="text-start fs-8 mx-auto"
+                                style="max-width: 320px"
+                            >
+                                <div
+                                    class="d-flex justify-content-between mb-1"
+                                >
+                                    <strong>Chủ tài khoản:</strong>
+                                    <span>CONG TY VIVUVIET TRAVEL</span>
+                                </div>
+                                <div
+                                    class="d-flex justify-content-between mb-1"
+                                >
+                                    <strong>Số tài khoản:</strong>
+                                    <span>1098 7654 3210</span>
+                                </div>
+                                <div
+                                    class="d-flex justify-content-between mb-1"
+                                >
+                                    <strong>Ngân hàng:</strong>
+                                    <span>VietinBank (Chi nhánh TP.HCM)</span>
+                                </div>
+                                <div
+                                    class="d-flex justify-content-between mb-1"
+                                >
+                                    <strong>Nội dung:</strong>
+                                    <span
+                                        class="text-accent fw-bold"
+                                        id="bank-ref"
+                                        >VIVUVIET_BK_REF</span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <button
+                            onclick="executePayment()"
+                            class="btn-brand w-100 py-3 mt-4 justify-content-center text-center"
+                        >
+                            XÁC NHẬN THANH TOÁN
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Column: Summary Panel -->
+                <aside class="booking-right">
+                    <div class="booking-right-sticky">
+                        <div class="summary-panel shadow-sm">
+                            <h4
+                                class="fw-bold fs-6 text-primary mb-3 text-uppercase border-bottom border-light pb-2"
+                            >
+                                Thông tin hóa đơn
+                            </h4>
+
+                            <div id="summary-tour-content">
+                                <!-- Loading placeholder -->
+                                <div class="d-flex justify-content-center my-4">
+                                    <span
+                                        class="spinner-border spinner-border-sm text-success"
+                                    ></span>
+                                </div>
+                            </div>
+
+                            <!-- Splitting bill summary view -->
+                            <div
+                                id="split-bill-view"
+                                class="my-3 p-3 bg-light rounded-3 fs-8"
+                                style="display: none"
+                            >
+                                <div class="fw-bold text-primary mb-2">
+                                    <i class="bi bi-people-fill me-1"></i>Hóa đơn đã
+                                    được chia nhóm:
+                                </div>
+                                <div
+                                    id="split-bill-list"
+                                    class="d-flex flex-column gap-1"
+                                >
+                                    <!-- Rendered by JS -->
+                                </div>
+                            </div>
+
+                            <!-- Total price summary breakdown -->
+                            <div
+                                id="summary-price-breakdown"
+                                class="border-top border-light pt-3"
+                            >
+                                <!-- Rendered by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </main>
+
+        <!-- Chân trang -->
+        <footer class="vv-footer">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <a
+                            href="/"
+                            class="vv-footer-brand d-block mb-3 text-decoration-none"
+                            ><span>VivuViet</span></a
+                        >
+                        <p
+                            class="small opacity-75 mb-3"
+                            style="max-width: 320px"
+                        >
+                            Tự hào mang đến những hành trình khám phá Việt Nam
+                            đích thực với dịch vụ tận tâm và chuyên nghiệp.
+                        </p>
+                        <div class="d-flex gap-2">
+                            <a href="/coming-soon" class="social-btn"
+                                ><i class="bi bi-facebook"></i
+                            ></a>
+                            <a href="/coming-soon" class="social-btn"
+                                ><i class="bi bi-instagram"></i
+                            ></a>
+                            <a href="/coming-soon" class="social-btn"
+                                ><i class="bi bi-youtube"></i
+                            ></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 col-6">
+                        <h6>Liên kết</h6>
+                        <ul class="list-unstyled d-flex flex-column gap-2 fs-7">
+                            <li><a href="/coming-soon">Về chúng tôi</a></li>
+                            <li>
+                                <a href="/coming-soon">Chính sách đối tác</a>
+                            </li>
+                            <li><a href="/coming-soon">Khuyến mãi hot</a></li>
+                            <li><a href="/coming-soon">Blog cẩm nang</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 col-6">
+                        <h6>Hỗ trợ</h6>
+                        <ul class="list-unstyled d-flex flex-column gap-2 fs-7">
+                            <li>
+                                <a href="/coming-soon">Câu hỏi thường gặp</a>
+                            </li>
+                            <li>
+                                <a href="/coming-soon">Điều khoản dịch vụ</a>
+                            </li>
+                            <li>
+                                <a href="/coming-soon">Chính sách bảo mật</a>
+                            </li>
+                            <li><a href="/coming-soon">Liên hệ phản hồi</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <h6>Liên hệ</h6>
+                        <ul class="list-unstyled d-flex flex-column gap-2 fs-7">
+                            <li>
+                                <i class="bi bi-geo-alt text-accent me-2"></i
+                                >123 Đường Lê Lợi, Quận 1, TP. HCM
+                            </li>
+                            <li>
+                                <i class="bi bi-telephone text-accent me-2"></i
+                                >+84 123 456 789
+                            </li>
+                            <li>
+                                <i class="bi bi-envelope text-accent me-2"></i
+                                >hello@vivuviet.com
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr class="vv-footer-divider" />
+                <div class="text-center small opacity-50">
+                    &copy; 2026 VivuViet Travel. Explore the heart of Vietnam.
+                    All rights reserved.
+                </div>
+            </div>
+        </footer>
+
+        <!-- Toast alerts container -->
+        <div id="toast-container"></div>
+
+        <!-- Bootstrap Bundle JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Shared Auth script -->
+        <script src="/js/auth.js"></script>
+        <!-- Search Dropdown -->
+        <script src="/js/search.js"></script>
+        <!-- Chatbox -->
+        <script src="/js/chatbox.js"></script>
+        <!-- Page controller script -->
+        <script src="/booking/script.js"></script>
+    </body>
+</html>

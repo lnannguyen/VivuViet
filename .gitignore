@@ -1,0 +1,15 @@
+node_modules/
+backend/node_modules/
+backend/.env
+.env
+.DS_Store
+*.log
+d_vivuviet_report_images_*
+homepage_*
+tour_listing_*
+tour_detail_*
+booking_page_*
+payment_page_*
+user_profile_*
+C:\Users\Nguyen Thi Thu An\.gemini\antigravity-ide\brain\*
+C:/Users/Nguyen Thi Thu An/.gemini/antigravity-ide/brain/*
