@@ -157,25 +157,11 @@ function renderDestinations(destinations) {
   `;
 
     els.destinationsContainer.innerHTML = `
-    <div class="row g-3 text-start align-items-stretch">
-      <div class="col-md-5" style="min-height: 420px;">
-        ${createCard(des1)}
-      </div>
-      <div class="col-md-7">
-        <div class="d-flex flex-column h-100" style="gap: 1rem;">
-          <div class="w-100" style="flex: 1 1 0%; min-height: 200px;">
-            ${createCard(des2)}
-          </div>
-          <div class="w-100 d-flex flex-column flex-sm-row" style="flex: 1 1 0%; min-height: 200px; gap: 1rem;">
-            <div style="flex: 1 1 0%; min-width: 0;">
-              ${createCard(des3)}
-            </div>
-            <div style="flex: 1 1 0%; min-width: 0;">
-              ${createCard(des4)}
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="dest-grid-container">
+      <div class="dest-item">${createCard(des1)}</div>
+      <div class="dest-item">${createCard(des2)}</div>
+      <div class="dest-item">${createCard(des3)}</div>
+      <div class="dest-item">${createCard(des4)}</div>
     </div>
   `;
 }

@@ -2100,10 +2100,48 @@ body.page-ready {
 }
 
 /* =============================================
-   Top Destinations horizontal scroll on mobile only
+   Top Destinations grid layout (Desktop)
+   ============================================= */
+.dest-grid-container,
+#destinations-skeleton {
+    display: grid;
+    grid-template-columns: 5fr 3.5fr 3.5fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    height: 420px;
+    width: 100%;
+}
+.dest-grid-container > div,
+#destinations-skeleton > div {
+    min-width: 0;
+    min-height: 0;
+}
+.dest-grid-container > div:nth-child(1),
+#destinations-skeleton > div:nth-child(1) {
+    grid-column: 1;
+    grid-row: span 2;
+}
+.dest-grid-container > div:nth-child(2),
+#destinations-skeleton > div:nth-child(2) {
+    grid-column: 2 / span 2;
+    grid-row: 1;
+}
+.dest-grid-container > div:nth-child(3),
+#destinations-skeleton > div:nth-child(3) {
+    grid-column: 2;
+    grid-row: 2;
+}
+.dest-grid-container > div:nth-child(4),
+#destinations-skeleton > div:nth-child(4) {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+/* =============================================
+   Top Destinations horizontal scroll (Mobile only)
    ============================================= */
 @media (max-width: 767.98px) {
-    #destinations-container > .row,
+    .dest-grid-container,
     #destinations-skeleton {
         display: flex;
         flex-wrap: nowrap !important;
@@ -2117,50 +2155,25 @@ body.page-ready {
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none; /* Firefox */
+        height: auto !important; /* Reset desktop height */
     }
 
-    #destinations-container > .row::-webkit-scrollbar,
+    .dest-grid-container::-webkit-scrollbar,
     #destinations-skeleton::-webkit-scrollbar {
         display: none; /* Chrome, Safari, Opera */
     }
 
-    #destinations-container > .row > .col-md-5,
-    #destinations-skeleton > .col-md-5 {
+    .dest-grid-container > div,
+    #destinations-skeleton > div {
         flex: 0 0 220px !important;
         width: 220px !important;
         max-width: 220px !important;
+        height: 270px !important;
         min-height: 270px !important;
-        height: 270px !important;
         scroll-snap-align: start;
-        padding: 0 !important;
+        grid-column: auto !important; /* Reset grid positions */
+        grid-row: auto !important;    /* Reset grid spans */
         margin: 0 !important;
-    }
-
-    #destinations-container > .row > .col-md-7,
-    #destinations-skeleton > .col-md-7 {
-        flex: 0 0 auto !important;
-        width: auto !important;
-        max-width: none !important;
         padding: 0 !important;
-        margin: 0 !important;
-    }
-
-    #destinations-container > .row > .col-md-7 > .d-flex,
-    #destinations-skeleton > .d-flex {
-        flex-direction: row !important;
-        gap: 1rem !important;
-        height: 270px !important;
-    }
-
-    #destinations-container > .row > .col-md-7 > .d-flex > div,
-    #destinations-skeleton > .d-flex > div {
-        flex: 0 0 220px !important;
-        width: 220px !important;
-        max-width: 220px !important;
-        min-height: 270px !important;
-        height: 270px !important;
-        scroll-snap-align: start;
-        padding: 0 !important;
-        margin: 0 !important;
     }
 }
