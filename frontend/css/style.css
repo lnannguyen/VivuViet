@@ -2026,3 +2026,39 @@ body.page-ready {
         padding: 0 !important; /* Xoá padding mặc định của Bootstrap col */
     }
 }
+
+/* =============================================
+   Flash Sale horizontal scroll on mobile and tablet
+   ============================================= */
+@media (max-width: 991.98px) {
+    #flashSaleList,
+    #flash-sale-skeleton {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        padding-bottom: 1rem !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        margin-left: -1rem !important;
+        margin-right: -1rem !important;
+        gap: 1rem !important;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+    }
+
+    #flashSaleList::-webkit-scrollbar,
+    #flash-sale-skeleton::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+
+    #flashSaleList > div,
+    #flash-sale-skeleton > div {
+        flex: 0 0 280px !important; /* Độ rộng thẻ tour trên mobile */
+        width: 280px !important;
+        max-width: 280px !important;
+        scroll-snap-align: start;
+        margin-bottom: 0 !important;
+        padding: 0 !important; /* Xoá padding mặc định của Bootstrap col */
+    }
+}
