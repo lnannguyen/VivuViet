@@ -1954,3 +1954,39 @@ body.page-ready {
 .media-item .media-remove:hover {
     background: rgba(255, 0, 0, 0.8);
 }
+
+/* =============================================
+   Responsive mega menu layout for tablet and mobile
+   ============================================= */
+@media (max-width: 991.98px) {
+    .mega-menu {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 1rem 0.5rem !important;
+        position: static !important;
+        background-color: transparent !important;
+    }
+    .mega-menu .border-start {
+        border-left: none !important;
+        border-top: 1px solid var(--border) !important;
+        padding-top: 1.5rem !important;
+        margin-top: 1rem !important;
+        padding-left: 0 !important;
+    }
+    .mega-menu .row.g-3 {
+        --bs-gutter-y: 0.75rem;
+    }
+    /* Giảm kích thước ảnh và chữ trên mobile/tablet */
+    .mega-menu .vv-hover-scale {
+        height: 75px !important;
+    }
+    .mega-menu span.fs-8 {
+        font-size: 0.65rem !important;
+    }
+    .mega-menu .col-12.mt-4 {
+        margin-top: 1.25rem !important;
+        padding-top: 1rem !important;
+    }
+}
