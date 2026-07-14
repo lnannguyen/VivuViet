@@ -2105,7 +2105,7 @@ body.page-ready {
 @media (max-width: 767.98px) {
     #destinations-container > .row,
     #destinations-skeleton {
-        display: flex !important;
+        display: flex;
         flex-wrap: nowrap !important;
         overflow-x: auto !important;
         padding-bottom: 1rem !important;
