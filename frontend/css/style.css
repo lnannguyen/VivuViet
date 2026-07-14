@@ -1990,3 +1990,39 @@ body.page-ready {
         padding-top: 1rem !important;
     }
 }
+
+/* =============================================
+   Category horizontal scroll on mobile and tablet
+   ============================================= */
+@media (max-width: 991.98px) {
+    #categories-container,
+    #categories-skeleton {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        padding-bottom: 1rem !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        margin-left: -1rem !important;
+        margin-right: -1rem !important;
+        gap: 1rem !important;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+    }
+
+    #categories-container::-webkit-scrollbar,
+    #categories-skeleton::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+
+    #categories-container > div,
+    #categories-skeleton > div {
+        flex: 0 0 200px !important; /* Độ rộng thẻ trên mobile */
+        width: 200px !important;
+        max-width: 200px !important;
+        scroll-snap-align: start;
+        margin-bottom: 0 !important;
+        padding: 0 !important; /* Xoá padding mặc định của Bootstrap col */
+    }
+}
