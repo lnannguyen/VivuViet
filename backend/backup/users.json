@@ -18,7 +18,7 @@
     "achievements": [],
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.284Z",
-    "updatedAt": "2026-07-25T18:20:07.278Z"
+    "updatedAt": "2026-07-25T18:22:28.998Z"
   },
   {
     "_id": "USR003",
@@ -39,7 +39,7 @@
     "achievements": [],
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.285Z",
-    "updatedAt": "2026-07-25T18:20:07.479Z"
+    "updatedAt": "2026-07-25T18:22:29.203Z"
   },
   {
     "_id": "USR004",
@@ -55,7 +55,7 @@
     "passportStamps": [],
     "password": "$2b$10$.krA4MSIi5OOvUzEgelEBOwRCQpdzf0hgbwhb5/lwoUypCBVPQoBq",
     "phone": "0938112233",
-    "updatedAt": "2026-07-25T18:20:07.672Z",
+    "updatedAt": "2026-07-25T18:22:29.381Z",
     "vivupoints": 320,
     "vouchers": [],
     "wishlist": [
@@ -76,7 +76,7 @@
     "passportStamps": [],
     "password": "$2b$10$.krA4MSIi5OOvUzEgelEBOwRCQpdzf0hgbwhb5/lwoUypCBVPQoBq",
     "phone": "0977889900",
-    "updatedAt": "2026-07-25T18:20:07.894Z",
+    "updatedAt": "2026-07-25T18:22:29.613Z",
     "vivupoints": 450,
     "vouchers": [],
     "wishlist": [
@@ -242,7 +242,7 @@
     "passportStamps": [],
     "password": "$2b$10$ca46ggVIv0UZFC6Qcmx3k.JPV2755okQzY5TI1UjXucD051qeTbfO",
     "phone": "0901234567",
-    "updatedAt": "2026-07-25T18:20:07.059Z",
+    "updatedAt": "2026-07-25T18:22:28.770Z",
     "vivupoints": 500,
     "vouchers": [],
     "wishlist": [
