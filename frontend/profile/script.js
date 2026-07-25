@@ -808,6 +808,21 @@ let currentVoucherFilter = "all";
 
 const defaultFigmaVouchers = [
     {
+        id: "VC_WELCOME200K",
+        code: "WELCOME200K",
+        title: "Giảm 200k",
+        subtitle: "CHÀO MỪNG THÀNH VIÊN MỚI",
+        description: "Đặc quyền ưu đãi 200.000đ dành riêng cho thành viên mới VivuViet",
+        icon: "bi-gift-fill",
+        iconBg: "#FFF0ED",
+        iconColor: "#FF5722",
+        daysLeft: 60,
+        type: "service",
+        category: "welcome",
+        minSpend: 0,
+        discount: 200000,
+    },
+    {
         id: "VC_HOTEL20",
         code: "HOTEL20",
         title: "Giảm 20%",
@@ -829,7 +844,7 @@ const defaultFigmaVouchers = [
         subtitle: "VÉ MÁY BAY KHỨ HỒI",
         description: "Ưu đãi giảm trực tiếp 500.000đ khi đặt vé máy bay khứ hồi",
         icon: "bi-airplane-fill",
-        iconBg: "#FFEDE9",
+        iconBg: "#FFF0ED",
         iconColor: "#FF5722",
         daysLeft: 3,
         type: "expiring",
@@ -859,7 +874,7 @@ const defaultFigmaVouchers = [
         subtitle: "XE ĐƯA ĐÓN SÂN BAY",
         description: "Mã giảm giá cho dịch vụ xe đưa đón sân bay",
         icon: "bi-car-front-fill",
-        iconBg: "#FFEDE9",
+        iconBg: "#FFF0ED",
         iconColor: "#FF5722",
         daysLeft: 7,
         type: "expiring",
@@ -881,6 +896,21 @@ const defaultFigmaVouchers = [
         category: "dich-vu",
         minSpend: 500000,
         discount: 25,
+    },
+    {
+        id: "VC_VIVUVIET2026",
+        code: "VIVUVIET2026",
+        title: "Giảm 300k",
+        subtitle: "HÀNH TRÌNH TOUR VIVUVIET",
+        description: "Giảm 300k cho tất cả đơn hàng tour du lịch từ 2.000.000đ",
+        icon: "bi-ticket-perforated-fill",
+        iconBg: "#E6F4EA",
+        iconColor: "#10B981",
+        daysLeft: 90,
+        type: "service",
+        category: "tour",
+        minSpend: 2000000,
+        discount: 300000,
     },
 ];
 
@@ -907,7 +937,7 @@ function loadVouchers() {
                 description: `Đơn tối thiểu: ${(uv.min_spend || 0).toLocaleString("vi-VN")} đ`,
                 icon: "bi-ticket-perforated-fill",
                 iconBg: "#E6F4EA",
-                iconColor: "#0E5E3A",
+                iconColor: "#10B981",
                 daysLeft: 30,
                 type: "service",
                 category: "special",
@@ -932,7 +962,7 @@ function loadVouchers() {
                     <i class="bi ${v.icon}"></i>
                 </div>
                 <div class="figma-voucher-info">
-                    <h5 class="figma-voucher-title" style="color: ${v.iconColor};">${v.title}</h5>
+                    <h5 class="figma-voucher-title">${v.title}</h5>
                     <div class="figma-voucher-subtitle">${v.subtitle}</div>
                     <p class="figma-voucher-desc">${v.description}</p>
                 </div>
