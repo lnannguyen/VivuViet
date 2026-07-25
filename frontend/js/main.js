@@ -94,11 +94,14 @@ function renderCategories(categories) {
         return;
     }
 
+    const badges = ["✨ Khám Phá Ngay", "🌴 Trải Nghiệm", "🏛️ Di Sản"];
+
     els.categoriesContainer.innerHTML = categories
         .map(
-            (cat) => `
+            (cat, idx) => `
     <div class="col-12 col-md-4 mb-4">
       <div class="category-card" onclick="window.location.href='/tours?category=${encodeURIComponent(cat.name)}'">
+        <span class="category-card-badge">${badges[idx % badges.length]}</span>
         <img src="${cat.image || "/assets/images/categories/dulichbien.png"}" alt="${cat.name}">
         <div class="category-card-overlay">
           <h5>${cat.name}</h5>
