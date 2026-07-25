@@ -23,19 +23,19 @@
     "review_count": 18,
     "viewCount": 1420,
     "bookingCount": 52,
-    "image": "/assets/images/tours/sapa/thumbnail.jpg",
-    "thumbnail": "/assets/images/tours/sapa/thumbnail.jpg",
+    "image": "/assets/images/tours/sapa/fansipan_peak.jpg",
+    "thumbnail": "/assets/images/tours/sapa/fansipan_peak.jpg",
     "images": [
-      "/assets/images/tours/sapa/1.jpg",
-      "/assets/images/tours/sapa/2.jpg",
-      "/assets/images/tours/sapa/3.jpg",
-      "/assets/images/tours/sapa/4.jpg"
+      "/assets/images/tours/sapa/fansipan_peak.jpg",
+      "/assets/images/tours/sapa/nhatho_da.jpg",
+      "/assets/images/tours/sapa/catcat_village.jpg",
+      "/assets/images/tours/sapa/sanmay_fansipan.jpg"
     ],
     "gallery": [
-      "/assets/images/tours/sapa/1.jpg",
-      "/assets/images/tours/sapa/2.jpg",
-      "/assets/images/tours/sapa/3.jpg",
-      "/assets/images/tours/sapa/4.jpg"
+      "/assets/images/tours/sapa/fansipan_peak.jpg",
+      "/assets/images/tours/sapa/nhatho_da.jpg",
+      "/assets/images/tours/sapa/catcat_village.jpg",
+      "/assets/images/tours/sapa/sanmay_fansipan.jpg"
     ],
     "category": "Vùng Cao",
     "description": "Hành trình đưa bạn khám phá thị trấn sương mù Sapa, check-in đỉnh Fansipan bằng cáp treo kỷ kỷ lục và trải nghiệm nét văn hóa bản địa độc đáo tại Bản Cát Cát.",
@@ -100,7 +100,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.538Z",
-    "updatedAt": "2026-07-25T13:57:11.370Z"
+    "updatedAt": "2026-07-25T14:09:49.821Z"
   },
   {
     "_id": "TOUR002",
@@ -126,19 +126,19 @@
     "review_count": 24,
     "viewCount": 2150,
     "bookingCount": 88,
-    "image": "/assets/images/tours/ha-long/halong.png",
-    "thumbnail": "/assets/images/tours/ha-long/halong.png",
+    "image": "/assets/images/tours/ha-long/halong_cruise.png",
+    "thumbnail": "/assets/images/tours/ha-long/halong_cruise.png",
     "images": [
-      "/assets/images/tours/ha-long/halong.png",
-      "/assets/images/tours/ha-long/kayak.jpg",
-      "/assets/images/tours/ha-long/vinhdisan.jpg",
-      "/assets/images/tours/ha-long/hangdong.jpg"
+      "/assets/images/tours/ha-long/halong_cruise.png",
+      "/assets/images/tours/ha-long/kayak_cave.jpg",
+      "/assets/images/tours/ha-long/vinhdisan_night.jpg",
+      "/assets/images/tours/ha-long/hangdong_thachnhu.jpg"
     ],
     "gallery": [
-      "/assets/images/tours/ha-long/halong.png",
-      "/assets/images/tours/ha-long/kayak.jpg",
-      "/assets/images/tours/ha-long/vinhdisan.jpg",
-      "/assets/images/tours/ha-long/hangdong.jpg"
+      "/assets/images/tours/ha-long/halong_cruise.png",
+      "/assets/images/tours/ha-long/kayak_cave.jpg",
+      "/assets/images/tours/ha-long/vinhdisan_night.jpg",
+      "/assets/images/tours/ha-long/hangdong_thachnhu.jpg"
     ],
     "category": "Du lịch biển",
     "description": "Nghỉ dưỡng thượng lưu trên du thuyền 5 sao giữa kỳ quan thiên nhiên thế giới Vịnh Hạ Long, chèo thuyền kayak và ngắm hoàng hôn rực rỡ.",
@@ -197,7 +197,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T13:57:11.555Z"
+    "updatedAt": "2026-07-25T14:09:50.009Z"
   },
   {
     "_id": "TOUR003",
@@ -223,19 +223,19 @@
     "review_count": 12,
     "viewCount": 980,
     "bookingCount": 36,
-    "image": "/assets/images/tours/cao-bang/thumbnail.jpg",
-    "thumbnail": "/assets/images/tours/cao-bang/thumbnail.jpg",
+    "image": "/assets/images/tours/cao-bang/bangioc_waterfall.jpg",
+    "thumbnail": "/assets/images/tours/cao-bang/bangioc_waterfall.jpg",
     "images": [
-      "/assets/images/tours/cao-bang/1.jpg",
-      "/assets/images/tours/cao-bang/2.jpg",
-      "/assets/images/tours/cao-bang/3.jpg",
-      "/assets/images/tours/cao-bang/4.jpg"
+      "/assets/images/tours/cao-bang/bangioc_waterfall.jpg",
+      "/assets/images/tours/cao-bang/nguomngao_cave.jpg",
+      "/assets/images/tours/cao-bang/babe_lake.jpg",
+      "/assets/images/tours/cao-bang/mapileng_pass.jpg"
     ],
     "gallery": [
-      "/assets/images/tours/cao-bang/1.jpg",
-      "/assets/images/tours/cao-bang/2.jpg",
-      "/assets/images/tours/cao-bang/3.jpg",
-      "/assets/images/tours/cao-bang/4.jpg"
+      "/assets/images/tours/cao-bang/bangioc_waterfall.jpg",
+      "/assets/images/tours/cao-bang/nguomngao_cave.jpg",
+      "/assets/images/tours/cao-bang/babe_lake.jpg",
+      "/assets/images/tours/cao-bang/mapileng_pass.jpg"
     ],
     "category": "Vùng Cao",
     "description": "Tận mắt chiêm ngưỡng Thác Bản Giốc - thác nước tự nhiên lớn nhất Đông Nam Á, khám phá vẻ đẹp ảo diệu của Động Ngườm Ngao và Hồ Ba Bể xanh mát.",
@@ -296,7 +296,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T13:57:11.733Z"
+    "updatedAt": "2026-07-25T14:09:50.189Z"
   },
   {
     "_id": "TOUR004",
@@ -322,19 +322,19 @@
     "review_count": 30,
     "viewCount": 3100,
     "bookingCount": 110,
-    "image": "/assets/images/tours/phu-quoc/thumbnail.jpg",
-    "thumbnail": "/assets/images/tours/phu-quoc/thumbnail.jpg",
+    "image": "/assets/images/tours/phu-quoc/phuquoc_beach.jpg",
+    "thumbnail": "/assets/images/tours/phu-quoc/phuquoc_beach.jpg",
     "images": [
-      "/assets/images/tours/phu-quoc/1.jpg",
-      "/assets/images/tours/phu-quoc/2.jpg",
-      "/assets/images/tours/phu-quoc/3.jpg",
-      "/assets/images/tours/phu-quoc/4.jpg"
+      "/assets/images/tours/phu-quoc/phuquoc_beach.jpg",
+      "/assets/images/tours/phu-quoc/honthom_cable.jpg",
+      "/assets/images/tours/phu-quoc/vinpearl_safari.jpg",
+      "/assets/images/tours/phu-quoc/hamninh_village.jpg"
     ],
     "gallery": [
-      "/assets/images/tours/phu-quoc/1.jpg",
-      "/assets/images/tours/phu-quoc/2.jpg",
-      "/assets/images/tours/phu-quoc/3.jpg",
-      "/assets/images/tours/phu-quoc/4.jpg"
+      "/assets/images/tours/phu-quoc/phuquoc_beach.jpg",
+      "/assets/images/tours/phu-quoc/honthom_cable.jpg",
+      "/assets/images/tours/phu-quoc/vinpearl_safari.jpg",
+      "/assets/images/tours/phu-quoc/hamninh_village.jpg"
     ],
     "category": "Du lịch biển",
     "description": "Trải nghiệm trọn vẹn đảo ngọc Phú Quốc với tour cano 4 đảo lặn ngắm san hô, check-in Grand World thành phố không ngủ và công viên VinWonders.",
@@ -400,7 +400,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T13:57:11.911Z"
+    "updatedAt": "2026-07-25T14:09:50.366Z"
   },
   {
     "_id": "TOUR005",
@@ -426,19 +426,19 @@
     "review_count": 20,
     "viewCount": 1650,
     "bookingCount": 64,
-    "image": "/assets/images/tours/hoi-an/hoian.png",
-    "thumbnail": "/assets/images/tours/hoi-an/hoian.png",
+    "image": "/assets/images/tours/hoi-an/phoco_hoian.png",
+    "thumbnail": "/assets/images/tours/hoi-an/phoco_hoian.png",
     "images": [
-      "/assets/images/tours/hoi-an/hoian.png",
-      "/assets/images/tours/hoi-an/denlong.jpg",
-      "/assets/images/tours/hoi-an/caumuc.jpg",
-      "/assets/images/tours/hoi-an/rau.jpg"
+      "/assets/images/tours/hoi-an/phoco_hoian.png",
+      "/assets/images/tours/hoi-an/denlong_hoian.jpg",
+      "/assets/images/tours/hoi-an/chuacau_hoian.jpg",
+      "/assets/images/tours/hoi-an/traque_village.jpg"
     ],
     "gallery": [
-      "/assets/images/tours/hoi-an/hoian.png",
-      "/assets/images/tours/hoi-an/denlong.jpg",
-      "/assets/images/tours/hoi-an/caumuc.jpg",
-      "/assets/images/tours/hoi-an/rau.jpg"
+      "/assets/images/tours/hoi-an/phoco_hoian.png",
+      "/assets/images/tours/hoi-an/denlong_hoian.jpg",
+      "/assets/images/tours/hoi-an/chuacau_hoian.jpg",
+      "/assets/images/tours/hoi-an/traque_village.jpg"
     ],
     "category": "Văn Hóa & Di Sản",
     "description": "Hành trình đưa quý khách đến với phố cổ Hội An rực rỡ đèn lồng, Bà Nà Hills Cầu Vàng nổi tiếng thế giới và không gian cổ kính Cố đô Huế.",
@@ -505,7 +505,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T13:57:12.088Z"
+    "updatedAt": "2026-07-25T14:09:50.544Z"
   },
   {
     "_id": "TOUR006",
@@ -531,19 +531,19 @@
     "review_count": 45,
     "viewCount": 2800,
     "bookingCount": 150,
-    "image": "/assets/images/tours/ninh-binh/thumbnail.jpg",
-    "thumbnail": "/assets/images/tours/ninh-binh/thumbnail.jpg",
+    "image": "/assets/images/tours/ninh-binh/trangan_landscape.jpg",
+    "thumbnail": "/assets/images/tours/ninh-binh/trangan_landscape.jpg",
     "images": [
-      "/assets/images/tours/ninh-binh/1.jpg",
-      "/assets/images/tours/ninh-binh/2.jpg",
-      "/assets/images/tours/ninh-binh/3.jpg",
-      "/assets/images/tours/ninh-binh/4.jpg"
+      "/assets/images/tours/ninh-binh/trangan_landscape.jpg",
+      "/assets/images/tours/ninh-binh/hangmua_peak.jpg",
+      "/assets/images/tours/ninh-binh/baidinh_pagoda.jpg",
+      "/assets/images/tours/ninh-binh/trangan_boat.jpg"
     ],
     "gallery": [
-      "/assets/images/tours/ninh-binh/1.jpg",
-      "/assets/images/tours/ninh-binh/2.jpg",
-      "/assets/images/tours/ninh-binh/3.jpg",
-      "/assets/images/tours/ninh-binh/4.jpg"
+      "/assets/images/tours/ninh-binh/trangan_landscape.jpg",
+      "/assets/images/tours/ninh-binh/hangmua_peak.jpg",
+      "/assets/images/tours/ninh-binh/baidinh_pagoda.jpg",
+      "/assets/images/tours/ninh-binh/trangan_boat.jpg"
     ],
     "category": "Văn Hóa & Di Sản",
     "description": "Chuyến đi trong ngày trọn vẹn khám phá danh thắng Tràng An di sản thế giới kép, bái Phật tại đại danh chùa Bái Đính và ngắm toàn cảnh Tam Cốc từ Hang Múa.",
@@ -594,6 +594,6 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T13:57:12.270Z"
+    "updatedAt": "2026-07-25T14:09:50.725Z"
   }
 ]
