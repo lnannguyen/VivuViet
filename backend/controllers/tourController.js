@@ -39,7 +39,13 @@ const getAllTours = async (req, res) => {
         if (category) filter.category = { $regex: category, $options: "i" };
         if (isFeatured) filter.isFeatured = isFeatured === "true";
         if (status) filter.status = status;
-        if (mood) filter.mood = { $in: [mood] };
+        if (mood) {
+            if (mood.toLowerCase() === "khám phá" || mood.toLowerCase() === "kham pha") {
+                // "khám phá" matches any tour
+            } else {
+                filter.mood = { $elemMatch: { $regex: mood, $options: "i" } };
+            }
+        }
         if (duration) filter.duration = { $regex: duration, $options: "i" };
         if (days) filter.days = Number(days);
 

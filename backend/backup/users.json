@@ -5,7 +5,7 @@
     "email": "hung.tran@gmail.com",
     "phone": "0987654321",
     "avatar": "/assets/images/avt/pngtree-art-boy-avatar-png-image_8855201.png",
-    "password": "$2b$10$uwfuGxYwzO7baj/woJj1HO52UbPhaKEvKOkWr31UDxEaJjhYuyC4m",
+    "password": "$2b$10$20eC6hIeaETPVHQA7g6Q3eyyKk7QoZFYWRIgpEM4Rfcb2i7CRItZO",
     "auth_provider": "local",
     "membership": "gold",
     "wishlist": [
@@ -18,7 +18,7 @@
     "achievements": [],
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.284Z",
-    "updatedAt": "2026-07-25T15:03:48.038Z"
+    "updatedAt": "2026-07-25T17:25:01.962Z"
   },
   {
     "_id": "USR003",
@@ -26,7 +26,7 @@
     "email": "mai.le@gmail.com",
     "phone": "0912345678",
     "avatar": "/assets/images/avt/avt2.jpg",
-    "password": "$2b$10$uwfuGxYwzO7baj/woJj1HO52UbPhaKEvKOkWr31UDxEaJjhYuyC4m",
+    "password": "$2b$10$20eC6hIeaETPVHQA7g6Q3eyyKk7QoZFYWRIgpEM4Rfcb2i7CRItZO",
     "auth_provider": "local",
     "membership": "standard",
     "wishlist": [
@@ -39,7 +39,7 @@
     "achievements": [],
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.285Z",
-    "updatedAt": "2026-07-25T15:03:48.218Z"
+    "updatedAt": "2026-07-25T17:25:02.147Z"
   },
   {
     "_id": "USR004",
@@ -53,9 +53,9 @@
     "membership": "gold",
     "notifications": [],
     "passportStamps": [],
-    "password": "$2b$10$uwfuGxYwzO7baj/woJj1HO52UbPhaKEvKOkWr31UDxEaJjhYuyC4m",
+    "password": "$2b$10$20eC6hIeaETPVHQA7g6Q3eyyKk7QoZFYWRIgpEM4Rfcb2i7CRItZO",
     "phone": "0938112233",
-    "updatedAt": "2026-07-25T15:03:48.393Z",
+    "updatedAt": "2026-07-25T17:25:02.327Z",
     "vivupoints": 320,
     "vouchers": [],
     "wishlist": [
@@ -74,9 +74,9 @@
     "membership": "gold",
     "notifications": [],
     "passportStamps": [],
-    "password": "$2b$10$uwfuGxYwzO7baj/woJj1HO52UbPhaKEvKOkWr31UDxEaJjhYuyC4m",
+    "password": "$2b$10$20eC6hIeaETPVHQA7g6Q3eyyKk7QoZFYWRIgpEM4Rfcb2i7CRItZO",
     "phone": "0977889900",
-    "updatedAt": "2026-07-25T15:03:48.571Z",
+    "updatedAt": "2026-07-25T17:25:02.507Z",
     "vivupoints": 450,
     "vouchers": [],
     "wishlist": [
@@ -189,5 +189,43 @@
     "address": "",
     "dob": null,
     "gender": "female"
+  },
+  {
+    "_id": "USRE69998",
+    "fullname": "tran phuong anh",
+    "email": "anhtp@gmail.com",
+    "phone": "012345678",
+    "avatar": "",
+    "password": "$2b$10$QyxKYey.uaRhPJ22f8RpE.FIzfkjBJr3XhbQj.aTcLoCAGZwIEmXW",
+    "auth_provider": "local",
+    "membership": "standard",
+    "wishlist": [],
+    "notifications": [
+      {
+        "title": "Chào mừng gia nhập VivuViet!",
+        "content": "Xin chào tran phuong anh, chào mừng bạn đã tham gia cộng đồng du lịch VivuViet!",
+        "type": "general",
+        "isRead": false,
+        "_id": "6a64d29f56f7f2616fe69999",
+        "createdAt": "2026-07-25T15:13:35.543Z"
+      }
+    ],
+    "vouchers": [
+      {
+        "code": "WELCOME200K",
+        "discount_amount": 200000,
+        "discount_type": "fixed",
+        "min_spend": 1000000,
+        "expiry_date": "2026-10-23T15:13:35.537Z",
+        "isUsed": false,
+        "_id": "6a64d29f56f7f2616fe6999a"
+      }
+    ],
+    "vivupoints": 0,
+    "passportStamps": [],
+    "achievements": [],
+    "createdAt": "2026-07-25T15:13:35.549Z",
+    "updatedAt": "2026-07-25T15:13:35.549Z",
+    "__v": 0
   }
 ]

@@ -309,13 +309,15 @@ function applyFilters() {
 
     // Lọc theo cảm xúc (Mood)
     if (urlMood) {
-        filteredTours = filteredTours.filter(
-            (tour) =>
-                tour.mood &&
-                tour.mood.some((m) =>
-                    m.toLowerCase().includes(urlMood.toLowerCase()),
-                ),
-        );
+        const moodLower = urlMood.toLowerCase().trim();
+        filteredTours = filteredTours.filter((tour) => {
+            if (!tour.mood || tour.mood.length === 0) return true;
+            return tour.mood.some(
+                (m) =>
+                    m.toLowerCase().includes(moodLower) ||
+                    moodLower.includes(m.toLowerCase()),
+            );
+        });
     }
 
     // Tính toán điểm phù hợp nếu đang bật chế độ Match
