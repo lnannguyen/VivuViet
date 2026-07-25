@@ -40,9 +40,11 @@
 *   **Mã QR thanh toán động:** Quét mã QR chứa sẵn số tiền và cú pháp chuyển khoản tự động để thực hiện giao dịch nhanh qua ứng dụng ngân hàng.
 
 ### 6. Trang cá nhân (profile/profile.html)
-*   **Hồ sơ cá nhân:** Cập nhật họ tên, số điện thoại và tải lên ảnh đại diện thời gian thực.
+*   **Hồ sơ cá nhân:** Cập nhật họ tên, số điện thoại, ngày sinh, địa chỉ và tải lên ảnh đại diện thời gian thực lưu trữ trực tiếp trên Cloudinary Đám mây kèm cơ chế khôi phục tự động (`onerror fallback`).
 *   **Hạng thành viên & VivuPoints:** Hiển thị số điểm tích lũy thành viên, huy hiệu hạng Vàng, Bạc, Đồng và nút mở modal quy đổi điểm lấy Voucher.
 *   **Lịch sử booking:** Theo dõi trạng thái đơn hàng (Đang xử lý, Đã thanh toán, Đã hoàn thành, Đã hủy).
+*   **Hộ chiếu du lịch (Travel Passport):** Tự động đóng con dấu địa danh mới vào hộ chiếu du lịch kèm mốc thời gian chuẩn xác theo đúng các chuyến đi đã hoàn thành thực tế.
+*   **Thành tựu du lịch (Travel Achievements):** Hệ thống huy hiệu danh giá tự động mở khóa theo cấp độ hành trình trải nghiệm của du khách.
 *   **Hủy đơn / Hoàn thành:** Khách hàng có thể nhấn nút "Yêu cầu hủy" đối với tour chưa khởi hành, hoặc nhấn "Hoàn thành Tour" đối với chuyến đi đã hoàn tất để nhận thêm điểm thưởng.
 *   **Đánh giá chuyến đi (Review):** Modal viết đánh giá, chọn số sao, nhận xét chi tiết và đính kèm tối đa 3 ảnh cùng 2 video thực tế từ thiết bị.
 
