@@ -691,35 +691,109 @@ function getLandmarkCaption(imgSrc, tour) {
     if (!imgSrc) return "";
     const src = imgSrc.toLowerCase();
 
-    // Mapping tên danh thắng theo file ảnh
-    if (src.includes("phuquoc")) return "Biển ngọc Phú Quốc & Hoàng hôn Sunset Sanato";
-    if (src.includes("honthom")) return "Cáp treo Hòn Thơm vượt biển dài nhất thế giới";
-    if (src.includes("safari")) return "Công viên bán hoang dã Vinpearl Safari Phú Quốc";
-    if (src.includes("langchai")) return "Làng chài truyền thống Hàm Ninh Phú Quốc";
-    if (src.includes("nuocmam")) return "Nhà thùng nước mắm truyền thống Phú Quốc";
-    
-    if (src.includes("hoian")) return "Toàn cảnh Phố cổ Hội An bên dòng sông Hoài";
-    if (src.includes("denlong")) return "Đêm phố cổ Hội An rực rỡ sắc màu đèn lồng";
-    if (src.includes("caumuc") || src.includes("chuacau")) return "Chùa Cầu di sản kiến trúc độc đáo Hội An";
-    if (src.includes("rau")) return "Làng rau truyền thống Trà Quế Hội An";
+    // Sapa images mapping
+    if (src.includes("/sapa/1.jpg") || src.includes("sapa_fansipan") || src.includes("fansipan")) {
+        return "Đỉnh Fansipan 3.143m - Nóc nhà Đông Dương";
+    }
+    if (src.includes("/sapa/2.jpg")) {
+        return "Nhà thờ Đá Sapa & Trung tâm thị trấn sương mù";
+    }
+    if (src.includes("/sapa/3.jpg") || src.includes("sapa_catcat") || src.includes("catcat")) {
+        return "Bản Cát Cát thổ cẩm H'Mông & Ruộng bậc thang vàng";
+    }
+    if (src.includes("/sapa/4.jpg") || src.includes("sanmay")) {
+        return "Đỉnh Fansipan Sapa biển mây bình minh";
+    }
+    if (src.includes("sapa")) {
+        return "Thị trấn sương mù Sapa & Thung lũng Mường Hoa";
+    }
 
-    if (src.includes("sapa_fansipan") || src.includes("fansipan")) return "Cáp treo 3 dây & Đỉnh Fansipan 3.143m Nóc nhà Đông Dương";
-    if (src.includes("sapa_catcat") || src.includes("catcat")) return "Bản Cát Cát thổ cẩm H'Mông & Ruộng bậc thang vàng Sapa";
-    if (src.includes("sanmay")) return "Đỉnh Fansipan Sapa biển mây bình minh";
-    if (src.includes("sapa")) return "Thị trấn sương mù Sapa & Thung lũng Mường Hoa";
+    // Phú Quốc images mapping
+    if (src.includes("/phu-quoc/1.jpg")) {
+        return "Biển ngọc Phú Quốc & Hoàng hôn Sunset Sanato";
+    }
+    if (src.includes("/phu-quoc/2.jpg") || src.includes("honthom")) {
+        return "Cáp treo Hòn Thơm vượt biển dài nhất thế giới";
+    }
+    if (src.includes("/phu-quoc/3.jpg") || src.includes("safari")) {
+        return "Công viên bán hoang dã Vinpearl Safari Phú Quốc";
+    }
+    if (src.includes("/phu-quoc/4.jpg") || src.includes("langchai")) {
+        return "Làng chài truyền thống Hàm Ninh Phú Quốc";
+    }
+    if (src.includes("phuquoc") || src.includes("nuocmam")) {
+        return "Nhà thùng nước mắm truyền thống Phú Quốc";
+    }
 
-    if (src.includes("halong")) return "Du thuyền 5 sao giữa kỳ quan Vịnh Hạ Long";
-    if (src.includes("kayak")) return "Chèo thuyền Kayak khám phá Hang Sung Sốt";
-    if (src.includes("vinhdisan")) return "Đêm vịnh di sản thiên nhiên thế giới Hạ Long";
-    if (src.includes("hangdong")) return "Khám phá hệ thống hang động thạch nhũ Hạ Long";
+    // Ninh Bình images mapping
+    if (src.includes("/ninh-binh/1.jpg")) {
+        return "Tuyệt tác danh thắng Tràng An Ninh Bình";
+    }
+    if (src.includes("/ninh-binh/2.jpg") || src.includes("dinh")) {
+        return "Đỉnh Hang Múa - Góc ngắm đại panorama Tam Cốc";
+    }
+    if (src.includes("/ninh-binh/3.jpg") || src.includes("xuanthuy") || src.includes("baidinh")) {
+        return "Chùa Bái Đính - Ngôi chùa lớn nhất Đông Nam Á";
+    }
+    if (src.includes("/ninh-binh/4.jpg") || src.includes("khampha")) {
+        return "Chèo thuyền đò lướt qua hang động Tràng An";
+    }
+    if (src.includes("ninhbinh")) {
+        return "Tuyệt tác danh thắng Tràng An Ninh Bình";
+    }
 
-    if (src.includes("ninhbinh")) return "Tuyệt tác danh thắng Tràng An Ninh Bình";
-    if (src.includes("dinh")) return "Đỉnh Hang Múa - Góc ngắm đại panorama Tam Cốc";
-    if (src.includes("xuanthuy") || src.includes("baidinh")) return "Chùa Bái Đính - Ngôi chùa lớn nhất Đông Nam Á";
-    if (src.includes("khampha")) return "Chèo thuyền đò lướt qua hang động Tràng An";
+    // Cao Bằng images mapping
+    if (src.includes("/cao-bang/1.jpg")) {
+        return "Thác Bản Giốc - Thác nước tự nhiên hùng vĩ nhất";
+    }
+    if (src.includes("/cao-bang/2.jpg")) {
+        return "Động Ngườm Ngao - Kỳ quan thạch nhũ Cao Bằng";
+    }
+    if (src.includes("/cao-bang/3.jpg")) {
+        return "Hồ Ba Bể - Viên ngọc xanh giữa đại ngàn";
+    }
+    if (src.includes("/cao-bang/4.jpg") || src.includes("hagiang")) {
+        return "Đèo Mã Pí Lèng & Cảnh quan cao nguyên đá";
+    }
+    if (src.includes("caobang")) {
+        return "Thác Bản Giốc - Thác nước tự nhiên hùng vĩ nhất";
+    }
 
-    if (src.includes("caobang")) return "Thác Bản Giốc - Thác nước tự nhiên hùng vĩ nhất";
-    if (src.includes("hanoi1") || src.includes("phoco")) return "Phố cổ 36 phố phường Hà Nội";
+    // Hạ Long images mapping
+    if (src.includes("/ha-long/1.jpg")) {
+        return "Du thuyền 5 sao giữa kỳ quan Vịnh Hạ Long";
+    }
+    if (src.includes("/ha-long/2.jpg") || src.includes("kayak")) {
+        return "Chèo thuyền Kayak khám phá Hang Sung Sốt";
+    }
+    if (src.includes("/ha-long/3.jpg") || src.includes("vinhdisan")) {
+        return "Đêm vịnh di sản thiên nhiên thế giới Hạ Long";
+    }
+    if (src.includes("/ha-long/4.jpg") || src.includes("hangdong")) {
+        return "Khám phá hệ thống hang động thạch nhũ Hạ Long";
+    }
+    if (src.includes("halong") || src.includes("vinhha")) {
+        return "Du thuyền 5 sao giữa kỳ quan Vịnh Hạ Long";
+    }
+
+    // Hội An images mapping
+    if (src.includes("/hoi-an/1.jpg")) {
+        return "Toàn cảnh Phố cổ Hội An bên dòng sông Hoài";
+    }
+    if (src.includes("/hoi-an/2.jpg") || src.includes("denlong")) {
+        return "Đêm phố cổ Hội An rực rỡ sắc màu đèn lồng";
+    }
+    if (src.includes("/hoi-an/3.jpg") || src.includes("caumuc") || src.includes("chuacau")) {
+        return "Chùa Cầu di sản kiến trúc độc đáo Hội An";
+    }
+    if (src.includes("/hoi-an/4.jpg") || src.includes("rau")) {
+        return "Làng rau truyền thống Trà Quế Hội An";
+    }
+    if (src.includes("hoian") || src.includes("phoco")) {
+        return "Toàn cảnh Phố cổ Hội An bên dòng sông Hoài";
+    }
+
+    if (src.includes("hanoi1")) return "Phố cổ 36 phố phường Hà Nội";
     if (src.includes("hanoi")) return "Hồ Hoàn Kiếm & Tháp Rùa cổ kính Hà Nội";
 
     const dest = tour ? (tour.destination || tour.name || "") : "";
