@@ -578,12 +578,12 @@ async function loadMyReviews() {
                 mediaHtml += `<div class="review-media-grid mt-3">`;
                 if (r.images) {
                     r.images.forEach(img => {
-                        mediaHtml += `<div class="media-item"><img src="${img}" alt="Review image" class="img-fluid rounded object-fit-cover w-100 h-100"></div>`;
+                        mediaHtml += `<div class="media-item"><img src="${img}" alt="Review image" class="img-fluid rounded object-fit-cover w-100 h-100" onerror="this.parentElement.style.display='none'"></div>`;
                     });
                 }
                 if (r.videos) {
                     r.videos.forEach(vid => {
-                        mediaHtml += `<div class="media-item"><video src="${vid}" class="w-100 h-100 object-fit-cover rounded" muted controls></video></div>`;
+                        mediaHtml += `<div class="media-item"><video src="${vid}" class="w-100 h-100 object-fit-cover rounded" muted controls onerror="this.parentElement.style.display='none'"></video></div>`;
                     });
                 }
                 mediaHtml += `</div>`;
