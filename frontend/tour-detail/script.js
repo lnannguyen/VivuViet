@@ -268,9 +268,6 @@ function renderTourData(tour) {
     } else {
         els.virtual360Section.style.display = "none";
     }
-    } else {
-        els.virtual360Section.style.display = "none";
-    }
 
     // Bản đồ lộ trình điểm đi - điểm đến
     const origin = encodeURIComponent(tour.departure || "Hà Nội");
