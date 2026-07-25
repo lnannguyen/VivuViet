@@ -100,7 +100,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.538Z",
-    "updatedAt": "2026-07-25T14:18:02.489Z"
+    "updatedAt": "2026-07-25T14:32:44.510Z"
   },
   {
     "_id": "TOUR002",
@@ -131,13 +131,13 @@
     "images": [
       "/assets/images/tours/ha-long/halong_cruise.png",
       "/assets/images/tours/ha-long/kayak_cave.jpg",
-      "/assets/images/tours/ha-long/vinhdisan_night.jpg",
+      "/assets/images/tours/ha-long/halong_panorama.jpg",
       "/assets/images/tours/ha-long/hangdong_thachnhu.jpg"
     ],
     "gallery": [
       "/assets/images/tours/ha-long/halong_cruise.png",
       "/assets/images/tours/ha-long/kayak_cave.jpg",
-      "/assets/images/tours/ha-long/vinhdisan_night.jpg",
+      "/assets/images/tours/ha-long/halong_panorama.jpg",
       "/assets/images/tours/ha-long/hangdong_thachnhu.jpg"
     ],
     "category": "Du lịch biển",
@@ -197,7 +197,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T14:18:02.701Z"
+    "updatedAt": "2026-07-25T14:32:44.705Z"
   },
   {
     "_id": "TOUR003",
@@ -296,7 +296,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T14:18:02.883Z"
+    "updatedAt": "2026-07-25T14:32:44.958Z"
   },
   {
     "_id": "TOUR004",
@@ -400,7 +400,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T14:18:03.089Z"
+    "updatedAt": "2026-07-25T14:32:45.147Z"
   },
   {
     "_id": "TOUR005",
@@ -505,7 +505,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T14:18:03.310Z"
+    "updatedAt": "2026-07-25T14:32:45.367Z"
   },
   {
     "_id": "TOUR006",
@@ -594,6 +594,6 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T14:18:03.489Z"
+    "updatedAt": "2026-07-25T14:32:45.572Z"
   }
 ]

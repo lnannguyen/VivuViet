@@ -721,9 +721,9 @@ function getLandmarkCaption(imgSrc, tour) {
 
     // Hạ Long
     if (src.includes("halong_cruise")) return "Du thuyền 5 sao giữa kỳ quan Vịnh Hạ Long";
-    if (src.includes("kayak_cave") || src.includes("kayak")) return "Chèo thuyền Kayak khám phá Hang Sung Sốt";
-    if (src.includes("vinhdisan_night") || src.includes("vinhdisan")) return "Đêm vịnh di sản thiên nhiên thế giới Hạ Long";
-    if (src.includes("hangdong_thachnhu") || src.includes("hangdong")) return "Khám phá hệ thống hang động thạch nhũ Hạ Long";
+    if (src.includes("kayak_cave") || src.includes("kayak")) return "Chèo thuyền Kayak khám phá vòm hang đá vôi Hạ Long";
+    if (src.includes("halong_panorama") || src.includes("panorama") || src.includes("vinhdisan")) return "Toàn cảnh quần thể đảo đá vôi Vịnh Hạ Long";
+    if (src.includes("hangdong_thachnhu") || src.includes("hangdong")) return "Khám phá hệ thống hang động thạch nhũ ảo diệu Hạ Long";
     if (src.includes("halong")) return "Du thuyền 5 sao giữa kỳ quan Vịnh Hạ Long";
 
     // Hội An

@@ -217,8 +217,8 @@ const seedData = async () => {
                 bookingCount: 88,
                 image: "/assets/images/tours/ha-long/halong_cruise.png",
                 thumbnail: "/assets/images/tours/ha-long/halong_cruise.png",
-                images: ["/assets/images/tours/ha-long/halong_cruise.png", "/assets/images/tours/ha-long/kayak_cave.jpg", "/assets/images/tours/ha-long/vinhdisan_night.jpg", "/assets/images/tours/ha-long/hangdong_thachnhu.jpg"],
-                gallery: ["/assets/images/tours/ha-long/halong_cruise.png", "/assets/images/tours/ha-long/kayak_cave.jpg", "/assets/images/tours/ha-long/vinhdisan_night.jpg", "/assets/images/tours/ha-long/hangdong_thachnhu.jpg"],
+                images: ["/assets/images/tours/ha-long/halong_cruise.png", "/assets/images/tours/ha-long/kayak_cave.jpg", "/assets/images/tours/ha-long/halong_panorama.jpg", "/assets/images/tours/ha-long/hangdong_thachnhu.jpg"],
+                gallery: ["/assets/images/tours/ha-long/halong_cruise.png", "/assets/images/tours/ha-long/kayak_cave.jpg", "/assets/images/tours/ha-long/halong_panorama.jpg", "/assets/images/tours/ha-long/hangdong_thachnhu.jpg"],
                 category: "Du lịch biển",
                 description: "Nghỉ dưỡng thượng lưu trên du thuyền 5 sao giữa kỳ quan thiên nhiên thế giới Vịnh Hạ Long, chèo thuyền kayak và ngắm hoàng hôn rực rỡ.",
                 itinerary: [
