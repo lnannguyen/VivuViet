@@ -8,7 +8,7 @@
     "status": true,
     "__v": 0,
     "createdAt": "2026-07-25T03:46:29.610Z",
-    "updatedAt": "2026-07-25T17:34:11.253Z"
+    "updatedAt": "2026-07-25T17:37:54.484Z"
   },
   {
     "_id": "CAT002",
@@ -19,17 +19,17 @@
     "status": true,
     "__v": 0,
     "createdAt": "2026-07-25T03:46:29.611Z",
-    "updatedAt": "2026-07-25T17:34:11.457Z"
+    "updatedAt": "2026-07-25T17:37:54.790Z"
   },
   {
     "_id": "CAT003",
     "code": "CAT003",
     "name": "Văn Hóa & Di Sản",
     "description": "Hành trình ngược dòng thời gian tìm về di sản lịch sử và kiến trúc cổ kính.",
-    "image": "/assets/images/categories/vanhoa.png",
+    "image": "/assets/images/tours/hoi-an/phoco_hoian.png",
     "status": true,
     "__v": 0,
     "createdAt": "2026-07-25T03:46:29.611Z",
-    "updatedAt": "2026-07-25T17:34:11.648Z"
+    "updatedAt": "2026-07-25T17:37:54.995Z"
   }
 ]

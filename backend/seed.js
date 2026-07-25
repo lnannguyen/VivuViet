@@ -45,7 +45,7 @@ const seedData = async () => {
                 title: "Văn Hóa & Di Sản",
                 name: "Văn Hóa & Di Sản",
                 icon: "bi-bank",
-                image: "/assets/images/categories/vanhoa.png",
+                image: "/assets/images/tours/hoi-an/phoco_hoian.png",
                 description: "Hành trình ngược dòng thời gian tìm về di sản lịch sử và kiến trúc cổ kính.",
             },
         ];
