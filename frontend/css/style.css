@@ -229,15 +229,25 @@ a {
     font-family: var(--font);
     font-size: 0.875rem;
     background: #fff;
-    width: 220px;
+    width: 180px;
+    max-width: 100%;
     transition: var(--transition);
 }
 
 .search-box-nav input:focus {
     outline: none;
     border-color: var(--primary);
-    width: 280px;
+    width: 220px;
     box-shadow: 0 0 0 3px rgba(27, 67, 50, 0.12);
+}
+
+@media (max-width: 1199.98px) {
+    .search-box-nav input {
+        width: 140px;
+    }
+    .search-box-nav input:focus {
+        width: 180px;
+    }
 }
 
 .search-box-nav .search-icon {

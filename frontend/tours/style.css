@@ -101,3 +101,11 @@
     height: 38px;
     font-size: 1.1rem;
 }
+
+@media (max-width: 991.98px) {
+    .filter-sidebar {
+        position: static !important;
+        top: 0 !important;
+        margin-bottom: 1.5rem;
+    }
+}

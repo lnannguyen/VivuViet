@@ -167,7 +167,7 @@ function renderGrid() {
                     : "";
 
             return `
-      <div class="col-md-6 col-lg-4 mb-4">
+      <div class="col-12 col-sm-6 col-md-6 col-xl-4 mb-4">
         <div class="tour-card" onclick="window.location.href='/tours/${tour.slug || tour._id}'">
           <div class="tour-card-img-wrap">
             <img src="${tour.image || "/assets/images/dulichbien.png"}" alt="${tour.title || tour.name}">
