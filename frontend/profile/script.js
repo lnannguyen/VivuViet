@@ -173,13 +173,20 @@ window.switchProfileTab = (tabName) => {
     if (activePane) activePane.classList.add("active");
 };
 
+// Quản lý trạng thái chỉnh sửa hồ sơ & ảnh đại diện
+let isProfileEditing = false;
+
 // Bật chế độ chỉnh sửa hồ sơ
 window.enableProfileEdit = () => {
+    isProfileEditing = true;
     els.profileName.removeAttribute("disabled");
     els.profilePhone.removeAttribute("disabled");
     els.profileDob.removeAttribute("disabled");
     els.profileAddress.removeAttribute("disabled");
     document.getElementsByName("profileGender").forEach(radio => radio.removeAttribute("disabled"));
+
+    // Hiển thị các nút camera cập nhật ảnh đại diện
+    document.querySelectorAll(".btn-change-avatar").forEach(el => el.classList.add("active"));
 
     document.getElementById("btnEditProfile").classList.add("d-none");
     document.getElementById("btnEditProfile").classList.remove("d-flex");
@@ -225,12 +232,15 @@ async function saveProfileInfo() {
             user.address = address;
             localStorage.setItem("user", JSON.stringify(user));
 
-            // Khóa lại form
+            // Khóa lại form & ẩn nút đổi ảnh đại diện
+            isProfileEditing = false;
             els.profileName.setAttribute("disabled", "true");
             els.profilePhone.setAttribute("disabled", "true");
             els.profileDob.setAttribute("disabled", "true");
             els.profileAddress.setAttribute("disabled", "true");
             document.getElementsByName("profileGender").forEach(radio => radio.setAttribute("disabled", "true"));
+
+            document.querySelectorAll(".btn-change-avatar").forEach(el => el.classList.remove("active"));
 
             document.getElementById("btnEditProfile").classList.remove("d-none");
             document.getElementById("btnEditProfile").classList.add("d-flex");
@@ -245,6 +255,11 @@ async function saveProfileInfo() {
 }
 
 window.changeAvatarDemo = async () => {
+    if (!isProfileEditing) {
+        showToast("Vui lòng bấm 'Chỉnh sửa' trước khi thay đổi ảnh đại diện!", "warning");
+        return;
+    }
+
     const token = localStorage.getItem("token");
     if (!token) return;
 

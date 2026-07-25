@@ -42,22 +42,25 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
-    background-color: var(--primary);
+    background-color: #0A5C36;
     color: #fff;
     border: 2px solid #fff;
-    display: flex;
+    display: none; /* Khóa mặc định - chỉ hiện khi bấm Chỉnh sửa */
     align-items: center;
     justify-content: center;
     font-size: 0.75rem;
     cursor: pointer;
-    box-shadow: var(--shadow-sm);
-    transition: var(--transition);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: all 0.25s ease;
+}
+.btn-change-avatar.active {
+    display: flex;
 }
 .btn-change-avatar:hover {
-    background-color: var(--accent);
+    background-color: #FF6127;
 }
 
 .profile-membership-badge {
