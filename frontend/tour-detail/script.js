@@ -101,6 +101,7 @@ function showErrorState(message) {
 
 // Đổ dữ liệu tour lên giao diện
 function renderTourData(tour) {
+    window.currentTourData = tour;
     // Tiêu đề tab trình duyệt
     document.title = `${tour.title || tour.name} - VivuViet`;
 
@@ -687,6 +688,45 @@ function init360DragViewer() {
 let currentLightboxIndex = 0;
 let currentLightboxImages = [];
 
+function getLandmarkCaption(imgSrc, tour) {
+    if (!imgSrc) return "";
+    const src = imgSrc.toLowerCase();
+
+    // Mapping tên danh thắng theo file ảnh
+    if (src.includes("phuquoc")) return "Biển ngọc Phú Quốc & Hoàng hôn Sunset Sanato";
+    if (src.includes("honthom")) return "Cáp treo Hòn Thơm vượt biển dài nhất thế giới";
+    if (src.includes("safari")) return "Công viên bán hoang dã Vinpearl Safari Phú Quốc";
+    if (src.includes("langchai")) return "Làng chài truyền thống Hàm Ninh Phú Quốc";
+    if (src.includes("nuocmam")) return "Nhà thùng nước mắm truyền thống Phú Quốc";
+    
+    if (src.includes("hoian")) return "Toàn cảnh Phố cổ Hội An bên dòng sông Hoài";
+    if (src.includes("denlong")) return "Đêm phố cổ Hội An rực rỡ sắc màu đèn lồng";
+    if (src.includes("caumuc") || src.includes("chuacau")) return "Chùa Cầu di sản kiến trúc độc đáo Hội An";
+    if (src.includes("rau")) return "Làng rau truyền thống Trà Quế Hội An";
+
+    if (src.includes("sapa")) return "Thị trấn sương mù Sapa & Bản Cát Cát";
+    if (src.includes("sanmay") || src.includes("fansipan")) return "Đỉnh Fansipan 3.143m - Nóc nhà Đông Dương";
+    if (src.includes("vungcao")) return "Cảnh quan văn hóa vùng cao Tây Bắc";
+    if (src.includes("hagiang")) return "Hành trình ngắm cảnh vùng cao hùng vĩ";
+
+    if (src.includes("halong")) return "Du thuyền 5 sao giữa kỳ quan Vịnh Hạ Long";
+    if (src.includes("kayak")) return "Chèo thuyền Kayak khám phá Hang Sung Sốt";
+    if (src.includes("vinhdisan")) return "Đêm vịnh di sản thiên nhiên thế giới Hạ Long";
+    if (src.includes("hangdong")) return "Khám phá hệ thống hang động thạch nhũ Hạ Long";
+
+    if (src.includes("ninhbinh")) return "Tuyệt tác danh thắng Tràng An Ninh Bình";
+    if (src.includes("dinh")) return "Đỉnh Hang Múa - Góc ngắm đại panorama Tam Cốc";
+    if (src.includes("xuanthuy") || src.includes("baidinh")) return "Chùa Bái Đính - Ngôi chùa lớn nhất Đông Nam Á";
+    if (src.includes("khampha")) return "Chèo thuyền đò lướt qua hang động Tràng An";
+
+    if (src.includes("caobang")) return "Thác Bản Giốc - Thác nước tự nhiên hùng vĩ nhất";
+    if (src.includes("hanoi1") || src.includes("phoco")) return "Phố cổ 36 phố phường Hà Nội";
+    if (src.includes("hanoi")) return "Hồ Hoàn Kiếm & Tháp Rùa cổ kính Hà Nội";
+
+    const dest = tour ? (tour.destination || tour.name || "") : "";
+    return dest ? `${dest} - Cảnh quan hành trình` : "Cảnh quan hành trình du lịch";
+}
+
 window.openGalleryLightbox = (index) => {
     currentLightboxIndex = index;
     const modal = document.getElementById("vvGalleryLightbox");
@@ -695,9 +735,11 @@ window.openGalleryLightbox = (index) => {
     const thumbsContainer = document.getElementById("vvLightboxThumbs");
     if (!modal || !mainImg) return;
 
-    mainImg.src = currentLightboxImages[currentLightboxIndex] || "";
+    const imgUrl = currentLightboxImages[currentLightboxIndex] || "";
+    mainImg.src = imgUrl;
     if (caption) {
-        caption.innerText = `Ảnh ${currentLightboxIndex + 1} / ${currentLightboxImages.length}`;
+        const landmarkName = getLandmarkCaption(imgUrl, window.currentTourData);
+        caption.innerHTML = `<span class="fw-bold text-success-light me-2"><i class="bi bi-geo-alt-fill me-1" style="color: #22c55e;"></i>${landmarkName}</span> <span class="opacity-75">(${currentLightboxIndex + 1}/${currentLightboxImages.length})</span>`;
     }
 
     if (thumbsContainer) {
