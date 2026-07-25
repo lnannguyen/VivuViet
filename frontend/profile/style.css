@@ -375,61 +375,64 @@
 .figma-voucher-title {
     font-size: 1.3rem;
     font-weight: 800;
-    color: #FF5722;
+    color: #FF6127;
     margin: 0;
     line-height: 1.15;
-    font-family: 'Outfit', 'Inter', var(--bs-font-sans-serif);
+    font-family: 'Be Vietnam Pro', sans-serif;
 }
 .figma-voucher-subtitle {
     font-size: 0.82rem;
     font-weight: 800;
-    color: #1F2937;
+    color: #202421;
     text-transform: uppercase;
     margin-top: 0.15rem;
     margin-bottom: 0.35rem;
     letter-spacing: 0.2px;
-    font-family: 'Outfit', 'Inter', var(--bs-font-sans-serif);
+    font-family: 'Be Vietnam Pro', sans-serif;
 }
 .figma-voucher-desc {
     font-size: 0.78rem;
-    color: #6B7280;
+    color: #74796E;
     line-height: 1.4;
     margin: 0;
+    font-family: 'Be Vietnam Pro', sans-serif;
 }
 
 .figma-voucher-footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-top: 1px dashed #F3F4F6;
+    border-top: 1px dashed #E3E3DC;
     padding-top: 0.9rem;
     margin-top: auto;
 }
 .figma-voucher-expiry {
     font-size: 0.76rem;
-    color: #6B7280;
+    color: #74796E;
     font-weight: 500;
+    font-family: 'Be Vietnam Pro', sans-serif;
 }
 .figma-voucher-expiry strong {
-    color: #111827;
+    color: #202421;
     font-weight: 700;
 }
 .figma-voucher-use-btn {
-    background-color: #FF5722;
+    background-color: #FF6127;
     color: #FFFFFF;
     border: none;
     border-radius: 10px;
     padding: 8px 20px;
     font-size: 0.85rem;
     font-weight: 700;
-    box-shadow: 0 4px 12px rgba(255, 87, 34, 0.25);
+    font-family: 'Be Vietnam Pro', sans-serif;
+    box-shadow: 0 4px 12px rgba(255, 97, 39, 0.25);
     transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
 }
 .figma-voucher-use-btn:hover {
-    background-color: #E64A19;
+    background-color: #E04E19;
     color: #FFFFFF;
     transform: translateY(-1px) scale(1.02);
-    box-shadow: 0 6px 16px rgba(255, 87, 34, 0.35);
+    box-shadow: 0 6px 16px rgba(255, 97, 39, 0.35);
 }
 
 .figma-voucher-hunt-card {
