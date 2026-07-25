@@ -344,7 +344,7 @@ function renderBookingHistory() {
       <div class="card mb-3 p-3 border border-light shadow-none bg-white">
         <div class="row g-3 align-items-center">
           <div class="col-md-2 text-center text-md-start">
-            <img src="${tour.image || "/assets/images/dulichbien.png"}" class="rounded-3 object-fit-cover w-100" style="max-height: 100px;">
+            <img src="${tour.image || "/assets/images/categories/dulichbien.png"}" class="rounded-3 object-fit-cover w-100" style="max-height: 100px;">
           </div>
           <div class="col-md-6">
             <span class="badge ${badgeClass} fs-9 mb-1 text-uppercase">${statusText}</span>
@@ -499,7 +499,7 @@ async function loadWishlistTours() {
       <div class="col-md-6 col-lg-4">
         <div class="tour-card" onclick="window.location.href='/tours/${t.slug || t._id}'">
           <div class="tour-card-img-wrap">
-            <img src="${t.image || "/assets/images/dulichbien.png"}" alt="${t.title || t.name}">
+            <img src="${t.image || "/assets/images/categories/dulichbien.png"}" alt="${t.title || t.name}">
             <button class="tour-card-wishlist active" data-tour-id="${t._id}" onclick="event.stopPropagation(); toggleWishlistFromProfile(this)">
               <i class="bi bi-heart-fill"></i>
             </button>
