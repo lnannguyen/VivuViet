@@ -42,7 +42,7 @@ VivuViet là nền tảng website đặt tour du lịch Việt Nam toàn diện,
 *   **Node.js & Express.js:** Xây dựng máy chủ web và các định tuyến dịch vụ RESTful API.
 *   **JSON Web Token (JWT):** Xác thực tài khoản người dùng và bảo mật phiên làm việc phi trạng thái.
 *   **BcryptJS:** Mã hóa một chiều mật khẩu người dùng trước khi lưu trữ vào cơ sở dữ liệu.
-*   **Multer:** Xử lý upload tệp đa phương tiện (ảnh đại diện, ảnh/video đánh giá tour) lưu trữ trực tiếp trên đĩa cục bộ.
+*   **Multer & Cloudinary Cloud Storage:** Xử lý upload tệp đa phương tiện (ảnh đại diện, ảnh/video đánh giá tour) lưu trữ trực tiếp trên mây Cloudinary vĩnh viễn với cơ chế sao lưu cục bộ an toàn.
 *   **VNPay (HMAC-SHA512):** Tích hợp cổng thanh toán VNPay Sandbox với ký số bảo mật.
 
 ### Cơ sở dữ liệu (Database)
@@ -72,15 +72,16 @@ VivuViet/
 │   └── index.html            # Trang chủ hệ thống
 │
 └── backend/                  # Mã nguồn máy chủ (Server API)
+    ├── backup/               # Thư mục chứa 7 file sao lưu dữ liệu dạng JSON
+    ├── config/               # Cấu hình kết nối Cloudinary Cloud Storage
     ├── controllers/          # Logic xử lý nghiệp vụ các module API
     ├── middleware/           # Middleware xác thực JWT và kiểm tra quyền truy cập
     ├── models/               # Cấu trúc lược đồ dữ liệu MongoDB (Mongoose Schemas)
     ├── routes/               # Cấu trúc định tuyến API endpoints
     ├── services/             # Dịch vụ gửi email tự động và các helper khác
-    ├── .env                  # Cấu hình biến môi trường (Database URI, JWT Secret, VNPay)
-    ├── seed.js               # Kịch bản nạp dữ liệu mẫu ban đầu (Tours, Destinations)
-    ├── seed_voucher.js       # Kịch bản nạp dữ liệu mã giảm giá mẫu
-    ├── seed_reviews.js       # Kịch bản nạp dữ liệu đánh giá mẫu
+    ├── .env                  # Cấu hình biến môi trường (Database URI, JWT Secret, VNPay, Cloudinary)
+    ├── export_json.js        # Script tự động trích xuất sao lưu dữ liệu ra JSON
+    ├── seed.js               # Kịch bản nạp dữ liệu mẫu ban đầu (Tours, Users, Vouchers, Reviews)
     └── server.js             # File khởi động máy chủ chính
 ```
 
@@ -111,15 +112,18 @@ VivuViet/
     VNPAY_TMN_CODE=your_vnpay_tmn_code
     VNPAY_HASH_SECRET=your_vnpay_hash_secret
     VNPAY_URL=https://sandbox.vnpayment.vn/paymentv2/vpcpay.html
-    VNPAY_RETURN_URL=http://localhost:5000/api/payments/vnpay-return
+    VNPAY_RETURN_URL=http://localhost:5000/api/payment/vnpay-return
+
+    # Cấu hình lưu trữ đám mây Cloudinary
+    CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+    CLOUDINARY_API_KEY=your_cloudinary_api_key
+    CLOUDINARY_API_SECRET=your_cloudinary_api_secret
     ```
 
 ### Bước 3: Nạp dữ liệu mẫu ban đầu (Seeding Database)
-Chạy các lệnh sau trong thư mục `backend` để nạp danh sách tour, điểm đến, mã giảm giá và đánh giá mẫu vào MongoDB:
+Chạy lệnh sau trong thư mục `backend` để nạp đầy đủ danh sách tour, điểm đến, mã giảm giá và đánh giá mẫu vào MongoDB:
 ```bash
 npm run seed
-node seed_voucher.js
-node seed_reviews.js
 ```
 
 ### Bước 4: Khởi chạy máy chủ Backend

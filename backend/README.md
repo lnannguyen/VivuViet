@@ -23,7 +23,7 @@
 *   **MongoDB Atlas (Mongoose ODM):** Cơ sở dữ liệu NoSQL để lưu trữ cấu trúc tour, booking, review, voucher và user.
 *   **JSON Web Token (JWT):** Tạo token xác thực bảo mật tài khoản người dùng.
 *   **BcryptJS:** Mã hóa một chiều mật khẩu người dùng trước khi lưu trữ.
-*   **Multer:** Middleware phục vụ cho việc tải lên tệp ảnh, video từ Client lên đĩa máy chủ.
+*   **Multer & Cloudinary:** Phục vụ cho việc tải lên và quản lý tập tin đa phương tiện (ảnh đại diện, ảnh/video đánh giá) lưu trữ trực tiếp trên đám mây Cloudinary vĩnh viễn với cơ chế sao lưu đĩa cục bộ.
 *   **Moment:** Định dạng thời gian chuẩn đầu vào cho các tham số VNPay.
 *   **Crypto:** Thư viện mã hóa tích hợp của NodeJS dùng để ký chữ ký số bảo mật HMAC-SHA512.
 *   **CORS & Dotenv:** Quản lý chia sẻ tài nguyên chéo nguồn và bảo mật cấu hình ứng dụng thông qua biến môi trường.
@@ -34,6 +34,8 @@
 
 ```text
 backend/
+├── backup/               # Thư mục lưu trữ 7 file sao lưu dữ liệu dạng JSON
+├── config/               # Cấu hình kết nối Cloudinary Cloud Storage
 ├── controllers/          # Logic xử lý nghiệp vụ các module API
 │   ├── authController.js     # Đăng ký, đăng nhập
 │   ├── userController.js     # Chỉnh sửa hồ sơ, cập nhật avatar
@@ -66,9 +68,8 @@ backend/
 │   └── emailService.js       # Dịch vụ gửi thư xác nhận đặt tour tự động
 │
 ├── .env                  # Lưu trữ cấu hình biến môi trường
-├── seed.js               # Script khởi tạo danh sách tour mẫu
-├── seed_voucher.js       # Script khởi tạo danh sách voucher giảm giá mẫu
-├── seed_reviews.js       # Script khởi tạo danh sách bình luận mẫu
+├── export_json.js        # Script trích xuất sao lưu 7 bảng dữ liệu ra file JSON
+├── seed.js               # Script khởi tạo danh sách tour, user, voucher, review mẫu
 └── server.js             # File chạy khởi động máy chủ API chính
 ```
 
