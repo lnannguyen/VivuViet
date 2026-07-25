@@ -97,7 +97,7 @@ function renderCategories(categories) {
     els.categoriesContainer.innerHTML = categories
         .map(
             (cat) => `
-    <div class="col-6 col-md-4 mb-4">
+    <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4">
       <div class="category-card" onclick="window.location.href='/tours?category=${encodeURIComponent(cat.name)}'">
         <img src="${cat.image || "/assets/images/dulichbien.png"}" alt="${cat.name}">
         <div class="category-card-overlay">
