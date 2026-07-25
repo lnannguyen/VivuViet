@@ -18,7 +18,7 @@
     "achievements": [],
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.284Z",
-    "updatedAt": "2026-07-25T17:37:57.525Z"
+    "updatedAt": "2026-07-25T17:40:29.011Z"
   },
   {
     "_id": "USR003",
@@ -39,7 +39,7 @@
     "achievements": [],
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.285Z",
-    "updatedAt": "2026-07-25T17:37:57.708Z"
+    "updatedAt": "2026-07-25T17:40:29.188Z"
   },
   {
     "_id": "USR004",
@@ -55,7 +55,7 @@
     "passportStamps": [],
     "password": "$2b$10$.krA4MSIi5OOvUzEgelEBOwRCQpdzf0hgbwhb5/lwoUypCBVPQoBq",
     "phone": "0938112233",
-    "updatedAt": "2026-07-25T17:37:57.965Z",
+    "updatedAt": "2026-07-25T17:40:29.421Z",
     "vivupoints": 320,
     "vouchers": [],
     "wishlist": [
@@ -76,7 +76,7 @@
     "passportStamps": [],
     "password": "$2b$10$.krA4MSIi5OOvUzEgelEBOwRCQpdzf0hgbwhb5/lwoUypCBVPQoBq",
     "phone": "0977889900",
-    "updatedAt": "2026-07-25T17:37:58.169Z",
+    "updatedAt": "2026-07-25T17:40:29.635Z",
     "vivupoints": 450,
     "vouchers": [],
     "wishlist": [
@@ -227,5 +227,27 @@
     "createdAt": "2026-07-25T15:13:35.549Z",
     "updatedAt": "2026-07-25T15:13:35.549Z",
     "__v": 0
+  },
+  {
+    "_id": "USR001",
+    "email": "anan265464@gmail.com",
+    "__v": 0,
+    "achievements": [],
+    "auth_provider": "local",
+    "avatar": "/assets/images/avt/pngtree-avatar-male-2-png-image_21200797.png",
+    "createdAt": "2026-07-25T17:40:28.792Z",
+    "fullname": "Nguyễn Thị Thu An",
+    "membership": "diamond",
+    "notifications": [],
+    "passportStamps": [],
+    "password": "$2b$10$ca46ggVIv0UZFC6Qcmx3k.JPV2755okQzY5TI1UjXucD051qeTbfO",
+    "phone": "0901234567",
+    "updatedAt": "2026-07-25T17:40:28.792Z",
+    "vivupoints": 500,
+    "vouchers": [],
+    "wishlist": [
+      "TOUR001",
+      "TOUR004"
+    ]
   }
 ]

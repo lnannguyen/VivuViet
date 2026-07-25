@@ -75,10 +75,21 @@ const seedData = async () => {
         const salt = await bcrypt.genSalt(10);
         const defaultPassword = await bcrypt.hash("123456", salt);
 
-        await User.deleteOne({ email: "anan265464@gmail.com" });
-        await User.deleteOne({ _id: "USR001" });
-
         const defaultUsers = [
+            {
+                _id: "USR001",
+                fullname: "Nguyễn Thị Thu An",
+                email: "anan265464@gmail.com",
+                phone: "0901234567",
+                avatar: "/assets/images/avt/pngtree-avatar-male-2-png-image_21200797.png",
+                password: defaultPassword,
+                auth_provider: "local",
+                membership: "diamond",
+                wishlist: ["TOUR001", "TOUR004"],
+                notifications: [],
+                vouchers: [],
+                vivupoints: 500,
+            },
             {
                 _id: "USR002",
                 fullname: "Trần Văn Hùng",
@@ -137,7 +148,7 @@ const seedData = async () => {
             },
         ];
         for (const u of defaultUsers) {
-            await User.updateOne({ _id: u._id }, { $set: u }, { upsert: true });
+            await User.updateOne({ email: u.email }, { $setOnInsert: u }, { upsert: true });
         }
 
         // 4. SEED TOURS (Upsert)
