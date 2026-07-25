@@ -78,6 +78,9 @@ const VIETNAM_PROVINCES = [
 document.addEventListener("DOMContentLoaded", async () => {
     await checkAuth();
 
+    // Khóa nút đổi ảnh mặc định
+    document.querySelectorAll(".btn-change-avatar").forEach(el => el.classList.remove("active"));
+
     user = window.currentUser ? window.currentUser() : null;
     if (!user) {
         showToast("Vui lòng đăng nhập để xem trang cá nhân!", "error");
