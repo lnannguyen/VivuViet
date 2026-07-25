@@ -94,18 +94,11 @@ function renderCategories(categories) {
         return;
     }
 
-    const badges = [
-        '<i class="bi bi-mountain-snow me-1 text-warning"></i> VÙNG CAO',
-        '<i class="bi bi-water me-1 text-info"></i> BIỂN ĐẢO',
-        '<i class="bi bi-bank me-1 text-warning"></i> DI SẢN'
-    ];
-
     els.categoriesContainer.innerHTML = categories
         .map(
-            (cat, idx) => `
+            (cat) => `
     <div class="col-12 col-md-4 mb-3">
       <div class="category-card shadow-sm" onclick="window.location.href='/tours?category=${encodeURIComponent(cat.name)}'">
-        <span class="category-card-badge">${badges[idx % badges.length]}</span>
         <img src="${cat.image || "/assets/images/categories/dulichbien.png"}" alt="${cat.name}">
         <div class="category-card-overlay">
           <div class="d-flex justify-content-between align-items-end gap-2">
