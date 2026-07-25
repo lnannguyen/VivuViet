@@ -126,9 +126,12 @@ const getTourById = async (req, res) => {
 // Lấy các tour nổi bật / gợi ý trang chủ
 const getFeaturedTours = async (req, res) => {
     try {
-        const tours = await Tour.find({ isFeatured: true, status: "Available" })
+        let tours = await Tour.find({ isFeatured: true })
             .sort({ rating: -1 })
             .limit(8);
+        if (!tours || tours.length === 0) {
+            tours = await Tour.find({}).sort({ rating: -1 }).limit(8);
+        }
         res.status(200).json(tours);
     } catch (error) {
         res.status(500).json({ message: "Lỗi server!", error: error.message });

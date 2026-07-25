@@ -121,11 +121,21 @@ app.get("/api/health", (req, res) => {
     });
 });
 
-// Kết nối MongoDB
+// Kết nối MongoDB & Tự động nạp tour nếu database mới/trống
 mongoose
     .connect(process.env.MONGO_URI)
     .then(async () => {
         console.log("Kết nối MongoDB thành công!");
+        try {
+            const Tour = require("./models/Tour");
+            const tourCount = await Tour.countDocuments();
+            if (tourCount === 0) {
+                console.log("Phát hiện database chưa có tour, tiến hành nạp tour tự động...");
+                const seedData = require("./seed");
+            }
+        } catch (e) {
+            console.error("Auto seed error:", e.message);
+        }
     })
     .catch((err) => console.log("Lỗi kết nối MongoDB:", err));
 
