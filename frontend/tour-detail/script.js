@@ -262,25 +262,30 @@ function renderTourData(tour) {
 
         if (showVR) {
             els.virtual360Section.style.display = "block";
-            const embedSrc = `https://maps.google.com/maps?q=${vrLat},${vrLng}&t=k&z=15&ie=UTF8&iwloc=&output=embed`;
+            const panoImg = tour.image || imgs[0] || "/assets/images/sanmay.png";
             const openInMapsUrl = `https://www.google.com/maps?q=${vrLat},${vrLng}&t=k`;
-            const streetViewUrl = `https://www.google.com/maps/@${vrLat},${vrLng},3a,75y,90t/data=!3m6!1e1!3m4!1s`;
 
             els.virtual360Section.innerHTML = `
-          <h2 class="vv-section-title">Bản đồ vệ tinh & Trải nghiệm 360°</h2>
-          <p class="vv-360-note">Khám phá toàn cảnh điểm đến qua góc nhìn vệ tinh 3D sắc nét:</p>
-          <div class="vv-360-frame-wrap shadow-sm rounded-4 overflow-hidden">
-            <iframe class="vv-360-frame w-100" style="height: 400px; border: 0;" src="${embedSrc}" loading="lazy" allowfullscreen></iframe>
+          <h2 class="vv-section-title">Trải nghiệm không gian 360° Cảnh Quan VR</h2>
+          <p class="vv-360-note">Kéo rê chuột (hoặc vuốt màn hình) trên khung ảnh dưới đây để xoay ngắm toàn cảnh thiên nhiên 360°:</p>
+          <div class="vv-360-panorama-container shadow-sm rounded-4 overflow-hidden position-relative" id="vv360Viewer">
+            <div class="vv-360-panorama-img" id="vv360Img" style="background-image: url('${panoImg}');"></div>
+            <div class="vv-360-badge"><i class="bi bi-vr me-1"></i> 360° Panorama VR Mode</div>
+            <div class="vv-360-controls">
+                <button type="button" class="btn btn-dark btn-sm rounded-pill opacity-90 px-3" onclick="rotate360(-80)"><i class="bi bi-arrow-left me-1"></i> Trái</button>
+                <button type="button" class="btn btn-success btn-sm rounded-pill px-3 fw-bold" id="btnAutoRotate360" onclick="toggleAutoRotate360()"><i class="bi bi-arrow-repeat me-1"></i> Tự xoay 360°</button>
+                <button type="button" class="btn btn-dark btn-sm rounded-pill opacity-90 px-3" onclick="rotate360(80)">Phải <i class="bi bi-arrow-right ms-1"></i></button>
+            </div>
           </div>
-          <div class="d-flex flex-wrap gap-2 mt-3">
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mt-3">
+              <span class="fs-8 text-muted"><i class="bi bi-info-circle me-1"></i> Mẹo: Giữ chuột trái và di chuyển sang ngang để xoay ngắm toàn cảnh 360 độ</span>
               <a href="${openInMapsUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success rounded-pill btn-sm fw-bold">
-                <i class="bi bi-box-arrow-up-right me-1"></i> Xem bản đồ lớn
-              </a>
-              <a href="${streetViewUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-success text-white rounded-pill btn-sm fw-bold">
-                <i class="bi bi-compass me-1"></i> Khám phá Chế độ 360° trên Google Maps
+                <i class="bi bi-geo-alt-fill me-1"></i> Định vị điểm đến trên Google Maps
               </a>
           </div>
         `;
+
+            setTimeout(init360DragViewer, 100);
         } else {
             els.virtual360Section.style.display = "none";
         }
@@ -614,3 +619,69 @@ async function loadRelatedTours(tour) {
 document.addEventListener("authReady", () => {
     loadTourDetail();
 });
+
+// 360 Panorama VR Drag & Rotate Logic
+let isDragging360 = false;
+let startX360 = 0;
+let currentPos360 = 50;
+let autoRotateInterval = null;
+
+window.rotate360 = (delta) => {
+    currentPos360 += delta * 0.1;
+    const imgEl = document.getElementById("vv360Img");
+    if (imgEl) imgEl.style.backgroundPosition = `${currentPos360}% center`;
+};
+
+window.toggleAutoRotate360 = () => {
+    const btn = document.getElementById("btnAutoRotate360");
+    if (autoRotateInterval) {
+        clearInterval(autoRotateInterval);
+        autoRotateInterval = null;
+        if (btn) btn.innerHTML = `<i class="bi bi-arrow-repeat me-1"></i> Tự xoay 360°`;
+    } else {
+        autoRotateInterval = setInterval(() => {
+            rotate360(1.5);
+        }, 30);
+        if (btn) btn.innerHTML = `<i class="bi bi-pause-fill me-1"></i> Tạm dừng`;
+    }
+};
+
+function init360DragViewer() {
+    const viewer = document.getElementById("vv360Viewer");
+    const imgEl = document.getElementById("vv360Img");
+    if (!viewer || !imgEl) return;
+
+    viewer.addEventListener("mousedown", (e) => {
+        isDragging360 = true;
+        startX360 = e.clientX;
+    });
+
+    window.addEventListener("mouseup", () => {
+        isDragging360 = false;
+    });
+
+    window.addEventListener("mousemove", (e) => {
+        if (!isDragging360) return;
+        const deltaX = e.clientX - startX360;
+        startX360 = e.clientX;
+        currentPos360 += deltaX * 0.15;
+        imgEl.style.backgroundPosition = `${currentPos360}% center`;
+    });
+
+    viewer.addEventListener("touchstart", (e) => {
+        isDragging360 = true;
+        startX360 = e.touches[0].clientX;
+    });
+
+    window.addEventListener("touchend", () => {
+        isDragging360 = false;
+    });
+
+    window.addEventListener("touchmove", (e) => {
+        if (!isDragging360) return;
+        const deltaX = e.touches[0].clientX - startX360;
+        startX360 = e.touches[0].clientX;
+        currentPos360 += deltaX * 0.2;
+        imgEl.style.backgroundPosition = `${currentPos360}% center`;
+    });
+}
