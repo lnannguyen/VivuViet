@@ -24,6 +24,17 @@ document.addEventListener("DOMContentLoaded", () => {
             const email = document.getElementById("registerEmail").value.trim();
             const phone = document.getElementById("registerPhone").value.trim();
             const password = document.getElementById("registerPassword").value;
+            const confirmPassword = document.getElementById("registerConfirmPassword")?.value;
+
+            if (password.length < 6) {
+                showToast("Mật khẩu phải chứa ít nhất 6 ký tự!", "error");
+                return;
+            }
+
+            if (confirmPassword && password !== confirmPassword) {
+                showToast("Mật khẩu xác nhận không khớp với mật khẩu đã nhập!", "error");
+                return;
+            }
 
             try {
                 const res = await fetch(`${API_URL}/auth/register`, {
@@ -31,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    body: JSON.stringify({ fullname, email, phone, password }),
+                    body: JSON.stringify({ fullname, email, phone, password, confirmPassword }),
                 });
 
                 const data = await res.json();

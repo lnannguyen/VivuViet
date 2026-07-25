@@ -6,17 +6,32 @@ const mongoose = require("mongoose");
 // Đăng ký
 const register = async (req, res) => {
     try {
-        const { fullname, email, phone, password } = req.body;
+        const { fullname, email, phone, password, confirmPassword } = req.body;
 
         if (!fullname || !email || !password) {
             return res
                 .status(400)
-                .json({ message: "Vui lòng điền đầy đủ thông tin!" });
+                .json({ message: "Vui lòng điền đầy đủ các thông tin bắt buộc!" });
         }
 
-        const existingUser = await User.findOne({ email });
+        // Ràng buộc mật khẩu tối thiểu 6 ký tự
+        if (password.length < 6) {
+            return res
+                .status(400)
+                .json({ message: "Mật khẩu phải chứa ít nhất 6 ký tự!" });
+        }
+
+        // Ràng buộc khớp mật khẩu và xác nhận mật khẩu
+        if (confirmPassword !== undefined && password !== confirmPassword) {
+            return res
+                .status(400)
+                .json({ message: "Mật khẩu xác nhận không khớp với mật khẩu đã nhập!" });
+        }
+
+        const cleanEmail = email.trim().toLowerCase();
+        const existingUser = await User.findOne({ email: cleanEmail });
         if (existingUser) {
-            return res.status(400).json({ message: "Email đã được sử dụng!" });
+            return res.status(400).json({ message: "Email này đã được đăng ký tài khoản! Vui lòng chọn Đăng nhập hoặc dùng email khác." });
         }
 
         const hashedPassword = await bcrypt.hash(password, 10);
