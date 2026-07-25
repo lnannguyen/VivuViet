@@ -12,26 +12,9 @@ const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
 
-// Đảm bảo thư mục tồn tại
-const imagesDir = path.join(__dirname, "../../frontend/assets/images/reviews/");
-const videosDir = path.join(__dirname, "../../frontend/assets/videos/reviews/");
-if (!fs.existsSync(imagesDir)) fs.mkdirSync(imagesDir, { recursive: true });
-if (!fs.existsSync(videosDir)) fs.mkdirSync(videosDir, { recursive: true });
+const os = require("os");
 
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        if (file.fieldname === 'videos') {
-            cb(null, videosDir);
-        } else {
-            cb(null, imagesDir);
-        }
-    },
-    filename: function (req, file, cb) {
-        const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-        cb(null, "review-" + uniqueSuffix + path.extname(file.originalname));
-    },
-});
-const upload = multer({ storage: storage });
+const upload = multer({ dest: os.tmpdir() });
 
 router.get("/recent", getRecentReviews); // Public: xem reviews mới nhất
 router.get("/tour/:tourId", getTourReviews); // Public: xem reviews của tour
