@@ -12,7 +12,7 @@
     "videos": [],
     "createdAt": "2026-07-05T00:00:00.000Z",
     "__v": 0,
-    "updatedAt": "2026-07-25T12:28:29.029Z"
+    "updatedAt": "2026-07-25T13:39:25.355Z"
   },
   {
     "_id": "REV003",
@@ -27,7 +27,7 @@
     "videos": [],
     "createdAt": "2026-07-12T00:00:00.000Z",
     "__v": 0,
-    "updatedAt": "2026-07-25T12:28:29.233Z"
+    "updatedAt": "2026-07-25T13:39:25.532Z"
   },
   {
     "_id": "REV001",
@@ -40,7 +40,7 @@
     ],
     "rating": 5,
     "tour_id": "TOUR006",
-    "updatedAt": "2026-07-25T12:28:28.823Z",
+    "updatedAt": "2026-07-25T13:39:25.177Z",
     "user_id": "USR003",
     "videos": []
   },
@@ -55,8 +55,21 @@
     ],
     "rating": 5,
     "tour_id": "TOUR003",
-    "updatedAt": "2026-07-25T12:28:29.409Z",
+    "updatedAt": "2026-07-25T13:39:25.712Z",
     "user_id": "USR005",
     "videos": []
+  },
+  {
+    "_id": "REV82698745",
+    "booking_id": "BK82646234",
+    "user_id": "USR88BEFD",
+    "tour_id": "TOUR002",
+    "rating": 5,
+    "comment": "Tour đẹp tuyệt vời 10 điểm",
+    "images": [],
+    "videos": [],
+    "createdAt": "2026-07-25T12:31:38.747Z",
+    "updatedAt": "2026-07-25T12:31:38.747Z",
+    "__v": 0
   }
 ]

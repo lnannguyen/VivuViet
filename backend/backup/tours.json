@@ -28,14 +28,12 @@
     "images": [
       "/assets/images/sapa.jpg",
       "/assets/images/sanmay.png",
-      "/assets/images/vungcao.png",
-      "/assets/images/hagiang.png"
+      "/assets/images/vungcao.png"
     ],
     "gallery": [
       "/assets/images/sapa.jpg",
       "/assets/images/sanmay.png",
-      "/assets/images/vungcao.png",
-      "/assets/images/hagiang.png"
+      "/assets/images/vungcao.png"
     ],
     "category": "Vùng Cao",
     "description": "Hành trình đưa bạn khám phá thị trấn sương mù Sapa, check-in đỉnh Fansipan bằng cáp treo kỷ kỷ lục và trải nghiệm nét văn hóa bản địa độc đáo tại Bản Cát Cát.",
@@ -100,7 +98,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.538Z",
-    "updatedAt": "2026-07-25T12:28:26.367Z"
+    "updatedAt": "2026-07-25T13:39:23.046Z"
   },
   {
     "_id": "TOUR002",
@@ -197,7 +195,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T12:28:26.572Z"
+    "updatedAt": "2026-07-25T13:39:23.229Z"
   },
   {
     "_id": "TOUR003",
@@ -296,7 +294,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T12:28:26.776Z"
+    "updatedAt": "2026-07-25T13:39:23.407Z"
   },
   {
     "_id": "TOUR004",
@@ -400,7 +398,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T12:28:26.981Z"
+    "updatedAt": "2026-07-25T13:39:23.586Z"
   },
   {
     "_id": "TOUR005",
@@ -505,7 +503,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T12:28:27.161Z"
+    "updatedAt": "2026-07-25T13:39:23.764Z"
   },
   {
     "_id": "TOUR006",
@@ -594,6 +592,6 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T12:28:27.390Z"
+    "updatedAt": "2026-07-25T13:39:23.943Z"
   }
 ]

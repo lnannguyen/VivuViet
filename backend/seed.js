@@ -169,8 +169,8 @@ const seedData = async () => {
                 bookingCount: 52,
                 image: "/assets/images/sapa.jpg",
                 thumbnail: "/assets/images/sapa.jpg",
-                images: ["/assets/images/sapa.jpg", "/assets/images/sanmay.png", "/assets/images/vungcao.png", "/assets/images/hagiang.png"],
-                gallery: ["/assets/images/sapa.jpg", "/assets/images/sanmay.png", "/assets/images/vungcao.png", "/assets/images/hagiang.png"],
+                images: ["/assets/images/sapa.jpg", "/assets/images/sanmay.png", "/assets/images/vungcao.png"],
+                gallery: ["/assets/images/sapa.jpg", "/assets/images/sanmay.png", "/assets/images/vungcao.png"],
                 category: "Vùng Cao",
                 description: "Hành trình đưa bạn khám phá thị trấn sương mù Sapa, check-in đỉnh Fansipan bằng cáp treo kỷ kỷ lục và trải nghiệm nét văn hóa bản địa độc đáo tại Bản Cát Cát.",
                 itinerary: [

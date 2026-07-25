@@ -44,5 +44,73 @@
     "createdAt": "2026-07-20T00:00:00.000Z",
     "__v": 0,
     "updatedAt": "2026-07-25T03:46:31.042Z"
+  },
+  {
+    "_id": "BK82595027",
+    "user_id": "USR88BEFD",
+    "tour_id": "TOUR002",
+    "departure_date": "2026-07-26T00:00:00.000Z",
+    "quantity": 2,
+    "passengers": [
+      {
+        "fullname": "Quyên",
+        "phone": "0123456789",
+        "passport_cccd": "0123456789"
+      },
+      {
+        "fullname": "Uyên Nhi",
+        "phone": "123456789",
+        "passport_cccd": "023456789"
+      }
+    ],
+    "total_price": 8400000,
+    "service_fee": 840000,
+    "voucher_code": null,
+    "discount_amount": 0,
+    "final_price": 9240000,
+    "bill_split": [
+      {
+        "name": "Quyên",
+        "amount": 4620000,
+        "isPaid": false
+      },
+      {
+        "name": "Uyên Nhi",
+        "amount": 4620000,
+        "isPaid": false
+      }
+    ],
+    "booking_status": "pending",
+    "isReviewed": false,
+    "payment_method": "vnpay",
+    "createdAt": "2026-07-25T12:29:55.032Z",
+    "updatedAt": "2026-07-25T12:29:55.032Z",
+    "__v": 0
+  },
+  {
+    "_id": "BK82646234",
+    "user_id": "USR88BEFD",
+    "tour_id": "TOUR002",
+    "departure_date": "2026-07-25T00:00:00.000Z",
+    "quantity": 1,
+    "passengers": [
+      {
+        "fullname": "quyên",
+        "phone": "123456789",
+        "passport_cccd": "123456789"
+      }
+    ],
+    "total_price": 4200000,
+    "service_fee": 420000,
+    "voucher_code": null,
+    "discount_amount": 0,
+    "final_price": 4620000,
+    "bill_split": [],
+    "booking_status": "completed",
+    "isReviewed": true,
+    "payment_method": "bank_transfer",
+    "createdAt": "2026-07-25T12:30:46.238Z",
+    "updatedAt": "2026-07-25T12:31:39.416Z",
+    "__v": 0
   }
 ]

@@ -41,6 +41,10 @@
     height: 100%;
     min-height: 0;
 }
+.vv-gallery-side-2 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
 .vv-gallery-side > img {
     min-height: 0;
     min-width: 0;

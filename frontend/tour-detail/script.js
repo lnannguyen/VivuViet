@@ -112,23 +112,8 @@ function renderTourData(tour) {
             ? tour.images
             : [tour.image];
 
-    // Đảm bảo đủ 4 ảnh hiển thị phong phú trong lưới gallery
-    const fallbackPool = [
-        tour.image,
-        "/assets/images/honthom.jpg",
-        "/assets/images/safari.jpg",
-        "/assets/images/kayak.jpg",
-        "/assets/images/denlong.jpg",
-        "/assets/images/dinh.jpg",
-        "/assets/images/vungcao.png"
-    ].filter(Boolean);
-
-    const imgs = [];
-    for (let i = 0; i < 4; i++) {
-        imgs[i] = rawImgs[i] || fallbackPool[i] || tour.image;
-    }
-
-    currentLightboxImages = imgs;
+    // Dùng 100% ảnh thực tế của Tour, không pha trộn ảnh từ tour khác
+    currentLightboxImages = rawImgs;
 
     // Tự động khởi tạo Lightbox Modal nếu chưa có trong DOM
     if (!document.getElementById("vvGalleryLightbox")) {
@@ -149,20 +134,34 @@ function renderTourData(tour) {
         document.body.insertAdjacentHTML("beforeend", lightboxHTML);
     }
 
-    els.gallery.innerHTML = `
-    <div class="vv-gallery">
-      <div class="vv-gallery-main" onclick="openGalleryLightbox(0)" title="Bấm để xem phóng to ảnh HD">
-        <img src="${imgs[0] || "/assets/images/dulichbien.png"}" alt="${tour.title || tour.name}">
-      </div>
-      <div class="vv-gallery-side">
-        <img src="${imgs[1] || "/assets/images/dulichbien.png"}" alt="Scenic Image 2" onclick="openGalleryLightbox(1)" title="Bấm để xem phóng to ảnh HD">
-        <img src="${imgs[2] || "/assets/images/dulichbien.png"}" alt="Scenic Image 3" onclick="openGalleryLightbox(2)" title="Bấm để xem phóng to ảnh HD">
-        <div class="vv-gallery-wide" onclick="openGalleryLightbox(3)" title="Bấm để xem phóng to ảnh HD">
-          <img src="${imgs[3] || "/assets/images/dulichbien.png"}" alt="Scenic Image 4">
+    if (rawImgs.length <= 3) {
+        els.gallery.innerHTML = `
+        <div class="vv-gallery">
+          <div class="vv-gallery-main" onclick="openGalleryLightbox(0)" title="Bấm để xem phóng to ảnh HD">
+            <img src="${rawImgs[0] || tour.image}" alt="${tour.title || tour.name}">
+          </div>
+          <div class="vv-gallery-side vv-gallery-side-2">
+            <img src="${rawImgs[1] || rawImgs[0] || tour.image}" alt="Scenic Image 2" onclick="openGalleryLightbox(1)" title="Bấm để xem phóng to ảnh HD">
+            <img src="${rawImgs[2] || rawImgs[1] || rawImgs[0] || tour.image}" alt="Scenic Image 3" onclick="openGalleryLightbox(2)" title="Bấm để xem phóng to ảnh HD">
+          </div>
         </div>
-      </div>
-    </div>
-  `;
+      `;
+    } else {
+        els.gallery.innerHTML = `
+        <div class="vv-gallery">
+          <div class="vv-gallery-main" onclick="openGalleryLightbox(0)" title="Bấm để xem phóng to ảnh HD">
+            <img src="${rawImgs[0]}" alt="${tour.title || tour.name}">
+          </div>
+          <div class="vv-gallery-side">
+            <img src="${rawImgs[1]}" alt="Scenic Image 2" onclick="openGalleryLightbox(1)" title="Bấm để xem phóng to ảnh HD">
+            <img src="${rawImgs[2]}" alt="Scenic Image 3" onclick="openGalleryLightbox(2)" title="Bấm để xem phóng to ảnh HD">
+            <div class="vv-gallery-wide" onclick="openGalleryLightbox(3)" title="Bấm để xem phóng to ảnh HD">
+              <img src="${rawImgs[3]}" alt="Scenic Image 4">
+            </div>
+          </div>
+        </div>
+      `;
+    }
 
     // Huy hiệu nổi bật / khuyến mãi
     let badgeHTML = "";
@@ -704,10 +703,10 @@ function getLandmarkCaption(imgSrc, tour) {
     if (src.includes("caumuc") || src.includes("chuacau")) return "Chùa Cầu di sản kiến trúc độc đáo Hội An";
     if (src.includes("rau")) return "Làng rau truyền thống Trà Quế Hội An";
 
-    if (src.includes("sapa")) return "Thị trấn sương mù Sapa & Bản Cát Cát";
-    if (src.includes("sanmay") || src.includes("fansipan")) return "Đỉnh Fansipan 3.143m - Nóc nhà Đông Dương";
-    if (src.includes("vungcao")) return "Cảnh quan văn hóa vùng cao Tây Bắc";
-    if (src.includes("hagiang")) return "Hành trình ngắm cảnh vùng cao hùng vĩ";
+    if (src.includes("sapa_fansipan") || src.includes("fansipan")) return "Cáp treo 3 dây & Đỉnh Fansipan 3.143m Nóc nhà Đông Dương";
+    if (src.includes("sapa_catcat") || src.includes("catcat")) return "Bản Cát Cát thổ cẩm H'Mông & Ruộng bậc thang vàng Sapa";
+    if (src.includes("sanmay")) return "Đỉnh Fansipan Sapa biển mây bình minh";
+    if (src.includes("sapa")) return "Thị trấn sương mù Sapa & Thung lũng Mường Hoa";
 
     if (src.includes("halong")) return "Du thuyền 5 sao giữa kỳ quan Vịnh Hạ Long";
     if (src.includes("kayak")) return "Chèo thuyền Kayak khám phá Hang Sung Sốt";
