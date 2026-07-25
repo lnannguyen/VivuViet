@@ -295,11 +295,22 @@ function renderTourData(tour) {
     }
 
     // Bản đồ lộ trình điểm đi - điểm đến
-    const origin = encodeURIComponent(tour.departure || "Hà Nội");
-    const dest = encodeURIComponent(tour.location || tour.destination || "Việt Nam");
+    const startLoc = (tour.departure || "Hà Nội").trim();
+    const endLoc = (tour.location || tour.destination || tour.name || "Việt Nam").trim();
+
+    let routeEmbedSrc = "";
+    if (startLoc.toLowerCase() === endLoc.toLowerCase() || endLoc.toLowerCase().includes(startLoc.toLowerCase()) || startLoc.toLowerCase().includes(endLoc.toLowerCase())) {
+        // Cùng thành phố (ví dụ: TP.HCM đi Cần Giờ / Củ Chi), nhúng bản đồ danh thắng chi tiết zoom 11
+        const fullQuery = tour.name ? `${tour.name}` : `${endLoc}`;
+        routeEmbedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(fullQuery)}&z=11&output=embed`;
+    } else {
+        // Khác thành phố (ví dụ: Hà Nội -> Ninh Bình / Sapa / Hạ Long), nhúng bản đồ chỉ đường lộ trình zoom 9
+        routeEmbedSrc = `https://maps.google.com/maps?saddr=${encodeURIComponent(startLoc)}&daddr=${encodeURIComponent(endLoc)}&z=9&output=embed`;
+    }
+
     els.map.innerHTML = `
-    <div style="position: relative; width: 100%; height: 350px; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm);">
-      <iframe src="https://maps.google.com/maps?saddr=${origin}&daddr=${dest}&output=embed" 
+    <div style="position: relative; width: 100%; height: 380px; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm);">
+      <iframe src="${routeEmbedSrc}" 
         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
   `;
