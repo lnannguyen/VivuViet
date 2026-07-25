@@ -148,10 +148,13 @@ function renderTourData(tour) {
                 ${itemsHTML}
             </div>
             <div class="vv-mobile-gallery-badge">
-                <i class="bi bi-camera-fill me-1"></i><span id="vvMobileImgIdx">1</span>/${rawImgs.length} <span class="ms-1 opacity-75">(Vuốt ngang)</span>
+                <i class="bi bi-camera-fill me-1"></i><span id="vvMobileImgIdx">1</span>/${rawImgs.length}
             </div>
         </div>
     `;
+
+    // Khởi chạy tự động trượt ảnh di động
+    setTimeout(initMobileGalleryAutoPlay, 500);
 
     // Huy hiệu nổi bật / khuyến mãi
     let badgeHTML = "";
@@ -800,6 +803,46 @@ window.handleMobileGalleryScroll = (el) => {
     const scrollPos = el.scrollLeft;
     const currentIdx = Math.min(Math.round(scrollPos / itemWidth) + 1, (currentLightboxImages || []).length || 1);
     idxEl.innerText = currentIdx;
+};
+
+// Tự động trượt ảnh carousel trên di động
+let mobileGalleryInterval = null;
+let isUserTouchingGallery = false;
+
+window.initMobileGalleryAutoPlay = () => {
+    const scrollEl = document.getElementById("vvMainGalleryScroll");
+    if (!scrollEl) return;
+
+    if (mobileGalleryInterval) clearInterval(mobileGalleryInterval);
+
+    // Tạm dừng khi người dùng chạm tay vào ảnh
+    scrollEl.addEventListener("touchstart", () => { isUserTouchingGallery = true; }, { passive: true });
+    scrollEl.addEventListener("touchend", () => {
+        setTimeout(() => { isUserTouchingGallery = false; }, 4000);
+    }, { passive: true });
+
+    mobileGalleryInterval = setInterval(() => {
+        if (isUserTouchingGallery || window.innerWidth > 768) return;
+
+        const firstItem = scrollEl.querySelector(".vv-gallery-item");
+        if (!firstItem) return;
+
+        const itemWidth = firstItem.offsetWidth + 12;
+        const totalItems = (currentLightboxImages || []).length || 1;
+        if (totalItems <= 1) return;
+
+        let currentScroll = scrollEl.scrollLeft;
+        let currentIdx = Math.round(currentScroll / itemWidth);
+        let nextIdx = (currentIdx + 1) % totalItems;
+
+        scrollEl.scrollTo({
+            left: nextIdx * itemWidth,
+            behavior: "smooth"
+        });
+
+        const idxEl = document.getElementById("vvMobileImgIdx");
+        if (idxEl) idxEl.innerText = nextIdx + 1;
+    }, 3500);
 };
 
 // Lắng nghe phím bấm chuyển ảnh (Bàn phím: Trái/Phải/ESC)

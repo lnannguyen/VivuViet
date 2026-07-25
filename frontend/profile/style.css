@@ -484,3 +484,49 @@
     max-width: 220px;
     margin: 0;
 }
+
+/* Mobile Responsive Profile Layout */
+@media (max-width: 991px) {
+    .profile-layout {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    .profile-sidebar {
+        padding: 1.25rem 1rem 0.75rem;
+    }
+    .profile-user-info {
+        padding-bottom: 1rem;
+        margin-bottom: 0.75rem;
+        border-bottom: 1px solid var(--border);
+    }
+    .profile-menu {
+        display: flex;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        gap: 0.5rem;
+        padding-bottom: 0.5rem;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    .profile-menu::-webkit-scrollbar {
+        display: none;
+    }
+    .profile-menu-link {
+        flex: 0 0 auto;
+        white-space: nowrap;
+        padding: 0.55rem 1.1rem;
+        font-size: 0.82rem;
+        border-radius: 50rem;
+        border-left: none;
+        background-color: #f3f4f6;
+    }
+    .profile-menu-link.active {
+        background-color: var(--primary);
+        color: #ffffff;
+        border-left: none;
+    }
+    .profile-content {
+        padding: 1.25rem;
+        min-height: auto;
+    }
+}
