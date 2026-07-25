@@ -262,18 +262,24 @@ function renderTourData(tour) {
 
         if (showVR) {
             els.virtual360Section.style.display = "block";
-            const embedSrc = `https://maps.google.com/maps?layer=c&cbll=${vrLat},${vrLng}&cbp=,0,,0,5&output=svembed`;
-            const openInMapsUrl = `https://www.google.com/maps?layer=c&cbll=${vrLat},${vrLng}`;
+            const embedSrc = `https://maps.google.com/maps?q=${vrLat},${vrLng}&t=k&z=15&ie=UTF8&iwloc=&output=embed`;
+            const openInMapsUrl = `https://www.google.com/maps?q=${vrLat},${vrLng}&t=k`;
+            const streetViewUrl = `https://www.google.com/maps/@${vrLat},${vrLng},3a,75y,90t/data=!3m6!1e1!3m4!1s`;
 
             els.virtual360Section.innerHTML = `
-          <h2 class="vv-section-title">Trải nghiệm không gian AR/VR 360°</h2>
-          <p class="vv-360-note">Kéo thả chuột trên khung hình dưới đây để xoay góc nhìn thực tế tại điểm tham quan:</p>
-          <div class="vv-360-frame-wrap shadow-sm">
-            <iframe class="vv-360-frame" src="${embedSrc}" loading="lazy" allowfullscreen></iframe>
+          <h2 class="vv-section-title">Bản đồ vệ tinh & Trải nghiệm 360°</h2>
+          <p class="vv-360-note">Khám phá toàn cảnh điểm đến qua góc nhìn vệ tinh 3D sắc nét:</p>
+          <div class="vv-360-frame-wrap shadow-sm rounded-4 overflow-hidden">
+            <iframe class="vv-360-frame w-100" style="height: 400px; border: 0;" src="${embedSrc}" loading="lazy" allowfullscreen></iframe>
           </div>
-          <a href="${openInMapsUrl}" target="_blank" rel="noopener noreferrer" class="vv-360-btn-outline mt-2">
-            <i class="bi bi-box-arrow-up-right"></i> Xem lớn trên Google Maps
-          </a>
+          <div class="d-flex flex-wrap gap-2 mt-3">
+              <a href="${openInMapsUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success rounded-pill btn-sm fw-bold">
+                <i class="bi bi-box-arrow-up-right me-1"></i> Xem bản đồ lớn
+              </a>
+              <a href="${streetViewUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-success text-white rounded-pill btn-sm fw-bold">
+                <i class="bi bi-compass me-1"></i> Khám phá Chế độ 360° trên Google Maps
+              </a>
+          </div>
         `;
         } else {
             els.virtual360Section.style.display = "none";
