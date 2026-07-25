@@ -208,87 +208,66 @@ function renderTourData(tour) {
             '<p class="text-muted">Chi tiết lịch trình đang được cập nhật...</p>';
     }
 
-    // Khung xem 360° Google Street View
+    // Khung xem 360° Google Street View Cảnh Quan Danh Thắng
     if (
         tour.locationCoords &&
         tour.locationCoords.lat &&
         tour.locationCoords.lng
     ) {
-        
         let vrLat = tour.locationCoords.lat;
         let vrLng = tour.locationCoords.lng;
         let showVR = true;
-        
-        // Ghi đè toạ độ chuẩn cho một số địa điểm nổi tiếng (chọn góc 360 độ đẹp nhất)
+        let scenicSearchName = tour.title || tour.name || tour.destination || "";
+
         const destLower = (tour.destination || "").toLowerCase() + " " + (tour.title || "").toLowerCase();
-        
+
         if (destLower.includes("phú quốc") || destLower.includes("kiên giang")) {
-            vrLat = 10.0125; vrLng = 104.0163; // Sun World Hòn Thơm
-        } else if (destLower.includes("sapa") || destLower.includes("lào cai") || destLower.includes("fansipan") || destLower.includes("sa pa")) {
-            vrLat = 22.3033; vrLng = 103.7750; // Đỉnh Fansipan (Toạ độ chuẩn đã xác minh hoạt động)
-        } else if (destLower.includes("nha trang") || destLower.includes("khánh hòa")) {
-            vrLat = 12.2227; vrLng = 109.2396; // VinWonders Nha Trang
-        } else if (destLower.includes("an giang") || destLower.includes("châu đốc")) {
-            vrLat = 10.6726; vrLng = 105.0788; // Miếu Bà Chúa Xứ
+            scenicSearchName = "Sunset Sanato Beach Club Phú Quốc";
+            vrLat = 10.1834; vrLng = 103.9664;
+        } else if (destLower.includes("sapa") || destLower.includes("lào cai") || destLower.includes("fansipan")) {
+            scenicSearchName = "Đỉnh Fansipan Sapa";
+            vrLat = 22.3033; vrLng = 103.7750;
         } else if (destLower.includes("hạ long") || destLower.includes("quảng ninh")) {
-            vrLat = 20.9566; vrLng = 107.0505; // Cáp treo Nữ Hoàng
-        } else if (destLower.includes("đà nẵng") || destLower.includes("bà nà")) {
-            vrLat = 16.0610; vrLng = 108.2272; // Cầu Rồng Đà Nẵng (Điểm chắc chắn có VR đẹp)
-        } else if (destLower.includes("đà lạt") || destLower.includes("lâm đồng")) {
-            vrLat = 11.9388; vrLng = 108.4449; // Quảng trường Lâm Viên
-        } else if (destLower.includes("cần thơ") || destLower.includes("cái răng")) {
-            vrLat = 10.0039; vrLng = 105.7454; // Chợ Nổi Cái Răng (trên sông)
+            scenicSearchName = "Vịnh Hạ Long Quảng Ninh";
+            vrLat = 20.9101; vrLng = 107.1839;
         } else if (destLower.includes("ninh bình") || destLower.includes("tràng an")) {
-            vrLat = 20.2562; vrLng = 105.9181; // Bến thuyền Tràng An
+            scenicSearchName = "Danh thắng Tràng An Ninh Bình";
+            vrLat = 20.2506; vrLng = 105.9745;
         } else if (destLower.includes("hội an") || destLower.includes("quảng nam")) {
-            vrLat = 15.8776; vrLng = 108.3283; // Chùa Cầu Hội An
+            scenicSearchName = "Phố cổ Hội An Chùa Cầu";
+            vrLat = 15.8771; vrLng = 108.3258;
         } else if (destLower.includes("cao bằng") || destLower.includes("bản giốc")) {
-            vrLat = 22.8536; vrLng = 106.7241; // Thác Bản Giốc
-        } else if (destLower.includes("huế") || destLower.includes("đại nội")) {
-            vrLat = 16.4687; vrLng = 107.5768; // Ngọ Môn - Đại Nội Huế
-        } else if (destLower.includes("vũng tàu")) {
-            vrLat = 10.3270; vrLng = 107.0841; // Tượng Chúa Kitô Vua
-        } else if (destLower.includes("cà mau") || destLower.includes("đất mũi")) {
-            vrLat = 8.6231; vrLng = 104.7307; // Cột mốc Đất Mũi Cà Mau
-        }
-        
-        // Tránh tình trạng tour tỉnh khác bị gán mặc định Hồ Hoàn Kiếm (Hà Nội)
-        if (Math.abs(vrLat - 21.0285) < 0.1 && Math.abs(vrLng - 105.8542) < 0.1) {
-            // Nếu toạ độ ở Hà Nội nhưng tên tour không có chữ Hà Nội
-            if (!destLower.includes("hà nội") && !destLower.includes("hanoi")) {
-                showVR = false; // Tạm ẩn thay vì hiển thị sai Hồ Hoàn Kiếm
-            }
+            scenicSearchName = "Thác Bản Giốc Cao Bằng";
+            vrLat = 22.8536; vrLng = 106.7241;
+        } else if (destLower.includes("hà nội")) {
+            scenicSearchName = "Hồ Hoàn Kiếm Hà Nội";
+            vrLat = 21.0285; vrLng = 105.8542;
         }
 
         if (showVR) {
             els.virtual360Section.style.display = "block";
-            const panoImg = tour.image || imgs[0] || "/assets/images/sanmay.png";
-            const openInMapsUrl = `https://www.google.com/maps?q=${vrLat},${vrLng}&t=k`;
+            const embedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(scenicSearchName)}&layer=c&cbll=${vrLat},${vrLng}&cbp=12,0,,0,5&output=svembed`;
+            const openInMapsUrl = `https://www.google.com/maps?q=${encodeURIComponent(scenicSearchName)}&layer=c&cbll=${vrLat},${vrLng}`;
 
             els.virtual360Section.innerHTML = `
-          <h2 class="vv-section-title">Trải nghiệm không gian 360° Cảnh Quan VR</h2>
-          <p class="vv-360-note">Kéo rê chuột (hoặc vuốt màn hình) trên khung ảnh dưới đây để xoay ngắm toàn cảnh thiên nhiên 360°:</p>
-          <div class="vv-360-panorama-container shadow-sm rounded-4 overflow-hidden position-relative" id="vv360Viewer">
-            <div class="vv-360-panorama-img" id="vv360Img" style="background-image: url('${panoImg}');"></div>
-            <div class="vv-360-badge"><i class="bi bi-vr me-1"></i> 360° Panorama VR Mode</div>
-            <div class="vv-360-controls">
-                <button type="button" class="btn btn-dark btn-sm rounded-pill opacity-90 px-3" onclick="rotate360(-80)"><i class="bi bi-arrow-left me-1"></i> Trái</button>
-                <button type="button" class="btn btn-success btn-sm rounded-pill px-3 fw-bold" id="btnAutoRotate360" onclick="toggleAutoRotate360()"><i class="bi bi-arrow-repeat me-1"></i> Tự xoay 360°</button>
-                <button type="button" class="btn btn-dark btn-sm rounded-pill opacity-90 px-3" onclick="rotate360(80)">Phải <i class="bi bi-arrow-right ms-1"></i></button>
-            </div>
+          <h2 class="vv-section-title">Trải nghiệm không gian AR/VR 360° Cảnh Quan</h2>
+          <p class="vv-360-note">Kéo thả chuột trên khung hình dưới đây để xoay ngắm toàn cảnh 360° thực tế tại danh thắng:</p>
+          <div class="vv-360-frame-wrap shadow-sm rounded-4 overflow-hidden" style="height: 420px; background: #000;">
+            <iframe class="vv-360-frame w-100 h-100" style="border: 0;" src="${embedSrc}" loading="lazy" allowfullscreen></iframe>
           </div>
           <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mt-3">
-              <span class="fs-8 text-muted"><i class="bi bi-info-circle me-1"></i> Mẹo: Giữ chuột trái và di chuyển sang ngang để xoay ngắm toàn cảnh 360 độ</span>
+              <span class="fs-8 text-muted"><i class="bi bi-compass me-1"></i> Góc nhìn danh thắng 360°: <strong>${scenicSearchName}</strong></span>
               <a href="${openInMapsUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success rounded-pill btn-sm fw-bold">
-                <i class="bi bi-geo-alt-fill me-1"></i> Định vị điểm đến trên Google Maps
+                <i class="bi bi-box-arrow-up-right me-1"></i> Xem lớn trên Google Maps
               </a>
           </div>
         `;
-
-            setTimeout(init360DragViewer, 100);
         } else {
             els.virtual360Section.style.display = "none";
         }
+    } else {
+        els.virtual360Section.style.display = "none";
+    }
     } else {
         els.virtual360Section.style.display = "none";
     }
