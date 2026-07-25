@@ -23,17 +23,19 @@
     "review_count": 18,
     "viewCount": 1420,
     "bookingCount": 52,
-    "image": "/assets/images/tours/sapa/sapa.jpg",
-    "thumbnail": "/assets/images/tours/sapa/sapa.jpg",
+    "image": "/assets/images/tours/sapa/thumbnail.jpg",
+    "thumbnail": "/assets/images/tours/sapa/thumbnail.jpg",
     "images": [
-      "/assets/images/tours/sapa/sapa.jpg",
-      "/assets/images/tours/sapa/sanmay.png",
-      "/assets/images/categories/vungcao.png"
+      "/assets/images/tours/sapa/1.jpg",
+      "/assets/images/tours/sapa/2.jpg",
+      "/assets/images/tours/sapa/3.jpg",
+      "/assets/images/tours/sapa/4.jpg"
     ],
     "gallery": [
-      "/assets/images/tours/sapa/sapa.jpg",
-      "/assets/images/tours/sapa/sanmay.png",
-      "/assets/images/categories/vungcao.png"
+      "/assets/images/tours/sapa/1.jpg",
+      "/assets/images/tours/sapa/2.jpg",
+      "/assets/images/tours/sapa/3.jpg",
+      "/assets/images/tours/sapa/4.jpg"
     ],
     "category": "Vùng Cao",
     "description": "Hành trình đưa bạn khám phá thị trấn sương mù Sapa, check-in đỉnh Fansipan bằng cáp treo kỷ kỷ lục và trải nghiệm nét văn hóa bản địa độc đáo tại Bản Cát Cát.",
@@ -98,7 +100,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.538Z",
-    "updatedAt": "2026-07-25T13:51:41.319Z"
+    "updatedAt": "2026-07-25T13:57:11.370Z"
   },
   {
     "_id": "TOUR002",
@@ -195,7 +197,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T13:51:41.503Z"
+    "updatedAt": "2026-07-25T13:57:11.555Z"
   },
   {
     "_id": "TOUR003",
@@ -221,17 +223,19 @@
     "review_count": 12,
     "viewCount": 980,
     "bookingCount": 36,
-    "image": "/assets/images/tours/cao-bang/caobang.png",
-    "thumbnail": "/assets/images/tours/cao-bang/caobang.png",
+    "image": "/assets/images/tours/cao-bang/thumbnail.jpg",
+    "thumbnail": "/assets/images/tours/cao-bang/thumbnail.jpg",
     "images": [
-      "/assets/images/tours/cao-bang/caobang.png",
-      "/assets/images/tours/cao-bang/hagiang.png",
-      "/assets/images/tours/ha-long/hangdong.jpg"
+      "/assets/images/tours/cao-bang/1.jpg",
+      "/assets/images/tours/cao-bang/2.jpg",
+      "/assets/images/tours/cao-bang/3.jpg",
+      "/assets/images/tours/cao-bang/4.jpg"
     ],
     "gallery": [
-      "/assets/images/tours/cao-bang/caobang.png",
-      "/assets/images/tours/cao-bang/hagiang.png",
-      "/assets/images/tours/ha-long/hangdong.jpg"
+      "/assets/images/tours/cao-bang/1.jpg",
+      "/assets/images/tours/cao-bang/2.jpg",
+      "/assets/images/tours/cao-bang/3.jpg",
+      "/assets/images/tours/cao-bang/4.jpg"
     ],
     "category": "Vùng Cao",
     "description": "Tận mắt chiêm ngưỡng Thác Bản Giốc - thác nước tự nhiên lớn nhất Đông Nam Á, khám phá vẻ đẹp ảo diệu của Động Ngườm Ngao và Hồ Ba Bể xanh mát.",
@@ -292,7 +296,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T13:51:41.683Z"
+    "updatedAt": "2026-07-25T13:57:11.733Z"
   },
   {
     "_id": "TOUR004",
@@ -318,19 +322,19 @@
     "review_count": 30,
     "viewCount": 3100,
     "bookingCount": 110,
-    "image": "/assets/images/tours/phu-quoc/phuquoc.png",
-    "thumbnail": "/assets/images/tours/phu-quoc/phuquoc.png",
+    "image": "/assets/images/tours/phu-quoc/thumbnail.jpg",
+    "thumbnail": "/assets/images/tours/phu-quoc/thumbnail.jpg",
     "images": [
-      "/assets/images/tours/phu-quoc/phuquoc.png",
-      "/assets/images/tours/phu-quoc/honthom.jpg",
-      "/assets/images/tours/phu-quoc/safari.jpg",
-      "/assets/images/tours/phu-quoc/langchai.jpg"
+      "/assets/images/tours/phu-quoc/1.jpg",
+      "/assets/images/tours/phu-quoc/2.jpg",
+      "/assets/images/tours/phu-quoc/3.jpg",
+      "/assets/images/tours/phu-quoc/4.jpg"
     ],
     "gallery": [
-      "/assets/images/tours/phu-quoc/phuquoc.png",
-      "/assets/images/tours/phu-quoc/honthom.jpg",
-      "/assets/images/tours/phu-quoc/safari.jpg",
-      "/assets/images/tours/phu-quoc/langchai.jpg"
+      "/assets/images/tours/phu-quoc/1.jpg",
+      "/assets/images/tours/phu-quoc/2.jpg",
+      "/assets/images/tours/phu-quoc/3.jpg",
+      "/assets/images/tours/phu-quoc/4.jpg"
     ],
     "category": "Du lịch biển",
     "description": "Trải nghiệm trọn vẹn đảo ngọc Phú Quốc với tour cano 4 đảo lặn ngắm san hô, check-in Grand World thành phố không ngủ và công viên VinWonders.",
@@ -396,7 +400,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T13:51:41.862Z"
+    "updatedAt": "2026-07-25T13:57:11.911Z"
   },
   {
     "_id": "TOUR005",
@@ -501,7 +505,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T13:51:42.044Z"
+    "updatedAt": "2026-07-25T13:57:12.088Z"
   },
   {
     "_id": "TOUR006",
@@ -527,19 +531,19 @@
     "review_count": 45,
     "viewCount": 2800,
     "bookingCount": 150,
-    "image": "/assets/images/tours/ninh-binh/ninhbinh.png",
-    "thumbnail": "/assets/images/tours/ninh-binh/ninhbinh.png",
+    "image": "/assets/images/tours/ninh-binh/thumbnail.jpg",
+    "thumbnail": "/assets/images/tours/ninh-binh/thumbnail.jpg",
     "images": [
-      "/assets/images/tours/ninh-binh/ninhbinh.png",
-      "/assets/images/tours/ninh-binh/dinh.jpg",
-      "/assets/images/tours/ninh-binh/xuanthuy.jpg",
-      "/assets/images/categories/khampha.png"
+      "/assets/images/tours/ninh-binh/1.jpg",
+      "/assets/images/tours/ninh-binh/2.jpg",
+      "/assets/images/tours/ninh-binh/3.jpg",
+      "/assets/images/tours/ninh-binh/4.jpg"
     ],
     "gallery": [
-      "/assets/images/tours/ninh-binh/ninhbinh.png",
-      "/assets/images/tours/ninh-binh/dinh.jpg",
-      "/assets/images/tours/ninh-binh/xuanthuy.jpg",
-      "/assets/images/categories/khampha.png"
+      "/assets/images/tours/ninh-binh/1.jpg",
+      "/assets/images/tours/ninh-binh/2.jpg",
+      "/assets/images/tours/ninh-binh/3.jpg",
+      "/assets/images/tours/ninh-binh/4.jpg"
     ],
     "category": "Văn Hóa & Di Sản",
     "description": "Chuyến đi trong ngày trọn vẹn khám phá danh thắng Tràng An di sản thế giới kép, bái Phật tại đại danh chùa Bái Đính và ngắm toàn cảnh Tam Cốc từ Hang Múa.",
@@ -590,6 +594,6 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T13:51:42.223Z"
+    "updatedAt": "2026-07-25T13:57:12.270Z"
   }
 ]
