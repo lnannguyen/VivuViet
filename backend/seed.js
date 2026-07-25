@@ -78,7 +78,7 @@ const seedData = async () => {
         const defaultUsers = [
             {
                 _id: "USR001",
-                fullname: "Nguyễn Minh Anh",
+                fullname: "Nguyen Thi Thu An",
                 email: "anan265464@gmail.com",
                 phone: "0901234567",
                 avatar: "/assets/images/avt/avatar1.png",
@@ -89,7 +89,7 @@ const seedData = async () => {
                 notifications: [
                     {
                         title: "Chào mừng gia nhập VivuViet!",
-                        content: "Xin chào Nguyễn Minh Anh, chào mừng bạn tham gia cộng đồng du lịch VivuViet!",
+                        content: "Xin chào Nguyen Thi Thu An, chào mừng bạn tham gia cộng đồng du lịch VivuViet!",
                         type: "general",
                         isRead: true,
                     },
@@ -513,7 +513,7 @@ const seedData = async () => {
                 departure_date: new Date("2026-08-15"),
                 quantity: 2,
                 passengers: [
-                    { fullname: "Nguyễn Minh Anh", email: "minhanh@gmail.com", phone: "0901234567", passport_cccd: "001098001234" },
+                    { fullname: "Nguyen Thi Thu An", email: "anan265464@gmail.com", phone: "0901234567", passport_cccd: "001098001234" },
                     { fullname: "Trần Bảo Ngọc", email: "baongoc@gmail.com", phone: "0909876543", passport_cccd: "001098005678" },
                 ],
                 total_price: 7000000,
@@ -534,7 +534,7 @@ const seedData = async () => {
                 departure_date: new Date("2026-09-02"),
                 quantity: 1,
                 passengers: [
-                    { fullname: "Nguyễn Minh Anh", email: "minhanh@gmail.com", phone: "0901234567", passport_cccd: "001098001234" },
+                    { fullname: "Nguyen Thi Thu An", email: "anan265464@gmail.com", phone: "0901234567", passport_cccd: "001098001234" },
                 ],
                 total_price: 4200000,
                 service_fee: 420000,

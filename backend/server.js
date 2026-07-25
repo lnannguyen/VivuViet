@@ -135,7 +135,7 @@ async function autoSeedDefaultUser() {
                 {
                     $set: {
                         _id: "USR001",
-                        fullname: "Nguyễn Minh Anh",
+                        fullname: "Nguyen Thi Thu An",
                         email: "anan265464@gmail.com",
                         phone: "0901234567",
                         password: defaultPassword,

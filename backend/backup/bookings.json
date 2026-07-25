@@ -7,8 +7,8 @@
     "quantity": 2,
     "passengers": [
       {
-        "fullname": "Nguyễn Minh Anh",
-        "email": "minhanh@gmail.com",
+        "fullname": "Nguyen Thi Thu An",
+        "email": "anan265464@gmail.com",
         "phone": "0901234567",
         "passport_cccd": "001098001234"
       },
@@ -30,7 +30,7 @@
     "payment_method": "bank_transfer",
     "createdAt": "2026-06-10T00:00:00.000Z",
     "__v": 0,
-    "updatedAt": "2026-07-25T05:00:33.378Z"
+    "updatedAt": "2026-07-25T06:12:59.400Z"
   },
   {
     "_id": "BK1002",
@@ -40,8 +40,8 @@
     "quantity": 1,
     "passengers": [
       {
-        "fullname": "Nguyễn Minh Anh",
-        "email": "minhanh@gmail.com",
+        "fullname": "Nguyen Thi Thu An",
+        "email": "anan265464@gmail.com",
         "phone": "0901234567",
         "passport_cccd": "001098001234"
       }
@@ -57,7 +57,7 @@
     "payment_method": "vnpay",
     "createdAt": "2026-07-01T00:00:00.000Z",
     "__v": 0,
-    "updatedAt": "2026-07-25T05:00:33.557Z"
+    "updatedAt": "2026-07-25T06:12:59.578Z"
   },
   {
     "_id": "BK1003",

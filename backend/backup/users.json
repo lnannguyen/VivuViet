@@ -1,11 +1,11 @@
 [
   {
     "_id": "USR001",
-    "fullname": "Nguyễn Minh Anh",
+    "fullname": "Nguyen Thi Thu An",
     "email": "anan265464@gmail.com",
     "phone": "0901234567",
     "avatar": "/assets/images/avt/avatar1.png",
-    "password": "$2b$10$8KM1DsPVM16/4a/i2yHvsusrlPA49LSpqElqGmgmDqDaENtPLvqUW",
+    "password": "$2b$10$DipkGEx737l32xLWI.YPSOnlXRkCjHS7rm3h8sj405uXE1MsZuLcC",
     "auth_provider": "local",
     "membership": "gold",
     "wishlist": [
@@ -15,11 +15,11 @@
     "notifications": [
       {
         "title": "Chào mừng gia nhập VivuViet!",
-        "content": "Xin chào Nguyễn Minh Anh, chào mừng bạn tham gia cộng đồng du lịch VivuViet!",
+        "content": "Xin chào Nguyen Thi Thu An, chào mừng bạn tham gia cộng đồng du lịch VivuViet!",
         "type": "general",
         "isRead": true,
-        "_id": "6a6442efeaddf9c54ba9e3c9",
-        "createdAt": "2026-07-25T05:00:31.218Z"
+        "_id": "6a6453e846fe0cb727349ea3",
+        "createdAt": "2026-07-25T06:12:56.947Z"
       }
     ],
     "vouchers": [
@@ -30,7 +30,7 @@
         "min_spend": 1000000,
         "expiry_date": "2026-12-31T00:00:00.000Z",
         "isUsed": false,
-        "_id": "6a6442efeaddf9c54ba9e3c7"
+        "_id": "6a6453e846fe0cb727349ea1"
       },
       {
         "code": "VIVUVIET2026",
@@ -39,7 +39,7 @@
         "min_spend": 2000000,
         "expiry_date": "2026-12-31T00:00:00.000Z",
         "isUsed": false,
-        "_id": "6a6442efeaddf9c54ba9e3c8"
+        "_id": "6a6453e846fe0cb727349ea2"
       }
     ],
     "vivupoints": 350,
@@ -50,7 +50,7 @@
         "visitCount": 2,
         "firstVisitDate": "2025-03-10T00:00:00.000Z",
         "lastVisitDate": "2026-06-20T00:00:00.000Z",
-        "_id": "6a6442efeaddf9c54ba9e3c5"
+        "_id": "6a6453e846fe0cb727349e9f"
       },
       {
         "location": "Sapa, Lào Cai",
@@ -58,7 +58,7 @@
         "visitCount": 1,
         "firstVisitDate": "2025-09-01T00:00:00.000Z",
         "lastVisitDate": "2025-09-01T00:00:00.000Z",
-        "_id": "6a6442efeaddf9c54ba9e3c6"
+        "_id": "6a6453e846fe0cb727349ea0"
       }
     ],
     "achievements": [
@@ -67,12 +67,17 @@
         "icon": "bi-binoculars-fill",
         "color": "#0E5E3A",
         "unlockedAt": "2025-09-01T00:00:00.000Z",
-        "_id": "6a6442efeaddf9c54ba9e3c4"
+        "_id": "6a6453e846fe0cb727349e9e"
       }
     ],
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.283Z",
-    "updatedAt": "2026-07-25T05:00:31.212Z"
+    "updatedAt": "2026-07-25T06:12:56.940Z",
+    "resetOtp": "158703",
+    "resetOtpExpire": "2026-07-25T05:25:26.968Z",
+    "address": "",
+    "dob": null,
+    "gender": "female"
   },
   {
     "_id": "USR002",
@@ -80,7 +85,7 @@
     "email": "hung.tran@gmail.com",
     "phone": "0987654321",
     "avatar": "/assets/images/avt/avatar2.png",
-    "password": "$2b$10$8KM1DsPVM16/4a/i2yHvsusrlPA49LSpqElqGmgmDqDaENtPLvqUW",
+    "password": "$2b$10$DipkGEx737l32xLWI.YPSOnlXRkCjHS7rm3h8sj405uXE1MsZuLcC",
     "auth_provider": "local",
     "membership": "standard",
     "wishlist": [
@@ -95,7 +100,7 @@
         "min_spend": 1000000,
         "expiry_date": "2026-12-31T00:00:00.000Z",
         "isUsed": false,
-        "_id": "6a6442efeaddf9c54ba9e3ca"
+        "_id": "6a6453e946fe0cb727349ea4"
       }
     ],
     "vivupoints": 120,
@@ -103,7 +108,7 @@
     "achievements": [],
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.284Z",
-    "updatedAt": "2026-07-25T05:00:31.396Z"
+    "updatedAt": "2026-07-25T06:12:57.146Z"
   },
   {
     "_id": "USR003",
@@ -111,7 +116,7 @@
     "email": "mai.le@gmail.com",
     "phone": "0912345678",
     "avatar": "",
-    "password": "$2b$10$8KM1DsPVM16/4a/i2yHvsusrlPA49LSpqElqGmgmDqDaENtPLvqUW",
+    "password": "$2b$10$DipkGEx737l32xLWI.YPSOnlXRkCjHS7rm3h8sj405uXE1MsZuLcC",
     "auth_provider": "local",
     "membership": "standard",
     "wishlist": [],
@@ -122,6 +127,6 @@
     "achievements": [],
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.285Z",
-    "updatedAt": "2026-07-25T05:00:31.574Z"
+    "updatedAt": "2026-07-25T06:12:57.351Z"
   }
 ]
