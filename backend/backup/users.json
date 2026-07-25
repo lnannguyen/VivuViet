@@ -5,7 +5,7 @@
     "email": "anan265464@gmail.com",
     "phone": "0901234567",
     "avatar": "/assets/images/avt/avatar1.png",
-    "password": "$2b$10$DipkGEx737l32xLWI.YPSOnlXRkCjHS7rm3h8sj405uXE1MsZuLcC",
+    "password": "$2b$10$.R/xEZWzdArMaoxAs.tUPOMcrH/trxPLRqiZqWK.clbgEYJ.Xdr0C",
     "auth_provider": "local",
     "membership": "gold",
     "wishlist": [
@@ -18,8 +18,8 @@
         "content": "Xin chào Nguyen Thi Thu An, chào mừng bạn tham gia cộng đồng du lịch VivuViet!",
         "type": "general",
         "isRead": true,
-        "_id": "6a6453e846fe0cb727349ea3",
-        "createdAt": "2026-07-25T06:12:56.947Z"
+        "_id": "6a6455e774387321d4e3f954",
+        "createdAt": "2026-07-25T06:21:27.773Z"
       }
     ],
     "vouchers": [
@@ -30,7 +30,7 @@
         "min_spend": 1000000,
         "expiry_date": "2026-12-31T00:00:00.000Z",
         "isUsed": false,
-        "_id": "6a6453e846fe0cb727349ea1"
+        "_id": "6a6455e774387321d4e3f952"
       },
       {
         "code": "VIVUVIET2026",
@@ -39,40 +39,47 @@
         "min_spend": 2000000,
         "expiry_date": "2026-12-31T00:00:00.000Z",
         "isUsed": false,
-        "_id": "6a6453e846fe0cb727349ea2"
+        "_id": "6a6455e774387321d4e3f953"
       }
     ],
     "vivupoints": 350,
     "passportStamps": [
       {
-        "location": "Hội An, Quảng Nam",
-        "image": "/assets/images/hoian.png",
-        "visitCount": 2,
-        "firstVisitDate": "2025-03-10T00:00:00.000Z",
-        "lastVisitDate": "2026-06-20T00:00:00.000Z",
-        "_id": "6a6453e846fe0cb727349e9f"
-      },
-      {
         "location": "Sapa, Lào Cai",
         "image": "/assets/images/sapa.jpg",
         "visitCount": 1,
-        "firstVisitDate": "2025-09-01T00:00:00.000Z",
-        "lastVisitDate": "2025-09-01T00:00:00.000Z",
-        "_id": "6a6453e846fe0cb727349ea0"
+        "firstVisitDate": "2026-05-20T00:00:00.000Z",
+        "lastVisitDate": "2026-05-20T00:00:00.000Z",
+        "_id": "6a6455e774387321d4e3f950"
+      },
+      {
+        "location": "Hạ Long, Quảng Ninh",
+        "image": "/assets/images/halong.png",
+        "visitCount": 1,
+        "firstVisitDate": "2026-04-10T00:00:00.000Z",
+        "lastVisitDate": "2026-04-10T00:00:00.000Z",
+        "_id": "6a6455e774387321d4e3f951"
       }
     ],
     "achievements": [
       {
+        "label": "Khởi đầu mới",
+        "icon": "bi-rocket-takeoff-fill",
+        "color": "#3b82f6",
+        "unlockedAt": "2026-05-20T00:00:00.000Z",
+        "_id": "6a6455e774387321d4e3f94e"
+      },
+      {
         "label": "Chinh phục Sapa",
-        "icon": "bi-binoculars-fill",
+        "icon": "bi-triangle-half",
         "color": "#0E5E3A",
-        "unlockedAt": "2025-09-01T00:00:00.000Z",
-        "_id": "6a6453e846fe0cb727349e9e"
+        "unlockedAt": "2026-05-20T00:00:00.000Z",
+        "_id": "6a6455e774387321d4e3f94f"
       }
     ],
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.283Z",
-    "updatedAt": "2026-07-25T06:12:56.940Z",
+    "updatedAt": "2026-07-25T06:21:27.769Z",
     "resetOtp": "158703",
     "resetOtpExpire": "2026-07-25T05:25:26.968Z",
     "address": "",
@@ -85,7 +92,7 @@
     "email": "hung.tran@gmail.com",
     "phone": "0987654321",
     "avatar": "/assets/images/avt/avatar2.png",
-    "password": "$2b$10$DipkGEx737l32xLWI.YPSOnlXRkCjHS7rm3h8sj405uXE1MsZuLcC",
+    "password": "$2b$10$.R/xEZWzdArMaoxAs.tUPOMcrH/trxPLRqiZqWK.clbgEYJ.Xdr0C",
     "auth_provider": "local",
     "membership": "standard",
     "wishlist": [
@@ -100,7 +107,7 @@
         "min_spend": 1000000,
         "expiry_date": "2026-12-31T00:00:00.000Z",
         "isUsed": false,
-        "_id": "6a6453e946fe0cb727349ea4"
+        "_id": "6a6455e774387321d4e3f955"
       }
     ],
     "vivupoints": 120,
@@ -108,7 +115,7 @@
     "achievements": [],
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.284Z",
-    "updatedAt": "2026-07-25T06:12:57.146Z"
+    "updatedAt": "2026-07-25T06:21:27.975Z"
   },
   {
     "_id": "USR003",
@@ -116,7 +123,7 @@
     "email": "mai.le@gmail.com",
     "phone": "0912345678",
     "avatar": "",
-    "password": "$2b$10$DipkGEx737l32xLWI.YPSOnlXRkCjHS7rm3h8sj405uXE1MsZuLcC",
+    "password": "$2b$10$.R/xEZWzdArMaoxAs.tUPOMcrH/trxPLRqiZqWK.clbgEYJ.Xdr0C",
     "auth_provider": "local",
     "membership": "standard",
     "wishlist": [],
@@ -127,6 +134,6 @@
     "achievements": [],
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.285Z",
-    "updatedAt": "2026-07-25T06:12:57.351Z"
+    "updatedAt": "2026-07-25T06:21:28.231Z"
   }
 ]

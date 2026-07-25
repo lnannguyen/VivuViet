@@ -659,6 +659,10 @@ function loadAchievements() {
     if (!els.achievementsContainer) return;
 
     const unlocked = user.achievements || [];
+    const completedBookings = (bookings || []).filter(
+        (b) => b.booking_status === "completed",
+    );
+    const completedCount = completedBookings.length;
 
     // Danh sách huy hiệu mặc định
     const badgesList = [
@@ -667,36 +671,62 @@ function loadAchievements() {
             desc: "Hoàn thành chuyến đi đầu tiên",
             icon: "bi-rocket-takeoff-fill",
             color: "#3b82f6",
+            autoCheck: () => completedCount >= 1,
         },
         {
             label: "Nhà thám hiểm",
             desc: "Chinh phục 5 chuyến đi cùng VivuViet",
             icon: "bi-compass-fill",
             color: "#10b981",
+            autoCheck: () => completedCount >= 5,
         },
         {
             label: "Chinh phục Sapa",
             desc: "Đã hoàn thành tour vùng cao Tây Bắc",
             icon: "bi-triangle-half",
             color: "#0E5E3A",
+            autoCheck: () =>
+                completedBookings.some((b) =>
+                    (b.tour?.name || b.tour?.title || "")
+                        .toLowerCase()
+                        .includes("sapa"),
+                ),
         },
         {
             label: "Khám phá Hạ Long",
             desc: "Trải nghiệm thuyền vịnh kì quan",
             icon: "bi-tsunami",
             color: "#F97316",
+            autoCheck: () =>
+                completedBookings.some((b) =>
+                    (b.tour?.name || b.tour?.title || "")
+                        .toLowerCase()
+                        .includes("hạ long"),
+                ),
         },
         {
             label: "Văn hóa Hội An",
             desc: "Tham quan phố cổ lồng đèn di sản",
             icon: "bi-shop",
             color: "#EAB308",
+            autoCheck: () =>
+                completedBookings.some((b) =>
+                    (b.tour?.name || b.tour?.title || "")
+                        .toLowerCase()
+                        .includes("hội an"),
+                ),
         },
         {
             label: "Biển xanh Phú Quốc",
             desc: "Nghỉ dưỡng thiên đường đảo ngọc",
             icon: "bi-water",
             color: "#06B6D4",
+            autoCheck: () =>
+                completedBookings.some((b) =>
+                    (b.tour?.name || b.tour?.title || "")
+                        .toLowerCase()
+                        .includes("phú quốc"),
+                ),
         },
     ];
 
@@ -715,17 +745,20 @@ function loadAchievements() {
                         ? u.icon
                         : "bi-trophy-fill",
                 color: u.color || "#6b7280",
+                autoCheck: () => true,
             });
         }
     });
 
     els.achievementsContainer.innerHTML = badgesList
         .map((b) => {
-            const isUnlocked = unlocked.some(
-                (u) =>
-                    u.label.toLowerCase().includes(b.label.toLowerCase()) ||
-                    b.label.toLowerCase().includes(u.label.toLowerCase()),
-            );
+            const isUnlocked =
+                (typeof b.autoCheck === "function" && b.autoCheck()) ||
+                unlocked.some(
+                    (u) =>
+                        u.label.toLowerCase().includes(b.label.toLowerCase()) ||
+                        b.label.toLowerCase().includes(u.label.toLowerCase()),
+                );
 
             return `
       <div class="achievement-badge-card ${isUnlocked ? "" : "locked"}">

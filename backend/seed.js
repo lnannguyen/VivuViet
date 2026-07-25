@@ -115,26 +115,32 @@ const seedData = async () => {
                 vivupoints: 350,
                 passportStamps: [
                     {
-                        location: "Hội An, Quảng Nam",
-                        image: "/assets/images/hoian.png",
-                        firstVisitDate: new Date("2025-03-10"),
-                        lastVisitDate: new Date("2026-06-20"),
-                        visitCount: 2,
-                    },
-                    {
                         location: "Sapa, Lào Cai",
                         image: "/assets/images/sapa.jpg",
-                        firstVisitDate: new Date("2025-09-01"),
-                        lastVisitDate: new Date("2025-09-01"),
+                        firstVisitDate: new Date("2026-05-20"),
+                        lastVisitDate: new Date("2026-05-20"),
+                        visitCount: 1,
+                    },
+                    {
+                        location: "Hạ Long, Quảng Ninh",
+                        image: "/assets/images/halong.png",
+                        firstVisitDate: new Date("2026-04-10"),
+                        lastVisitDate: new Date("2026-04-10"),
                         visitCount: 1,
                     },
                 ],
                 achievements: [
                     {
+                        label: "Khởi đầu mới",
+                        icon: "bi-rocket-takeoff-fill",
+                        color: "#3b82f6",
+                        unlockedAt: new Date("2026-05-20"),
+                    },
+                    {
                         label: "Chinh phục Sapa",
-                        icon: "bi-binoculars-fill",
+                        icon: "bi-triangle-half",
                         color: "#0E5E3A",
-                        unlockedAt: new Date("2025-09-01"),
+                        unlockedAt: new Date("2026-05-20"),
                     },
                 ],
             },
@@ -510,7 +516,7 @@ const seedData = async () => {
                 _id: "BK1001",
                 user_id: "USR001",
                 tour_id: "TOUR001",
-                departure_date: new Date("2026-08-15"),
+                departure_date: new Date("2026-05-20"),
                 quantity: 2,
                 passengers: [
                     { fullname: "Nguyen Thi Thu An", email: "anan265464@gmail.com", phone: "0901234567", passport_cccd: "001098001234" },
@@ -525,13 +531,13 @@ const seedData = async () => {
                 booking_status: "completed",
                 isReviewed: true,
                 payment_method: "bank_transfer",
-                createdAt: new Date("2026-06-10"),
+                createdAt: new Date("2026-05-01"),
             },
             {
                 _id: "BK1002",
                 user_id: "USR001",
                 tour_id: "TOUR002",
-                departure_date: new Date("2026-09-02"),
+                departure_date: new Date("2026-08-10"),
                 quantity: 1,
                 passengers: [
                     { fullname: "Nguyen Thi Thu An", email: "anan265464@gmail.com", phone: "0901234567", passport_cccd: "001098001234" },
@@ -549,7 +555,7 @@ const seedData = async () => {
             },
         ];
         for (const b of defaultBookings) {
-            await Booking.updateOne({ _id: b._id }, { $setOnInsert: b }, { upsert: true });
+            await Booking.updateOne({ _id: b._id }, { $set: b }, { upsert: true });
         }
 
         // 7. SEED REVIEWS ($setOnInsert: Giữ nguyên các review thật khách hàng viết)
