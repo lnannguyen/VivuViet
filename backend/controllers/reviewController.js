@@ -67,13 +67,59 @@ const createReview = async (req, res) => {
 
         const newId = "REV" + Date.now().toString().slice(-8);
 
-        // Xử lý file tải lên
-        const imagePaths = req.files && req.files.images 
-            ? req.files.images.map(f => "/assets/images/reviews/" + f.filename) 
-            : [];
-        const videoPaths = req.files && req.files.videos 
-            ? req.files.videos.map(f => "/assets/videos/reviews/" + f.filename) 
-            : [];
+        // Xử lý file tải lên (Cloudinary Cloud + Fallback ổ đĩa)
+        const cloudinary = require("../config/cloudinary");
+
+        let imagePaths = [];
+        let videoPaths = [];
+
+        if (req.files && req.files.images) {
+            for (const f of req.files.images) {
+                let imgUrl = "/assets/images/reviews/" + f.filename;
+                if (
+                    process.env.CLOUDINARY_CLOUD_NAME &&
+                    process.env.CLOUDINARY_API_KEY &&
+                    process.env.CLOUDINARY_API_SECRET
+                ) {
+                    try {
+                        const cloudResult = await cloudinary.uploader.upload(f.path, {
+                            folder: "vivuviet_reviews/images",
+                            resource_type: "image",
+                        });
+                        if (cloudResult && cloudResult.secure_url) {
+                            imgUrl = cloudResult.secure_url;
+                        }
+                    } catch (err) {
+                        console.warn("Cloudinary image upload fallback to local storage:", err.message);
+                    }
+                }
+                imagePaths.push(imgUrl);
+            }
+        }
+
+        if (req.files && req.files.videos) {
+            for (const f of req.files.videos) {
+                let vidUrl = "/assets/videos/reviews/" + f.filename;
+                if (
+                    process.env.CLOUDINARY_CLOUD_NAME &&
+                    process.env.CLOUDINARY_API_KEY &&
+                    process.env.CLOUDINARY_API_SECRET
+                ) {
+                    try {
+                        const cloudResult = await cloudinary.uploader.upload(f.path, {
+                            folder: "vivuviet_reviews/videos",
+                            resource_type: "video",
+                        });
+                        if (cloudResult && cloudResult.secure_url) {
+                            vidUrl = cloudResult.secure_url;
+                        }
+                    } catch (err) {
+                        console.warn("Cloudinary video upload fallback to local storage:", err.message);
+                    }
+                }
+                videoPaths.push(vidUrl);
+            }
+        }
 
         const review = await Review.create({
             _id: newId,
