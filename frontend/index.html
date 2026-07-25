@@ -216,26 +216,28 @@
 
     <!-- Danh mục tour nổi bật -->
     <section class="container my-5 reveal">
-        <div class="mb-4">
-            <h3 class="section-title">Cảm hứng cho chuyến đi</h3>
-            <p class="section-sub mt-1">Lựa chọn phong cách du lịch phù hợp với sở thích của bạn</p>
-        </div>
+        <div class="categories-wrapper">
+            <div class="mb-4">
+                <h3 class="section-title">Cảm hứng cho chuyến đi</h3>
+                <p class="section-sub mt-1">Lựa chọn phong cách du lịch phù hợp với sở thích của bạn</p>
+            </div>
 
-        <!-- Khung loading dạng xương (skeleton) -->
-        <div id="categories-skeleton" class="row">
-            <div class="col-12 col-md-4 mb-4">
-                <div class="skeleton skeleton-card"></div>
+            <!-- Khung loading dạng xương (skeleton) -->
+            <div id="categories-skeleton" class="row justify-content-center g-4">
+                <div class="col-12 col-md-4 mb-3">
+                    <div class="skeleton skeleton-card" style="height: 320px; border-radius: 24px;"></div>
+                </div>
+                <div class="col-12 col-md-4 mb-3">
+                    <div class="skeleton skeleton-card" style="height: 320px; border-radius: 24px;"></div>
+                </div>
+                <div class="col-12 col-md-4 mb-3">
+                    <div class="skeleton skeleton-card" style="height: 320px; border-radius: 24px;"></div>
+                </div>
             </div>
-            <div class="col-12 col-md-4 mb-4">
-                <div class="skeleton skeleton-card"></div>
-            </div>
-            <div class="col-12 col-md-4 mb-4">
-                <div class="skeleton skeleton-card"></div>
-            </div>
-        </div>
 
-        <!-- Danh sách danh mục động -->
-        <div class="row" id="categories-container" style="display: none;"></div>
+            <!-- Danh sách danh mục động -->
+            <div class="row justify-content-center g-4" id="categories-container" style="display: none;"></div>
+        </div>
     </section>
 
     <!-- Khu vực Flash Sale -->
