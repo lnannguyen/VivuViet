@@ -1628,7 +1628,8 @@ body.page-ready {
     overflow: hidden;
     position: relative;
     aspect-ratio: 9/16;
-    max-width: 260px;
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
     cursor: pointer;
     box-shadow: var(--shadow-sm);
@@ -2096,6 +2097,34 @@ body.page-ready {
         scroll-snap-align: start;
         margin-bottom: 0 !important;
         padding: 0 !important; /* Xoá padding mặc định của Bootstrap col */
+    }
+}
+
+/* Travel Shorts horizontal scroll on mobile only */
+@media (max-width: 767.98px) {
+    .shorts-row-container {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        padding-bottom: 1rem !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        margin-left: -1rem !important;
+        margin-right: -1rem !important;
+        gap: 1rem !important;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    .shorts-row-container::-webkit-scrollbar {
+        display: none;
+    }
+    .shorts-row-container > div {
+        flex: 0 0 200px !important;
+        width: 200px !important;
+        max-width: 200px !important;
+        scroll-snap-align: start;
+        padding: 0 !important;
     }
 }
 
