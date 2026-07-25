@@ -237,6 +237,73 @@ const validateVoucher = async (req, res) => {
     } catch (error) {
         res.status(500).json({ message: "Lỗi server!", error: error.message });
     }
+// Quên mật khẩu - Gửi mã OTP khôi phục
+const forgotPassword = async (req, res) => {
+    try {
+        const { email } = req.body;
+        if (!email) {
+            return res.status(400).json({ message: "Vui lòng nhập địa chỉ email!" });
+        }
+
+        const user = await User.findOne({ email });
+        if (!user) {
+            return res.status(404).json({ message: "Email này chưa được đăng ký tài khoản!" });
+        }
+
+        // Sinh mã OTP 6 chữ số
+        const otp = Math.floor(100000 + Math.random() * 900000).toString();
+        user.resetOtp = otp;
+        user.resetOtpExpire = new Date(Date.now() + 15 * 60 * 1000); // 15 phút
+        await user.save();
+
+        const { sendPasswordResetOtp } = require("../services/emailService");
+        const emailPreview = await sendPasswordResetOtp(user, otp);
+
+        res.status(200).json({
+            message: "Mã OTP khôi phục đã được gửi về email của bạn!",
+            otp: otp, // Gửi về để hỗ trợ test nhanh trên UI nếu cần
+            email_preview: emailPreview,
+        });
+    } catch (error) {
+        console.error("Forgot password error:", error);
+        res.status(500).json({ message: "Lỗi máy chủ!", error: error.message });
+    }
+};
+
+// Đặt lại mật khẩu mới bằng OTP
+const resetPassword = async (req, res) => {
+    try {
+        const { email, otp, newPassword } = req.body;
+        if (!email || !otp || !newPassword) {
+            return res.status(400).json({ message: "Vui lòng nhập đầy đủ Email, Mã OTP và Mật khẩu mới!" });
+        }
+
+        const user = await User.findOne({ email });
+        if (!user) {
+            return res.status(404).json({ message: "Không tìm thấy người dùng!" });
+        }
+
+        if (!user.resetOtp || user.resetOtp !== otp) {
+            return res.status(400).json({ message: "Mã OTP không chính xác!" });
+        }
+
+        if (!user.resetOtpExpire || new Date(user.resetOtpExpire) < new Date()) {
+            return res.status(400).json({ message: "Mã OTP đã hết hạn, vui lòng yêu cầu mã mới!" });
+        }
+
+        // Mã hóa mật khẩu mới
+        user.password = await bcrypt.hash(newPassword, 10);
+        user.resetOtp = undefined;
+        user.resetOtpExpire = undefined;
+        await user.save();
+
+        res.status(200).json({
+            message: "Đặt lại mật khẩu thành công! Bạn có thể đăng nhập bằng mật khẩu mới.",
+        });
+    } catch (error) {
+        console.error("Reset password error:", error);
+        res.status(500).json({ message: "Lỗi máy chủ!", error: error.message });
+    }
 };
 
 module.exports = {
@@ -247,4 +314,6 @@ module.exports = {
     toggleWishlist,
     markNotificationRead,
     validateVoucher,
+    forgotPassword,
+    resetPassword,
 };

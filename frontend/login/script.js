@@ -80,4 +80,111 @@ document.addEventListener("DOMContentLoaded", () => {
         btnGoogle.addEventListener("click", () => demoOAuth("Google"));
     if (btnFacebook)
         btnFacebook.addEventListener("click", () => demoOAuth("Facebook"));
+
+    // ----------------------------------------------------
+    // Xử lý Quên mật khẩu & Đặt lại mật khẩu bằng OTP
+    // ----------------------------------------------------
+    const formSendOtp = document.getElementById("formSendOtp");
+    const formResetPassword = document.getElementById("formResetPassword");
+    let resetTargetEmail = "";
+
+    if (formSendOtp) {
+        formSendOtp.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const email = document.getElementById("forgotEmail").value.trim();
+            const btnSubmit = document.getElementById("btnSubmitSendOtp");
+
+            if (!email) return;
+
+            btnSubmit.disabled = true;
+            btnSubmit.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Đang gửi OTP...';
+
+            try {
+                const res = await fetch(`${API_URL}/auth/forgot-password`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ email }),
+                });
+
+                const data = await res.json();
+                if (res.ok) {
+                    resetTargetEmail = email;
+                    showToast(data.message, "success");
+
+                    // Chuyển từ Form Nhập Email sang Form Nhập OTP & Mật Khẩu Mới
+                    formSendOtp.classList.add("d-none");
+                    formResetPassword.classList.remove("d-none");
+
+                    // Tự động điền mã OTP nếu trả về hỗ trợ test nhanh
+                    if (data.otp) {
+                        document.getElementById("resetOtp").value = data.otp;
+                        document.getElementById("otpNotice").innerHTML =
+                            `<i class="bi bi-check-circle-fill me-1"></i> Mã OTP đã gửi: <strong class="text-accent fs-6 ms-1">${data.otp}</strong> (Có hiệu lực 15 phút)`;
+                    }
+                } else {
+                    showToast(data.message || "Không thể gửi OTP!", "error");
+                }
+            } catch (error) {
+                console.error("Send OTP error:", error);
+                showToast("Lỗi kết nối máy chủ!", "error");
+            } finally {
+                btnSubmit.disabled = false;
+                btnSubmit.innerHTML = '<i class="bi bi-send-fill me-2"></i>Gửi mã xác thực OTP';
+            }
+        });
+    }
+
+    if (formResetPassword) {
+        formResetPassword.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const otp = document.getElementById("resetOtp").value.trim();
+            const newPassword = document.getElementById("resetNewPassword").value;
+            const btnSubmit = document.getElementById("btnSubmitResetPass");
+
+            if (!otp || !newPassword) return;
+
+            btnSubmit.disabled = true;
+            btnSubmit.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Đang xử lý...';
+
+            try {
+                const res = await fetch(`${API_URL}/auth/reset-password`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        email: resetTargetEmail,
+                        otp: otp,
+                        newPassword: newPassword,
+                    }),
+                });
+
+                const data = await res.json();
+                if (res.ok) {
+                    showToast("Đặt lại mật khẩu thành công! Hãy đăng nhập.", "success");
+
+                    // Điền tự động mật khẩu mới vào ô Đăng nhập
+                    document.getElementById("loginEmail").value = resetTargetEmail;
+                    document.getElementById("loginPassword").value = newPassword;
+
+                    // Đóng modal
+                    const modalEl = document.getElementById("forgotPasswordModal");
+                    const modalInstance = bootstrap.Modal.getInstance(modalEl);
+                    if (modalInstance) modalInstance.hide();
+
+                    // Reset form modal về ban đầu
+                    formSendOtp.classList.remove("d-none");
+                    formResetPassword.classList.add("d-none");
+                    formSendOtp.reset();
+                    formResetPassword.reset();
+                } else {
+                    showToast(data.message || "Xác nhận OTP thất bại!", "error");
+                }
+            } catch (error) {
+                console.error("Reset password error:", error);
+                showToast("Lỗi kết nối máy chủ!", "error");
+            } finally {
+                btnSubmit.disabled = false;
+                btnSubmit.innerHTML = '<i class="bi bi-shield-check me-2"></i>Xác nhận đặt lại Mật khẩu';
+            }
+        });
+    }
 });

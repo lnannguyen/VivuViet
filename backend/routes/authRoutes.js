@@ -8,12 +8,16 @@ const {
     toggleWishlist,
     markNotificationRead,
     validateVoucher,
+    forgotPassword,
+    resetPassword,
 } = require("../controllers/authController");
 const { protect } = require("../middleware/authMiddleware");
 
 // Public routes
 router.post("/register", register);
 router.post("/login", login);
+router.post("/forgot-password", forgotPassword);
+router.post("/reset-password", resetPassword);
 
 // Protected routes (cần token)
 router.get("/me", protect, getMe);

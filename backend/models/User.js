@@ -63,6 +63,8 @@ const userSchema = new mongoose.Schema(
         vivupoints: { type: Number, default: 0 },
         passportStamps: [passportStampSchema],
         achievements: [achievementSchema],
+        resetOtp: { type: String },
+        resetOtpExpire: { type: Date },
     },
     { timestamps: true, _id: false },
 );

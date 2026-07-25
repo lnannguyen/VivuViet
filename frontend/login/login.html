@@ -122,7 +122,10 @@
                                 >
                             </div>
                             <a
-                                href="/coming-soon"
+                                href="#"
+                                id="btnForgotPassword"
+                                data-bs-toggle="modal"
+                                data-bs-target="#forgotPasswordModal"
                                 class="text-accent fw-bold text-decoration-none"
                                 >Quên mật khẩu?</a
                             >
@@ -185,6 +188,62 @@
                         <a href="/coming-soon">Điều khoản dịch vụ</a>
                         <a href="/coming-soon">Chính sách bảo mật</a>
                         <a href="/coming-soon">Hỗ trợ khách hàng</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Quên Mật Khẩu & Đặt Lại Mật Khẩu bằng OTP -->
+        <div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+                    <div class="modal-header border-0 bg-light p-4">
+                        <h5 class="modal-title fw-bold text-dark" id="forgotPasswordModalLabel">
+                            <i class="bi bi-key-fill text-accent me-2"></i>Khôi phục Mật khẩu
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-4">
+                        <!-- Bước 1: Nhập Email nhận mã OTP -->
+                        <form id="formSendOtp">
+                            <p class="text-muted small mb-3">
+                                Nhập địa chỉ email đăng ký tài khoản VivuViet của bạn để nhận mã OTP xác thực phục hồi mật khẩu.
+                            </p>
+                            <div class="mb-3">
+                                <label for="forgotEmail" class="form-label fw-semibold fs-7">Email của bạn</label>
+                                <div class="auth-input-wrapper">
+                                    <i class="bi bi-envelope input-icon-left"></i>
+                                    <input type="email" class="form-control auth-input" id="forgotEmail" placeholder="yourname@email.com" required />
+                                </div>
+                            </div>
+                            <button type="submit" id="btnSubmitSendOtp" class="btn-brand w-100 py-2.5 justify-content-center text-center rounded-3">
+                                <i class="bi bi-send-fill me-2"></i>Gửi mã xác thực OTP
+                            </button>
+                        </form>
+
+                        <!-- Bước 2: Nhập Mã OTP & Mật Khẩu Mới (Ẩn mặc định) -->
+                        <form id="formResetPassword" class="d-none">
+                            <div class="alert alert-success small py-2 px-3 mb-3" id="otpNotice">
+                                <i class="bi bi-check-circle-fill me-1"></i> Mã OTP đã gửi! Vui lòng kiểm tra email.
+                            </div>
+                            <div class="mb-3">
+                                <label for="resetOtp" class="form-label fw-semibold fs-7">Mã OTP (6 chữ số)</label>
+                                <div class="auth-input-wrapper">
+                                    <i class="bi bi-shield-lock input-icon-left"></i>
+                                    <input type="text" class="form-control auth-input" id="resetOtp" placeholder="123456" maxlength="6" required />
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="resetNewPassword" class="form-label fw-semibold fs-7">Mật khẩu mới</label>
+                                <div class="auth-input-wrapper">
+                                    <i class="bi bi-lock input-icon-left"></i>
+                                    <input type="password" class="form-control auth-input" id="resetNewPassword" placeholder="••••••••" required />
+                                </div>
+                            </div>
+                            <button type="submit" id="btnSubmitResetPass" class="btn-brand w-100 py-2.5 justify-content-center text-center rounded-3">
+                                <i class="bi bi-shield-check me-2"></i>Xác nhận đặt lại Mật khẩu
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
