@@ -79,8 +79,8 @@ const sendSplitBillInvoice = async (booking, user, tour) => {
         });
 
         console.log("=========================================");
-        console.log("📧 Email Message sent: %s", info.messageId);
-        console.log("🔗 Preview URL: %s", nodemailer.getTestMessageUrl(info));
+        console.log("[Email] Message sent: %s", info.messageId);
+        console.log("[Preview URL]: %s", nodemailer.getTestMessageUrl(info));
         console.log("=========================================");
 
         return nodemailer.getTestMessageUrl(info);

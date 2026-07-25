@@ -32,7 +32,12 @@ const createBooking = async (req, res) => {
                 .json({ message: `Chỉ còn ${tour.availableSeats} chỗ trống!` });
         }
 
-        const total_price = tour.price * quantity;
+        const adultsQty = req.body.adults_qty || quantity;
+        const childrenQty = req.body.children_qty || 0;
+        const adultPrice = tour.price;
+        const childPrice = tour.childPrice || Math.round(adultPrice * 0.5);
+        const total_price = adultsQty * adultPrice + childrenQty * childPrice;
+
         const service_fee = Math.round(
             (total_price * (tour.service_fee_rate || 10)) / 100,
         );
@@ -41,15 +46,16 @@ const createBooking = async (req, res) => {
         // Lấy thông tin user
         let user = await User.findById(user_id);
 
-        // Xử lý voucher nếu có
+        // Xử lý voucher nếu có (Kiểm tra cá nhân trước, toàn hệ thống sau)
         if (voucher_code) {
-            const voucher = user.vouchers.find(
+            let voucher = user ? user.vouchers.find(
                 (v) =>
                     v.code === voucher_code &&
                     !v.isUsed &&
                     new Date(v.expiry_date) > new Date() &&
-                    total_price >= v.min_spend,
-            );
+                    total_price >= (v.min_spend || 0),
+            ) : null;
+
             if (voucher) {
                 discount_amount =
                     voucher.discount_type === "percentage"
@@ -57,13 +63,24 @@ const createBooking = async (req, res) => {
                               (total_price * voucher.discount_amount) / 100,
                           )
                         : voucher.discount_amount;
-                // Đánh dấu voucher đã dùng
                 voucher.isUsed = true;
                 await user.save();
+            } else {
+                const VoucherModel = require("../models/Voucher");
+                const globalVoucher = await VoucherModel.findOne({ code: voucher_code });
+                if (
+                    globalVoucher &&
+                    new Date() <= new Date(globalVoucher.valid_until) &&
+                    globalVoucher.used_count < globalVoucher.max_uses
+                ) {
+                    discount_amount = globalVoucher.discount_amount;
+                    globalVoucher.used_count += 1;
+                    await globalVoucher.save();
+                }
             }
         }
 
-        const final_price = total_price + service_fee - discount_amount;
+        const final_price = Math.max(0, total_price + service_fee - discount_amount);
 
         // Sinh ID booking
         const newId = "BK" + Date.now().toString().slice(-8);
@@ -280,7 +297,13 @@ const completeBooking = async (req, res) => {
         }
 
         // Cập nhật Passport Stamp
-        const locationName = booking.tour_id.destination || "Việt Nam";
+        const tourObj = (typeof booking.tour_id === "object" && booking.tour_id)
+            ? booking.tour_id
+            : await Tour.findById(booking.tour_id);
+
+        const locationName = (tourObj && tourObj.destination) ? tourObj.destination : "Việt Nam";
+        const tourImage = (tourObj && tourObj.image) ? tourObj.image : "/assets/images/dulichbien.png";
+
         const existingStamp = user.passportStamps.find(
             (s) => s.location === locationName,
         );
@@ -291,7 +314,7 @@ const completeBooking = async (req, res) => {
         } else {
             user.passportStamps.push({
                 location: locationName,
-                image: booking.tour_id.image || "/assets/images/dulichbien.png",
+                image: tourImage,
                 visitCount: 1,
                 firstVisitDate: new Date(),
                 lastVisitDate: new Date(),

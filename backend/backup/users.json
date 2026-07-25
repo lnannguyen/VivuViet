@@ -1,0 +1,151 @@
+[
+  {
+    "_id": "USR001",
+    "fullname": "Nguyễn Minh Anh",
+    "email": "minhanh@gmail.com",
+    "phone": "0901234567",
+    "avatar": "/assets/images/avt/avatar1.png",
+    "password": "$2b$10$LDugt7V2lKzWTJiDaVA2ie4dAawovdAoE8HS/2pi378Hbvk4ylLde",
+    "auth_provider": "local",
+    "membership": "gold",
+    "wishlist": [
+      "TOUR001",
+      "TOUR003"
+    ],
+    "notifications": [
+      {
+        "title": "Chào mừng gia nhập VivuViet!",
+        "content": "Xin chào Nguyễn Minh Anh, chào mừng bạn tham gia cộng đồng du lịch VivuViet!",
+        "type": "general",
+        "isRead": true,
+        "_id": "6a6431961ccf61b390593394",
+        "createdAt": "2026-07-25T03:46:30.275Z"
+      },
+      {
+        "title": "Đặt tour thành công!",
+        "content": "Bạn vừa đặt thành công tour Khám phá Sapa - Chinh phục Fansipan. Chúc bạn chuyến đi vui vẻ!",
+        "type": "booking",
+        "isRead": false,
+        "_id": "6a6431961ccf61b390593395",
+        "createdAt": "2026-07-25T03:46:30.276Z"
+      }
+    ],
+    "vouchers": [
+      {
+        "code": "WELCOME200K",
+        "discount_amount": 200000,
+        "discount_type": "fixed",
+        "min_spend": 1000000,
+        "expiry_date": "2026-12-31T00:00:00.000Z",
+        "isUsed": false,
+        "_id": "6a6431961ccf61b390593396"
+      },
+      {
+        "code": "VIVUVIET2026",
+        "discount_amount": 300000,
+        "discount_type": "fixed",
+        "min_spend": 2000000,
+        "expiry_date": "2026-12-31T00:00:00.000Z",
+        "isUsed": false,
+        "_id": "6a6431961ccf61b390593397"
+      }
+    ],
+    "vivupoints": 350,
+    "passportStamps": [
+      {
+        "location": "Hội An, Quảng Nam",
+        "image": "/assets/images/hoian.png",
+        "visitCount": 2,
+        "firstVisitDate": "2025-03-10T00:00:00.000Z",
+        "lastVisitDate": "2026-06-20T00:00:00.000Z",
+        "_id": "6a6431961ccf61b390593398"
+      },
+      {
+        "location": "Sapa, Lào Cai",
+        "image": "/assets/images/sapa.jpg",
+        "visitCount": 1,
+        "firstVisitDate": "2025-09-01T00:00:00.000Z",
+        "lastVisitDate": "2025-09-01T00:00:00.000Z",
+        "_id": "6a6431961ccf61b390593399"
+      }
+    ],
+    "achievements": [
+      {
+        "label": "Chinh phục Sapa",
+        "icon": "bi-binoculars-fill",
+        "color": "#0E5E3A",
+        "unlockedAt": "2025-09-01T00:00:00.000Z",
+        "_id": "6a6431961ccf61b39059339a"
+      },
+      {
+        "label": "Khám phá Hạ Long",
+        "icon": "bi-anchor",
+        "color": "#F97316",
+        "unlockedAt": "2026-01-15T00:00:00.000Z",
+        "_id": "6a6431961ccf61b39059339b"
+      }
+    ],
+    "__v": 0,
+    "createdAt": "2026-07-25T03:46:30.283Z",
+    "updatedAt": "2026-07-25T03:59:43.799Z"
+  },
+  {
+    "_id": "USR002",
+    "fullname": "Trần Văn Hùng",
+    "email": "hung.tran@gmail.com",
+    "phone": "0987654321",
+    "avatar": "/assets/images/avt/avatar2.png",
+    "password": "$2b$10$LDugt7V2lKzWTJiDaVA2ie4dAawovdAoE8HS/2pi378Hbvk4ylLde",
+    "auth_provider": "local",
+    "membership": "standard",
+    "wishlist": [
+      "TOUR002"
+    ],
+    "notifications": [
+      {
+        "title": "Mã giảm giá mới",
+        "content": "Tặng bạn voucher VIVUVIET2026 giảm 300k cho hành trình tiếp theo!",
+        "type": "general",
+        "isRead": false,
+        "_id": "6a6431961ccf61b39059339c",
+        "createdAt": "2026-07-25T03:46:30.278Z"
+      }
+    ],
+    "vouchers": [
+      {
+        "code": "WELCOME200K",
+        "discount_amount": 200000,
+        "discount_type": "fixed",
+        "min_spend": 1000000,
+        "expiry_date": "2026-12-31T00:00:00.000Z",
+        "isUsed": false,
+        "_id": "6a6431961ccf61b39059339d"
+      }
+    ],
+    "vivupoints": 120,
+    "passportStamps": [],
+    "achievements": [],
+    "__v": 0,
+    "createdAt": "2026-07-25T03:46:30.284Z",
+    "updatedAt": "2026-07-25T03:59:44.032Z"
+  },
+  {
+    "_id": "USR003",
+    "fullname": "Lê Thị Phương Mai",
+    "email": "mai.le@gmail.com",
+    "phone": "0912345678",
+    "avatar": "",
+    "password": "$2b$10$LDugt7V2lKzWTJiDaVA2ie4dAawovdAoE8HS/2pi378Hbvk4ylLde",
+    "auth_provider": "local",
+    "membership": "standard",
+    "wishlist": [],
+    "notifications": [],
+    "vouchers": [],
+    "vivupoints": 50,
+    "passportStamps": [],
+    "achievements": [],
+    "__v": 0,
+    "createdAt": "2026-07-25T03:46:30.285Z",
+    "updatedAt": "2026-07-25T03:59:44.214Z"
+  }
+]

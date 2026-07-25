@@ -60,8 +60,6 @@ const getAllTours = async (req, res) => {
         const limitNum = Number(limit) || 100;
         const skip = (pageNum - 1) * limitNum;
 
-        console.log("DEBUG_FILTER:", JSON.stringify(filter));
-
         const [tours, total] = await Promise.all([
             Tour.find(filter).sort(sort).skip(skip).limit(limitNum),
             Tour.countDocuments(filter),

@@ -299,3 +299,13 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* Review Media Zoomable Hover Effects */
+.review-media-grid .media-item {
+    cursor: pointer;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.review-media-grid .media-item:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: var(--shadow-md);
+}

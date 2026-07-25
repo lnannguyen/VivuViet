@@ -1,0 +1,108 @@
+[
+  {
+    "_id": "BK1001",
+    "user_id": "USR001",
+    "tour_id": "TOUR001",
+    "departure_date": "2026-08-15T00:00:00.000Z",
+    "quantity": 2,
+    "passengers": [
+      {
+        "fullname": "Nguyễn Minh Anh",
+        "email": "minhanh@gmail.com",
+        "phone": "0901234567",
+        "passport_cccd": "001098001234"
+      },
+      {
+        "fullname": "Trần Bảo Ngọc",
+        "email": "baongoc@gmail.com",
+        "phone": "0909876543",
+        "passport_cccd": "001098005678"
+      }
+    ],
+    "total_price": 7000000,
+    "service_fee": 700000,
+    "voucher_code": "WELCOME200K",
+    "discount_amount": 200000,
+    "final_price": 7500000,
+    "bill_split": [],
+    "booking_status": "completed",
+    "isReviewed": true,
+    "payment_method": "bank_transfer",
+    "createdAt": "2026-06-10T00:00:00.000Z",
+    "__v": 0,
+    "updatedAt": "2026-07-25T03:59:46.274Z"
+  },
+  {
+    "_id": "BK1002",
+    "user_id": "USR001",
+    "tour_id": "TOUR002",
+    "departure_date": "2026-09-02T00:00:00.000Z",
+    "quantity": 1,
+    "passengers": [
+      {
+        "fullname": "Nguyễn Minh Anh",
+        "email": "minhanh@gmail.com",
+        "phone": "0901234567",
+        "passport_cccd": "001098001234"
+      }
+    ],
+    "total_price": 4200000,
+    "service_fee": 420000,
+    "voucher_code": null,
+    "discount_amount": 0,
+    "final_price": 4620000,
+    "bill_split": [],
+    "booking_status": "paid",
+    "isReviewed": false,
+    "payment_method": "vnpay",
+    "createdAt": "2026-07-01T00:00:00.000Z",
+    "__v": 0,
+    "updatedAt": "2026-07-25T03:59:46.490Z"
+  },
+  {
+    "_id": "BK1003",
+    "user_id": "USR002",
+    "tour_id": "TOUR004",
+    "departure_date": "2026-08-22T00:00:00.000Z",
+    "quantity": 2,
+    "passengers": [
+      {
+        "fullname": "Trần Văn Hùng",
+        "email": "hung.tran@gmail.com",
+        "phone": "0987654321",
+        "passport_cccd": "001092009999"
+      },
+      {
+        "fullname": "Nguyễn Thị Hoa",
+        "email": "hoa.nguyen@gmail.com",
+        "phone": "0981112223",
+        "passport_cccd": "001092008888"
+      }
+    ],
+    "total_price": 11600000,
+    "service_fee": 1160000,
+    "voucher_code": "VIVUVIET2026",
+    "discount_amount": 300000,
+    "final_price": 12460000,
+    "bill_split": [
+      {
+        "name": "Trần Văn Hùng",
+        "email": "hung.tran@gmail.com",
+        "amount": 6230000,
+        "isPaid": true
+      },
+      {
+        "name": "Nguyễn Thị Hoa",
+        "email": "hoa.nguyen@gmail.com",
+        "amount": 6230000,
+        "isPaid": false
+      }
+    ],
+    "booking_status": "pending",
+    "isReviewed": false,
+    "payment_method": "bank_transfer",
+    "createdAt": "2026-07-20T00:00:00.000Z",
+    "__v": 0,
+    "updatedAt": "2026-07-25T03:46:31.042Z"
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "_id": "DES001",
+    "code": "DES001",
+    "name": "Sapa",
+    "description": "Thị trấn mộng mơ vùng Tây Bắc",
+    "image": "/assets/images/sapa.jpg",
+    "status": true,
+    "__v": 0,
+    "createdAt": "2026-07-25T03:46:29.874Z",
+    "updatedAt": "2026-07-25T03:59:41.970Z"
+  },
+  {
+    "_id": "DES002",
+    "code": "DES002",
+    "name": "Hạ Long",
+    "description": "Kỳ quan thiên nhiên thế giới",
+    "image": "/assets/images/halong.png",
+    "status": true,
+    "__v": 0,
+    "createdAt": "2026-07-25T03:46:29.874Z",
+    "updatedAt": "2026-07-25T03:59:42.189Z"
+  },
+  {
+    "_id": "DES003",
+    "code": "DES003",
+    "name": "Hội An",
+    "description": "Phố cổ di sản văn hóa thế giới",
+    "image": "/assets/images/hoian.png",
+    "status": true,
+    "__v": 0,
+    "createdAt": "2026-07-25T03:46:29.874Z",
+    "updatedAt": "2026-07-25T03:59:42.394Z"
+  },
+  {
+    "_id": "DES004",
+    "code": "DES004",
+    "name": "Phú Quốc",
+    "description": "Thiên đường biển ngọc đảo ngọc",
+    "image": "/assets/images/phuquoc.png",
+    "status": true,
+    "__v": 0,
+    "createdAt": "2026-07-25T03:46:29.874Z",
+    "updatedAt": "2026-07-25T03:59:42.598Z"
+  },
+  {
+    "_id": "DES005",
+    "code": "DES005",
+    "name": "Cao Bằng",
+    "description": "Thác Bản Giốc và núi rừng Đông Bắc",
+    "image": "/assets/images/caobang.png",
+    "status": true,
+    "__v": 0,
+    "createdAt": "2026-07-25T03:46:29.875Z",
+    "updatedAt": "2026-07-25T03:59:42.803Z"
+  },
+  {
+    "_id": "DES006",
+    "code": "DES006",
+    "name": "Ninh Bình",
+    "description": "Di sản thế giới kép Tràng An",
+    "image": "/assets/images/ninhbinh.png",
+    "status": true,
+    "__v": 0,
+    "createdAt": "2026-07-25T03:46:29.875Z",
+    "updatedAt": "2026-07-25T03:59:42.989Z"
+  },
+  {
+    "_id": "DES007",
+    "code": "DES007",
+    "name": "Đà Nẵng",
+    "description": "Thành phố đáng sống bên sông Hàn",
+    "image": "/assets/images/danang.png",
+    "status": true,
+    "__v": 0,
+    "createdAt": "2026-07-25T03:46:29.875Z",
+    "updatedAt": "2026-07-25T03:59:43.203Z"
+  },
+  {
+    "_id": "DES008",
+    "code": "DES008",
+    "name": "Hà Giang",
+    "description": "Công viên địa chất cao nguyên đá",
+    "image": "/assets/images/hagiang.png",
+    "status": true,
+    "__v": 0,
+    "createdAt": "2026-07-25T03:46:29.875Z",
+    "updatedAt": "2026-07-25T03:59:43.519Z"
+  }
+]

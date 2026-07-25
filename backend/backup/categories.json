@@ -1,0 +1,46 @@
+[
+  {
+    "_id": "CAT001",
+    "code": "CAT001",
+    "name": "Vùng Cao",
+    "description": "Khám phá núi rừng hùng vĩ, mây ngàn và bản sắc văn hóa các dân tộc phía Bắc.",
+    "image": "/assets/images/vungcao.png",
+    "status": true,
+    "__v": 0,
+    "createdAt": "2026-07-25T03:46:29.610Z",
+    "updatedAt": "2026-07-25T03:59:38.973Z"
+  },
+  {
+    "_id": "CAT002",
+    "code": "CAT002",
+    "name": "Du lịch biển",
+    "description": "Tận hưởng làn nước trong xanh, cát trắng và không khí biển trong lành tươi mát.",
+    "image": "/assets/images/dulichbien.png",
+    "status": true,
+    "__v": 0,
+    "createdAt": "2026-07-25T03:46:29.611Z",
+    "updatedAt": "2026-07-25T03:59:41.355Z"
+  },
+  {
+    "_id": "CAT003",
+    "code": "CAT003",
+    "name": "Văn Hóa & Di Sản",
+    "description": "Hành trình ngược dòng thời gian tìm về di sản lịch sử và kiến trúc cổ kính.",
+    "image": "/assets/images/vanhoa.png",
+    "status": true,
+    "__v": 0,
+    "createdAt": "2026-07-25T03:46:29.611Z",
+    "updatedAt": "2026-07-25T03:59:41.566Z"
+  },
+  {
+    "_id": "CAT004",
+    "code": "CAT004",
+    "name": "Sinh Thái",
+    "description": "Hòa mình vào thiên nhiên hoang sơ, rừng nguyên sinh và các khu bảo tồn đa dạng.",
+    "image": "/assets/images/khampha.png",
+    "status": true,
+    "__v": 0,
+    "createdAt": "2026-07-25T03:46:29.611Z",
+    "updatedAt": "2026-07-25T03:59:41.780Z"
+  }
+]

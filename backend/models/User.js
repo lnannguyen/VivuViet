@@ -31,7 +31,7 @@ const passportStampSchema = new mongoose.Schema({
 
 const achievementSchema = new mongoose.Schema({
     label: { type: String, required: true },
-    icon: { type: String, default: "🏆" },
+    icon: { type: String, default: "bi-trophy-fill" },
     color: { type: String, default: "#F97316" },
     unlockedAt: { type: Date, default: Date.now },
 });

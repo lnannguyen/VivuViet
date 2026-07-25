@@ -1,0 +1,47 @@
+[
+  {
+    "_id": "REV001",
+    "booking_id": "BK1001",
+    "user_id": "USR001",
+    "tour_id": "TOUR001",
+    "rating": 5,
+    "comment": "Chuyến đi Sapa rất tuyệt vời! Hướng dẫn viên chu đáo, cảnh Fansipan đắm chìm trong mây ngàn mộng mơ. Chắc chắn sẽ quay lại cùng VivuViet!",
+    "images": [
+      "/assets/images/sapa.jpg"
+    ],
+    "videos": [],
+    "createdAt": "2026-06-18T00:00:00.000Z",
+    "__v": 0,
+    "updatedAt": "2026-07-25T03:59:46.695Z"
+  },
+  {
+    "_id": "REV002",
+    "booking_id": "BK1000_MOCK",
+    "user_id": "USR002",
+    "tour_id": "TOUR002",
+    "rating": 5,
+    "comment": "Du thuyền 5 sao trên Vịnh Hạ Long rất sang trọng. Đồ ăn hải sản tươi ngon, chèo thuyền kayak rất vui!",
+    "images": [
+      "/assets/images/halong.png"
+    ],
+    "videos": [],
+    "createdAt": "2026-07-05T00:00:00.000Z",
+    "__v": 0,
+    "updatedAt": "2026-07-25T03:46:31.244Z"
+  },
+  {
+    "_id": "REV003",
+    "booking_id": "BK1000_MOCK2",
+    "user_id": "USR003",
+    "tour_id": "TOUR006",
+    "rating": 5,
+    "comment": "Đi Ninh Bình 1 ngày gọn nhẹ mà tham quan được nhiều điểm đẹp. Tràng An nước trong vắt, Hang Múa chụp hình siêu ảo!",
+    "images": [
+      "/assets/images/ninhbinh.png"
+    ],
+    "videos": [],
+    "createdAt": "2026-07-12T00:00:00.000Z",
+    "__v": 0,
+    "updatedAt": "2026-07-25T03:46:31.244Z"
+  }
+]

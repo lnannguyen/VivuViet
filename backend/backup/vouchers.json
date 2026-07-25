@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "6a6431961ccf61b39059339e",
+    "code": "VIVUVIET2026",
+    "discount_amount": 300000,
+    "description": "Giảm 300k cho đơn hàng từ 2.000.000đ",
+    "max_uses": 1000,
+    "used_count": 15,
+    "valid_until": "2026-12-31T00:00:00.000Z",
+    "__v": 0,
+    "createdAt": "2026-07-25T03:46:30.835Z",
+    "updatedAt": "2026-07-25T03:59:45.671Z"
+  },
+  {
+    "_id": "6a6431961ccf61b39059339f",
+    "code": "WELCOME200K",
+    "discount_amount": 200000,
+    "description": "Giảm 200k chào mừng thành viên mới",
+    "max_uses": 500,
+    "used_count": 42,
+    "valid_until": "2026-12-31T00:00:00.000Z",
+    "__v": 0,
+    "createdAt": "2026-07-25T03:46:30.835Z",
+    "updatedAt": "2026-07-25T03:59:45.918Z"
+  },
+  {
+    "_id": "6a6431961ccf61b3905933a0",
+    "code": "SUMMER2026",
+    "discount_amount": 500000,
+    "description": "Giảm 500k ưu đãi mùa hè rực rỡ",
+    "max_uses": 200,
+    "used_count": 8,
+    "valid_until": "2026-09-30T00:00:00.000Z",
+    "__v": 0,
+    "createdAt": "2026-07-25T03:46:30.835Z",
+    "updatedAt": "2026-07-25T03:59:46.096Z"
+  }
+]

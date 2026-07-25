@@ -18,7 +18,7 @@ const createPaymentUrl = async (req, res) => {
         const secretKey = process.env.VNPAY_HASH_SECRET;
         const vnpUrl = process.env.VNPAY_URL;
         const returnUrl = process.env.VNPAY_RETURN_URL;
-        const amount = booking.total_price * 100;
+        const amount = (booking.final_price || booking.total_price) * 100;
 
         let vnpParams = {
             vnp_Version: "2.1.0",
@@ -70,6 +70,8 @@ const vnpayReturn = async (req, res) => {
             .update(Buffer.from(signData, "utf-8"))
             .digest("hex");
 
+        const clientOrigin = process.env.CLIENT_URL || "http://localhost:5000";
+
         if (secureHash === signed && vnpParams["vnp_ResponseCode"] === "00") {
             const bookingId = vnpParams["vnp_TxnRef"];
             if (bookingId) {
@@ -79,14 +81,14 @@ const vnpayReturn = async (req, res) => {
                 });
             }
             res.redirect(
-                "http://localhost:5000/booking/success?payment_method=vnpay",
+                `${clientOrigin}/booking/success?payment_method=vnpay`,
             );
         } else {
-            res.redirect("http://localhost:5000/booking/failed");
+            res.redirect(`${clientOrigin}/booking/failed`);
         }
     } catch (error) {
         console.error("VNPAY Return error:", error);
-        res.redirect("http://localhost:5000/booking/failed");
+        res.redirect(`${clientOrigin}/booking/failed`);
     }
 };
 

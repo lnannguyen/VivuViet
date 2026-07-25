@@ -208,7 +208,7 @@ function renderTourData(tour) {
         if (destLower.includes("phú quốc") || destLower.includes("kiên giang")) {
             vrLat = 10.0125; vrLng = 104.0163; // Sun World Hòn Thơm
         } else if (destLower.includes("sapa") || destLower.includes("lào cai") || destLower.includes("fansipan") || destLower.includes("sa pa")) {
-            vrLat = 22.3056; vrLng = 103.7766; // Đỉnh Fansipan (Toạ độ khác để tránh lỗi tên)
+            vrLat = 22.3033; vrLng = 103.7750; // Đỉnh Fansipan (Toạ độ chuẩn đã xác minh hoạt động)
         } else if (destLower.includes("nha trang") || destLower.includes("khánh hòa")) {
             vrLat = 12.2227; vrLng = 109.2396; // VinWonders Nha Trang
         } else if (destLower.includes("an giang") || destLower.includes("châu đốc")) {

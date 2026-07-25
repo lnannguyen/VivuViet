@@ -1128,3 +1128,40 @@ window.openViewReviewModal = async (bookingId) => {
         showToast("Lỗi kết nối máy chủ!", "error");
     }
 };
+
+// Event delegation to handle clicking on media items in review media grids
+document.addEventListener("click", (e) => {
+    const mediaItem = e.target.closest(".review-media-grid .media-item");
+    if (!mediaItem) return;
+
+    // Do not zoom if it's the remove button in the write review media preview
+    if (e.target.closest(".media-remove")) return;
+
+    const img = mediaItem.querySelector("img");
+    const video = mediaItem.querySelector("video");
+    const lightboxContent = document.getElementById("lightboxContent");
+
+    if (!lightboxContent) return;
+
+    if (img) {
+        lightboxContent.innerHTML = `<img src="${img.src}" class="img-fluid rounded shadow-lg" style="max-height: 80vh; max-width: 100%; object-fit: contain;">`;
+    } else if (video) {
+        lightboxContent.innerHTML = `<video src="${video.src}" class="w-100 rounded shadow-lg" style="max-height: 80vh;" controls autoplay></video>`;
+    } else {
+        return;
+    }
+
+    const modalEl = document.getElementById("lightboxModal");
+    if (modalEl) {
+        const modal = new bootstrap.Modal(modalEl);
+        modal.show();
+    }
+});
+
+// Clean up lightbox content when hidden (pauses video and prevents background play)
+document.getElementById("lightboxModal")?.addEventListener("hidden.bs.modal", () => {
+    const lightboxContent = document.getElementById("lightboxContent");
+    if (lightboxContent) {
+        lightboxContent.innerHTML = "";
+    }
+});
