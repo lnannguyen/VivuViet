@@ -101,7 +101,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.538Z",
-    "updatedAt": "2026-07-25T17:40:29.813Z"
+    "updatedAt": "2026-07-25T17:44:50.328Z"
   },
   {
     "_id": "TOUR002",
@@ -199,7 +199,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T17:40:30.023Z"
+    "updatedAt": "2026-07-25T17:44:50.543Z"
   },
   {
     "_id": "TOUR003",
@@ -299,7 +299,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T17:40:30.225Z"
+    "updatedAt": "2026-07-25T17:44:50.748Z"
   },
   {
     "_id": "TOUR004",
@@ -404,7 +404,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T17:40:30.445Z"
+    "updatedAt": "2026-07-25T17:44:50.952Z"
   },
   {
     "_id": "TOUR005",
@@ -510,7 +510,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T17:40:30.649Z"
+    "updatedAt": "2026-07-25T17:44:51.157Z"
   },
   {
     "_id": "TOUR006",
@@ -600,6 +600,385 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T17:40:30.829Z"
+    "updatedAt": "2026-07-25T17:44:51.362Z"
+  },
+  {
+    "_id": "TOUR007",
+    "__v": 0,
+    "availableSeats": 22,
+    "bookingCount": 95,
+    "category": "Du lịch biển",
+    "childPrice": 1825000,
+    "code": "TOUR007",
+    "createdAt": "2026-07-25T17:44:51.559Z",
+    "days": 3,
+    "departure": "TP. Hồ Chí Minh / Hà Nội",
+    "departureDates": [
+      "2026-08-04",
+      "2026-08-18"
+    ],
+    "description": "Trải nghiệm thành phố đáng sống nhất Việt Nam, check-in Cầu Vàng bàn tay khổng lồ Bà Nà Hills và thư giãn tại bãi biển Mỹ Khê.",
+    "destination": "Đà Nẵng",
+    "discount": 13,
+    "duration": "3 Ngày 2 Đêm",
+    "excluded": [
+      "Chi phí mua sắm quà cá nhân"
+    ],
+    "excludes": [],
+    "gallery": [
+      "/assets/images/tours/da-nang/golden_bridge.jpg",
+      "/assets/images/tours/da-nang/mykhe_beach.jpg",
+      "/assets/images/tours/da-nang/sontra_peninsula.jpg",
+      "/assets/images/tours/da-nang/dragon_bridge.jpg"
+    ],
+    "highlights": [
+      "Cầu Vàng Bà Nà Hills kỳ quan thế giới",
+      "Bãi biển Mỹ Khê xanh ngút ngàn",
+      "Thưởng thức bánh tráng thịt heo 2 đầu da"
+    ],
+    "image": "/assets/images/tours/da-nang/golden_bridge.jpg",
+    "images": [
+      "/assets/images/tours/da-nang/golden_bridge.jpg",
+      "/assets/images/tours/da-nang/mykhe_beach.jpg",
+      "/assets/images/tours/da-nang/sontra_peninsula.jpg",
+      "/assets/images/tours/da-nang/dragon_bridge.jpg"
+    ],
+    "included": [
+      "Xe ô tô máy lạnh chất lượng cao",
+      "Khách sạn 3-4 sao gần biển",
+      "Ăn uống theo chương trình",
+      "Vé cáp treo Bà Nà Hills"
+    ],
+    "includes": [],
+    "isFeatured": true,
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Ngày 1: Đón Sân Bay Đà Nẵng – Bãi biển Mỹ Khê – Bán Đảo Sơn Trà",
+        "content": "Xe đón đoàn tại Sân bay Đà Nẵng. Thăm Chùa Linh Ứng Bán Đảo Sơn Trà ngắm tượng Phật Bà 67m. Tự do tắm biển Mỹ Khê."
+      },
+      {
+        "day": 2,
+        "title": "Ngày 2: Cáp Treo Bà Nà Hills – Cầu Vàng – Làng Pháp",
+        "content": "Khởi hành đi Bà Nà Hills. Đi cáp treo kỷ lục thế giới check-in Cầu Vàng, dạo chơi Làng Pháp và tham gia 100+ trò chơi tại Fantasy Park."
+      },
+      {
+        "day": 3,
+        "title": "Ngày 3: Cầu Rồng – Chợ Hàn – Tiễn Sân Bay",
+        "content": "Tham quan Cầu Rồng, Cầu Tình Yêu. Mua sắm chả bò, hải sản khô tại Chợ Hàn. Tiễn khách ra sân bay Đà Nẵng."
+      }
+    ],
+    "location": "Đà Nẵng, Việt Nam",
+    "locationCoords": {
+      "address": "Bà Nà Hills, Đà Nẵng",
+      "lat": 15.9988,
+      "lng": 107.9881
+    },
+    "matchingTags": [
+      "CAT002",
+      "danang",
+      "banahills"
+    ],
+    "maxGuests": 35,
+    "meetingPoint": "Sân bay Đà Nẵng - 08:30 AM",
+    "mood": [
+      "thư giãn",
+      "văn hóa",
+      "khám phá"
+    ],
+    "name": "Khám phá Đà Nẵng - Cầu Vàng",
+    "oldPrice": 4200000,
+    "price": 3650000,
+    "rating": 4.9,
+    "rating_avg": 4.9,
+    "reviewCount": 38,
+    "review_count": 38,
+    "service_fee_rate": 10,
+    "slug": "kham-pha-da-nang-cau-vang-ba-na-hills",
+    "status": "Available",
+    "thumbnail": "/assets/images/tours/da-nang/golden_bridge.jpg",
+    "title": "Khám phá Đà Nẵng – Cầu Vàng Bà Nà Hills – Bán Đảo Sơn Trà",
+    "updatedAt": "2026-07-25T17:44:51.559Z",
+    "viewCount": 2300,
+    "weatherLocation": "Da Nang"
+  },
+  {
+    "_id": "TOUR008",
+    "__v": 0,
+    "availableSeats": 25,
+    "bookingCount": 70,
+    "category": "Văn Hóa & Di Sản",
+    "childPrice": 425000,
+    "code": "TOUR008",
+    "createdAt": "2026-07-25T17:44:52.576Z",
+    "days": 1,
+    "departure": "Hà Nội",
+    "departureDates": [
+      "Hàng ngày"
+    ],
+    "description": "Hành trình trải nghiệm tinh hoa văn hóa thủ đô ngàn năm văn hiến, dạo quanh Hồ Gươm, viếng Lăng Bác và khám phá phố cổ 36 phố phường.",
+    "destination": "Hà Nội",
+    "discount": 15,
+    "duration": "1 Ngày",
+    "excluded": [
+      "Chi phí cá nhân"
+    ],
+    "excludes": [],
+    "gallery": [
+      "/assets/images/tours/ha-noi/hoankiem_lake.png",
+      "/assets/images/tours/ha-noi/hanoi_oldquarter.jpg",
+      "/assets/images/tours/sapa/nhatho_da.jpg",
+      "/assets/images/tours/ninh-binh/baidinh_pagoda.jpg"
+    ],
+    "highlights": [
+      "Lăng Bác & Quảng trường Ba Đình",
+      "Văn Miếu Quốc Tử Giám di sản lịch sử",
+      "Thưởng thức Phở & Cà phê trứng Hà Nội"
+    ],
+    "image": "/assets/images/tours/ha-noi/hoankiem_lake.png",
+    "images": [
+      "/assets/images/tours/ha-noi/hoankiem_lake.png",
+      "/assets/images/tours/ha-noi/hanoi_oldquarter.jpg",
+      "/assets/images/tours/sapa/nhatho_da.jpg",
+      "/assets/images/tours/ninh-binh/baidinh_pagoda.jpg"
+    ],
+    "included": [
+      "Xe ô tô du lịch máy lạnh",
+      "Bữa ăn trưa đặc sản Hà Nội",
+      "Vé tham quan các điểm",
+      "Vé xe xích lô phố cổ"
+    ],
+    "includes": [],
+    "isFeatured": true,
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Ngày 1: Lăng Bác – Văn Miếu Quốc Tử Giám – Phố Cổ Hà Nội",
+        "content": "08h00 đón khách tại khách sạn. Viếng Lăng Chủ tịch Hồ Chí Minh, Chùa Một Cột. Thăm Văn Miếu Quốc Tử Giám trường đại học đầu tiên. Chiều đi xích lô phố cổ, thưởng thức bún chả Hà Nội và cà phê trứng."
+      }
+    ],
+    "location": "Hà Nội, Việt Nam",
+    "locationCoords": {
+      "address": "Hồ Hoàn Kiếm, Hà Nội",
+      "lat": 21.0285,
+      "lng": 105.8542
+    },
+    "matchingTags": [
+      "CAT003",
+      "hanoi",
+      "phoco"
+    ],
+    "maxGuests": 40,
+    "meetingPoint": "Hồ Hoàn Kiếm, Hà Nội - 08:00 AM",
+    "mood": [
+      "văn hóa",
+      "gia đình",
+      "khám phá"
+    ],
+    "name": "Hà Nội 36 Phố Phường",
+    "oldPrice": 1000000,
+    "price": 850000,
+    "rating": 4.8,
+    "rating_avg": 4.8,
+    "reviewCount": 22,
+    "review_count": 22,
+    "service_fee_rate": 10,
+    "slug": "ha-noi-ky-uc-36-pho-phuong-hoan-kiem",
+    "status": "Available",
+    "thumbnail": "/assets/images/tours/ha-noi/hoankiem_lake.png",
+    "title": "Hà Nội Ký Ức 36 Phố Phường – Hồ Hoàn Kiếm – Văn Miếu",
+    "updatedAt": "2026-07-25T17:44:52.576Z",
+    "viewCount": 1750,
+    "weatherLocation": "Ha Noi"
+  },
+  {
+    "_id": "TOUR009",
+    "__v": 0,
+    "availableSeats": 16,
+    "bookingCount": 55,
+    "category": "Văn Hóa & Di Sản",
+    "childPrice": 925000,
+    "code": "TOUR009",
+    "createdAt": "2026-07-25T17:44:52.933Z",
+    "days": 2,
+    "departure": "TP. Hồ Chí Minh",
+    "departureDates": [
+      "2026-08-06",
+      "2026-08-20"
+    ],
+    "description": "Khám phá thành phố mang tên Bác sôi động bậc nhất, trải nghiệm di tích lịch sử Địa đạo Củ Chi và sinh thái rừng ngập mặn Cần Giờ.",
+    "destination": "HCM",
+    "discount": 16,
+    "duration": "2 Ngày 1 Đêm",
+    "excluded": [
+      "Chi phí cá nhân"
+    ],
+    "excludes": [],
+    "gallery": [
+      "/assets/images/tours/hcm/saigon_skyline.png",
+      "/assets/images/tours/hcm/cangio_mangrove.jpg",
+      "/assets/images/tours/hcm/cuchi_tunnels.jpg",
+      "/assets/images/tours/hoi-an/phoco_hoian.png"
+    ],
+    "highlights": [
+      "Địa đạo Củ Chi huyền thoại",
+      "Rừng ngập mặn Cần Giờ sinh thái khu dự trữ sinh quyển",
+      "Ngắm Sài Gòn lung linh về đêm"
+    ],
+    "image": "/assets/images/tours/hcm/saigon_skyline.png",
+    "images": [
+      "/assets/images/tours/hcm/saigon_skyline.png",
+      "/assets/images/tours/hcm/cangio_mangrove.jpg",
+      "/assets/images/tours/hcm/cuchi_tunnels.jpg",
+      "/assets/images/tours/hoi-an/phoco_hoian.png"
+    ],
+    "included": [
+      "Xe ô tô máy lạnh đời mới",
+      "Khách sạn 3 sao trung tâm",
+      "Các bữa ăn chương trình",
+      "Vé tham quan & cano Cần Giờ"
+    ],
+    "includes": [],
+    "isFeatured": true,
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Ngày 1: TP.HCM – Di tích lịch sử Địa đạo Củ Chi",
+        "content": "08h00 khởi hành đi Củ Chi. Chui hầm hỏa lực trận địa, thưởng thức khoai mì chấm muối đậu. Chiều tham quan Dinh Độc Lập, Nhà thờ Đức Bà, Bưu điện Thành phố."
+      },
+      {
+        "day": 2,
+        "title": "Ngày 2: Rừng ngập mặn Cần Giờ – Đảo Khỉ – Trở về trung tâm",
+        "content": "Khởi hành đi Cần Giờ. Đi cano xuyên rừng ngập mặn Vàm Sát, cho khỉ ăn và lên tháp Tang Bồng ngắm toàn cảnh rừng xanh."
+      }
+    ],
+    "location": "TP. Hồ Chí Minh, Việt Nam",
+    "locationCoords": {
+      "address": "Quận 1, TP. Hồ Chí Minh",
+      "lat": 10.7769,
+      "lng": 106.7009
+    },
+    "matchingTags": [
+      "CAT003",
+      "hcm",
+      "cuchi"
+    ],
+    "maxGuests": 30,
+    "meetingPoint": "Chợ Bến Thành, TP.HCM - 07:30 AM",
+    "mood": [
+      "văn hóa",
+      "thiên nhiên",
+      "khám phá"
+    ],
+    "name": "TP. Hồ Chí Minh - Cần Giờ - Củ Chi",
+    "oldPrice": 2200000,
+    "price": 1850000,
+    "rating": 4.7,
+    "rating_avg": 4.7,
+    "reviewCount": 19,
+    "review_count": 19,
+    "service_fee_rate": 10,
+    "slug": "sai-gon-soi-dong-can-gio-di-a-dao-cu-chi",
+    "status": "Available",
+    "thumbnail": "/assets/images/tours/hcm/saigon_skyline.png",
+    "title": "TP. Hồ Chí Minh Sôi Động – Rừng Ngập Mặn Cần Giờ – Địa Đạo Củ Chi",
+    "updatedAt": "2026-07-25T17:44:52.933Z",
+    "viewCount": 1400,
+    "weatherLocation": "Ho Chi Minh"
+  },
+  {
+    "_id": "TOUR010",
+    "__v": 0,
+    "availableSeats": 25,
+    "bookingCount": 82,
+    "category": "Văn Hóa & Di Sản",
+    "childPrice": 975000,
+    "code": "TOUR010",
+    "createdAt": "2026-07-25T17:44:53.205Z",
+    "days": 2,
+    "departure": "TP. Hồ Chí Minh",
+    "departureDates": [
+      "2026-08-07",
+      "2026-08-21"
+    ],
+    "description": "Hành trình xuôi về đồng bằng sông Cửu Long, đi ghe máy tham quan Chợ nổi Cái Răng, hái trái cây miệt vườn và thưởng thức đờn ca tài tử.",
+    "destination": "Cần Thơ",
+    "discount": 15,
+    "duration": "2 Ngày 1 Đêm",
+    "excluded": [
+      "Chi phí mua sắm trái cây làm quà"
+    ],
+    "excludes": [],
+    "gallery": [
+      "/assets/images/tours/can-tho/cairang_floating_market.png",
+      "/assets/images/tours/phu-quoc/hamninh_village.jpg",
+      "/assets/images/tours/hoi-an/traque_village.jpg",
+      "/assets/images/tours/ninh-binh/trangan_boat.jpg"
+    ],
+    "highlights": [
+      "Chợ nổi Cái Răng sầm uất",
+      "Thưởng thức đờn ca tài tử Nam Bộ",
+      "Miệt vườn trái cây Cồn Thới Sơn"
+    ],
+    "image": "/assets/images/tours/can-tho/cairang_floating_market.png",
+    "images": [
+      "/assets/images/tours/can-tho/cairang_floating_market.png",
+      "/assets/images/tours/phu-quoc/hamninh_village.jpg",
+      "/assets/images/tours/hoi-an/traque_village.jpg",
+      "/assets/images/tours/ninh-binh/trangan_boat.jpg"
+    ],
+    "included": [
+      "Xe ô tô máy lạnh đời mới",
+      "Khách sạn 3 sao Cần Thơ",
+      "Vé ghe thuyền sông nước",
+      "Các bữa ăn chương trình"
+    ],
+    "includes": [],
+    "isFeatured": true,
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Ngày 1: TP.HCM – Mỹ Tho – Bến Tre – Cần Thơ",
+        "content": "Xe đón khách đi Mỹ Tho. Đi thuyền trên sông Tiền tham quan 4 cù lao Long Lân Quy Phụng. Thưởng thức hủ tiếu Mỹ Tho, trái cây nhiệt đới. Tối dạo bến Ninh Kiều."
+      },
+      {
+        "day": 2,
+        "title": "Ngày 2: Chợ Nổi Cái Răng – Lò hủ tiếu truyền thống – Trở về TP.HCM",
+        "content": "05h00 sáng đi ghe máy tham quan Chợ nổi Cái Răng sầm uất nét văn hóa đặc trưng sông nước. Thăm lò hủ tiếu truyền thống. 17h00 về lại TP.HCM."
+      }
+    ],
+    "location": "Cần Thơ, Việt Nam",
+    "locationCoords": {
+      "address": "Bến Ninh Kiều, Cần Thơ",
+      "lat": 10.0342,
+      "lng": 105.788
+    },
+    "matchingTags": [
+      "CAT003",
+      "cantho",
+      "mientay"
+    ],
+    "maxGuests": 35,
+    "meetingPoint": "Nhà hát TP.HCM - 06:30 AM",
+    "mood": [
+      "văn hóa",
+      "thư giãn",
+      "khám phá"
+    ],
+    "name": "Khám phá Miền Tây - Cần Thơ",
+    "oldPrice": 2300000,
+    "price": 1950000,
+    "rating": 4.9,
+    "rating_avg": 4.9,
+    "reviewCount": 31,
+    "review_count": 31,
+    "service_fee_rate": 10,
+    "slug": "kham-pha-mien-tay-song-nuoc-cho-noi-cai-rang",
+    "status": "Available",
+    "thumbnail": "/assets/images/tours/can-tho/cairang_floating_market.png",
+    "title": "Khám phá Miền Tây Sông Nước – Chợ Nổi Cái Răng Cần Thơ",
+    "updatedAt": "2026-07-25T17:44:53.205Z",
+    "viewCount": 1980,
+    "weatherLocation": "Can Tho"
   }
 ]
