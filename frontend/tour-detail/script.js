@@ -742,6 +742,7 @@ function getLandmarkCaption(imgSrc, tour) {
     // Cần Thơ & HCM & Hà Nội
     if (src.includes("ben_ninhkieu")) return "Bến Ninh Kiều & Toàn cảnh Cần Thơ về đêm";
     if (src.includes("mietvuon_cantho")) return "Khu sinh thái miệt vườn Cần Thơ";
+    if (src.includes("lohutieu_cantho")) return "Lò hủ tiếu truyền thống Cần Thơ";
     if (src.includes("cairang_floating_market") || src.includes("chonoi")) return "Chợ nổi Cái Răng Cần Thơ";
     if (src.includes("dinhdoclap_saigon")) return "Dinh Độc Lập TP. Hồ Chí Minh";
     if (src.includes("saigon_skyline") || src.includes("hcm")) return "Toàn cảnh Thành phố Hồ Chí Minh sôi động";

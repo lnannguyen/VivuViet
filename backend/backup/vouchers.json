@@ -9,7 +9,7 @@
     "valid_until": "2026-12-31T00:00:00.000Z",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.835Z",
-    "updatedAt": "2026-07-25T18:48:12.187Z"
+    "updatedAt": "2026-07-25T18:56:05.879Z"
   },
   {
     "_id": "6a6431961ccf61b39059339f",
@@ -21,7 +21,7 @@
     "valid_until": "2026-12-31T00:00:00.000Z",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.835Z",
-    "updatedAt": "2026-07-25T18:48:12.392Z"
+    "updatedAt": "2026-07-25T18:56:06.084Z"
   },
   {
     "_id": "6a6431961ccf61b3905933a0",
@@ -33,7 +33,7 @@
     "valid_until": "2026-09-30T00:00:00.000Z",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.835Z",
-    "updatedAt": "2026-07-25T18:48:12.606Z"
+    "updatedAt": "2026-07-25T18:56:06.346Z"
   },
   {
     "_id": "6a64f398474286f0e4ebc711",
@@ -43,7 +43,7 @@
     "description": "Giảm 20% đặt phòng khách sạn đối tác VivuViet",
     "discount_amount": 500000,
     "max_uses": 1000,
-    "updatedAt": "2026-07-25T18:48:11.164Z",
+    "updatedAt": "2026-07-25T18:56:04.869Z",
     "used_count": 15,
     "valid_until": "2026-12-31T00:00:00.000Z"
   },
@@ -55,7 +55,7 @@
     "description": "Tặng 500k khi đặt vé máy bay khứ hồi",
     "discount_amount": 500000,
     "max_uses": 500,
-    "updatedAt": "2026-07-25T18:48:11.367Z",
+    "updatedAt": "2026-07-25T18:56:05.074Z",
     "used_count": 42,
     "valid_until": "2026-12-31T00:00:00.000Z"
   },
@@ -67,7 +67,7 @@
     "description": "Giảm 15% ẩm thực cung đình tại các nhà hàng đối tác",
     "discount_amount": 150000,
     "max_uses": 300,
-    "updatedAt": "2026-07-25T18:48:11.552Z",
+    "updatedAt": "2026-07-25T18:56:05.278Z",
     "used_count": 12,
     "valid_until": "2026-12-31T00:00:00.000Z"
   },
@@ -79,7 +79,7 @@
     "description": "Miễn phí 100k xe đưa đón sân bay",
     "discount_amount": 100000,
     "max_uses": 500,
-    "updatedAt": "2026-07-25T18:48:11.729Z",
+    "updatedAt": "2026-07-25T18:56:05.461Z",
     "used_count": 20,
     "valid_until": "2026-12-31T00:00:00.000Z"
   },
@@ -91,7 +91,7 @@
     "description": "Giảm 25% dịch vụ Spa & Massage thảo mộc",
     "discount_amount": 250000,
     "max_uses": 200,
-    "updatedAt": "2026-07-25T18:48:11.982Z",
+    "updatedAt": "2026-07-25T18:56:05.697Z",
     "used_count": 8,
     "valid_until": "2026-12-31T00:00:00.000Z"
   }

@@ -101,7 +101,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.538Z",
-    "updatedAt": "2026-07-25T18:48:09.014Z"
+    "updatedAt": "2026-07-25T18:56:02.822Z"
   },
   {
     "_id": "TOUR002",
@@ -199,7 +199,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T18:48:09.217Z"
+    "updatedAt": "2026-07-25T18:56:03.025Z"
   },
   {
     "_id": "TOUR003",
@@ -299,7 +299,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T18:48:09.397Z"
+    "updatedAt": "2026-07-25T18:56:03.230Z"
   },
   {
     "_id": "TOUR004",
@@ -404,7 +404,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T18:48:09.729Z"
+    "updatedAt": "2026-07-25T18:56:03.410Z"
   },
   {
     "_id": "TOUR005",
@@ -510,7 +510,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T18:48:09.934Z"
+    "updatedAt": "2026-07-25T18:56:03.640Z"
   },
   {
     "_id": "TOUR006",
@@ -600,7 +600,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T18:48:10.139Z"
+    "updatedAt": "2026-07-25T18:56:03.844Z"
   },
   {
     "_id": "TOUR007",
@@ -698,7 +698,7 @@
     "status": "Available",
     "thumbnail": "/assets/images/tours/da-nang/golden_bridge.jpg",
     "title": "Khám phá Đà Nẵng – Cầu Vàng Bà Nà Hills – Bán Đảo Sơn Trà",
-    "updatedAt": "2026-07-25T18:48:10.344Z",
+    "updatedAt": "2026-07-25T18:56:04.049Z",
     "viewCount": 2300,
     "weatherLocation": "Da Nang"
   },
@@ -787,7 +787,7 @@
     "status": "Available",
     "thumbnail": "/assets/images/tours/ha-noi/hoankiem_lake.png",
     "title": "Hà Nội Ký Ức 36 Phố Phường – Hồ Hoàn Kiếm – Văn Miếu",
-    "updatedAt": "2026-07-25T18:48:10.548Z",
+    "updatedAt": "2026-07-25T18:56:04.255Z",
     "viewCount": 1750,
     "weatherLocation": "Ha Noi"
   },
@@ -882,7 +882,7 @@
     "status": "Available",
     "thumbnail": "/assets/images/tours/hcm/saigon_skyline.png",
     "title": "TP. Hồ Chí Minh Sôi Động – Rừng Ngập Mặn Cần Giờ – Địa Đạo Củ Chi",
-    "updatedAt": "2026-07-25T18:48:10.763Z",
+    "updatedAt": "2026-07-25T18:56:04.433Z",
     "viewCount": 1400,
     "weatherLocation": "Ho Chi Minh"
   },
@@ -912,7 +912,8 @@
     "gallery": [
       "/assets/images/tours/can-tho/cairang_floating_market.jpg",
       "/assets/images/tours/can-tho/ben_ninhkieu.jpg",
-      "/assets/images/tours/can-tho/mietvuon_cantho.jpg"
+      "/assets/images/tours/can-tho/mietvuon_cantho.jpg",
+      "/assets/images/tours/can-tho/lohutieu_cantho.jpg"
     ],
     "highlights": [
       "Chợ nổi Cái Răng sầm uất",
@@ -923,7 +924,8 @@
     "images": [
       "/assets/images/tours/can-tho/cairang_floating_market.jpg",
       "/assets/images/tours/can-tho/ben_ninhkieu.jpg",
-      "/assets/images/tours/can-tho/mietvuon_cantho.jpg"
+      "/assets/images/tours/can-tho/mietvuon_cantho.jpg",
+      "/assets/images/tours/can-tho/lohutieu_cantho.jpg"
     ],
     "included": [
       "Xe ô tô máy lạnh đời mới",
@@ -975,7 +977,7 @@
     "status": "Available",
     "thumbnail": "/assets/images/tours/can-tho/cairang_floating_market.jpg",
     "title": "Khám phá Miền Tây Sông Nước – Chợ Nổi Cái Răng Cần Thơ",
-    "updatedAt": "2026-07-25T18:48:10.950Z",
+    "updatedAt": "2026-07-25T18:56:04.629Z",
     "viewCount": 1980,
     "weatherLocation": "Can Tho"
   }

@@ -601,8 +601,8 @@ const seedData = async () => {
                 bookingCount: 82,
                 image: "/assets/images/tours/can-tho/cairang_floating_market.jpg",
                 thumbnail: "/assets/images/tours/can-tho/cairang_floating_market.jpg",
-                images: ["/assets/images/tours/can-tho/cairang_floating_market.jpg", "/assets/images/tours/can-tho/ben_ninhkieu.jpg", "/assets/images/tours/can-tho/mietvuon_cantho.jpg"],
-                gallery: ["/assets/images/tours/can-tho/cairang_floating_market.jpg", "/assets/images/tours/can-tho/ben_ninhkieu.jpg", "/assets/images/tours/can-tho/mietvuon_cantho.jpg"],
+                images: ["/assets/images/tours/can-tho/cairang_floating_market.jpg", "/assets/images/tours/can-tho/ben_ninhkieu.jpg", "/assets/images/tours/can-tho/mietvuon_cantho.jpg", "/assets/images/tours/can-tho/lohutieu_cantho.jpg"],
+                gallery: ["/assets/images/tours/can-tho/cairang_floating_market.jpg", "/assets/images/tours/can-tho/ben_ninhkieu.jpg", "/assets/images/tours/can-tho/mietvuon_cantho.jpg", "/assets/images/tours/can-tho/lohutieu_cantho.jpg"],
                 category: "Văn Hóa & Di Sản",
                 description: "Hành trình xuôi về đồng bằng sông Cửu Long, đi ghe máy tham quan Chợ nổi Cái Răng, hái trái cây miệt vườn và thưởng thức đờn ca tài tử.",
                 itinerary: [
