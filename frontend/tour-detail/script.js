@@ -740,10 +740,15 @@ function getLandmarkCaption(imgSrc, tour) {
     if (src.includes("dragon_bridge")) return "Cầu Rồng đun nước phun lửa sông Hàn";
 
     // Cần Thơ & HCM & Hà Nội
+    if (src.includes("ben_ninhkieu")) return "Bến Ninh Kiều & Toàn cảnh Cần Thơ về đêm";
+    if (src.includes("mietvuon_cantho")) return "Khu sinh thái miệt vườn Cần Thơ";
     if (src.includes("cairang_floating_market") || src.includes("chonoi")) return "Chợ nổi Cái Răng Cần Thơ";
+    if (src.includes("dinhdoclap_saigon")) return "Dinh Độc Lập TP. Hồ Chí Minh";
     if (src.includes("saigon_skyline") || src.includes("hcm")) return "Toàn cảnh Thành phố Hồ Chí Minh sôi động";
     if (src.includes("cangio_mangrove") || src.includes("cangio")) return "Khu sinh thái rừng ngập mặn Cần Giờ";
     if (src.includes("cuchi_tunnels") || src.includes("diadao")) return "Di tích lịch sử Địa đạo Củ Chi";
+    if (src.includes("vanmieu_quoctugiam")) return "Văn Miếu Quốc Tử Giám - Khuê Văn Các Hà Nội";
+    if (src.includes("hoangthanh_thanglong")) return "Hoàng Thành Thăng Long Hà Nội";
     if (src.includes("hoankiem_lake") || src.includes("hanoi")) return "Hồ Hoàn Kiếm & Tháp Rùa cổ kính Hà Nội";
     if (src.includes("hanoi_oldquarter") || src.includes("hanoi1")) return "Phố cổ 36 phố phường Hà Nội";
 
