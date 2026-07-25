@@ -46,6 +46,8 @@ const updateProfile = async (req, res) => {
     }
 };
 
+const cloudinary = require("../config/cloudinary");
+
 // [POST] /api/users/profile/avatar - Upload user avatar
 const uploadAvatar = async (req, res) => {
     try {
@@ -63,8 +65,26 @@ const uploadAvatar = async (req, res) => {
                 .json({ message: "Người dùng không tồn tại" });
         }
 
-        // Đường dẫn tương đối để frontend render
-        const avatarUrl = "/assets/images/avt/" + req.file.filename;
+        let avatarUrl = "/assets/images/avt/" + req.file.filename;
+
+        // Tự động đẩy lên Cloudinary Cloud nếu có cấu hình API Key
+        if (
+            process.env.CLOUDINARY_CLOUD_NAME &&
+            process.env.CLOUDINARY_API_KEY &&
+            process.env.CLOUDINARY_API_SECRET
+        ) {
+            try {
+                const cloudResult = await cloudinary.uploader.upload(req.file.path, {
+                    folder: "vivuviet_avatars",
+                    transformation: [{ width: 300, height: 300, crop: "fill" }],
+                });
+                if (cloudResult && cloudResult.secure_url) {
+                    avatarUrl = cloudResult.secure_url;
+                }
+            } catch (cloudErr) {
+                console.warn("Cloudinary upload fallback to local storage:", cloudErr.message);
+            }
+        }
 
         user.avatar = avatarUrl;
         await user.save();
