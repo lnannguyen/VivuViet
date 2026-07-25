@@ -237,6 +237,7 @@ const validateVoucher = async (req, res) => {
     } catch (error) {
         res.status(500).json({ message: "Lỗi server!", error: error.message });
     }
+};
 // Quên mật khẩu - Gửi mã OTP khôi phục
 const forgotPassword = async (req, res) => {
     try {

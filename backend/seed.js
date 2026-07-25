@@ -87,7 +87,7 @@ const seedData = async () => {
             {
                 _id: "USR001",
                 fullname: "Nguyễn Minh Anh",
-                email: "minhanh@gmail.com",
+                email: "anan265464@gmail.com",
                 phone: "0901234567",
                 avatar: "/assets/images/avt/avatar1.png",
                 password: defaultPassword,
@@ -185,7 +185,7 @@ const seedData = async () => {
             },
         ];
         for (const u of defaultUsers) {
-            await User.updateOne({ _id: u._id }, { $setOnInsert: u }, { upsert: true });
+            await User.updateOne({ _id: u._id }, { $set: u }, { upsert: true });
         }
 
         // 4. SEED TOURS (Upsert)

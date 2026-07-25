@@ -137,7 +137,7 @@ Máy chủ sẽ chạy tại địa chỉ: `http://localhost:5000`
 
 ## Tài khoản thử nghiệm mặc định
 Để thử nghiệm đầy đủ các tính năng đặt chỗ, thanh toán, đánh giá chuyến đi, bạn có thể đăng nhập bằng tài khoản thành viên Gold mặc định sau:
-*   **Email:** `an.nguyen@email.com`
+*   **Email:** `anan265464@gmail.com`
 *   **Mật khẩu:** `123456`
 
 ---
