@@ -8,7 +8,7 @@
     "status": true,
     "__v": 0,
     "createdAt": "2026-07-25T03:46:29.610Z",
-    "updatedAt": "2026-07-25T04:35:04.141Z"
+    "updatedAt": "2026-07-25T05:00:29.158Z"
   },
   {
     "_id": "CAT002",
@@ -19,7 +19,7 @@
     "status": true,
     "__v": 0,
     "createdAt": "2026-07-25T03:46:29.611Z",
-    "updatedAt": "2026-07-25T04:35:06.124Z"
+    "updatedAt": "2026-07-25T05:00:29.343Z"
   },
   {
     "_id": "CAT003",
@@ -30,17 +30,6 @@
     "status": true,
     "__v": 0,
     "createdAt": "2026-07-25T03:46:29.611Z",
-    "updatedAt": "2026-07-25T04:35:06.300Z"
-  },
-  {
-    "_id": "CAT004",
-    "code": "CAT004",
-    "name": "Sinh Thái",
-    "description": "Hòa mình vào thiên nhiên hoang sơ, rừng nguyên sinh và các khu bảo tồn đa dạng.",
-    "image": "/assets/images/khampha.png",
-    "status": true,
-    "__v": 0,
-    "createdAt": "2026-07-25T03:46:29.611Z",
-    "updatedAt": "2026-07-25T04:35:06.477Z"
+    "updatedAt": "2026-07-25T05:00:29.520Z"
   }
 ]

@@ -48,16 +48,8 @@ const seedData = async () => {
                 image: "/assets/images/vanhoa.png",
                 description: "Hành trình ngược dòng thời gian tìm về di sản lịch sử và kiến trúc cổ kính.",
             },
-            {
-                _id: "CAT004",
-                code: "CAT004",
-                title: "Khám Phá & Sinh Thái",
-                name: "Sinh Thái",
-                icon: "bi-tree-fill",
-                image: "/assets/images/khampha.png",
-                description: "Hòa mình vào thiên nhiên hoang sơ, rừng nguyên sinh và các khu bảo tồn đa dạng.",
-            },
         ];
+        await Category.deleteOne({ _id: "CAT004" });
         for (const cat of categories) {
             await Category.updateOne({ _id: cat._id }, { $set: cat }, { upsert: true });
         }
