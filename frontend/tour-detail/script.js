@@ -682,70 +682,67 @@ let currentLightboxImages = [];
 
 function getLandmarkCaption(imgSrc, tour) {
     if (!imgSrc) return "";
-    const src = imgSrc.toLowerCase();
+    const s = imgSrc.toLowerCase();
 
     // Sapa
-    if (src.includes("fansipan_peak")) return "Cột cờ Đỉnh Fansipan 3.143m & Biển mây";
-    if (src.includes("fansipan_marker") || src.includes("nhatho_da")) return "Cột mốc chóp inox Đỉnh Fansipan 3.143m";
-    if (src.includes("catcat_village") || src.includes("catcat")) return "Bản Cát Cát thổ cẩm H'Mông & Thung lũng Sapa";
-    if (src.includes("sanmay_fansipan") || src.includes("sanmay")) return "Săn mây hoàng hôn trên đỉnh Fansipan Sapa";
-    if (src.includes("sapa")) return "Thị trấn sương mù Sapa & Thung lũng Mường Hoa";
-
-    // Phú Quốc
-    if (src.includes("phuquoc_beach")) return "Biển ngọc Phú Quốc & Hoàng hôn Sunset Sanato";
-    if (src.includes("honthom_cable") || src.includes("honthom")) return "Cáp treo Hòn Thơm vượt biển dài nhất thế giới";
-    if (src.includes("vinpearl_safari") || src.includes("safari")) return "Công viên bán hoang dã Vinpearl Safari Phú Quốc";
-    if (src.includes("hamninh_village") || src.includes("langchai")) return "Làng chài truyền thống Hàm Ninh Phú Quốc";
-    if (src.includes("phuquoc") || src.includes("nuocmam")) return "Nhà thùng nước mắm truyền thống Phú Quốc";
-
-    // Ninh Bình
-    if (src.includes("trangan_landscape")) return "Tuyệt tác danh thắng Tràng An Ninh Bình";
-    if (src.includes("hangmua_peak") || src.includes("dinh")) return "Đỉnh Hang Múa - Góc ngắm đại panorama Tam Cốc";
-    if (src.includes("baidinh_pagoda") || src.includes("xuanthuy")) return "Chùa Bái Đính - Ngôi chùa lớn nhất Đông Nam Á";
-    if (src.includes("trangan_boat") || src.includes("khampha")) return "Chèo thuyền đò lướt qua hang động Tràng An";
-    if (src.includes("ninhbinh")) return "Tuyệt tác danh thắng Tràng An Ninh Bình";
-
-    // Cao Bằng
-    if (src.includes("bangioc_waterfall")) return "Thác Bản Giốc - Thác nước tự nhiên hùng vĩ nhất";
-    if (src.includes("nguomngao_cave")) return "Động Ngườm Ngao - Kỳ quan thạch nhũ Cao Bằng";
-    if (src.includes("babe_lake")) return "Hồ Ba Bể - Viên ngọc xanh giữa đại ngàn";
-    if (src.includes("mapileng_pass") || src.includes("hagiang")) return "Đèo Mã Pí Lèng & Cảnh quan cao nguyên đá";
-    if (src.includes("caobang")) return "Thác Bản Giốc - Thác nước tự nhiên hùng vĩ nhất";
+    if (s.includes("fansipan_peak")) return "Cột cờ Đỉnh Fansipan 3.143m & Biển mây";
+    if (s.includes("fansipan_marker")) return "Cột mốc chóp inox Đỉnh Fansipan 3.143m";
+    if (s.includes("catcat_village")) return "Bản Cát Cát thổ cẩm H'Mông & Thung lũng Sapa";
+    if (s.includes("sanmay_fansipan")) return "Săn mây hoàng hôn trên đỉnh Fansipan Sapa";
 
     // Hạ Long
-    if (src.includes("halong_cruise")) return "Du thuyền 5 sao giữa kỳ quan Vịnh Hạ Long";
-    if (src.includes("kayak_cave") || src.includes("kayak")) return "Chèo thuyền Kayak khám phá vòm hang đá vôi Hạ Long";
-    if (src.includes("halong_panorama") || src.includes("panorama") || src.includes("vinhdisan")) return "Toàn cảnh quần thể đảo đá vôi Vịnh Hạ Long";
-    if (src.includes("hangdong_thachnhu") || src.includes("hangdong")) return "Khám phá hệ thống hang động thạch nhũ ảo diệu Hạ Long";
-    if (src.includes("halong")) return "Du thuyền 5 sao giữa kỳ quan Vịnh Hạ Long";
+    if (s.includes("halong_cruise")) return "Du thuyền 5 sao giữa kỳ quan Vịnh Hạ Long";
+    if (s.includes("kayak_cave")) return "Chèo thuyền Kayak khám phá vòm hang đá vôi Hạ Long";
+    if (s.includes("halong_panorama")) return "Toàn cảnh quần thể đảo đá vôi Vịnh Hạ Long";
+    if (s.includes("hangdong_thachnhu")) return "Khám phá hệ thống hang động thạch nhũ ảo diệu Hạ Long";
+
+    // Cao Bằng
+    if (s.includes("bangioc_waterfall")) return "Thác Bản Giốc - Thác nước tự nhiên hùng vĩ nhất";
+    if (s.includes("nguomngao_cave")) return "Động Ngườm Ngao - Kỳ quan thạch nhũ Cao Bằng";
+    if (s.includes("babe_lake")) return "Hồ Ba Bể - Viên ngọc xanh giữa đại ngàn";
+    if (s.includes("mapileng_pass")) return "Đèo Mã Pí Lèng & Cảnh quan cao nguyên đá";
+
+    // Phú Quốc
+    if (s.includes("phuquoc_beach")) return "Biển ngọc Phú Quốc & Hoàng hôn Sunset Sanato";
+    if (s.includes("honthom_cable")) return "Cáp treo Hòn Thơm vượt biển dài nhất thế giới";
+    if (s.includes("vinpearl_safari")) return "Công viên bán hoang dã Vinpearl Safari Phú Quốc";
+    if (s.includes("hamninh_village")) return "Làng chài truyền thống Hàm Ninh Phú Quốc";
 
     // Hội An
-    if (src.includes("phoco_hoian")) return "Toàn cảnh Phố cổ Hội An bên dòng sông Hoài";
-    if (src.includes("denlong_hoian") || src.includes("denlong")) return "Đêm phố cổ Hội An rực rỡ sắc màu đèn lồng";
-    if (src.includes("chuacau_hoian") || src.includes("caumuc")) return "Chùa Cầu di sản kiến trúc độc đáo Hội An";
-    if (src.includes("traque_village") || src.includes("rau")) return "Làng rau truyền thống Trà Quế Hội An";
-    if (src.includes("hoian")) return "Toàn cảnh Phố cổ Hội An bên dòng sông Hoài";
+    if (s.includes("phoco_hoian")) return "Toàn cảnh Phố cổ Hội An bên dòng sông Hoài";
+    if (s.includes("denlong_hoian")) return "Đêm phố cổ Hội An rực rỡ sắc màu đèn lồng";
+    if (s.includes("chuacau_hoian")) return "Chùa Cầu di sản kiến trúc độc đáo Hội An";
+    if (s.includes("traque_village")) return "Làng rau truyền thống Trà Quế Hội An";
+
+    // Ninh Bình
+    if (s.includes("trangan_landscape")) return "Tuyệt tác danh thắng Tràng An Ninh Bình";
+    if (s.includes("hangmua_peak")) return "Đỉnh Hang Múa - Góc ngắm đại panorama Tam Cốc";
+    if (s.includes("baidinh_pagoda")) return "Chùa Bái Đính - Ngôi chùa lớn nhất Đông Nam Á";
+    if (s.includes("trangan_boat")) return "Chèo thuyền đò lướt qua hang động Tràng An";
 
     // Đà Nẵng
-    if (src.includes("golden_bridge")) return "Cầu Vàng Bà Nà Hills Đà Nẵng";
-    if (src.includes("mykhe_beach")) return "Bãi biển Mỹ Khê - Top biển đẹp nhất hành tinh";
-    if (src.includes("sontra_peninsula")) return "Bán đảo Sơn Trà & Chùa Linh Ứng";
-    if (src.includes("dragon_bridge")) return "Cầu Rồng đun nước phun lửa sông Hàn";
+    if (s.includes("golden_bridge")) return "Cầu Vàng Bà Nà Hills Đà Nẵng";
+    if (s.includes("mykhe_beach")) return "Bãi biển Mỹ Khê - Top biển đẹp nhất hành tinh";
+    if (s.includes("sontra_peninsula")) return "Bán đảo Sơn Trà & Chùa Linh Ứng";
+    if (s.includes("dragon_bridge")) return "Cầu Rồng đun nước phun lửa sông Hàn";
 
-    // Cần Thơ & HCM & Hà Nội
-    if (src.includes("ben_ninhkieu")) return "Bến Ninh Kiều & Toàn cảnh Cần Thơ về đêm";
-    if (src.includes("mietvuon_cantho")) return "Khu sinh thái miệt vườn Cần Thơ";
-    if (src.includes("lohutieu_cantho")) return "Lò hủ tiếu truyền thống Cần Thơ";
-    if (src.includes("cairang_floating_market") || src.includes("chonoi")) return "Chợ nổi Cái Răng Cần Thơ";
-    if (src.includes("dinhdoclap_saigon")) return "Dinh Độc Lập TP. Hồ Chí Minh";
-    if (src.includes("saigon_skyline") || src.includes("hcm")) return "Toàn cảnh Thành phố Hồ Chí Minh sôi động";
-    if (src.includes("cangio_mangrove") || src.includes("cangio")) return "Khu sinh thái rừng ngập mặn Cần Giờ";
-    if (src.includes("cuchi_tunnels") || src.includes("diadao")) return "Di tích lịch sử Địa đạo Củ Chi";
     // Hà Nội
-    if (src.includes("vanmieu_quoctugiam")) return "Văn Miếu Quốc Tử Giám - Khuê Văn Các Hà Nội";
-    if (src.includes("hoangthanh_thanglong")) return "Hoàng Thành Thăng Long Hà Nội";
-    if (src.includes("hanoi_oldquarter")) return "Phố cổ 36 phố phường Hà Nội";
-    if (src.includes("hoankiem_lake") || src.includes("hanoi")) return "Hồ Hoàn Kiếm & Tháp Rùa cổ kính Hà Nội";
+    if (s.includes("vanmieu_quoctugiam")) return "Văn Miếu Quốc Tử Giám - Khuê Văn Các Hà Nội";
+    if (s.includes("hanoi_oldquarter")) return "Phố cổ 36 phố phường Hà Nội";
+    if (s.includes("hoangthanh_thanglong")) return "Hoàng Thành Thăng Long Hà Nội";
+    if (s.includes("hoankiem_lake")) return "Hồ Hoàn Kiếm & Tháp Rùa cổ kính Hà Nội";
+
+    // TP. HCM
+    if (s.includes("saigon_skyline")) return "Toàn cảnh Thành phố Hồ Chí Minh sôi động";
+    if (s.includes("dinhdoclap_saigon")) return "Dinh Độc Lập TP. Hồ Chí Minh";
+    if (s.includes("cangio_mangrove")) return "Khu sinh thái rừng ngập mặn Cần Giờ";
+    if (s.includes("cuchi_tunnels")) return "Di tích lịch sử Địa đạo Củ Chi";
+
+    // Cần Thơ
+    if (s.includes("cairang_floating_market")) return "Chợ nổi Cái Răng Cần Thơ";
+    if (s.includes("ben_ninhkieu")) return "Bến Ninh Kiều & Toàn cảnh Cần Thơ về đêm";
+    if (s.includes("mietvuon_cantho")) return "Khu sinh thái miệt vườn Cần Thơ";
+    if (s.includes("lohutieu_cantho")) return "Lò hủ tiếu truyền thống Cần Thơ";
 
     const dest = tour ? (tour.destination || tour.name || "") : "";
     return dest ? `${dest} - Cảnh quan hành trình` : "Cảnh quan hành trình du lịch";
