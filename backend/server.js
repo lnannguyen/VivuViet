@@ -124,6 +124,8 @@ app.get("/api/health", (req, res) => {
 // Helper nạp tự động tài khoản thử nghiệm anan265464@gmail.com khi server khởi động
 async function autoSeedDefaultUser() {
     try {
+        const User = require("./models/User");
+        const bcrypt = require("bcryptjs");
         const testUser = await User.findOne({ email: "anan265464@gmail.com" });
         if (!testUser) {
             const salt = await bcrypt.genSalt(10);
