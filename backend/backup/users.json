@@ -5,7 +5,7 @@
     "email": "hung.tran@gmail.com",
     "phone": "0987654321",
     "avatar": "/assets/images/avt/pngtree-art-boy-avatar-png-image_8855201.png",
-    "password": "$2b$10$20eC6hIeaETPVHQA7g6Q3eyyKk7QoZFYWRIgpEM4Rfcb2i7CRItZO",
+    "password": "$2b$10$bViV4hnWGMIHddTxGJXeGuv4d14ENGU0lVYlO1/JK0.Rp1igLVe.a",
     "auth_provider": "local",
     "membership": "gold",
     "wishlist": [
@@ -18,7 +18,7 @@
     "achievements": [],
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.284Z",
-    "updatedAt": "2026-07-25T17:25:01.962Z"
+    "updatedAt": "2026-07-25T17:34:14.119Z"
   },
   {
     "_id": "USR003",
@@ -26,7 +26,7 @@
     "email": "mai.le@gmail.com",
     "phone": "0912345678",
     "avatar": "/assets/images/avt/avt2.jpg",
-    "password": "$2b$10$20eC6hIeaETPVHQA7g6Q3eyyKk7QoZFYWRIgpEM4Rfcb2i7CRItZO",
+    "password": "$2b$10$bViV4hnWGMIHddTxGJXeGuv4d14ENGU0lVYlO1/JK0.Rp1igLVe.a",
     "auth_provider": "local",
     "membership": "standard",
     "wishlist": [
@@ -39,7 +39,7 @@
     "achievements": [],
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.285Z",
-    "updatedAt": "2026-07-25T17:25:02.147Z"
+    "updatedAt": "2026-07-25T17:34:14.318Z"
   },
   {
     "_id": "USR004",
@@ -53,9 +53,9 @@
     "membership": "gold",
     "notifications": [],
     "passportStamps": [],
-    "password": "$2b$10$20eC6hIeaETPVHQA7g6Q3eyyKk7QoZFYWRIgpEM4Rfcb2i7CRItZO",
+    "password": "$2b$10$bViV4hnWGMIHddTxGJXeGuv4d14ENGU0lVYlO1/JK0.Rp1igLVe.a",
     "phone": "0938112233",
-    "updatedAt": "2026-07-25T17:25:02.327Z",
+    "updatedAt": "2026-07-25T17:34:14.529Z",
     "vivupoints": 320,
     "vouchers": [],
     "wishlist": [
@@ -74,9 +74,9 @@
     "membership": "gold",
     "notifications": [],
     "passportStamps": [],
-    "password": "$2b$10$20eC6hIeaETPVHQA7g6Q3eyyKk7QoZFYWRIgpEM4Rfcb2i7CRItZO",
+    "password": "$2b$10$bViV4hnWGMIHddTxGJXeGuv4d14ENGU0lVYlO1/JK0.Rp1igLVe.a",
     "phone": "0977889900",
-    "updatedAt": "2026-07-25T17:25:02.507Z",
+    "updatedAt": "2026-07-25T17:34:14.734Z",
     "vivupoints": 450,
     "vouchers": [],
     "wishlist": [

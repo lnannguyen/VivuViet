@@ -804,39 +804,167 @@ function loadAchievements() {
 }
 
 // Ví Voucher và đổi điểm
+let currentVoucherFilter = "all";
+
+const defaultFigmaVouchers = [
+    {
+        id: "VC_HOTEL20",
+        code: "HOTEL20",
+        title: "Giảm 20%",
+        subtitle: "ĐẶT PHÒNG KHÁCH SẠN",
+        description: "Áp dụng cho tất cả khách sạn đối tác của VivuViet",
+        icon: "bi-building-fill",
+        iconBg: "#E6F4EA",
+        iconColor: "#10B981",
+        daysLeft: 15,
+        type: "service",
+        category: "khach-san",
+        minSpend: 1000000,
+        discount: 20,
+    },
+    {
+        id: "VC_FLIGHT500K",
+        code: "FLIGHT500K",
+        title: "Tặng 500k",
+        subtitle: "VÉ MÁY BAY KHỨ HỒI",
+        description: "Ưu đãi giảm trực tiếp 500.000đ khi đặt vé máy bay khứ hồi",
+        icon: "bi-airplane-fill",
+        iconBg: "#FFEDE9",
+        iconColor: "#FF5722",
+        daysLeft: 3,
+        type: "expiring",
+        category: "may-bay",
+        minSpend: 2000000,
+        discount: 500000,
+    },
+    {
+        id: "VC_FOOD15",
+        code: "FOOD15",
+        title: "Giảm 15%",
+        subtitle: "ẨM THỰC CUNG ĐÌNH",
+        description: "Trải nghiệm bữa tối sang trọng tại các nhà hàng đối tác",
+        icon: "bi-cup-hot-fill",
+        iconBg: "#E6F4EA",
+        iconColor: "#059669",
+        daysLeft: 30,
+        type: "service",
+        category: "dich-vu",
+        minSpend: 500000,
+        discount: 15,
+    },
+    {
+        id: "VC_PICKUP100K",
+        code: "PICKUP100K",
+        title: "Miễn phí 100k",
+        subtitle: "XE ĐƯA ĐÓN SÂN BAY",
+        description: "Mã giảm giá cho dịch vụ xe đưa đón sân bay",
+        icon: "bi-car-front-fill",
+        iconBg: "#FFEDE9",
+        iconColor: "#FF5722",
+        daysLeft: 7,
+        type: "expiring",
+        category: "dich-vu",
+        minSpend: 300000,
+        discount: 100000,
+    },
+    {
+        id: "VC_SPA25",
+        code: "SPA25",
+        title: "Giảm 25%",
+        subtitle: "DỊCH VỤ SPA & MASSAGE",
+        description: "Thư giãn tuyệt đối với liệu trình thảo mộc thiên nhiên",
+        icon: "bi-flower1",
+        iconBg: "#E6F4EA",
+        iconColor: "#059669",
+        daysLeft: 12,
+        type: "service",
+        category: "dich-vu",
+        minSpend: 500000,
+        discount: 25,
+    },
+];
+
+window.filterVouchersTab = (filter, btn) => {
+    currentVoucherFilter = filter;
+    document.querySelectorAll(".figma-voucher-filter-btn").forEach((b) => b.classList.remove("active"));
+    if (btn) btn.classList.add("active");
+    loadVouchers();
+};
+
 function loadVouchers() {
     if (!els.vouchersContainer) return;
 
-    const voucherList = user.vouchers || [];
-    if (voucherList.length === 0) {
-        els.vouchersContainer.innerHTML =
-            '<p class="text-center text-muted col-12 py-5">Ví của bạn hiện đang rỗng. Hãy tham gia thêm tour để tích lũy điểm thưởng!</p>';
-        return;
+    const userVouchers = (user && user.vouchers) ? user.vouchers : [];
+    let allVouchers = [...defaultFigmaVouchers];
+
+    userVouchers.forEach((uv, idx) => {
+        if (!allVouchers.some((v) => v.code === uv.code)) {
+            allVouchers.push({
+                id: `USER_VC_${idx}`,
+                code: uv.code,
+                title: uv.discount_amount >= 100000 ? `Giảm ${(uv.discount_amount / 1000).toLocaleString("vi-VN")}k` : `Giảm ${uv.discount_amount}đ`,
+                subtitle: "VOUCHER ƯU ĐÃI ĐẶC BIỆT",
+                description: `Đơn tối thiểu: ${(uv.min_spend || 0).toLocaleString("vi-VN")} đ`,
+                icon: "bi-ticket-perforated-fill",
+                iconBg: "#E6F4EA",
+                iconColor: "#0E5E3A",
+                daysLeft: 30,
+                type: "service",
+                category: "special",
+                isUsed: uv.isUsed,
+            });
+        }
+    });
+
+    let displayVouchers = allVouchers;
+    if (currentVoucherFilter === "expiring") {
+        displayVouchers = allVouchers.filter((v) => v.daysLeft <= 10 || v.type === "expiring");
+    } else if (currentVoucherFilter === "service") {
+        displayVouchers = allVouchers.filter((v) => v.type === "service");
     }
 
-    els.vouchersContainer.innerHTML = voucherList
-        .map((v) => {
-            return `
-      <div class="voucher-ticket ${v.isUsed ? "opacity-50" : ""}">
-        <div class="voucher-ticket-left" style="background-color: ${v.isUsed ? "#6B7280" : "var(--primary)"}">
-          <div class="fs-8">VOUCHER</div>
-          <div class="fs-5">${v.discount_amount >= 1000 ? v.discount_amount / 1000 + "k" : v.discount_amount}</div>
+    const cardsHTML = displayVouchers
+        .map(
+            (v) => `
+        <div class="figma-voucher-card ${v.isUsed ? "opacity-50" : ""}">
+            <div class="figma-voucher-body">
+                <div class="figma-voucher-icon-box" style="background-color: ${v.iconBg}; color: ${v.iconColor};">
+                    <i class="bi ${v.icon}"></i>
+                </div>
+                <div class="figma-voucher-info">
+                    <h5 class="figma-voucher-title" style="color: ${v.iconColor};">${v.title}</h5>
+                    <div class="figma-voucher-subtitle">${v.subtitle}</div>
+                    <p class="figma-voucher-desc">${v.description}</p>
+                </div>
+            </div>
+            <div class="figma-voucher-footer">
+                <span class="figma-voucher-expiry">Hết hạn trong: <strong>${v.daysLeft} ngày nữa</strong></span>
+                <button class="figma-voucher-use-btn" onclick="useVoucherAction('${v.code}')">Dùng ngay</button>
+            </div>
         </div>
-        <div class="voucher-ticket-right">
-          <div>
-            <div class="voucher-ticket-title">${v.code}</div>
-            <div class="voucher-ticket-desc">Đơn tối thiểu: ${v.min_spend.toLocaleString("vi-VN")} đ. HSD: ${formatDateVN(v.expiry_date)}</div>
-          </div>
-          <div class="d-flex justify-content-between align-items-center mt-2">
-            <span class="voucher-ticket-code">${v.code}</span>
-            <span class="badge ${v.isUsed ? "bg-secondary" : "bg-success"} rounded-3 fs-9">${v.isUsed ? "Đã dùng" : "Khả dụng"}</span>
-          </div>
-        </div>
-      </div>
-    `;
-        })
+    `,
+        )
         .join("");
+
+    const huntCardHTML = `
+        <div class="figma-voucher-hunt-card" onclick="redeemPointsModal()">
+            <div class="figma-voucher-hunt-icon">
+                <i class="bi bi-plus-lg"></i>
+            </div>
+            <div class="figma-voucher-hunt-title">Săn thêm voucher</div>
+            <p class="figma-voucher-hunt-desc">Tham gia các trò chơi và hoạt động để nhận thêm ưu đãi.</p>
+        </div>
+    `;
+
+    els.vouchersContainer.innerHTML = cardsHTML + huntCardHTML;
 }
+
+window.useVoucherAction = (code) => {
+    showToast(`Đã áp dụng mã voucher ${code}! Vui lòng tiến hành đặt tour.`, "success");
+    setTimeout(() => {
+        window.location.href = "/tours";
+    }, 1200);
+};
 
 window.redeemPointsModal = () => {
     els.redeemPointsBalance.innerText = user.vivupoints || 0;

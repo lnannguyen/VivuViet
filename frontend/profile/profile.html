@@ -436,30 +436,21 @@
 
                     <!-- Tab 6: Vouchers -->
                     <div id="tab-vouchers" class="profile-tab-pane">
-                        <div
-                            class="d-flex justify-content-between align-items-center mb-3 border-bottom border-light pb-2"
-                        >
-                            <h4
-                                class="profile-content-title mb-0 border-0 pb-0"
-                            >
-                                Ví Voucher giảm giá
-                            </h4>
-                            <div class="d-flex align-items-center gap-2">
-                                <span class="fs-8 fw-semibold text-secondary"
-                                    >Đổi Voucher bằng điểm thưởng:</span
-                                >
-                                <button
-                                    class="btn btn-outline-brand fs-8 py-1 px-3"
-                                    onclick="redeemPointsModal()"
-                                >
-                                    ĐỔI ĐIỂM THƯỞNG
+                        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3 border-bottom border-light pb-3">
+                            <div>
+                                <h4 class="fw-bold mb-1" style="color: var(--primary-dark);">Voucher của tôi</h4>
+                                <p class="text-muted fs-7 mb-0">Khám phá các ưu đãi đặc biệt dành riêng cho bạn.</p>
+                            </div>
+                            <div class="d-flex align-items-center gap-2 flex-wrap">
+                                <button class="figma-voucher-filter-btn active" onclick="filterVouchersTab('all', this)">Tất cả</button>
+                                <button class="figma-voucher-filter-btn" onclick="filterVouchersTab('expiring', this)">Sắp hết hạn</button>
+                                <button class="figma-voucher-filter-btn" onclick="filterVouchersTab('service', this)">Dịch vụ</button>
+                                <button class="btn btn-outline-brand fs-8 py-1.5 px-3 rounded-pill ms-auto" onclick="redeemPointsModal()">
+                                    <i class="bi bi-gift-fill me-1"></i> Đổi điểm thưởng
                                 </button>
                             </div>
                         </div>
-                        <div
-                            class="voucher-grid mt-4"
-                            id="vouchers-wallet-container"
-                        >
+                        <div class="figma-voucher-grid" id="vouchers-wallet-container">
                             <!-- Rendered by JS -->
                         </div>
                     </div>

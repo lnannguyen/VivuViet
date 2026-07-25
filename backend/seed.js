@@ -435,6 +435,46 @@ const seedData = async () => {
         console.log("Đang đồng bộ Mã Giảm Giá (Vouchers)...");
         const globalVouchers = [
             {
+                code: "HOTEL20",
+                discount_amount: 500000,
+                description: "Giảm 20% đặt phòng khách sạn đối tác VivuViet",
+                max_uses: 1000,
+                used_count: 15,
+                valid_until: new Date("2026-12-31"),
+            },
+            {
+                code: "FLIGHT500K",
+                discount_amount: 500000,
+                description: "Tặng 500k khi đặt vé máy bay khứ hồi",
+                max_uses: 500,
+                used_count: 42,
+                valid_until: new Date("2026-12-31"),
+            },
+            {
+                code: "FOOD15",
+                discount_amount: 150000,
+                description: "Giảm 15% ẩm thực cung đình tại các nhà hàng đối tác",
+                max_uses: 300,
+                used_count: 12,
+                valid_until: new Date("2026-12-31"),
+            },
+            {
+                code: "PICKUP100K",
+                discount_amount: 100000,
+                description: "Miễn phí 100k xe đưa đón sân bay",
+                max_uses: 500,
+                used_count: 20,
+                valid_until: new Date("2026-12-31"),
+            },
+            {
+                code: "SPA25",
+                discount_amount: 250000,
+                description: "Giảm 25% dịch vụ Spa & Massage thảo mộc",
+                max_uses: 200,
+                used_count: 8,
+                valid_until: new Date("2026-12-31"),
+            },
+            {
                 code: "VIVUVIET2026",
                 discount_amount: 300000,
                 description: "Giảm 300k cho đơn hàng từ 2.000.000đ",
