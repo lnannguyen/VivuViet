@@ -121,13 +121,6 @@ const seedData = async () => {
                         lastVisitDate: new Date("2026-05-20"),
                         visitCount: 1,
                     },
-                    {
-                        location: "Hạ Long, Quảng Ninh",
-                        image: "/assets/images/halong.png",
-                        firstVisitDate: new Date("2026-04-10"),
-                        lastVisitDate: new Date("2026-04-10"),
-                        visitCount: 1,
-                    },
                 ],
                 achievements: [
                     {

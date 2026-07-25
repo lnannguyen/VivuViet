@@ -626,22 +626,52 @@ window.toggleWishlistFromProfile = async (btn) => {
 function loadPassportStamps() {
     if (!els.passportContainer) return;
 
-    const stamps = user.passportStamps || [];
+    // Lấy các điểm đến từ đơn hàng đã hoàn thành thực tế
+    const completedBookings = (bookings || []).filter(
+        (b) => b.booking_status === "completed",
+    );
+
+    // Tạo danh sách stamp động từ các tour đã đi xong
+    const dynamicStamps = completedBookings.map((b) => {
+        const tourObj = b.tour || {};
+        const destStr = tourObj.destination || tourObj.location || tourObj.name || tourObj.title || "";
+        return {
+            location: destStr,
+            visitDate: b.departure_date,
+        };
+    });
+
+    const userStamps = user.passportStamps || [];
 
     els.passportContainer.innerHTML = VIETNAM_PROVINCES.map((prov) => {
-        // Kiểm tra xem người dùng đã đến điểm này chưa
-        const visited = stamps.find(
-            (s) =>
-                prov.name.toLowerCase().includes(s.location.toLowerCase()) ||
-                s.location.toLowerCase().includes(prov.key.toLowerCase()),
+        // Kiểm tra xem tỉnh thành có đơn hàng đã hoàn thành không
+        const matchingCompleted = dynamicStamps.find((ds) =>
+            prov.name.toLowerCase().includes(ds.location.toLowerCase()) ||
+            ds.location.toLowerCase().includes(prov.key.toLowerCase()) ||
+            ds.location.toLowerCase().includes(prov.name.toLowerCase()),
         );
 
-        if (visited) {
+        // Kiểm tra trong user.passportStamps (chỉ ghép nếu tour đó thuộc đơn hoàn thành)
+        const matchingUserStamp = userStamps.find((us) =>
+            (prov.name.toLowerCase().includes(us.location.toLowerCase()) ||
+             us.location.toLowerCase().includes(prov.key.toLowerCase())) &&
+            completedBookings.some((cb) => {
+                const cbDest = cb.tour?.destination || cb.tour?.location || cb.tour?.name || "";
+                return cbDest.toLowerCase().includes(us.location.toLowerCase()) || us.location.toLowerCase().includes(cbDest.toLowerCase());
+            })
+        );
+
+        const isVisited = matchingCompleted || matchingUserStamp;
+        const stampDate = matchingCompleted
+            ? matchingCompleted.visitDate
+            : matchingUserStamp?.lastVisitDate || matchingUserStamp?.firstVisitDate;
+
+        if (isVisited) {
             return `
         <div class="passport-stamp unlocked">
-          <div class="passport-stamp-count">${visited.visitCount || 1}</div>
+          <div class="passport-stamp-count">1</div>
           <div class="passport-stamp-name">${prov.name}</div>
-          <div class="passport-stamp-date">${formatDateVN(visited.lastVisitDate || visited.firstVisitDate)}</div>
+          <div class="passport-stamp-date">${formatDateVN(stampDate)}</div>
         </div>
       `;
         } else {
