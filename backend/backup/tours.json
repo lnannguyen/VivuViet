@@ -101,7 +101,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.538Z",
-    "updatedAt": "2026-07-25T18:56:02.822Z"
+    "updatedAt": "2026-07-25T18:59:57.565Z"
   },
   {
     "_id": "TOUR002",
@@ -199,7 +199,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T18:56:03.025Z"
+    "updatedAt": "2026-07-25T18:59:57.755Z"
   },
   {
     "_id": "TOUR003",
@@ -299,7 +299,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T18:56:03.230Z"
+    "updatedAt": "2026-07-25T18:59:57.935Z"
   },
   {
     "_id": "TOUR004",
@@ -404,7 +404,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T18:56:03.410Z"
+    "updatedAt": "2026-07-25T18:59:58.115Z"
   },
   {
     "_id": "TOUR005",
@@ -510,7 +510,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T18:56:03.640Z"
+    "updatedAt": "2026-07-25T18:59:58.298Z"
   },
   {
     "_id": "TOUR006",
@@ -600,7 +600,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T18:56:03.844Z"
+    "updatedAt": "2026-07-25T18:59:58.504Z"
   },
   {
     "_id": "TOUR007",
@@ -698,7 +698,7 @@
     "status": "Available",
     "thumbnail": "/assets/images/tours/da-nang/golden_bridge.jpg",
     "title": "Khám phá Đà Nẵng – Cầu Vàng Bà Nà Hills – Bán Đảo Sơn Trà",
-    "updatedAt": "2026-07-25T18:56:04.049Z",
+    "updatedAt": "2026-07-25T18:59:58.714Z",
     "viewCount": 2300,
     "weatherLocation": "Da Nang"
   },
@@ -725,22 +725,22 @@
     ],
     "excludes": [],
     "gallery": [
-      "/assets/images/tours/ha-noi/hoankiem_lake.png",
       "/assets/images/tours/ha-noi/vanmieu_quoctugiam.jpg",
       "/assets/images/tours/ha-noi/hoangthanh_thanglong.jpg",
-      "/assets/images/tours/ha-noi/hanoi_oldquarter.jpg"
+      "/assets/images/tours/ha-noi/hanoi_oldquarter.jpg",
+      "/assets/images/tours/ha-noi/hoankiem_lake.png"
     ],
     "highlights": [
       "Lăng Bác & Quảng trường Ba Đình",
       "Văn Miếu Quốc Tử Giám di sản lịch sử",
       "Thưởng thức Phở & Cà phê trứng Hà Nội"
     ],
-    "image": "/assets/images/tours/ha-noi/hoankiem_lake.png",
+    "image": "/assets/images/tours/ha-noi/vanmieu_quoctugiam.jpg",
     "images": [
-      "/assets/images/tours/ha-noi/hoankiem_lake.png",
       "/assets/images/tours/ha-noi/vanmieu_quoctugiam.jpg",
       "/assets/images/tours/ha-noi/hoangthanh_thanglong.jpg",
-      "/assets/images/tours/ha-noi/hanoi_oldquarter.jpg"
+      "/assets/images/tours/ha-noi/hanoi_oldquarter.jpg",
+      "/assets/images/tours/ha-noi/hoankiem_lake.png"
     ],
     "included": [
       "Xe ô tô du lịch máy lạnh",
@@ -785,9 +785,9 @@
     "service_fee_rate": 10,
     "slug": "ha-noi-ky-uc-36-pho-phuong-hoan-kiem",
     "status": "Available",
-    "thumbnail": "/assets/images/tours/ha-noi/hoankiem_lake.png",
+    "thumbnail": "/assets/images/tours/ha-noi/vanmieu_quoctugiam.jpg",
     "title": "Hà Nội Ký Ức 36 Phố Phường – Hồ Hoàn Kiếm – Văn Miếu",
-    "updatedAt": "2026-07-25T18:56:04.255Z",
+    "updatedAt": "2026-07-25T18:59:58.956Z",
     "viewCount": 1750,
     "weatherLocation": "Ha Noi"
   },
@@ -882,7 +882,7 @@
     "status": "Available",
     "thumbnail": "/assets/images/tours/hcm/saigon_skyline.png",
     "title": "TP. Hồ Chí Minh Sôi Động – Rừng Ngập Mặn Cần Giờ – Địa Đạo Củ Chi",
-    "updatedAt": "2026-07-25T18:56:04.433Z",
+    "updatedAt": "2026-07-25T18:59:59.160Z",
     "viewCount": 1400,
     "weatherLocation": "Ho Chi Minh"
   },
@@ -977,7 +977,7 @@
     "status": "Available",
     "thumbnail": "/assets/images/tours/can-tho/cairang_floating_market.jpg",
     "title": "Khám phá Miền Tây Sông Nước – Chợ Nổi Cái Răng Cần Thơ",
-    "updatedAt": "2026-07-25T18:56:04.629Z",
+    "updatedAt": "2026-07-25T18:59:59.365Z",
     "viewCount": 1980,
     "weatherLocation": "Can Tho"
   }
