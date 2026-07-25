@@ -510,8 +510,8 @@ const seedData = async () => {
                 bookingCount: 70,
                 image: "/assets/images/tours/ha-noi/vanmieu_quoctugiam.jpg",
                 thumbnail: "/assets/images/tours/ha-noi/vanmieu_quoctugiam.jpg",
-                images: ["/assets/images/tours/ha-noi/vanmieu_quoctugiam.jpg", "/assets/images/tours/ha-noi/hoangthanh_thanglong.jpg", "/assets/images/tours/ha-noi/hanoi_oldquarter.jpg", "/assets/images/tours/ha-noi/hoankiem_lake.png"],
-                gallery: ["/assets/images/tours/ha-noi/vanmieu_quoctugiam.jpg", "/assets/images/tours/ha-noi/hoangthanh_thanglong.jpg", "/assets/images/tours/ha-noi/hanoi_oldquarter.jpg", "/assets/images/tours/ha-noi/hoankiem_lake.png"],
+                images: ["/assets/images/tours/ha-noi/vanmieu_quoctugiam.jpg", "/assets/images/tours/ha-noi/hanoi_oldquarter.jpg", "/assets/images/tours/ha-noi/hoangthanh_thanglong.jpg", "/assets/images/tours/ha-noi/hoankiem_lake.png"],
+                gallery: ["/assets/images/tours/ha-noi/vanmieu_quoctugiam.jpg", "/assets/images/tours/ha-noi/hanoi_oldquarter.jpg", "/assets/images/tours/ha-noi/hoangthanh_thanglong.jpg", "/assets/images/tours/ha-noi/hoankiem_lake.png"],
                 category: "Văn Hóa & Di Sản",
                 description: "Hành trình trải nghiệm tinh hoa văn hóa thủ đô ngàn năm văn hiến, dạo quanh Hồ Gươm, viếng Lăng Bác và khám phá phố cổ 36 phố phường.",
                 itinerary: [

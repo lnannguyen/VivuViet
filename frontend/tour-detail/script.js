@@ -748,10 +748,11 @@ function getLandmarkCaption(imgSrc, tour) {
     if (src.includes("saigon_skyline") || src.includes("hcm")) return "Toàn cảnh Thành phố Hồ Chí Minh sôi động";
     if (src.includes("cangio_mangrove") || src.includes("cangio")) return "Khu sinh thái rừng ngập mặn Cần Giờ";
     if (src.includes("cuchi_tunnels") || src.includes("diadao")) return "Di tích lịch sử Địa đạo Củ Chi";
+    // Hà Nội
     if (src.includes("vanmieu_quoctugiam")) return "Văn Miếu Quốc Tử Giám - Khuê Văn Các Hà Nội";
     if (src.includes("hoangthanh_thanglong")) return "Hoàng Thành Thăng Long Hà Nội";
+    if (src.includes("hanoi_oldquarter")) return "Phố cổ 36 phố phường Hà Nội";
     if (src.includes("hoankiem_lake") || src.includes("hanoi")) return "Hồ Hoàn Kiếm & Tháp Rùa cổ kính Hà Nội";
-    if (src.includes("hanoi_oldquarter") || src.includes("hanoi1")) return "Phố cổ 36 phố phường Hà Nội";
 
     const dest = tour ? (tour.destination || tour.name || "") : "";
     return dest ? `${dest} - Cảnh quan hành trình` : "Cảnh quan hành trình du lịch";
