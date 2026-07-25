@@ -1,90 +1,11 @@
 [
   {
-    "_id": "USR001",
-    "fullname": "Nguyen Thi Thu An",
-    "email": "anan265464@gmail.com",
-    "phone": "0901234567",
-    "avatar": "/assets/images/avt/pngtree-avatar-male-2-png-image_21200797.png",
-    "password": "$2b$10$PjjrcVuSbaX0ubcFDJc69OfmcHm3nmI9CKfeFRrc0ptdBn5u/h1U6",
-    "auth_provider": "local",
-    "membership": "gold",
-    "wishlist": [
-      "TOUR001",
-      "TOUR003"
-    ],
-    "notifications": [
-      {
-        "title": "Chào mừng gia nhập VivuViet!",
-        "content": "Xin chào Nguyen Thi Thu An, chào mừng bạn tham gia cộng đồng du lịch VivuViet!",
-        "type": "general",
-        "isRead": true,
-        "_id": "6a645a5d05bb49a465a7e125",
-        "createdAt": "2026-07-25T06:40:29.335Z"
-      }
-    ],
-    "vouchers": [
-      {
-        "code": "WELCOME200K",
-        "discount_amount": 200000,
-        "discount_type": "fixed",
-        "min_spend": 1000000,
-        "expiry_date": "2026-12-31T00:00:00.000Z",
-        "isUsed": false,
-        "_id": "6a645a5d05bb49a465a7e123"
-      },
-      {
-        "code": "VIVUVIET2026",
-        "discount_amount": 300000,
-        "discount_type": "fixed",
-        "min_spend": 2000000,
-        "expiry_date": "2026-12-31T00:00:00.000Z",
-        "isUsed": false,
-        "_id": "6a645a5d05bb49a465a7e124"
-      }
-    ],
-    "vivupoints": 350,
-    "passportStamps": [
-      {
-        "location": "Sapa, Lào Cai",
-        "image": "/assets/images/sapa.jpg",
-        "visitCount": 1,
-        "firstVisitDate": "2026-05-20T00:00:00.000Z",
-        "lastVisitDate": "2026-05-20T00:00:00.000Z",
-        "_id": "6a645a5d05bb49a465a7e122"
-      }
-    ],
-    "achievements": [
-      {
-        "label": "Khởi đầu mới",
-        "icon": "bi-rocket-takeoff-fill",
-        "color": "#3b82f6",
-        "unlockedAt": "2026-05-20T00:00:00.000Z",
-        "_id": "6a645a5d05bb49a465a7e120"
-      },
-      {
-        "label": "Chinh phục Sapa",
-        "icon": "bi-triangle-half",
-        "color": "#0E5E3A",
-        "unlockedAt": "2026-05-20T00:00:00.000Z",
-        "_id": "6a645a5d05bb49a465a7e121"
-      }
-    ],
-    "__v": 0,
-    "createdAt": "2026-07-25T03:46:30.283Z",
-    "updatedAt": "2026-07-25T06:40:29.330Z",
-    "resetOtp": "158703",
-    "resetOtpExpire": "2026-07-25T05:25:26.968Z",
-    "address": "",
-    "dob": null,
-    "gender": "female"
-  },
-  {
     "_id": "USR002",
     "fullname": "Trần Văn Hùng",
     "email": "hung.tran@gmail.com",
     "phone": "0987654321",
     "avatar": "/assets/images/avt/avatar2.png",
-    "password": "$2b$10$PjjrcVuSbaX0ubcFDJc69OfmcHm3nmI9CKfeFRrc0ptdBn5u/h1U6",
+    "password": "$2b$10$Pj5VM6/fhlc80IaBG739ROIiRg1.JJwzJgaxCEn.0kOtxHESnPWIG",
     "auth_provider": "local",
     "membership": "standard",
     "wishlist": [
@@ -99,7 +20,7 @@
         "min_spend": 1000000,
         "expiry_date": "2026-12-31T00:00:00.000Z",
         "isUsed": false,
-        "_id": "6a645a5d05bb49a465a7e126"
+        "_id": "6a645b32167c6a73ebe28acd"
       }
     ],
     "vivupoints": 120,
@@ -107,7 +28,7 @@
     "achievements": [],
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.284Z",
-    "updatedAt": "2026-07-25T06:40:29.513Z"
+    "updatedAt": "2026-07-25T06:44:02.358Z"
   },
   {
     "_id": "USR003",
@@ -115,7 +36,7 @@
     "email": "mai.le@gmail.com",
     "phone": "0912345678",
     "avatar": "",
-    "password": "$2b$10$PjjrcVuSbaX0ubcFDJc69OfmcHm3nmI9CKfeFRrc0ptdBn5u/h1U6",
+    "password": "$2b$10$Pj5VM6/fhlc80IaBG739ROIiRg1.JJwzJgaxCEn.0kOtxHESnPWIG",
     "auth_provider": "local",
     "membership": "standard",
     "wishlist": [],
@@ -126,6 +47,6 @@
     "achievements": [],
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.285Z",
-    "updatedAt": "2026-07-25T06:40:29.690Z"
+    "updatedAt": "2026-07-25T06:44:02.590Z"
   }
 ]

@@ -121,44 +121,11 @@ app.get("/api/health", (req, res) => {
     });
 });
 
-// Helper nạp tự động tài khoản thử nghiệm anan265464@gmail.com khi server khởi động
-async function autoSeedDefaultUser() {
-    try {
-        const User = require("./models/User");
-        const bcrypt = require("bcryptjs");
-        const testUser = await User.findOne({ email: "anan265464@gmail.com" });
-        if (!testUser) {
-            const salt = await bcrypt.genSalt(10);
-            const defaultPassword = await bcrypt.hash("123456", salt);
-            await User.updateOne(
-                { _id: "USR001" },
-                {
-                    $set: {
-                        _id: "USR001",
-                        fullname: "Nguyen Thi Thu An",
-                        email: "anan265464@gmail.com",
-                        phone: "0901234567",
-                        password: defaultPassword,
-                        auth_provider: "local",
-                        membership: "gold",
-                        vivupoints: 350,
-                    },
-                },
-                { upsert: true }
-            );
-            console.log("Auto-seeded test account: anan265464@gmail.com");
-        }
-    } catch (err) {
-        console.error("AutoSeed check error:", err.message);
-    }
-}
-
 // Kết nối MongoDB
 mongoose
     .connect(process.env.MONGO_URI)
     .then(async () => {
         console.log("Kết nối MongoDB thành công!");
-        await autoSeedDefaultUser();
     })
     .catch((err) => console.log("Lỗi kết nối MongoDB:", err));
 

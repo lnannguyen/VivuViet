@@ -75,68 +75,10 @@ const seedData = async () => {
         const salt = await bcrypt.genSalt(10);
         const defaultPassword = await bcrypt.hash("123456", salt);
 
+        await User.deleteOne({ email: "anan265464@gmail.com" });
+        await User.deleteOne({ _id: "USR001" });
+
         const defaultUsers = [
-            {
-                _id: "USR001",
-                fullname: "Nguyen Thi Thu An",
-                email: "anan265464@gmail.com",
-                phone: "0901234567",
-                avatar: "/assets/images/avt/pngtree-avatar-male-2-png-image_21200797.png",
-                password: defaultPassword,
-                auth_provider: "local",
-                membership: "gold",
-                wishlist: ["TOUR001", "TOUR003"],
-                notifications: [
-                    {
-                        title: "Chào mừng gia nhập VivuViet!",
-                        content: "Xin chào Nguyen Thi Thu An, chào mừng bạn tham gia cộng đồng du lịch VivuViet!",
-                        type: "general",
-                        isRead: true,
-                    },
-                ],
-                vouchers: [
-                    {
-                        code: "WELCOME200K",
-                        discount_amount: 200000,
-                        discount_type: "fixed",
-                        min_spend: 1000000,
-                        expiry_date: new Date("2026-12-31"),
-                        isUsed: false,
-                    },
-                    {
-                        code: "VIVUVIET2026",
-                        discount_amount: 300000,
-                        discount_type: "fixed",
-                        min_spend: 2000000,
-                        expiry_date: new Date("2026-12-31"),
-                        isUsed: false,
-                    },
-                ],
-                vivupoints: 350,
-                passportStamps: [
-                    {
-                        location: "Sapa, Lào Cai",
-                        image: "/assets/images/sapa.jpg",
-                        firstVisitDate: new Date("2026-05-20"),
-                        lastVisitDate: new Date("2026-05-20"),
-                        visitCount: 1,
-                    },
-                ],
-                achievements: [
-                    {
-                        label: "Khởi đầu mới",
-                        icon: "bi-rocket-takeoff-fill",
-                        color: "#3b82f6",
-                        unlockedAt: new Date("2026-05-20"),
-                    },
-                    {
-                        label: "Chinh phục Sapa",
-                        icon: "bi-triangle-half",
-                        color: "#0E5E3A",
-                        unlockedAt: new Date("2026-05-20"),
-                    },
-                ],
-            },
             {
                 _id: "USR002",
                 fullname: "Trần Văn Hùng",
@@ -502,69 +444,20 @@ const seedData = async () => {
             await Voucher.updateOne({ code: v.code }, { $set: v }, { upsert: true });
         }
 
-        // 6. SEED BOOKINGS ($setOnInsert: Không xóa đơn hàng thực tế của khách)
-        console.log("Đang bảo vệ & bổ sung Đơn Đặt Tour (Bookings)...");
-        const defaultBookings = [
-            {
-                _id: "BK1001",
-                user_id: "USR001",
-                tour_id: "TOUR001",
-                departure_date: new Date("2026-05-20"),
-                quantity: 2,
-                passengers: [
-                    { fullname: "Nguyen Thi Thu An", email: "anan265464@gmail.com", phone: "0901234567", passport_cccd: "001098001234" },
-                    { fullname: "Trần Bảo Ngọc", email: "baongoc@gmail.com", phone: "0909876543", passport_cccd: "001098005678" },
-                ],
-                total_price: 7000000,
-                service_fee: 700000,
-                voucher_code: "WELCOME200K",
-                discount_amount: 200000,
-                final_price: 7500000,
-                bill_split: [],
-                booking_status: "completed",
-                isReviewed: true,
-                payment_method: "bank_transfer",
-                createdAt: new Date("2026-05-01"),
-            },
-            {
-                _id: "BK1002",
-                user_id: "USR001",
-                tour_id: "TOUR002",
-                departure_date: new Date("2026-08-10"),
-                quantity: 1,
-                passengers: [
-                    { fullname: "Nguyen Thi Thu An", email: "anan265464@gmail.com", phone: "0901234567", passport_cccd: "001098001234" },
-                ],
-                total_price: 4200000,
-                service_fee: 420000,
-                voucher_code: null,
-                discount_amount: 0,
-                final_price: 4620000,
-                bill_split: [],
-                booking_status: "paid",
-                isReviewed: false,
-                payment_method: "vnpay",
-                createdAt: new Date("2026-07-01"),
-            },
-        ];
+        // 6. SEED BOOKINGS
+        console.log("Đang đồng bộ Đơn Đặt Tour (Bookings)...");
+        await Booking.deleteMany({ user_id: "USR001" });
+        await Booking.deleteMany({ _id: { $in: ["BK1001", "BK1002"] } });
+        const defaultBookings = [];
         for (const b of defaultBookings) {
             await Booking.updateOne({ _id: b._id }, { $set: b }, { upsert: true });
         }
 
-        // 7. SEED REVIEWS ($setOnInsert: Giữ nguyên các review thật khách hàng viết)
-        console.log("Đang bảo vệ & bổ sung Đánh Giá (Reviews)...");
-        const defaultReviews = [
-            {
-                _id: "REV001",
-                booking_id: "BK1001",
-                user_id: "USR001",
-                tour_id: "TOUR001",
-                rating: 5,
-                comment: "Chuyến đi Sapa rất tuyệt vời! Hướng dẫn viên chu đáo, cảnh Fansipan đắm chìm trong mây ngàn mộng mơ. Chắc chắn sẽ quay lại cùng VivuViet!",
-                images: ["/assets/images/sapa.jpg"],
-                createdAt: new Date("2026-06-18"),
-            },
-        ];
+        // 7. SEED REVIEWS
+        console.log("Đang đồng bộ Đánh Giá (Reviews)...");
+        await Review.deleteMany({ user_id: "USR001" });
+        await Review.deleteMany({ _id: "REV001" });
+        const defaultReviews = [];
         for (const r of defaultReviews) {
             await Review.updateOne({ _id: r._id }, { $setOnInsert: r }, { upsert: true });
         }

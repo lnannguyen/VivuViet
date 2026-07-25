@@ -1,20 +1,5 @@
 [
   {
-    "_id": "REV001",
-    "booking_id": "BK1001",
-    "user_id": "USR001",
-    "tour_id": "TOUR001",
-    "rating": 5,
-    "comment": "Chuyến đi Sapa rất tuyệt vời! Hướng dẫn viên chu đáo, cảnh Fansipan đắm chìm trong mây ngàn mộng mơ. Chắc chắn sẽ quay lại cùng VivuViet!",
-    "images": [
-      "/assets/images/sapa.jpg"
-    ],
-    "videos": [],
-    "createdAt": "2026-06-18T00:00:00.000Z",
-    "__v": 0,
-    "updatedAt": "2026-07-25T06:40:33.034Z"
-  },
-  {
     "_id": "REV002",
     "booking_id": "BK1000_MOCK",
     "user_id": "USR002",
