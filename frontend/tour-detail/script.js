@@ -583,7 +583,7 @@ async function loadRelatedTours(tour) {
           <div class="col-md-6 col-lg-4">
             <div class="tour-card" onclick="window.location.href='/tours/${t.slug || t._id}'">
               <div class="tour-card-img-wrap">
-                <img src="${t.image || "/assets/images/dulichbien.png"}" alt="${t.title || t.name}">
+                <img src="${t.image || "/assets/images/categories/dulichbien.png"}" alt="${t.title || t.name}">
               </div>
               <div class="tour-card-body">
                 <div class="tour-card-meta">

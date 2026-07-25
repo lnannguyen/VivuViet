@@ -4,87 +4,87 @@
     "code": "DES001",
     "name": "Sapa",
     "description": "Thị trấn mộng mơ vùng Tây Bắc",
-    "image": "/assets/images/sapa.jpg",
+    "image": "/assets/images/tours/sapa/sapa.jpg",
     "status": true,
     "__v": 0,
     "createdAt": "2026-07-25T03:46:29.874Z",
-    "updatedAt": "2026-07-25T13:39:20.500Z"
+    "updatedAt": "2026-07-25T13:51:38.745Z"
   },
   {
     "_id": "DES002",
     "code": "DES002",
     "name": "Hạ Long",
     "description": "Kỳ quan thiên nhiên thế giới",
-    "image": "/assets/images/halong.png",
+    "image": "/assets/images/tours/ha-long/halong.png",
     "status": true,
     "__v": 0,
     "createdAt": "2026-07-25T03:46:29.874Z",
-    "updatedAt": "2026-07-25T13:39:20.677Z"
+    "updatedAt": "2026-07-25T13:51:38.933Z"
   },
   {
     "_id": "DES003",
     "code": "DES003",
     "name": "Hội An",
     "description": "Phố cổ di sản văn hóa thế giới",
-    "image": "/assets/images/hoian.png",
+    "image": "/assets/images/tours/hoi-an/hoian.png",
     "status": true,
     "__v": 0,
     "createdAt": "2026-07-25T03:46:29.874Z",
-    "updatedAt": "2026-07-25T13:39:20.854Z"
+    "updatedAt": "2026-07-25T13:51:39.109Z"
   },
   {
     "_id": "DES004",
     "code": "DES004",
     "name": "Phú Quốc",
     "description": "Thiên đường biển ngọc đảo ngọc",
-    "image": "/assets/images/phuquoc.png",
+    "image": "/assets/images/tours/phu-quoc/phuquoc.png",
     "status": true,
     "__v": 0,
     "createdAt": "2026-07-25T03:46:29.874Z",
-    "updatedAt": "2026-07-25T13:39:21.030Z"
+    "updatedAt": "2026-07-25T13:51:39.286Z"
   },
   {
     "_id": "DES005",
     "code": "DES005",
     "name": "Cao Bằng",
     "description": "Thác Bản Giốc và núi rừng Đông Bắc",
-    "image": "/assets/images/caobang.png",
+    "image": "/assets/images/tours/cao-bang/caobang.png",
     "status": true,
     "__v": 0,
     "createdAt": "2026-07-25T03:46:29.875Z",
-    "updatedAt": "2026-07-25T13:39:21.207Z"
+    "updatedAt": "2026-07-25T13:51:39.462Z"
   },
   {
     "_id": "DES006",
     "code": "DES006",
     "name": "Ninh Bình",
     "description": "Di sản thế giới kép Tràng An",
-    "image": "/assets/images/ninhbinh.png",
+    "image": "/assets/images/tours/ninh-binh/ninhbinh.png",
     "status": true,
     "__v": 0,
     "createdAt": "2026-07-25T03:46:29.875Z",
-    "updatedAt": "2026-07-25T13:39:21.383Z"
+    "updatedAt": "2026-07-25T13:51:39.638Z"
   },
   {
     "_id": "DES007",
     "code": "DES007",
     "name": "Đà Nẵng",
     "description": "Thành phố đáng sống bên sông Hàn",
-    "image": "/assets/images/danang.png",
+    "image": "/assets/images/tours/da-nang/danang.png",
     "status": true,
     "__v": 0,
     "createdAt": "2026-07-25T03:46:29.875Z",
-    "updatedAt": "2026-07-25T13:39:21.559Z"
+    "updatedAt": "2026-07-25T13:51:39.814Z"
   },
   {
     "_id": "DES008",
     "code": "DES008",
     "name": "Hà Giang",
     "description": "Công viên địa chất cao nguyên đá",
-    "image": "/assets/images/hagiang.png",
+    "image": "/assets/images/tours/cao-bang/hagiang.png",
     "status": true,
     "__v": 0,
     "createdAt": "2026-07-25T03:46:29.875Z",
-    "updatedAt": "2026-07-25T13:39:21.735Z"
+    "updatedAt": "2026-07-25T13:51:39.991Z"
   }
 ]

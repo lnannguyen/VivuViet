@@ -29,7 +29,7 @@ body {
     width: 50%;
     background:
         linear-gradient(rgba(0, 0, 0, 0.1), rgba(7, 34, 20, 0.6)),
-        url("/assets/images/bg-register.jpg") no-repeat center center/cover;
+        url("/assets/images/bg/bg-register.jpg") no-repeat center center/cover;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;

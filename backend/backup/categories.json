@@ -4,32 +4,32 @@
     "code": "CAT001",
     "name": "Vùng Cao",
     "description": "Khám phá núi rừng hùng vĩ, mây ngàn và bản sắc văn hóa các dân tộc phía Bắc.",
-    "image": "/assets/images/vungcao.png",
+    "image": "/assets/images/categories/vungcao.png",
     "status": true,
     "__v": 0,
     "createdAt": "2026-07-25T03:46:29.610Z",
-    "updatedAt": "2026-07-25T13:39:19.948Z"
+    "updatedAt": "2026-07-25T13:51:38.206Z"
   },
   {
     "_id": "CAT002",
     "code": "CAT002",
     "name": "Du lịch biển",
     "description": "Tận hưởng làn nước trong xanh, cát trắng và không khí biển trong lành tươi mát.",
-    "image": "/assets/images/dulichbien.png",
+    "image": "/assets/images/categories/dulichbien.png",
     "status": true,
     "__v": 0,
     "createdAt": "2026-07-25T03:46:29.611Z",
-    "updatedAt": "2026-07-25T13:39:20.133Z"
+    "updatedAt": "2026-07-25T13:51:38.391Z"
   },
   {
     "_id": "CAT003",
     "code": "CAT003",
     "name": "Văn Hóa & Di Sản",
     "description": "Hành trình ngược dòng thời gian tìm về di sản lịch sử và kiến trúc cổ kính.",
-    "image": "/assets/images/vanhoa.png",
+    "image": "/assets/images/categories/vanhoa.png",
     "status": true,
     "__v": 0,
     "createdAt": "2026-07-25T03:46:29.611Z",
-    "updatedAt": "2026-07-25T13:39:20.310Z"
+    "updatedAt": "2026-07-25T13:51:38.567Z"
   }
 ]

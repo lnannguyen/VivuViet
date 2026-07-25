@@ -186,7 +186,7 @@ function formatDateVN(dateInput) {
 
     els.summaryTourContent.innerHTML = `
     <div class="d-flex gap-3 align-items-center">
-      <img src="${tourDetails.image || "/assets/images/dulichbien.png"}" class="rounded-3" style="width: 70px; height: 70px; object-fit: cover;">
+      <img src="${tourDetails.image || "/assets/images/categories/dulichbien.png"}" class="rounded-3" style="width: 70px; height: 70px; object-fit: cover;">
       <div>
         <div class="summary-tour-title">${tourDetails.title || tourDetails.name}</div>
         <div class="summary-tour-meta mb-0"><i class="bi bi-calendar3 text-accent me-1"></i> Khởi hành: ${formatDateVN(bookingData.departure_date)}</div>

@@ -170,7 +170,7 @@ function renderGrid() {
       <div class="col-12 col-sm-6 col-md-6 col-xl-4 mb-4">
         <div class="tour-card" onclick="window.location.href='/tours/${tour.slug || tour._id}'">
           <div class="tour-card-img-wrap">
-            <img src="${tour.image || "/assets/images/dulichbien.png"}" alt="${tour.title || tour.name}">
+            <img src="${tour.image || "/assets/images/categories/dulichbien.png"}" alt="${tour.title || tour.name}">
             ${matchBadge}
             ${tour.discount ? `<span class="tour-card-badge">-${tour.discount}%</span>` : tour.isFeatured ? `<span class="tour-card-badge">Hot</span>` : ""}
             <button class="tour-card-wishlist ${isWishlisted ? "active" : ""}" data-tour-id="${tour._id}" onclick="event.stopPropagation(); toggleWishlist(this)">

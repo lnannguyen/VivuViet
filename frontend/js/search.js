@@ -83,9 +83,9 @@
                     .map(
                         (t) => `
         <a href="/tours/${t.slug || t._id}" class="vv-search-item">
-          <img src="${t.image || t.thumbnail || "/assets/images/dulichbien.png"}" 
+          <img src="${t.image || t.thumbnail || "/assets/images/categories/dulichbien.png"}" 
                alt="${escapeHtml(t.title || t.name)}" 
-               onerror="this.src='/assets/images/dulichbien.png'" />
+               onerror="this.src='/assets/images/categories/dulichbien.png'" />
           <div class="vv-search-item-info">
             <div class="vv-search-item-name">${escapeHtml(t.title || t.name)}</div>
             <div class="vv-search-item-meta">

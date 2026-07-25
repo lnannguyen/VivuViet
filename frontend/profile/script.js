@@ -43,35 +43,35 @@ const els = {
 };
 
 const VIETNAM_PROVINCES = [
-    { name: "Hà Nội", key: "hà nội", img: "/assets/images/hanoi.png" },
-    { name: "Sapa, Lào Cai", key: "lào cai", img: "/assets/images/sapa.jpg" },
+    { name: "Hà Nội", key: "hà nội", img: "/assets/images/tours/ha-noi/hanoi.png" },
+    { name: "Sapa, Lào Cai", key: "lào cai", img: "/assets/images/tours/sapa/sapa.jpg" },
     {
         name: "Hạ Long, Quảng Ninh",
         key: "quảng ninh",
-        img: "/assets/images/halong.png",
+        img: "/assets/images/tours/ha-long/halong.png",
     },
     {
         name: "Phú Quốc, Kiên Giang",
         key: "kiên giang",
-        img: "/assets/images/phuquoc.png",
+        img: "/assets/images/tours/phu-quoc/phuquoc.png",
     },
     {
         name: "Nha Trang, Khánh Hòa",
         key: "khánh hòa",
-        img: "/assets/images/bien.png",
+        img: "/assets/images/categories/bien.png",
     },
     {
         name: "Hội An, Quảng Nam",
         key: "quảng nam",
-        img: "/assets/images/hoian.png",
+        img: "/assets/images/tours/hoi-an/hoian.png",
     },
     {
         name: "Đà Lạt, Lâm Đồng",
         key: "lâm đồng",
-        img: "/assets/images/sanmay.png",
+        img: "/assets/images/tours/sapa/sanmay.png",
     },
-    { name: "Cao Bằng", key: "cao bằng", img: "/assets/images/caobang.png" },
-    { name: "Ninh Bình", key: "ninh bình", img: "/assets/images/ninhbinh.png" },
+    { name: "Cao Bằng", key: "cao bằng", img: "/assets/images/tours/cao-bang/caobang.png" },
+    { name: "Ninh Bình", key: "ninh bình", img: "/assets/images/tours/ninh-binh/ninhbinh.png" },
 ];
 
 // Khởi tạo dữ liệu

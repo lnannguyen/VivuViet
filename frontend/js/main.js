@@ -99,7 +99,7 @@ function renderCategories(categories) {
             (cat) => `
     <div class="col-12 col-md-4 mb-4">
       <div class="category-card" onclick="window.location.href='/tours?category=${encodeURIComponent(cat.name)}'">
-        <img src="${cat.image || "/assets/images/dulichbien.png"}" alt="${cat.name}">
+        <img src="${cat.image || "/assets/images/categories/dulichbien.png"}" alt="${cat.name}">
         <div class="category-card-overlay">
           <h5>${cat.name}</h5>
           <small>${cat.description || ""}</small>
@@ -146,7 +146,7 @@ function renderDestinations(destinations) {
 
     const createCard = (des) => `
     <div class="card border-0 rounded-4 overflow-hidden position-relative w-100 h-100 dest-card" style="cursor: pointer; min-height: 200px;" onclick="window.location.href='/tours?destination=${encodeURIComponent(des.name)}'">
-      <img src="${des.image || "/assets/images/dulichbien.png"}" class="card-img h-100 w-100 object-fit-cover position-absolute top-0 start-0" alt="${des.name}" style="z-index: 0; transition: transform var(--transition);">
+      <img src="${des.image || "/assets/images/categories/dulichbien.png"}" class="card-img h-100 w-100 object-fit-cover position-absolute top-0 start-0" alt="${des.name}" style="z-index: 0; transition: transform var(--transition);">
       <div class="position-absolute bottom-0 start-0 w-100 h-50" style="background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 100%); pointer-events: none; z-index: 1;"></div>
       ${des.badge ? `<span class="dest-badge position-absolute top-0 start-0 m-3" style="z-index: 2;">${des.badge}</span>` : ""}
       <div class="position-absolute bottom-0 start-0 w-100 p-3 p-md-4 text-start" style="z-index: 2;">
@@ -206,7 +206,7 @@ function renderFeaturedTours(tours) {
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="tour-card" onclick="window.location.href='/tours/${tour.slug || tour._id}'">
           <div class="tour-card-img-wrap">
-            <img src="${tour.image || "/assets/images/dulichbien.png"}" alt="${tour.title || tour.name}">
+            <img src="${tour.image || "/assets/images/categories/dulichbien.png"}" alt="${tour.title || tour.name}">
             ${tour.discount ? `<span class="tour-card-badge">-${tour.discount}%</span>` : tour.isFeatured ? `<span class="tour-card-badge">Hot</span>` : ""}
             <button class="tour-card-wishlist ${isWishlisted ? "active" : ""}" data-tour-id="${tour._id}" onclick="event.stopPropagation(); toggleWishlist(this)">
               <i class="bi bi-heart-fill"></i>
@@ -373,7 +373,7 @@ function renderFlashSaleTours(tours) {
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="tour-card" onclick="window.location.href='/tours/${tour.slug || tour._id}'">
           <div class="tour-card-img-wrap">
-            <img src="${tour.image || "/assets/images/dulichbien.png"}" alt="${tour.title || tour.name}">
+            <img src="${tour.image || "/assets/images/categories/dulichbien.png"}" alt="${tour.title || tour.name}">
             <span class="flash-sale-badge"><i class="bi bi-lightning-fill"></i> -${discountPercent}%</span>
             <button class="tour-card-wishlist ${isWishlisted ? "active" : ""}" data-tour-id="${tour._id}" onclick="event.stopPropagation(); toggleWishlist(this)">
               <i class="bi bi-heart-fill"></i>
