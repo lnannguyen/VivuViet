@@ -427,10 +427,27 @@ function initBookingSidebar(tour) {
         </div>
         
         <form id="sidebarBookingForm" onsubmit="event.preventDefault(); proceedToBooking();">
+          <!-- Departure Point Select -->
+          <div class="mb-3">
+            <label class="form-label fs-7 fw-bold text-primary">
+              <i class="bi bi-geo-alt-fill me-1 text-danger"></i>Điểm xuất phát / Đón khách
+            </label>
+            <select id="bookDeparturePoint" class="form-select py-2 shadow-none fs-7 fw-semibold border-success-subtle" onchange="updateRouteMapFromDeparture(this.value)">
+              <option value="${tour.departure || 'Hà Nội'}" selected>📍 ${tour.departure || 'Hà Nội'} (Khởi hành mặc định)</option>
+              ${(tour.departure || '') !== 'TP. Hồ Chí Minh' ? '<option value="TP. Hồ Chí Minh">📍 TP. Hồ Chí Minh</option>' : ''}
+              ${(tour.departure || '') !== 'Hà Nội' ? '<option value="Hà Nội">📍 Hà Nội</option>' : ''}
+              ${(tour.departure || '') !== 'Đà Nẵng' ? '<option value="Đà Nẵng">📍 Đà Nẵng</option>' : ''}
+              ${(tour.departure || '') !== 'Cần Thơ' ? '<option value="Cần Thơ">📍 Cần Thơ</option>' : ''}
+              <option value="Sân bay / Khách sạn cá nhân">🚕 Đón tại Khách sạn / Sân bay cá nhân</option>
+            </select>
+          </div>
+
           <!-- Departure Date -->
           <div class="mb-3">
-            <label class="form-label fs-7 fw-bold text-primary">Ngày khởi hành dự kiến</label>
-            <input type="date" id="bookDate" class="form-control py-2 shadow-none fs-7" required min="${new Date().toISOString().split("T")[0]}">
+            <label class="form-label fs-7 fw-bold text-primary">
+              <i class="bi bi-calendar-event me-1 text-success"></i>Ngày khởi hành dự kiến
+            </label>
+            <input type="date" id="bookDate" class="form-control py-2 shadow-none fs-7 fw-semibold" required min="${new Date().toISOString().split("T")[0]}">
           </div>
           
           <!-- Adults Count -->
@@ -533,6 +550,27 @@ function initBookingSidebar(tour) {
                 });
             }
         }
+    };
+
+    window.updateRouteMapFromDeparture = (startLoc) => {
+        if (!startLoc || !els.map || !tour) return;
+        const cleanStart = startLoc.includes("Sân bay") ? "Sân bay Tân Sơn Nhất" : startLoc;
+        const endLoc = (tour.location || tour.destination || tour.name || "Việt Nam").trim();
+
+        let routeEmbedSrc = "";
+        if (cleanStart.toLowerCase() === endLoc.toLowerCase() || endLoc.toLowerCase().includes(cleanStart.toLowerCase()) || cleanStart.toLowerCase().includes(endLoc.toLowerCase())) {
+            const fullQuery = tour.name ? `${tour.name}` : `${endLoc}`;
+            routeEmbedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(fullQuery)}&z=11&output=embed`;
+        } else {
+            routeEmbedSrc = `https://maps.google.com/maps?saddr=${encodeURIComponent(cleanStart)}&daddr=${encodeURIComponent(endLoc)}&z=9&output=embed`;
+        }
+
+        els.map.innerHTML = `
+        <div style="position: relative; width: 100%; height: 380px; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm);">
+          <iframe src="${routeEmbedSrc}" 
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      `;
     };
 
     window.changePax = (type, val) => {
