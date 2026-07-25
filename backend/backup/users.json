@@ -18,7 +18,7 @@
     "achievements": [],
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.284Z",
-    "updatedAt": "2026-07-25T17:44:49.528Z"
+    "updatedAt": "2026-07-25T18:20:07.278Z"
   },
   {
     "_id": "USR003",
@@ -39,7 +39,7 @@
     "achievements": [],
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.285Z",
-    "updatedAt": "2026-07-25T17:44:49.706Z"
+    "updatedAt": "2026-07-25T18:20:07.479Z"
   },
   {
     "_id": "USR004",
@@ -55,7 +55,7 @@
     "passportStamps": [],
     "password": "$2b$10$.krA4MSIi5OOvUzEgelEBOwRCQpdzf0hgbwhb5/lwoUypCBVPQoBq",
     "phone": "0938112233",
-    "updatedAt": "2026-07-25T17:44:49.898Z",
+    "updatedAt": "2026-07-25T18:20:07.672Z",
     "vivupoints": 320,
     "vouchers": [],
     "wishlist": [
@@ -76,7 +76,7 @@
     "passportStamps": [],
     "password": "$2b$10$.krA4MSIi5OOvUzEgelEBOwRCQpdzf0hgbwhb5/lwoUypCBVPQoBq",
     "phone": "0977889900",
-    "updatedAt": "2026-07-25T17:44:50.133Z",
+    "updatedAt": "2026-07-25T18:20:07.894Z",
     "vivupoints": 450,
     "vouchers": [],
     "wishlist": [
@@ -195,8 +195,8 @@
     "fullname": "tran phuong anh",
     "email": "anhtp@gmail.com",
     "phone": "012345678",
-    "avatar": "",
-    "password": "$2b$10$QyxKYey.uaRhPJ22f8RpE.FIzfkjBJr3XhbQj.aTcLoCAGZwIEmXW",
+    "avatar": "https://res.cloudinary.com/cezflaqv/image/upload/v1785002783/vivuviet_avatars/seryf6fkjmvwxici5cqe.jpg",
+    "password": "$2b$10$E5kKp6GjEUcdOOk21AxK8.QgC8tBMAMmLrhgCfDxbdBPH1fzhrcIi",
     "auth_provider": "local",
     "membership": "standard",
     "wishlist": [],
@@ -225,7 +225,7 @@
     "passportStamps": [],
     "achievements": [],
     "createdAt": "2026-07-25T15:13:35.549Z",
-    "updatedAt": "2026-07-25T15:13:35.549Z",
+    "updatedAt": "2026-07-25T18:06:24.131Z",
     "__v": 0
   },
   {
@@ -234,7 +234,7 @@
     "__v": 0,
     "achievements": [],
     "auth_provider": "local",
-    "avatar": "/assets/images/avt/pngtree-avatar-male-2-png-image_21200797.png",
+    "avatar": "https://res.cloudinary.com/cezflaqv/image/upload/v1785002103/vivuviet_avatars/fwtrysazpvubyguas3pv.jpg",
     "createdAt": "2026-07-25T17:40:28.792Z",
     "fullname": "Nguyễn Thị Thu An",
     "membership": "diamond",
@@ -242,7 +242,7 @@
     "passportStamps": [],
     "password": "$2b$10$ca46ggVIv0UZFC6Qcmx3k.JPV2755okQzY5TI1UjXucD051qeTbfO",
     "phone": "0901234567",
-    "updatedAt": "2026-07-25T17:44:49.341Z",
+    "updatedAt": "2026-07-25T18:20:07.059Z",
     "vivupoints": 500,
     "vouchers": [],
     "wishlist": [
