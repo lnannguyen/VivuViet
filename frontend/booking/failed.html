@@ -355,6 +355,11 @@
                             document.getElementById("res-date").innerText =
                                 new Date(b.departure_date).toLocaleDateString(
                                     "vi-VN",
+                                    {
+                                        day: "2-digit",
+                                        month: "2-digit",
+                                        year: "numeric",
+                                    },
                                 );
                             document.getElementById("res-qty").innerText =
                                 `${b.quantity} người (${b.adults_qty}NL, ${b.children_qty}TE)`;

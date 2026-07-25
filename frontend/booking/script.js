@@ -174,12 +174,22 @@ async function fetchTourDetails() {
 function renderSummaryPanel() {
     if (!els.summaryTourContent || !tourDetails) return;
 
+function formatDateVN(dateInput) {
+    if (!dateInput) return "";
+    const d = new Date(dateInput);
+    if (isNaN(d.getTime())) return String(dateInput);
+    const day = String(d.getDate()).padStart(2, "0");
+    const month = String(d.getMonth() + 1).padStart(2, "0");
+    const year = d.getFullYear();
+    return `${day}/${month}/${year}`;
+}
+
     els.summaryTourContent.innerHTML = `
     <div class="d-flex gap-3 align-items-center">
       <img src="${tourDetails.image || "/assets/images/dulichbien.png"}" class="rounded-3" style="width: 70px; height: 70px; object-fit: cover;">
       <div>
         <div class="summary-tour-title">${tourDetails.title || tourDetails.name}</div>
-        <div class="summary-tour-meta mb-0"><i class="bi bi-calendar3 text-accent me-1"></i> Khởi hành: ${new Date(bookingData.departure_date).toLocaleDateString("vi-VN")}</div>
+        <div class="summary-tour-meta mb-0"><i class="bi bi-calendar3 text-accent me-1"></i> Khởi hành: ${formatDateVN(bookingData.departure_date)}</div>
         <div class="summary-tour-meta mb-0"><i class="bi bi-people-fill text-accent me-1"></i> Số lượng: ${bookingData.quantity} khách (${bookingData.adults_qty}NL, ${bookingData.children_qty}TE)</div>
       </div>
     </div>

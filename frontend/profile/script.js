@@ -4,6 +4,17 @@ let user = null;
 let bookings = [];
 let selectedRating = 5;
 
+// Helper định dạng ngày tháng chuẩn 2 chữ số DD/MM/YYYY
+function formatDateVN(dateInput) {
+    if (!dateInput) return "";
+    const d = new Date(dateInput);
+    if (isNaN(d.getTime())) return String(dateInput);
+    const day = String(d.getDate()).padStart(2, "0");
+    const month = String(d.getMonth() + 1).padStart(2, "0");
+    const year = d.getFullYear();
+    return `${day}/${month}/${year}`;
+}
+
 // Lưu trữ các phần tử giao diện (DOM elements)
 const els = {
     sidebarName: document.getElementById("sidebar-name"),
@@ -321,9 +332,7 @@ function renderBookingHistory() {
                 badgeClass = "bg-brand text-white";
             }
 
-            const travelDate = new Date(b.departure_date).toLocaleDateString(
-                "vi-VN",
-            );
+            const travelDate = formatDateVN(b.departure_date);
             const isCompleted = b.booking_status === "completed";
             const isPastDeparture = new Date(b.departure_date) < new Date();
             const isCancellable =
@@ -569,7 +578,7 @@ async function loadMyReviews() {
                         <img src="${r.tour?.image || '/assets/images/placeholder.jpg'}" alt="Tour" class="rounded-3 me-3 object-fit-cover" style="width: 60px; height: 60px;">
                         <div>
                             <h6 class="mb-1 text-primary-brand fw-bold">${r.tour?.name || 'Chuyến đi không xác định'}</h6>
-                            <div class="fs-8 text-muted">Đã viết ngày: ${new Date(r.createdAt).toLocaleDateString("vi-VN")}</div>
+                            <div class="fs-8 text-muted">Đã viết ngày: ${formatDateVN(r.createdAt)}</div>
                         </div>
                     </div>
                     <hr class="text-white opacity-75 my-3 border-2">
@@ -632,7 +641,7 @@ function loadPassportStamps() {
         <div class="passport-stamp unlocked">
           <div class="passport-stamp-count">${visited.visitCount || 1}</div>
           <div class="passport-stamp-name">${prov.name}</div>
-          <div class="passport-stamp-date">${new Date(visited.lastVisitDate || visited.firstVisitDate).toLocaleDateString("vi-VN")}</div>
+          <div class="passport-stamp-date">${formatDateVN(visited.lastVisitDate || visited.firstVisitDate)}</div>
         </div>
       `;
         } else {
@@ -753,7 +762,7 @@ function loadVouchers() {
         <div class="voucher-ticket-right">
           <div>
             <div class="voucher-ticket-title">${v.code}</div>
-            <div class="voucher-ticket-desc">Đơn tối thiểu: ${v.min_spend.toLocaleString("vi-VN")} đ. HSD: ${new Date(v.expiry_date).toLocaleDateString("vi-VN")}</div>
+            <div class="voucher-ticket-desc">Đơn tối thiểu: ${v.min_spend.toLocaleString("vi-VN")} đ. HSD: ${formatDateVN(v.expiry_date)}</div>
           </div>
           <div class="d-flex justify-content-between align-items-center mt-2">
             <span class="voucher-ticket-code">${v.code}</span>
@@ -846,7 +855,7 @@ function loadNotifications() {
             <div class="fs-8 text-secondary mt-1">${n.content}</div>
           </div>
         </div>
-        <div class="fs-9 text-muted">${new Date(n.createdAt).toLocaleDateString("vi-VN")}</div>
+        <div class="fs-9 text-muted">${formatDateVN(n.createdAt)}</div>
       </div>
     `;
         })
