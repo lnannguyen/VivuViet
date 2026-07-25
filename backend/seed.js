@@ -81,7 +81,7 @@ const seedData = async () => {
                 fullname: "Nguyen Thi Thu An",
                 email: "anan265464@gmail.com",
                 phone: "0901234567",
-                avatar: "/assets/images/avt/avatar1.png",
+                avatar: "/assets/images/avt/pngtree-avatar-male-2-png-image_21200797.png",
                 password: defaultPassword,
                 auth_provider: "local",
                 membership: "gold",

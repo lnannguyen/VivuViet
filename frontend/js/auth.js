@@ -79,7 +79,7 @@ function updateAuthUI(user) {
         navAuthArea.innerHTML = `
       <div class="dropdown">
         <div class="d-flex align-items-center gap-2 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="cursor: pointer;">
-          <img src="${user.avatar || "/assets/images/avt/pngtree-avatar-male-2-png-image_21200797.png"}" class="nav-user-avatar" alt="Avatar">
+          <img src="${user.avatar || "/assets/images/avt/pngtree-avatar-male-2-png-image_21200797.png"}" class="nav-user-avatar" alt="Avatar" onerror="this.src='/assets/images/avt/pngtree-avatar-male-2-png-image_21200797.png'">
           <span class="nav-user-name d-none d-sm-inline">${user.fullname}</span>
         </div>
         <ul class="dropdown-menu dropdown-menu-end border-0 shadow-md rounded-3 mt-2">
