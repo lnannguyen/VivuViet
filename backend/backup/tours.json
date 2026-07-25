@@ -27,13 +27,13 @@
     "thumbnail": "/assets/images/tours/sapa/fansipan_peak.jpg",
     "images": [
       "/assets/images/tours/sapa/fansipan_peak.jpg",
-      "/assets/images/tours/sapa/nhatho_da.jpg",
+      "/assets/images/tours/sapa/fansipan_marker.jpg",
       "/assets/images/tours/sapa/catcat_village.jpg",
       "/assets/images/tours/sapa/sanmay_fansipan.jpg"
     ],
     "gallery": [
       "/assets/images/tours/sapa/fansipan_peak.jpg",
-      "/assets/images/tours/sapa/nhatho_da.jpg",
+      "/assets/images/tours/sapa/fansipan_marker.jpg",
       "/assets/images/tours/sapa/catcat_village.jpg",
       "/assets/images/tours/sapa/sanmay_fansipan.jpg"
     ],
@@ -100,7 +100,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.538Z",
-    "updatedAt": "2026-07-25T14:09:49.821Z"
+    "updatedAt": "2026-07-25T14:18:02.489Z"
   },
   {
     "_id": "TOUR002",
@@ -197,7 +197,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T14:09:50.009Z"
+    "updatedAt": "2026-07-25T14:18:02.701Z"
   },
   {
     "_id": "TOUR003",
@@ -296,7 +296,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T14:09:50.189Z"
+    "updatedAt": "2026-07-25T14:18:02.883Z"
   },
   {
     "_id": "TOUR004",
@@ -400,7 +400,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T14:09:50.366Z"
+    "updatedAt": "2026-07-25T14:18:03.089Z"
   },
   {
     "_id": "TOUR005",
@@ -505,7 +505,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T14:09:50.544Z"
+    "updatedAt": "2026-07-25T14:18:03.310Z"
   },
   {
     "_id": "TOUR006",
@@ -594,6 +594,6 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T14:09:50.725Z"
+    "updatedAt": "2026-07-25T14:18:03.489Z"
   }
 ]

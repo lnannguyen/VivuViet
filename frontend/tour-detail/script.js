@@ -692,10 +692,10 @@ function getLandmarkCaption(imgSrc, tour) {
     const src = imgSrc.toLowerCase();
 
     // Sapa
-    if (src.includes("fansipan_peak")) return "Đỉnh Fansipan 3.143m - Nóc nhà Đông Dương";
-    if (src.includes("nhatho_da")) return "Nhà thờ Đá Sapa & Trung tâm thị trấn sương mù";
-    if (src.includes("catcat_village") || src.includes("catcat")) return "Bản Cát Cát thổ cẩm H'Mông & Ruộng bậc thang vàng";
-    if (src.includes("sanmay_fansipan") || src.includes("sanmay")) return "Đỉnh Fansipan Sapa biển mây bình minh";
+    if (src.includes("fansipan_peak")) return "Cột cờ Đỉnh Fansipan 3.143m & Biển mây";
+    if (src.includes("fansipan_marker") || src.includes("nhatho_da")) return "Cột mốc chóp inox Đỉnh Fansipan 3.143m";
+    if (src.includes("catcat_village") || src.includes("catcat")) return "Bản Cát Cát thổ cẩm H'Mông & Thung lũng Sapa";
+    if (src.includes("sanmay_fansipan") || src.includes("sanmay")) return "Săn mây hoàng hôn trên đỉnh Fansipan Sapa";
     if (src.includes("sapa")) return "Thị trấn sương mù Sapa & Thung lũng Mường Hoa";
 
     // Phú Quốc

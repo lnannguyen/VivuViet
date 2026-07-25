@@ -169,8 +169,8 @@ const seedData = async () => {
                 bookingCount: 52,
                 image: "/assets/images/tours/sapa/fansipan_peak.jpg",
                 thumbnail: "/assets/images/tours/sapa/fansipan_peak.jpg",
-                images: ["/assets/images/tours/sapa/fansipan_peak.jpg", "/assets/images/tours/sapa/nhatho_da.jpg", "/assets/images/tours/sapa/catcat_village.jpg", "/assets/images/tours/sapa/sanmay_fansipan.jpg"],
-                gallery: ["/assets/images/tours/sapa/fansipan_peak.jpg", "/assets/images/tours/sapa/nhatho_da.jpg", "/assets/images/tours/sapa/catcat_village.jpg", "/assets/images/tours/sapa/sanmay_fansipan.jpg"],
+                images: ["/assets/images/tours/sapa/fansipan_peak.jpg", "/assets/images/tours/sapa/fansipan_marker.jpg", "/assets/images/tours/sapa/catcat_village.jpg", "/assets/images/tours/sapa/sanmay_fansipan.jpg"],
+                gallery: ["/assets/images/tours/sapa/fansipan_peak.jpg", "/assets/images/tours/sapa/fansipan_marker.jpg", "/assets/images/tours/sapa/catcat_village.jpg", "/assets/images/tours/sapa/sanmay_fansipan.jpg"],
                 category: "Vùng Cao",
                 description: "Hành trình đưa bạn khám phá thị trấn sương mù Sapa, check-in đỉnh Fansipan bằng cáp treo kỷ kỷ lục và trải nghiệm nét văn hóa bản địa độc đáo tại Bản Cát Cát.",
                 itinerary: [
