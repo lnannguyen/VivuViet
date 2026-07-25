@@ -134,34 +134,24 @@ function renderTourData(tour) {
         document.body.insertAdjacentHTML("beforeend", lightboxHTML);
     }
 
-    if (rawImgs.length <= 3) {
-        els.gallery.innerHTML = `
-        <div class="vv-gallery">
-          <div class="vv-gallery-main" onclick="openGalleryLightbox(0)" title="Bấm để xem phóng to ảnh HD">
-            <img src="${rawImgs[0] || tour.image}" alt="${tour.title || tour.name}">
-          </div>
-          <div class="vv-gallery-side vv-gallery-side-2">
-            <img src="${rawImgs[1] || rawImgs[0] || tour.image}" alt="Scenic Image 2" onclick="openGalleryLightbox(1)" title="Bấm để xem phóng to ảnh HD">
-            <img src="${rawImgs[2] || rawImgs[1] || rawImgs[0] || tour.image}" alt="Scenic Image 3" onclick="openGalleryLightbox(2)" title="Bấm để xem phóng to ảnh HD">
-          </div>
+    currentLightboxImages = rawImgs;
+
+    let itemsHTML = rawImgs.map((imgSrc, idx) => `
+        <div class="vv-gallery-item vv-gallery-item-${idx} ${idx === 3 ? 'vv-gallery-wide-item' : ''}" onclick="openGalleryLightbox(${idx})" title="Bấm để xem phóng to ảnh HD">
+            <img src="${imgSrc}" alt="${tour.title || tour.name} ${idx + 1}">
         </div>
-      `;
-    } else {
-        els.gallery.innerHTML = `
-        <div class="vv-gallery">
-          <div class="vv-gallery-main" onclick="openGalleryLightbox(0)" title="Bấm để xem phóng to ảnh HD">
-            <img src="${rawImgs[0]}" alt="${tour.title || tour.name}">
-          </div>
-          <div class="vv-gallery-side">
-            <img src="${rawImgs[1]}" alt="Scenic Image 2" onclick="openGalleryLightbox(1)" title="Bấm để xem phóng to ảnh HD">
-            <img src="${rawImgs[2]}" alt="Scenic Image 3" onclick="openGalleryLightbox(2)" title="Bấm để xem phóng to ảnh HD">
-            <div class="vv-gallery-wide" onclick="openGalleryLightbox(3)" title="Bấm để xem phóng to ảnh HD">
-              <img src="${rawImgs[3]}" alt="Scenic Image 4">
+    `).join("");
+
+    els.gallery.innerHTML = `
+        <div class="vv-gallery-container">
+            <div class="vv-gallery" id="vvMainGalleryScroll" onscroll="handleMobileGalleryScroll(this)">
+                ${itemsHTML}
             </div>
-          </div>
+            <div class="vv-mobile-gallery-badge">
+                <i class="bi bi-camera-fill me-1"></i><span id="vvMobileImgIdx">1</span>/${rawImgs.length} <span class="ms-1 opacity-75">(Vuốt ngang)</span>
+            </div>
         </div>
-      `;
-    }
+    `;
 
     // Huy hiệu nổi bật / khuyến mãi
     let badgeHTML = "";
@@ -799,6 +789,17 @@ window.changeLightboxImg = (delta) => {
 
 window.selectLightboxImg = (index) => {
     openGalleryLightbox(index);
+};
+
+// Xử lý vuốt ảnh di động & cập nhật badge đếm
+window.handleMobileGalleryScroll = (el) => {
+    const idxEl = document.getElementById("vvMobileImgIdx");
+    if (!idxEl || !el) return;
+    const firstItem = el.querySelector(".vv-gallery-item");
+    const itemWidth = firstItem ? firstItem.offsetWidth + 12 : el.offsetWidth;
+    const scrollPos = el.scrollLeft;
+    const currentIdx = Math.min(Math.round(scrollPos / itemWidth) + 1, (currentLightboxImages || []).length || 1);
+    idxEl.innerText = currentIdx;
 };
 
 // Lắng nghe phím bấm chuyển ảnh (Bàn phím: Trái/Phải/ESC)
