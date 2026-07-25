@@ -98,7 +98,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.538Z",
-    "updatedAt": "2026-07-25T06:44:02.795Z"
+    "updatedAt": "2026-07-25T06:48:24.737Z"
   },
   {
     "_id": "TOUR002",
@@ -193,7 +193,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T06:44:03.000Z"
+    "updatedAt": "2026-07-25T06:48:24.941Z"
   },
   {
     "_id": "TOUR003",
@@ -288,7 +288,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T06:44:03.203Z"
+    "updatedAt": "2026-07-25T06:48:25.145Z"
   },
   {
     "_id": "TOUR004",
@@ -390,7 +390,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T06:44:03.408Z"
+    "updatedAt": "2026-07-25T06:48:25.350Z"
   },
   {
     "_id": "TOUR005",
@@ -493,7 +493,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T06:44:03.614Z"
+    "updatedAt": "2026-07-25T06:48:25.555Z"
   },
   {
     "_id": "TOUR006",
@@ -578,6 +578,6 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T06:44:03.818Z"
+    "updatedAt": "2026-07-25T06:48:25.740Z"
   }
 ]

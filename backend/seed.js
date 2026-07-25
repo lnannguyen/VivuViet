@@ -84,37 +84,56 @@ const seedData = async () => {
                 fullname: "Trần Văn Hùng",
                 email: "hung.tran@gmail.com",
                 phone: "0987654321",
-                avatar: "/assets/images/avt/avatar2.png",
+                avatar: "/assets/images/avt/pngtree-art-boy-avatar-png-image_8855201.png",
                 password: defaultPassword,
                 auth_provider: "local",
-                membership: "standard",
+                membership: "gold",
                 wishlist: ["TOUR002"],
                 notifications: [],
-                vouchers: [
-                    {
-                        code: "WELCOME200K",
-                        discount_amount: 200000,
-                        discount_type: "fixed",
-                        min_spend: 1000000,
-                        expiry_date: new Date("2026-12-31"),
-                        isUsed: false,
-                    },
-                ],
-                vivupoints: 120,
+                vouchers: [],
+                vivupoints: 250,
             },
             {
                 _id: "USR003",
                 fullname: "Lê Thị Phương Mai",
                 email: "mai.le@gmail.com",
                 phone: "0912345678",
-                avatar: "",
+                avatar: "/assets/images/avt/avt2.jpg",
                 password: defaultPassword,
                 auth_provider: "local",
                 membership: "standard",
-                wishlist: [],
+                wishlist: ["TOUR001"],
                 notifications: [],
                 vouchers: [],
-                vivupoints: 50,
+                vivupoints: 180,
+            },
+            {
+                _id: "USR004",
+                fullname: "Phạm Quốc Bảo",
+                email: "bao.pham@gmail.com",
+                phone: "0938112233",
+                avatar: "/assets/images/avt/av3.jpg",
+                password: defaultPassword,
+                auth_provider: "local",
+                membership: "gold",
+                wishlist: ["TOUR001"],
+                notifications: [],
+                vouchers: [],
+                vivupoints: 320,
+            },
+            {
+                _id: "USR005",
+                fullname: "Nguyễn Thảo Nguyên",
+                email: "thaonguyen@gmail.com",
+                phone: "0977889900",
+                avatar: "/assets/images/avt/av4.jpg",
+                password: defaultPassword,
+                auth_provider: "local",
+                membership: "gold",
+                wishlist: ["TOUR003"],
+                notifications: [],
+                vouchers: [],
+                vivupoints: 450,
             },
         ];
         for (const u of defaultUsers) {
@@ -456,10 +475,50 @@ const seedData = async () => {
         // 7. SEED REVIEWS
         console.log("Đang đồng bộ Đánh Giá (Reviews)...");
         await Review.deleteMany({ user_id: "USR001" });
-        await Review.deleteMany({ _id: "REV001" });
-        const defaultReviews = [];
+        const defaultReviews = [
+            {
+                _id: "REV001",
+                booking_id: "BK001",
+                user_id: "USR003",
+                tour_id: "TOUR006",
+                rating: 5,
+                comment: "Đi Ninh Bình 1 ngày gọn nhẹ mà tham quan được nhiều điểm đẹp. Tràng An nước trong vắt, Hang Múa chụp hình siêu ảo!",
+                images: ["/assets/images/ninhbinh.png"],
+                createdAt: new Date("2026-06-15"),
+            },
+            {
+                _id: "REV002",
+                booking_id: "BK002",
+                user_id: "USR002",
+                tour_id: "TOUR002",
+                rating: 5,
+                comment: "Du thuyền 5 sao trên Vịnh Hạ Long rất sang trọng. Đồ ăn hải sản tươi ngon, chèo thuyền kayak rất vui!",
+                images: ["/assets/images/halong.png"],
+                createdAt: new Date("2026-06-20"),
+            },
+            {
+                _id: "REV003",
+                booking_id: "BK003",
+                user_id: "USR004",
+                tour_id: "TOUR001",
+                rating: 5,
+                comment: "Tour Sapa săn mây tuyệt đẹp! Khách sạn 4 sao sạch sẽ, hướng dẫn viên chu đáo nhiệt tình lắm!",
+                images: ["/assets/images/sapa.jpg"],
+                createdAt: new Date("2026-07-01"),
+            },
+            {
+                _id: "REV004",
+                booking_id: "BK004",
+                user_id: "USR005",
+                tour_id: "TOUR003",
+                rating: 5,
+                comment: "Phú Quốc nước biển xanh trong vắt như ngọc, đi tour cano 4 đảo ngắm san hô thiên nhiên rất thích!",
+                images: ["/assets/images/phuquoc.png"],
+                createdAt: new Date("2026-07-10"),
+            },
+        ];
         for (const r of defaultReviews) {
-            await Review.updateOne({ _id: r._id }, { $setOnInsert: r }, { upsert: true });
+            await Review.updateOne({ _id: r._id }, { $set: r }, { upsert: true });
         }
 
         console.log("=========================================");

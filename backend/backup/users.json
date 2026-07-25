@@ -4,49 +4,83 @@
     "fullname": "Trần Văn Hùng",
     "email": "hung.tran@gmail.com",
     "phone": "0987654321",
-    "avatar": "/assets/images/avt/avatar2.png",
-    "password": "$2b$10$Pj5VM6/fhlc80IaBG739ROIiRg1.JJwzJgaxCEn.0kOtxHESnPWIG",
+    "avatar": "/assets/images/avt/pngtree-art-boy-avatar-png-image_8855201.png",
+    "password": "$2b$10$TRIKVxSlUdH3Vx1k1KG4bezIJ64rUyFP5YfMAsujCfGW/tu9NQzIm",
     "auth_provider": "local",
-    "membership": "standard",
+    "membership": "gold",
     "wishlist": [
       "TOUR002"
     ],
     "notifications": [],
-    "vouchers": [
-      {
-        "code": "WELCOME200K",
-        "discount_amount": 200000,
-        "discount_type": "fixed",
-        "min_spend": 1000000,
-        "expiry_date": "2026-12-31T00:00:00.000Z",
-        "isUsed": false,
-        "_id": "6a645b32167c6a73ebe28acd"
-      }
-    ],
-    "vivupoints": 120,
+    "vouchers": [],
+    "vivupoints": 250,
     "passportStamps": [],
     "achievements": [],
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.284Z",
-    "updatedAt": "2026-07-25T06:44:02.358Z"
+    "updatedAt": "2026-07-25T06:48:23.917Z"
   },
   {
     "_id": "USR003",
     "fullname": "Lê Thị Phương Mai",
     "email": "mai.le@gmail.com",
     "phone": "0912345678",
-    "avatar": "",
-    "password": "$2b$10$Pj5VM6/fhlc80IaBG739ROIiRg1.JJwzJgaxCEn.0kOtxHESnPWIG",
+    "avatar": "/assets/images/avt/avt2.jpg",
+    "password": "$2b$10$TRIKVxSlUdH3Vx1k1KG4bezIJ64rUyFP5YfMAsujCfGW/tu9NQzIm",
     "auth_provider": "local",
     "membership": "standard",
-    "wishlist": [],
+    "wishlist": [
+      "TOUR001"
+    ],
     "notifications": [],
     "vouchers": [],
-    "vivupoints": 50,
+    "vivupoints": 180,
     "passportStamps": [],
     "achievements": [],
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.285Z",
-    "updatedAt": "2026-07-25T06:44:02.590Z"
+    "updatedAt": "2026-07-25T06:48:24.121Z"
+  },
+  {
+    "_id": "USR004",
+    "__v": 0,
+    "achievements": [],
+    "auth_provider": "local",
+    "avatar": "/assets/images/avt/av3.jpg",
+    "createdAt": "2026-07-25T06:48:24.327Z",
+    "email": "bao.pham@gmail.com",
+    "fullname": "Phạm Quốc Bảo",
+    "membership": "gold",
+    "notifications": [],
+    "passportStamps": [],
+    "password": "$2b$10$TRIKVxSlUdH3Vx1k1KG4bezIJ64rUyFP5YfMAsujCfGW/tu9NQzIm",
+    "phone": "0938112233",
+    "updatedAt": "2026-07-25T06:48:24.327Z",
+    "vivupoints": 320,
+    "vouchers": [],
+    "wishlist": [
+      "TOUR001"
+    ]
+  },
+  {
+    "_id": "USR005",
+    "__v": 0,
+    "achievements": [],
+    "auth_provider": "local",
+    "avatar": "/assets/images/avt/av4.jpg",
+    "createdAt": "2026-07-25T06:48:24.532Z",
+    "email": "thaonguyen@gmail.com",
+    "fullname": "Nguyễn Thảo Nguyên",
+    "membership": "gold",
+    "notifications": [],
+    "passportStamps": [],
+    "password": "$2b$10$TRIKVxSlUdH3Vx1k1KG4bezIJ64rUyFP5YfMAsujCfGW/tu9NQzIm",
+    "phone": "0977889900",
+    "updatedAt": "2026-07-25T06:48:24.532Z",
+    "vivupoints": 450,
+    "vouchers": [],
+    "wishlist": [
+      "TOUR003"
+    ]
   }
 ]
