@@ -237,40 +237,35 @@ function renderTourData(tour) {
 
         if (destLower.includes("phú quốc") || destLower.includes("kiên giang")) {
             scenicSearchName = "Sunset Sanato Beach Club Phú Quốc";
-            vrLat = 10.1834; vrLng = 103.9664;
         } else if (destLower.includes("sapa") || destLower.includes("lào cai") || destLower.includes("fansipan")) {
             scenicSearchName = "Đỉnh Fansipan Sapa";
-            vrLat = 22.3033; vrLng = 103.7750;
         } else if (destLower.includes("hạ long") || destLower.includes("quảng ninh")) {
             scenicSearchName = "Vịnh Hạ Long Quảng Ninh";
-            vrLat = 20.9101; vrLng = 107.1839;
         } else if (destLower.includes("ninh bình") || destLower.includes("tràng an")) {
             scenicSearchName = "Danh thắng Tràng An Ninh Bình";
-            vrLat = 20.2506; vrLng = 105.9745;
         } else if (destLower.includes("hội an") || destLower.includes("quảng nam")) {
             scenicSearchName = "Phố cổ Hội An Chùa Cầu";
-            vrLat = 15.8771; vrLng = 108.3258;
         } else if (destLower.includes("cao bằng") || destLower.includes("bản giốc")) {
             scenicSearchName = "Thác Bản Giốc Cao Bằng";
-            vrLat = 22.8536; vrLng = 106.7241;
+        } else if (destLower.includes("đà nẵng") || destLower.includes("bà nà")) {
+            scenicSearchName = "Cầu Vàng Bà Nà Hills Đà Nẵng";
         } else if (destLower.includes("hà nội")) {
             scenicSearchName = "Hồ Hoàn Kiếm Hà Nội";
-            vrLat = 21.0285; vrLng = 105.8542;
         }
 
         if (showVR) {
             els.virtual360Section.style.display = "block";
-            const embedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(scenicSearchName)}&layer=c&cbll=${vrLat},${vrLng}&cbp=12,0,,0,5&output=svembed`;
-            const openInMapsUrl = `https://www.google.com/maps?q=${encodeURIComponent(scenicSearchName)}&layer=c&cbll=${vrLat},${vrLng}`;
+            const embedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(scenicSearchName)}&t=k&z=15&output=embed`;
+            const openInMapsUrl = `https://www.google.com/maps?q=${encodeURIComponent(scenicSearchName)}`;
 
             els.virtual360Section.innerHTML = `
-          <h2 class="vv-section-title">Trải nghiệm không gian AR/VR 360° Cảnh Quan</h2>
-          <p class="vv-360-note">Kéo thả chuột trên khung hình dưới đây để xoay ngắm toàn cảnh 360° thực tế tại danh thắng:</p>
+          <h2 class="vv-section-title">Trải nghiệm không gian 360° Cảnh Quan Danh Thắng</h2>
+          <p class="vv-360-note">Bản đồ vệ tinh 3D tương tác toàn cảnh thực tế tại danh thắng:</p>
           <div class="vv-360-frame-wrap shadow-sm rounded-4 overflow-hidden" style="height: 420px; background: #000;">
             <iframe class="vv-360-frame w-100 h-100" style="border: 0;" src="${embedSrc}" loading="lazy" allowfullscreen></iframe>
           </div>
           <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mt-3">
-              <span class="fs-8 text-muted"><i class="bi bi-compass me-1"></i> Góc nhìn danh thắng 360°: <strong>${scenicSearchName}</strong></span>
+              <span class="fs-8 text-muted"><i class="bi bi-compass me-1"></i> Vị trí danh thắng: <strong>${scenicSearchName}</strong></span>
               <a href="${openInMapsUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success rounded-pill btn-sm fw-bold">
                 <i class="bi bi-box-arrow-up-right me-1"></i> Xem lớn trên Google Maps
               </a>
