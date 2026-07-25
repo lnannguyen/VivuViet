@@ -1471,31 +1471,30 @@ body.page-ready {
 
 /* Tour Mood & Quiz Matching */
 .mood-card {
-    border-radius: var(--radius-md);
+    border-radius: 16px;
     overflow: hidden;
     position: relative;
-    height: 120px;
+    height: 140px;
     cursor: pointer;
-    box-shadow: var(--shadow-sm);
-    transition:
-        transform 0.25s,
-        box-shadow 0.25s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .mood-card:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
 }
 
 .mood-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s;
+    object-position: center;
+    transition: transform 0.5s ease;
 }
 
 .mood-card:hover img {
-    transform: scale(1.08);
+    transform: scale(1.1);
 }
 
 .mood-card-overlay {
@@ -1506,21 +1505,81 @@ body.page-ready {
     height: 100%;
     background: linear-gradient(to top,
             rgba(14, 94, 58, 0.85) 0%,
-            rgba(0, 0, 0, 0.15) 100%);
+            rgba(0, 0, 0, 0.25) 50%,
+            rgba(0, 0, 0, 0.05) 100%);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 1rem;
+    padding: 1.2rem;
     color: #fff;
+    z-index: 1;
 }
 
 .mood-card-overlay h5 {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: 700;
     margin: 0;
     display: flex;
     align-items: center;
     gap: 8px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Category Cards */
+.category-card {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    height: 220px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
+}
+
+.category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.category-card:hover img {
+    transform: scale(1.08);
+}
+
+.category-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    color: #fff;
+    z-index: 1;
+}
+
+.category-card-overlay h5 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.category-card-overlay small {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.3;
 }
 
 /* Matching Match Score Badge */
