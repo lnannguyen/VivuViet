@@ -27,13 +27,15 @@
     "thumbnail": "/assets/images/sapa.jpg",
     "images": [
       "/assets/images/sapa.jpg",
+      "/assets/images/sanmay.png",
       "/assets/images/vungcao.png",
-      "/assets/images/sanmay.png"
+      "/assets/images/hagiang.png"
     ],
     "gallery": [
       "/assets/images/sapa.jpg",
+      "/assets/images/sanmay.png",
       "/assets/images/vungcao.png",
-      "/assets/images/sanmay.png"
+      "/assets/images/hagiang.png"
     ],
     "category": "Vùng Cao",
     "description": "Hành trình đưa bạn khám phá thị trấn sương mù Sapa, check-in đỉnh Fansipan bằng cáp treo kỷ kỷ lục và trải nghiệm nét văn hóa bản địa độc đáo tại Bản Cát Cát.",
@@ -98,7 +100,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.538Z",
-    "updatedAt": "2026-07-25T06:48:24.737Z"
+    "updatedAt": "2026-07-25T12:28:26.367Z"
   },
   {
     "_id": "TOUR002",
@@ -128,13 +130,15 @@
     "thumbnail": "/assets/images/halong.png",
     "images": [
       "/assets/images/halong.png",
-      "/assets/images/dulichbien.png",
-      "/assets/images/kayak.jpg"
+      "/assets/images/kayak.jpg",
+      "/assets/images/vinhdisan.jpg",
+      "/assets/images/hangdong.jpg"
     ],
     "gallery": [
       "/assets/images/halong.png",
-      "/assets/images/dulichbien.png",
-      "/assets/images/kayak.jpg"
+      "/assets/images/kayak.jpg",
+      "/assets/images/vinhdisan.jpg",
+      "/assets/images/hangdong.jpg"
     ],
     "category": "Du lịch biển",
     "description": "Nghỉ dưỡng thượng lưu trên du thuyền 5 sao giữa kỳ quan thiên nhiên thế giới Vịnh Hạ Long, chèo thuyền kayak và ngắm hoàng hôn rực rỡ.",
@@ -193,7 +197,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T06:48:24.941Z"
+    "updatedAt": "2026-07-25T12:28:26.572Z"
   },
   {
     "_id": "TOUR003",
@@ -223,11 +227,15 @@
     "thumbnail": "/assets/images/caobang.png",
     "images": [
       "/assets/images/caobang.png",
-      "/assets/images/vungcao.png"
+      "/assets/images/vungcao.png",
+      "/assets/images/hangdong.jpg",
+      "/assets/images/hagiang.png"
     ],
     "gallery": [
       "/assets/images/caobang.png",
-      "/assets/images/vungcao.png"
+      "/assets/images/vungcao.png",
+      "/assets/images/hangdong.jpg",
+      "/assets/images/hagiang.png"
     ],
     "category": "Vùng Cao",
     "description": "Tận mắt chiêm ngưỡng Thác Bản Giốc - thác nước tự nhiên lớn nhất Đông Nam Á, khám phá vẻ đẹp ảo diệu của Động Ngườm Ngao và Hồ Ba Bể xanh mát.",
@@ -288,7 +296,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T06:48:25.145Z"
+    "updatedAt": "2026-07-25T12:28:26.776Z"
   },
   {
     "_id": "TOUR004",
@@ -318,13 +326,15 @@
     "thumbnail": "/assets/images/phuquoc.png",
     "images": [
       "/assets/images/phuquoc.png",
-      "/assets/images/bien.png",
-      "/assets/images/safari.jpg"
+      "/assets/images/honthom.jpg",
+      "/assets/images/safari.jpg",
+      "/assets/images/langchai.jpg"
     ],
     "gallery": [
       "/assets/images/phuquoc.png",
-      "/assets/images/bien.png",
-      "/assets/images/safari.jpg"
+      "/assets/images/honthom.jpg",
+      "/assets/images/safari.jpg",
+      "/assets/images/langchai.jpg"
     ],
     "category": "Du lịch biển",
     "description": "Trải nghiệm trọn vẹn đảo ngọc Phú Quốc với tour cano 4 đảo lặn ngắm san hô, check-in Grand World thành phố không ngủ và công viên VinWonders.",
@@ -390,7 +400,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T06:48:25.350Z"
+    "updatedAt": "2026-07-25T12:28:26.981Z"
   },
   {
     "_id": "TOUR005",
@@ -420,13 +430,15 @@
     "thumbnail": "/assets/images/hoian.png",
     "images": [
       "/assets/images/hoian.png",
-      "/assets/images/vanhoa.png",
-      "/assets/images/phoco.png"
+      "/assets/images/denlong.jpg",
+      "/assets/images/caumuc.jpg",
+      "/assets/images/rau.jpg"
     ],
     "gallery": [
       "/assets/images/hoian.png",
-      "/assets/images/vanhoa.png",
-      "/assets/images/phoco.png"
+      "/assets/images/denlong.jpg",
+      "/assets/images/caumuc.jpg",
+      "/assets/images/rau.jpg"
     ],
     "category": "Văn Hóa & Di Sản",
     "description": "Hành trình đưa quý khách đến với phố cổ Hội An rực rỡ đèn lồng, Bà Nà Hills Cầu Vàng nổi tiếng thế giới và không gian cổ kính Cố đô Huế.",
@@ -493,7 +505,7 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T06:48:25.555Z"
+    "updatedAt": "2026-07-25T12:28:27.161Z"
   },
   {
     "_id": "TOUR006",
@@ -523,11 +535,15 @@
     "thumbnail": "/assets/images/ninhbinh.png",
     "images": [
       "/assets/images/ninhbinh.png",
-      "/assets/images/vanhoa.png"
+      "/assets/images/dinh.jpg",
+      "/assets/images/xuanthuy.jpg",
+      "/assets/images/khampha.png"
     ],
     "gallery": [
       "/assets/images/ninhbinh.png",
-      "/assets/images/vanhoa.png"
+      "/assets/images/dinh.jpg",
+      "/assets/images/xuanthuy.jpg",
+      "/assets/images/khampha.png"
     ],
     "category": "Văn Hóa & Di Sản",
     "description": "Chuyến đi trong ngày trọn vẹn khám phá danh thắng Tràng An di sản thế giới kép, bái Phật tại đại danh chùa Bái Đính và ngắm toàn cảnh Tam Cốc từ Hang Múa.",
@@ -578,6 +594,6 @@
     "status": "Available",
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.539Z",
-    "updatedAt": "2026-07-25T06:48:25.740Z"
+    "updatedAt": "2026-07-25T12:28:27.390Z"
   }
 ]

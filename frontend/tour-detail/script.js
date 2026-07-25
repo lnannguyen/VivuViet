@@ -105,10 +105,27 @@ function renderTourData(tour) {
     document.title = `${tour.title || tour.name} - VivuViet`;
 
     // Ảnh thư viện (gallery)
-    const imgs =
-        tour.gallery && tour.gallery.length >= 4
-            ? tour.gallery
-            : [tour.image, tour.image, tour.image, tour.image].filter(Boolean);
+    const rawImgs = (tour.gallery && tour.gallery.length > 0)
+        ? tour.gallery
+        : (tour.images && tour.images.length > 0)
+            ? tour.images
+            : [tour.image];
+
+    // Đảm bảo đủ 4 ảnh hiển thị phong phú trong lưới gallery
+    const fallbackPool = [
+        tour.image,
+        "/assets/images/honthom.jpg",
+        "/assets/images/safari.jpg",
+        "/assets/images/kayak.jpg",
+        "/assets/images/denlong.jpg",
+        "/assets/images/dinh.jpg",
+        "/assets/images/vungcao.png"
+    ].filter(Boolean);
+
+    const imgs = [];
+    for (let i = 0; i < 4; i++) {
+        imgs[i] = rawImgs[i] || fallbackPool[i] || tour.image;
+    }
 
     els.gallery.innerHTML = `
     <div class="vv-gallery">

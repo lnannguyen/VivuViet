@@ -5,7 +5,7 @@
     "email": "hung.tran@gmail.com",
     "phone": "0987654321",
     "avatar": "/assets/images/avt/pngtree-art-boy-avatar-png-image_8855201.png",
-    "password": "$2b$10$TRIKVxSlUdH3Vx1k1KG4bezIJ64rUyFP5YfMAsujCfGW/tu9NQzIm",
+    "password": "$2b$10$hTEOGcREZ2zfB3DyC1.CguiUoS0GSy6aOIyVVJI.aEdcuEXC/mS9O",
     "auth_provider": "local",
     "membership": "gold",
     "wishlist": [
@@ -18,7 +18,7 @@
     "achievements": [],
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.284Z",
-    "updatedAt": "2026-07-25T06:48:23.917Z"
+    "updatedAt": "2026-07-25T12:28:25.520Z"
   },
   {
     "_id": "USR003",
@@ -26,7 +26,7 @@
     "email": "mai.le@gmail.com",
     "phone": "0912345678",
     "avatar": "/assets/images/avt/avt2.jpg",
-    "password": "$2b$10$TRIKVxSlUdH3Vx1k1KG4bezIJ64rUyFP5YfMAsujCfGW/tu9NQzIm",
+    "password": "$2b$10$hTEOGcREZ2zfB3DyC1.CguiUoS0GSy6aOIyVVJI.aEdcuEXC/mS9O",
     "auth_provider": "local",
     "membership": "standard",
     "wishlist": [
@@ -39,7 +39,7 @@
     "achievements": [],
     "__v": 0,
     "createdAt": "2026-07-25T03:46:30.285Z",
-    "updatedAt": "2026-07-25T06:48:24.121Z"
+    "updatedAt": "2026-07-25T12:28:25.752Z"
   },
   {
     "_id": "USR004",
@@ -53,9 +53,9 @@
     "membership": "gold",
     "notifications": [],
     "passportStamps": [],
-    "password": "$2b$10$TRIKVxSlUdH3Vx1k1KG4bezIJ64rUyFP5YfMAsujCfGW/tu9NQzIm",
+    "password": "$2b$10$hTEOGcREZ2zfB3DyC1.CguiUoS0GSy6aOIyVVJI.aEdcuEXC/mS9O",
     "phone": "0938112233",
-    "updatedAt": "2026-07-25T06:48:24.327Z",
+    "updatedAt": "2026-07-25T12:28:25.959Z",
     "vivupoints": 320,
     "vouchers": [],
     "wishlist": [
@@ -74,13 +74,51 @@
     "membership": "gold",
     "notifications": [],
     "passportStamps": [],
-    "password": "$2b$10$TRIKVxSlUdH3Vx1k1KG4bezIJ64rUyFP5YfMAsujCfGW/tu9NQzIm",
+    "password": "$2b$10$hTEOGcREZ2zfB3DyC1.CguiUoS0GSy6aOIyVVJI.aEdcuEXC/mS9O",
     "phone": "0977889900",
-    "updatedAt": "2026-07-25T06:48:24.532Z",
+    "updatedAt": "2026-07-25T12:28:26.162Z",
     "vivupoints": 450,
     "vouchers": [],
     "wishlist": [
       "TOUR003"
     ]
+  },
+  {
+    "_id": "USR88BEFD",
+    "fullname": "Quyên Bùi Thị Mỹ",
+    "email": "quyenbtmk24406h@st.uel.edu.vn",
+    "phone": "0123456789",
+    "avatar": "",
+    "password": "$2b$10$oAZzkRcZBrVTRXbHVnnQg.L6Tb2wZFNNjefnMs8aFQjnJfmO/ns8.",
+    "auth_provider": "local",
+    "membership": "standard",
+    "wishlist": [],
+    "notifications": [
+      {
+        "title": "Chào mừng gia nhập VivuViet!",
+        "content": "Xin chào Quyên Bùi Thị Mỹ, chào mừng bạn đã tham gia cộng đồng du lịch VivuViet!",
+        "type": "general",
+        "isRead": false,
+        "_id": "6a64ab77c0948541a888befe",
+        "createdAt": "2026-07-25T12:26:31.422Z"
+      }
+    ],
+    "vouchers": [
+      {
+        "code": "WELCOME200K",
+        "discount_amount": 200000,
+        "discount_type": "fixed",
+        "min_spend": 1000000,
+        "expiry_date": "2026-10-23T12:26:31.417Z",
+        "isUsed": false,
+        "_id": "6a64ab77c0948541a888beff"
+      }
+    ],
+    "vivupoints": 0,
+    "passportStamps": [],
+    "achievements": [],
+    "createdAt": "2026-07-25T12:26:31.432Z",
+    "updatedAt": "2026-07-25T12:26:31.432Z",
+    "__v": 0
   }
 ]
