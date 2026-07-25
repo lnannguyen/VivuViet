@@ -235,37 +235,53 @@ function renderTourData(tour) {
 
         const destLower = (tour.destination || "").toLowerCase() + " " + (tour.title || "").toLowerCase();
 
-        if (destLower.includes("phú quốc") || destLower.includes("kiên giang")) {
+        let vrHeading = 180;
+
+        if (destLower.includes("hà nội")) {
+            scenicSearchName = "Hồ Hoàn Kiếm Hà Nội";
+            vrLat = 21.028784; vrLng = 105.852328; vrHeading = 230;
+        } else if (destLower.includes("phú quốc") || destLower.includes("kiên giang")) {
             scenicSearchName = "Sunset Sanato Beach Club Phú Quốc";
+            vrLat = 10.183412; vrLng = 103.966421; vrHeading = 260;
         } else if (destLower.includes("sapa") || destLower.includes("lào cai") || destLower.includes("fansipan")) {
-            scenicSearchName = "Đỉnh Fansipan Sapa";
+            scenicSearchName = "Trung tâm Quảng trường Sapa";
+            vrLat = 22.334351; vrLng = 103.841572; vrHeading = 120;
         } else if (destLower.includes("hạ long") || destLower.includes("quảng ninh")) {
-            scenicSearchName = "Vịnh Hạ Long Quảng Ninh";
+            scenicSearchName = "Cảng Du thuyền Tuần Châu Hạ Long";
+            vrLat = 20.923485; vrLng = 107.012543; vrHeading = 150;
         } else if (destLower.includes("ninh bình") || destLower.includes("tràng an")) {
             scenicSearchName = "Danh thắng Tràng An Ninh Bình";
+            vrLat = 20.250614; vrLng = 105.974521; vrHeading = 180;
         } else if (destLower.includes("hội an") || destLower.includes("quảng nam")) {
             scenicSearchName = "Phố cổ Hội An Chùa Cầu";
+            vrLat = 15.877142; vrLng = 108.325814; vrHeading = 280;
         } else if (destLower.includes("cao bằng") || destLower.includes("bản giốc")) {
             scenicSearchName = "Thác Bản Giốc Cao Bằng";
+            vrLat = 22.853612; vrLng = 106.724125; vrHeading = 45;
         } else if (destLower.includes("đà nẵng") || destLower.includes("bà nà")) {
-            scenicSearchName = "Cầu Vàng Bà Nà Hills Đà Nẵng";
-        } else if (destLower.includes("hà nội")) {
-            scenicSearchName = "Hồ Hoàn Kiếm Hà Nội";
+            scenicSearchName = "Cầu Rồng Đà Nẵng";
+            vrLat = 16.060241; vrLng = 108.228512; vrHeading = 250;
+        } else if (destLower.includes("hồ chí minh") || destLower.includes("saigon") || destLower.includes("tphcm")) {
+            scenicSearchName = "Dinh Độc Lập TP. Hồ Chí Minh";
+            vrLat = 10.777085; vrLng = 106.695321; vrHeading = 220;
+        } else if (destLower.includes("cần thơ") || destLower.includes("miền tây")) {
+            scenicSearchName = "Bến Ninh Kiều Cần Thơ";
+            vrLat = 10.034251; vrLng = 105.788012; vrHeading = 90;
         }
 
         if (showVR) {
             els.virtual360Section.style.display = "block";
-            const embedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(scenicSearchName)}&t=k&z=15&output=embed`;
-            const openInMapsUrl = `https://www.google.com/maps?q=${encodeURIComponent(scenicSearchName)}`;
+            const embedSrc = `https://maps.google.com/maps?q=&layer=c&cbll=${vrLat},${vrLng}&cbp=12,${vrHeading},,0,5&output=svembed`;
+            const openInMapsUrl = `https://www.google.com/maps?q=&layer=c&cbll=${vrLat},${vrLng}`;
 
             els.virtual360Section.innerHTML = `
-          <h2 class="vv-section-title">Trải nghiệm không gian 360° Cảnh Quan Danh Thắng</h2>
-          <p class="vv-360-note">Bản đồ vệ tinh 3D tương tác toàn cảnh thực tế tại danh thắng:</p>
+          <h2 class="vv-section-title">Trải nghiệm không gian AR/VR 360° Cảnh Quan</h2>
+          <p class="vv-360-note">Kéo thả chuột trên khung hình dưới đây để xoay ngắm toàn cảnh 360° thực tế tại danh thắng:</p>
           <div class="vv-360-frame-wrap shadow-sm rounded-4 overflow-hidden" style="height: 420px; background: #000;">
             <iframe class="vv-360-frame w-100 h-100" style="border: 0;" src="${embedSrc}" loading="lazy" allowfullscreen></iframe>
           </div>
           <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mt-3">
-              <span class="fs-8 text-muted"><i class="bi bi-compass me-1"></i> Vị trí danh thắng: <strong>${scenicSearchName}</strong></span>
+              <span class="fs-8 text-muted"><i class="bi bi-compass me-1"></i> Góc nhìn danh thắng 360°: <strong>${scenicSearchName}</strong></span>
               <a href="${openInMapsUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success rounded-pill btn-sm fw-bold">
                 <i class="bi bi-box-arrow-up-right me-1"></i> Xem lớn trên Google Maps
               </a>
