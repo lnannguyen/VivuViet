@@ -127,15 +127,36 @@ function renderTourData(tour) {
         imgs[i] = rawImgs[i] || fallbackPool[i] || tour.image;
     }
 
+    currentLightboxImages = imgs;
+
+    // Tự động khởi tạo Lightbox Modal nếu chưa có trong DOM
+    if (!document.getElementById("vvGalleryLightbox")) {
+        const lightboxHTML = `
+        <div id="vvGalleryLightbox" class="vv-lightbox-modal">
+            <button type="button" class="vv-lightbox-close" onclick="closeGalleryLightbox()"><i class="bi bi-x-lg"></i></button>
+            <div class="vv-lightbox-content">
+                <button type="button" class="vv-lightbox-nav vv-lightbox-prev" onclick="changeLightboxImg(-1)"><i class="bi bi-chevron-left"></i></button>
+                <div class="vv-lightbox-img-wrap">
+                    <img id="vvLightboxMainImg" src="" alt="Full Tour Image">
+                    <div id="vvLightboxCaption" class="vv-lightbox-caption"></div>
+                </div>
+                <button type="button" class="vv-lightbox-nav vv-lightbox-next" onclick="changeLightboxImg(1)"><i class="bi bi-chevron-right"></i></button>
+            </div>
+            <div id="vvLightboxThumbs" class="vv-lightbox-thumbs"></div>
+        </div>
+        `;
+        document.body.insertAdjacentHTML("beforeend", lightboxHTML);
+    }
+
     els.gallery.innerHTML = `
     <div class="vv-gallery">
-      <div class="vv-gallery-main">
+      <div class="vv-gallery-main" onclick="openGalleryLightbox(0)" title="Bấm để xem phóng to ảnh HD">
         <img src="${imgs[0] || "/assets/images/dulichbien.png"}" alt="${tour.title || tour.name}">
       </div>
       <div class="vv-gallery-side">
-        <img src="${imgs[1] || "/assets/images/dulichbien.png"}" alt="Scenic Image 2">
-        <img src="${imgs[2] || "/assets/images/dulichbien.png"}" alt="Scenic Image 3">
-        <div class="vv-gallery-wide">
+        <img src="${imgs[1] || "/assets/images/dulichbien.png"}" alt="Scenic Image 2" onclick="openGalleryLightbox(1)" title="Bấm để xem phóng to ảnh HD">
+        <img src="${imgs[2] || "/assets/images/dulichbien.png"}" alt="Scenic Image 3" onclick="openGalleryLightbox(2)" title="Bấm để xem phóng to ảnh HD">
+        <div class="vv-gallery-wide" onclick="openGalleryLightbox(3)" title="Bấm để xem phóng to ảnh HD">
           <img src="${imgs[3] || "/assets/images/dulichbien.png"}" alt="Scenic Image 4">
         </div>
       </div>
@@ -653,7 +674,7 @@ function init360DragViewer() {
         isDragging360 = false;
     });
 
-    window.addEventListener("touchmove", (e) => {
+    viewer.addEventListener("touchmove", (e) => {
         if (!isDragging360) return;
         const deltaX = e.touches[0].clientX - startX360;
         startX360 = e.touches[0].clientX;
@@ -661,3 +682,57 @@ function init360DragViewer() {
         imgEl.style.backgroundPosition = `${currentPos360}% center`;
     });
 }
+
+// Gallery Lightbox Modal Functions
+let currentLightboxIndex = 0;
+let currentLightboxImages = [];
+
+window.openGalleryLightbox = (index) => {
+    currentLightboxIndex = index;
+    const modal = document.getElementById("vvGalleryLightbox");
+    const mainImg = document.getElementById("vvLightboxMainImg");
+    const caption = document.getElementById("vvLightboxCaption");
+    const thumbsContainer = document.getElementById("vvLightboxThumbs");
+    if (!modal || !mainImg) return;
+
+    mainImg.src = currentLightboxImages[currentLightboxIndex] || "";
+    if (caption) {
+        caption.innerText = `Ảnh ${currentLightboxIndex + 1} / ${currentLightboxImages.length}`;
+    }
+
+    if (thumbsContainer) {
+        thumbsContainer.innerHTML = currentLightboxImages.map((imgSrc, i) => `
+            <div class="vv-lightbox-thumb-item ${i === currentLightboxIndex ? 'active' : ''}" onclick="selectLightboxImg(${i})">
+                <img src="${imgSrc}" alt="Thumbnail ${i + 1}">
+            </div>
+        `).join("");
+    }
+
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
+};
+
+window.closeGalleryLightbox = () => {
+    const modal = document.getElementById("vvGalleryLightbox");
+    if (modal) modal.classList.remove("active");
+    document.body.style.overflow = "";
+};
+
+window.changeLightboxImg = (delta) => {
+    if (!currentLightboxImages || currentLightboxImages.length === 0) return;
+    currentLightboxIndex = (currentLightboxIndex + delta + currentLightboxImages.length) % currentLightboxImages.length;
+    openGalleryLightbox(currentLightboxIndex);
+};
+
+window.selectLightboxImg = (index) => {
+    openGalleryLightbox(index);
+};
+
+// Lắng nghe phím bấm chuyển ảnh (Bàn phím: Trái/Phải/ESC)
+window.addEventListener("keydown", (e) => {
+    const modal = document.getElementById("vvGalleryLightbox");
+    if (!modal || !modal.classList.contains("active")) return;
+    if (e.key === "Escape") closeGalleryLightbox();
+    if (e.key === "ArrowLeft") changeLightboxImg(-1);
+    if (e.key === "ArrowRight") changeLightboxImg(1);
+});

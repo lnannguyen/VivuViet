@@ -202,6 +202,127 @@
     border: none;
 }
 /* 360° Panorama VR Viewer */
+.vv-gallery img {
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+.vv-gallery img:hover {
+    transform: scale(1.02);
+    filter: brightness(1.05);
+}
+
+/* Fullscreen Gallery Lightbox Modal */
+.vv-lightbox-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(10, 15, 25, 0.95);
+    backdrop-filter: blur(12px);
+    z-index: 9999;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.vv-lightbox-modal.active {
+    display: flex;
+    opacity: 1;
+}
+.vv-lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: #fff;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+    z-index: 10000;
+}
+.vv-lightbox-close:hover {
+    background: var(--primary);
+    transform: scale(1.1);
+}
+.vv-lightbox-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+}
+.vv-lightbox-img-wrap {
+    max-width: 90%;
+    max-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.vv-lightbox-img-wrap img {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+.vv-lightbox-caption {
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
+.vv-lightbox-nav {
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    margin: 0 15px;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+.vv-lightbox-nav:hover {
+    background: var(--primary);
+    transform: scale(1.1);
+}
+.vv-lightbox-thumbs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+.vv-lightbox-thumb-item {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0.6;
+    border: 2px solid transparent;
+    transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+.vv-lightbox-thumb-item.active, .vv-lightbox-thumb-item:hover {
+    opacity: 1;
+    border-color: #22c55e;
+}
+.vv-lightbox-thumb-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 .vv-360-panorama-container {
     width: 100%;
     height: 420px;
