@@ -766,7 +766,7 @@ async function loadAchievements() {
         {
             label: "Chinh phục Sapa",
             desc: "Đã hoàn thành tour vùng cao Sapa - Fansipan",
-            icon: "bi-mountain-snow",
+            icon: "bi-tree-fill",
             color: "#0E5E3A",
             autoCheck: () => hasVisitedLoc("sapa"),
         },
@@ -825,7 +825,7 @@ async function loadAchievements() {
 
             return `
       <div class="achievement-badge-card ${isUnlocked ? "unlocked" : "locked"}">
-        <div class="achievement-badge-icon" style="background: ${isUnlocked ? b.color + "18" : "#f3f4f6"}; color: ${isUnlocked ? b.color : "#9ca3af"};">
+        <div class="achievement-badge-icon" style="background-color: ${isUnlocked ? 'rgba(14, 94, 58, 0.12)' : '#f3f4f6'}; color: ${isUnlocked ? b.color : '#9ca3af'};">
           <i class="bi ${b.icon}"></i>
         </div>
         <div class="achievement-badge-info">
