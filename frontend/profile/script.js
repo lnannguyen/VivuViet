@@ -1203,6 +1203,12 @@ window.submitReview = async () => {
         }
     }
 
+    const submitBtn = document.querySelector("#writeReviewModal button[type='submit']") || document.querySelector("#writeReviewModal .btn-brand");
+    if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<span class="spinner-border spinner-border-sm me-1"></span> Đang gửi...`;
+    }
+
     try {
         // Gửi đánh giá lên endpoint reviews
         const res = await fetch(`${API_URL}/reviews`, {
@@ -1230,8 +1236,11 @@ window.submitReview = async () => {
             els.sidebarPoints.innerText = user.vivupoints;
             localStorage.setItem("user", JSON.stringify(user));
 
-            // Tải lại lịch sử đặt tour để cập nhật trạng thái
+            // Tải lại lịch sử đặt tour và danh sách đánh giá
             loadMyBookings();
+            if (typeof loadMyReviews === "function") {
+                loadMyReviews();
+            }
         } else {
             showToast(
                 data.message || "Gửi đánh giá không thành công!",

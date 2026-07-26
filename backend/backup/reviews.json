@@ -6,7 +6,9 @@
     "tour_id": "TOUR002",
     "rating": 5,
     "comment": "Du thuyền 5 sao trên Vịnh Hạ Long rất sang trọng. Đồ ăn hải sản tươi ngon, chèo thuyền kayak rất vui!",
-    "images": [],
+    "images": [
+      "/assets/images/halong.png"
+    ],
     "videos": [],
     "createdAt": "2026-07-05T00:00:00.000Z",
     "__v": 0,
@@ -19,7 +21,9 @@
     "tour_id": "TOUR001",
     "rating": 5,
     "comment": "Tour Sapa săn mây tuyệt đẹp! Khách sạn 4 sao sạch sẽ, hướng dẫn viên chu đáo nhiệt tình lắm!",
-    "images": [],
+    "images": [
+      "/assets/images/sapa.jpg"
+    ],
     "videos": [],
     "createdAt": "2026-07-12T00:00:00.000Z",
     "__v": 0,
@@ -31,7 +35,9 @@
     "booking_id": "BK001",
     "comment": "Đi Ninh Bình 1 ngày gọn nhẹ mà tham quan được nhiều điểm đẹp. Tràng An nước trong vắt, Hang Múa chụp hình siêu ảo!",
     "createdAt": "2026-07-25T06:48:27.092Z",
-    "images": [],
+    "images": [
+      "/assets/images/ninhbinh.png"
+    ],
     "rating": 5,
     "tour_id": "TOUR006",
     "updatedAt": "2026-07-25T19:36:51.027Z",
@@ -44,7 +50,9 @@
     "booking_id": "BK004",
     "comment": "Phú Quốc nước biển xanh trong vắt như ngọc, đi tour cano 4 đảo ngắm san hô thiên nhiên rất thích!",
     "createdAt": "2026-07-25T06:48:28.461Z",
-    "images": [],
+    "images": [
+      "/assets/images/phuquoc.png"
+    ],
     "rating": 5,
     "tour_id": "TOUR003",
     "updatedAt": "2026-07-25T19:36:51.640Z",
@@ -62,6 +70,26 @@
     "videos": [],
     "createdAt": "2026-07-25T12:31:38.747Z",
     "updatedAt": "2026-07-25T12:31:38.747Z",
+    "__v": 0
+  },
+  {
+    "_id": "REV10045995",
+    "booking_id": "BK09862882",
+    "user_id": "USR001",
+    "tour_id": "TOUR001",
+    "rating": 5,
+    "comment": "thắng cảnh rất đẹp, đồ ăn rất ngon",
+    "images": [
+      "https://res.cloudinary.com/cezflaqv/image/upload/v1785010050/vivuviet_reviews/images/wrcck2d4wjds4edpfizm.jpg",
+      "https://res.cloudinary.com/cezflaqv/image/upload/v1785010051/vivuviet_reviews/images/pfybx13t3aesmv5vaqq5.jpg",
+      "https://res.cloudinary.com/cezflaqv/image/upload/v1785010054/vivuviet_reviews/images/adnvwx4yxkzvwu0nrhgi.jpg"
+    ],
+    "videos": [
+      "https://res.cloudinary.com/cezflaqv/video/upload/v1785010064/vivuviet_reviews/videos/cbknjzlvkxbbobpbpt2x.mp4",
+      "https://res.cloudinary.com/cezflaqv/video/upload/v1785010070/vivuviet_reviews/videos/brx5yimefxn9ibbjldmx.mp4"
+    ],
+    "createdAt": "2026-07-25T20:07:51.554Z",
+    "updatedAt": "2026-07-25T20:07:51.554Z",
     "__v": 0
   }
 ]
