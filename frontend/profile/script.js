@@ -641,53 +641,60 @@ window.toggleWishlistFromProfile = async (btn) => {
 };
 
 // Hộ chiếu du lịch (passport stamps)
-function loadPassportStamps() {
+async function loadPassportStamps() {
     if (!els.passportContainer) return;
 
-    // Lấy các điểm đến từ đơn hàng đã hoàn thành thực tế
-    const completedBookings = (bookings || []).filter(
-        (b) => b.booking_status === "completed",
+    // Lấy danh sách đánh giá của người dùng để unlock stamp
+    let userReviewedTours = [];
+    try {
+        const token = localStorage.getItem("token");
+        if (token) {
+            const res = await fetch(`${API_URL}/reviews/user/me`, {
+                headers: { Authorization: `Bearer ${token}` }
+            });
+            if (res.ok) {
+                const revs = await res.json();
+                userReviewedTours = (revs || []).map(r => ({
+                    location: r.tour?.destination || r.tour?.location || r.tour?.name || "",
+                    visitDate: r.createdAt
+                }));
+            }
+        }
+    } catch(e) {}
+
+    // Lấy các đơn đặt tour thực tế của người dùng
+    const userBookings = (bookings || []).filter(
+        (b) => b.booking_status === "completed" || b.isReviewed === true || b.booking_status === "paid" || b.booking_status === "confirmed"
     );
 
-    // Tạo danh sách stamp động từ các tour đã đi xong
-    const dynamicStamps = completedBookings.map((b) => {
-        const tourObj = b.tour || {};
+    const dynamicStamps = userBookings.map((b) => {
+        const tourObj = (b.tour_id && typeof b.tour_id === "object") ? b.tour_id : (b.tour || {});
         const destStr = tourObj.destination || tourObj.location || tourObj.name || tourObj.title || "";
         return {
             location: destStr,
-            visitDate: b.departure_date,
+            visitDate: b.departure_date || b.createdAt,
         };
     });
 
     const userStamps = user.passportStamps || [];
+    const allVisited = [...dynamicStamps, ...userReviewedTours, ...userStamps];
 
     els.passportContainer.innerHTML = VIETNAM_PROVINCES.map((prov) => {
-        // Kiểm tra xem tỉnh thành có đơn hàng đã hoàn thành không
-        const matchingCompleted = dynamicStamps.find((ds) =>
-            prov.name.toLowerCase().includes(ds.location.toLowerCase()) ||
-            ds.location.toLowerCase().includes(prov.key.toLowerCase()) ||
-            ds.location.toLowerCase().includes(prov.name.toLowerCase()),
-        );
+        const provNameLower = prov.name.toLowerCase();
+        const provKeyLower = prov.key.toLowerCase();
 
-        // Kiểm tra trong user.passportStamps (chỉ ghép nếu tour đó thuộc đơn hoàn thành)
-        const matchingUserStamp = userStamps.find((us) =>
-            (prov.name.toLowerCase().includes(us.location.toLowerCase()) ||
-             us.location.toLowerCase().includes(prov.key.toLowerCase())) &&
-            completedBookings.some((cb) => {
-                const cbDest = cb.tour?.destination || cb.tour?.location || cb.tour?.name || "";
-                return cbDest.toLowerCase().includes(us.location.toLowerCase()) || us.location.toLowerCase().includes(cbDest.toLowerCase());
-            })
-        );
+        // Tìm điểm đến khớp với tỉnh thành
+        const match = allVisited.find((st) => {
+            const stLoc = (st.location || st.name || "").toLowerCase();
+            if (!stLoc) return false;
+            return provNameLower.includes(stLoc) || stLoc.includes(provKeyLower) || stLoc.includes(provNameLower);
+        });
 
-        const isVisited = matchingCompleted || matchingUserStamp;
-        const stampDate = matchingCompleted
-            ? matchingCompleted.visitDate
-            : matchingUserStamp?.lastVisitDate || matchingUserStamp?.firstVisitDate;
-
-        if (isVisited) {
+        if (match) {
+            const stampDate = match.visitDate || match.lastVisitDate || match.createdAt || new Date().toISOString();
             return `
-        <div class="passport-stamp unlocked">
-          <div class="passport-stamp-count">1</div>
+        <div class="passport-stamp unlocked shadow-sm">
+          <div class="passport-stamp-count"><i class="bi bi-check-lg"></i></div>
           <div class="passport-stamp-name">${prov.name}</div>
           <div class="passport-stamp-date">${formatDateVN(stampDate)}</div>
         </div>
@@ -695,7 +702,7 @@ function loadPassportStamps() {
         } else {
             return `
         <div class="passport-stamp locked">
-          <div class="passport-stamp-name" style="opacity: 0.25;">${prov.name}</div>
+          <div class="passport-stamp-name" style="opacity: 0.35;">${prov.name}</div>
         </div>
       `;
         }

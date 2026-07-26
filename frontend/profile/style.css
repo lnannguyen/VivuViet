@@ -160,34 +160,47 @@
     position: relative;
 }
 .passport-stamp.unlocked {
-    border-color: var(--primary);
+    border-color: #0E5E3A;
     border-style: solid;
-    background-color: var(--primary-muted);
-    box-shadow: var(--shadow-sm);
-    transform: rotate(-5deg);
+    border-width: 3px;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    box-shadow: 0 6px 18px rgba(14, 94, 58, 0.2);
+    transform: rotate(-5deg) scale(1.04);
+}
+.passport-stamp.unlocked:hover {
+    transform: rotate(0deg) scale(1.08);
 }
 .passport-stamp-name {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: 700;
     color: var(--text-secondary);
 }
 .passport-stamp.unlocked .passport-stamp-name {
-    color: var(--primary);
+    color: #0E5E3A;
+    font-weight: 800;
 }
 .passport-stamp-date {
-    font-size: 0.55rem;
-    color: var(--text-light);
-    margin-top: 0.25rem;
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: #2e7d32;
+    margin-top: 0.2rem;
 }
 .passport-stamp-count {
     position: absolute;
-    top: -3px;
-    right: -3px;
+    top: -4px;
+    right: -4px;
     background-color: var(--accent);
     color: #fff;
-    font-size: 0.6rem;
-    font-weight: 700;
-    width: 18px;
+    font-size: 0.65rem;
+    font-weight: 800;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
     height: 18px;
     border-radius: 50%;
     display: flex;
