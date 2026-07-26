@@ -208,66 +208,72 @@
     justify-content: center;
 }
 
-/* Achievements badges - Modern Grid Redesign */
+/* Achievements badges - Wide Horizontal Row Cards */
 .achievements-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
     gap: 1.25rem;
 }
 .achievement-badge-card {
     background: #ffffff;
     border: 1.5px solid #e5e7eb;
     border-radius: 20px;
-    padding: 1.5rem 1.25rem;
-    text-align: center;
+    padding: 1.25rem 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
     position: relative;
     overflow: hidden;
 }
 .achievement-badge-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
 }
 .achievement-badge-card.unlocked {
     border-color: #10b981;
-    background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+    background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
     box-shadow: 0 8px 24px rgba(16, 185, 129, 0.12);
 }
 .achievement-badge-card.locked {
-    opacity: 0.55;
+    opacity: 0.6;
     filter: grayscale(0.85);
     background: #f9fafb;
 }
 .achievement-badge-icon {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
+    width: 58px;
+    height: 58px;
+    border-radius: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1rem;
-    font-size: 1.85rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    font-size: 1.75rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+.achievement-badge-info {
+    flex-grow: 1;
+    min-width: 0;
 }
 .achievement-badge-label {
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 800;
     color: #1f2937;
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.25rem;
 }
 .achievement-badge-desc {
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     color: #6b7280;
-    line-height: 1.4;
+    line-height: 1.35;
 }
 .achievement-status-tag {
-    display: inline-block;
-    margin-top: 0.75rem;
-    font-size: 0.72rem;
+    flex-shrink: 0;
+    font-size: 0.75rem;
     font-weight: 700;
-    padding: 4px 12px;
+    padding: 6px 14px;
     border-radius: 999px;
+    white-space: nowrap;
 }
 .achievement-status-tag.unlocked {
     background: #d1fae5;

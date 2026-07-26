@@ -828,8 +828,10 @@ async function loadAchievements() {
         <div class="achievement-badge-icon" style="background: ${isUnlocked ? b.color + "18" : "#f3f4f6"}; color: ${isUnlocked ? b.color : "#9ca3af"};">
           <i class="bi ${b.icon}"></i>
         </div>
-        <div class="achievement-badge-label">${b.label}</div>
-        <div class="achievement-badge-desc">${b.desc}</div>
+        <div class="achievement-badge-info">
+          <div class="achievement-badge-label">${b.label}</div>
+          <div class="achievement-badge-desc">${b.desc}</div>
+        </div>
         <div class="achievement-status-tag ${isUnlocked ? "unlocked" : "locked"}">
           ${isUnlocked ? '<i class="bi bi-patch-check-fill me-1"></i> Đã mở khóa' : '<i class="bi bi-lock-fill me-1"></i> Chưa mở khóa'}
         </div>
