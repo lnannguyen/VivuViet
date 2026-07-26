@@ -710,23 +710,51 @@ async function loadPassportStamps() {
 }
 
 // Hệ thống thành tựu
-function loadAchievements() {
+async function loadAchievements() {
     if (!els.achievementsContainer) return;
 
     const unlocked = user.achievements || [];
-    const completedBookings = (bookings || []).filter(
-        (b) => b.booking_status === "completed",
+    const validBookings = (bookings || []).filter(
+        (b) => b.booking_status === "completed" || b.isReviewed === true || b.booking_status === "paid" || b.booking_status === "confirmed"
     );
-    const completedCount = completedBookings.length;
+    const completedCount = validBookings.length;
+
+    // Lấy danh sách đánh giá
+    let userReviewedTours = [];
+    try {
+        const token = localStorage.getItem("token");
+        if (token) {
+            const res = await fetch(`${API_URL}/reviews/user/me`, {
+                headers: { Authorization: `Bearer ${token}` }
+            });
+            if (res.ok) {
+                userReviewedTours = await res.json();
+            }
+        }
+    } catch(e) {}
+
+    const hasVisitedLoc = (keyword) => {
+        const kw = keyword.toLowerCase();
+        const inBookings = validBookings.some((b) => {
+            const tourObj = (b.tour_id && typeof b.tour_id === "object") ? b.tour_id : (b.tour || {});
+            const nameStr = (tourObj.name || tourObj.destination || tourObj.location || "").toLowerCase();
+            return nameStr.includes(kw);
+        });
+        const inReviews = userReviewedTours.some((r) => {
+            const nameStr = (r.tour?.name || r.tour?.destination || "").toLowerCase();
+            return nameStr.includes(kw);
+        });
+        return inBookings || inReviews;
+    };
 
     // Danh sách huy hiệu mặc định
     const badgesList = [
         {
             label: "Khởi đầu mới",
-            desc: "Hoàn thành chuyến đi đầu tiên",
+            desc: "Hoàn thành chuyến đi hoặc đánh giá đầu tiên",
             icon: "bi-rocket-takeoff-fill",
             color: "#3b82f6",
-            autoCheck: () => completedCount >= 1,
+            autoCheck: () => completedCount >= 1 || userReviewedTours.length >= 1,
         },
         {
             label: "Nhà thám hiểm",
@@ -737,51 +765,31 @@ function loadAchievements() {
         },
         {
             label: "Chinh phục Sapa",
-            desc: "Đã hoàn thành tour vùng cao Tây Bắc",
-            icon: "bi-triangle-half",
+            desc: "Đã hoàn thành tour vùng cao Sapa - Fansipan",
+            icon: "bi-mountain-snow",
             color: "#0E5E3A",
-            autoCheck: () =>
-                completedBookings.some((b) =>
-                    (b.tour?.name || b.tour?.title || "")
-                        .toLowerCase()
-                        .includes("sapa"),
-                ),
+            autoCheck: () => hasVisitedLoc("sapa"),
         },
         {
             label: "Khám phá Hạ Long",
-            desc: "Trải nghiệm thuyền vịnh kì quan",
-            icon: "bi-tsunami",
-            color: "#F97316",
-            autoCheck: () =>
-                completedBookings.some((b) =>
-                    (b.tour?.name || b.tour?.title || "")
-                        .toLowerCase()
-                        .includes("hạ long"),
-                ),
+            desc: "Trải nghiệm thuyền vịnh kì quan Hạ Long",
+            icon: "bi-water",
+            color: "#06B6D4",
+            autoCheck: () => hasVisitedLoc("hạ long") || hasVisitedLoc("halong"),
         },
         {
             label: "Văn hóa Hội An",
-            desc: "Tham quan phố cổ lồng đèn di sản",
-            icon: "bi-shop",
+            desc: "Tham quan phố cổ lồng đèn di sản Hội An",
+            icon: "bi-bank",
             color: "#EAB308",
-            autoCheck: () =>
-                completedBookings.some((b) =>
-                    (b.tour?.name || b.tour?.title || "")
-                        .toLowerCase()
-                        .includes("hội an"),
-                ),
+            autoCheck: () => hasVisitedLoc("hội an") || hasVisitedLoc("hoian"),
         },
         {
             label: "Biển xanh Phú Quốc",
-            desc: "Nghỉ dưỡng thiên đường đảo ngọc",
-            icon: "bi-water",
-            color: "#06B6D4",
-            autoCheck: () =>
-                completedBookings.some((b) =>
-                    (b.tour?.name || b.tour?.title || "")
-                        .toLowerCase()
-                        .includes("phú quốc"),
-                ),
+            desc: "Nghỉ dưỡng thiên đường đảo ngọc Phú Quốc",
+            icon: "bi-sun-fill",
+            color: "#F97316",
+            autoCheck: () => hasVisitedLoc("phú quốc") || hasVisitedLoc("phuquoc"),
         },
     ];
 
@@ -816,12 +824,15 @@ function loadAchievements() {
                 );
 
             return `
-      <div class="achievement-badge-card ${isUnlocked ? "" : "locked"}">
-        <div class="achievement-badge-icon" style="color: ${isUnlocked ? b.color : "#ccc"}; border-color: ${isUnlocked ? b.color : "#e5e7eb"}">
+      <div class="achievement-badge-card ${isUnlocked ? "unlocked" : "locked"}">
+        <div class="achievement-badge-icon" style="background: ${isUnlocked ? b.color + "18" : "#f3f4f6"}; color: ${isUnlocked ? b.color : "#9ca3af"};">
           <i class="bi ${b.icon}"></i>
         </div>
         <div class="achievement-badge-label">${b.label}</div>
-        <div class="achievement-badge-desc">${isUnlocked ? "Đã mở khóa" : b.desc}</div>
+        <div class="achievement-badge-desc">${b.desc}</div>
+        <div class="achievement-status-tag ${isUnlocked ? "unlocked" : "locked"}">
+          ${isUnlocked ? '<i class="bi bi-patch-check-fill me-1"></i> Đã mở khóa' : '<i class="bi bi-lock-fill me-1"></i> Chưa mở khóa'}
+        </div>
       </div>
     `;
         })

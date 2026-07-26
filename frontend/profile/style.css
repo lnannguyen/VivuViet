@@ -208,37 +208,74 @@
     justify-content: center;
 }
 
-/* Achievements badges */
+/* Achievements badges - Modern Grid Redesign */
 .achievements-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.25rem;
 }
 .achievement-badge-card {
-    background-color: #fcfbfa;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-md);
-    padding: 1.25rem;
+    background: #ffffff;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 20px;
+    padding: 1.5rem 1.25rem;
     text-align: center;
-    transition: var(--transition);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    position: relative;
+    overflow: hidden;
+}
+.achievement-badge-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+.achievement-badge-card.unlocked {
+    border-color: #10b981;
+    background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.12);
 }
 .achievement-badge-card.locked {
-    opacity: 0.65;
-    filter: grayscale(1);
+    opacity: 0.55;
+    filter: grayscale(0.85);
+    background: #f9fafb;
 }
 .achievement-badge-icon {
-    font-size: 2.25rem;
-    margin-bottom: 0.5rem;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.85rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 .achievement-badge-label {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 0.25rem;
+    font-size: 1rem;
+    font-weight: 800;
+    color: #1f2937;
+    margin-bottom: 0.35rem;
 }
 .achievement-badge-desc {
-    font-size: 0.65rem;
-    color: var(--text-light);
+    font-size: 0.8rem;
+    color: #6b7280;
+    line-height: 1.4;
+}
+.achievement-status-tag {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+}
+.achievement-status-tag.unlocked {
+    background: #d1fae5;
+    color: #065f46;
+}
+.achievement-status-tag.locked {
+    background: #f3f4f6;
+    color: #6b7280;
 }
 
 /* Voucher Ticket Cards */
